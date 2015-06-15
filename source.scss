@@ -25,9 +25,17 @@
 @import 'variables';
 
 /**
+ * _normalize.scss
+ * -----------------------------------------------------------------------------
+ * @link https://github.com/necolas/normalize.css/blob/master/normalize.css
+ */
+
+@import 'normalize';
+
+/**
  * bhalash-helpers.scss
  * -----------------------------------------------------------------------------
- * MIT-licensed Sass library.
+ * @link https://github.com/bhalash/scss-helpers
  */
 
 @import 'scss-helpers/bhalash-helpers';
@@ -37,4 +45,4 @@
  * -----------------------------------------------------------------------------
  */
 
-
+@import 'containers';
