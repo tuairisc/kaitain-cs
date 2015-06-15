@@ -1,0 +1,45 @@
+/**
+ * Template Stylesheet Source
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Tuairisc.ie
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * Template Assets
+ * -----------------------------------------------------------------------------
+ */
+
+@import 'assets';
+
+/**
+ * Template Variables
+ * -----------------------------------------------------------------------------
+ */
+
+@import 'variables';
+
+/**
+ * bhalash-helpers.scss
+ * -----------------------------------------------------------------------------
+ * MIT-licensed Sass library.
+ */
+
+@import 'scss-helpers/bhalash-helpers';
+
+/**
+ * normalize.scss 
+ * -----------------------------------------------------------------------------
+ */
+
+@import 'normalize.css/normalize.css';
+
+/**
+ * 
+ * -----------------------------------------------------------------------------
+ */
