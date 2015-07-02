@@ -1,6 +1,8 @@
 /**
  * Theme Containers
  * -----------------------------------------------------------------------------
+ * All of the rules for top-level containers in the theme.
+ * 
  * @category   Sass Template
  * @package    Tuairisc.ie
  * @author     Mark Grealish <mark@bhalash.com>
@@ -9,3 +11,58 @@
  * @version    2.0
  * @link       https://github.com/bhalash/tuairisc.ie
  */
+
+$sidebar-width: 25%;
+
+body {
+    background-color: #f2f2f2;
+}
+
+#header {
+    background-color: palette(white, x-light);
+    @include height(10);
+    @include fixed(0 0 0, top left right);
+}
+
+#main {
+    background-color: palette(white, x-light);
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 80%;
+    @include flex-parent(row);
+    @include margin(5, top bottom);
+    @include padding(1.5);
+
+    @include media($b-768) {
+        @include flex-parent(column);
+    }
+
+    @include media(ie 9) {
+        @include clearfix();
+        overflow-x: hidden;
+    }
+}
+
+#content {
+    @include flex-child(1);
+
+    @include media(ie 9) {
+        float: left;
+        width: calc($100% - #{$sidebar-width});
+    }
+}
+
+#sidebar {
+    @include flex-child(0 1 $sidebar-width); 
+
+    @include media(ie 9) {
+        float: right;
+        width: $sidebar-width;
+    }
+}
+
+#footer {
+    background-color: palette(tuairisc);
+    @include height(10);
+}
