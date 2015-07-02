@@ -9,3 +9,75 @@
  * @version    2.0
  * @link       https://github.com/bhalash/tuairisc.ie
  */
+
+$assets: '../images/';
+$article: $assets + 'article/';
+$background: $assets + 'background/';
+$brands: $assets + 'brands/';
+$buttons: $assets + 'buttons/';
+$education: $assets + 'education/';
+$social: $assets + 'social/';
+
+/**
+ * Branding Images
+ * -----------------------------------------------------------------------------
+ */
+
+$assets: (
+    // Tuairisc and sponsor branding.
+    brand: (
+        tuairisc: (
+            black: 'tuairisc-black.svg',
+            white: 'tuairisc-white.svg'
+        ),
+        foras: (
+            black: 'foras-black.svg',
+            white: 'foras-white.svg'
+        ),
+        greann: 'greann.svg'
+    ), 
+    // Tuairisc rainbow stripe backgrounds.
+    bg: (
+        stripe: 'stripe.svg',
+        footer:  'stripe-footer.svg'
+    ),
+    // Blockquote quotation marks.
+    quote: (
+        close: 'quotation_close.svg',
+        open: 'quotation_open.svg'
+    ),
+    // Education section banners.
+    edu: (
+        download: (#d2d3d5, $education + 'download.svg'),
+        soundwave: $education + 'soundwave.svg',
+        banners: (
+            187: (#e3393c, ''),
+            202: (#c44b54, $education + 'picture.svg'),
+            203: (#7c5c91, $education + 'book.svg'),
+            204: (#c9ab5f, $education + 'video.svg'),
+            205: (#89b0d4, $education + 'reading.svg'),
+            206: (#e34284, $education + 'crossword.svg')
+        ) 
+    ),
+
+);
+
+/**
+ * Fetch Asset
+ * -----------------------------------------------------------------------------
+ * @param   string      $asset      Name of the asset to be fetched.
+ * @param   map         $variants   Optional. Variants to be fetched.
+ * @return  map         $asset      Selected asset. Throws a fit otherwise. :)
+ */
+
+@function asset($asset, $variants: null) {
+    $asset: map-get($assets, $asset);
+
+    @if ($variants) {
+        @each $variant in $variants {
+            $asset: map-get($asset, $variant);
+        }
+    }
+
+    @return $asset;
+}
