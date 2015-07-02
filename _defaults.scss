@@ -1,0 +1,181 @@
+/**
+ * Theme Defaults
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Tuairisc.ie
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+html {
+    color: palette(black, x-dark);
+    font-family: $font-opensans;
+}
+
+body {
+    @include media(print) {
+        margin: 0;
+    }
+}
+
+/**
+ * Default Text Size and Weight
+ * -----------------------------------------------------------------------------
+ */
+
+blockquote, cite, li, footer p, ins, p, q {
+    @include font-size(1.5);
+    font-weight: 300;
+}
+
+/*
+ * Remove Margins and Padding
+ * -----------------------------------------------------------------------------
+ */
+
+blockquote, h1, h2, h3, h4, h5, h6, li, ol, p, pre, ul, %zero {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Forms
+ * -----------------------------------------------------------------------------
+ */
+
+input, button, textarea {
+    // Remove all default appearance and focus appearance styling. 
+    -webkit-appearance: none;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    @include prefix(border-radius, 0);
+
+    &:focus {
+        border: 0;
+        outline: 0;
+    }
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+}
+
+/**
+ * Headline Items
+ * -----------------------------------------------------------------------------
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    // font-family: $font-opensans-title;
+    font-weight: bold;
+}
+
+h1, %h1 { 
+    @include font-size(4.8);
+}
+
+h2, %h2 { 
+    @include font-size(3.3); 
+}
+
+h3, %h3 { 
+    @include font-size(2.8);
+}
+
+h4, %h4 { 
+    @include font-size(2.3);
+}
+
+h5, %h5 { 
+    @include font-size(1.8);
+}
+
+h6, %h6 { 
+    @include font-size(1.3);
+}
+
+/**
+ * Anchors
+ * -----------------------------------------------------------------------------
+ */
+
+a, %anchor {
+    color: palette(blue);
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/**
+ * Horizontal Rule
+ * -----------------------------------------------------------------------------
+ */
+
+hr, %hr {
+    border: 0;
+    background: palette(black, light);
+    height: 1px;
+    @include margin(2 0);
+}
+
+body:not(.single) article ~ hr, %article-hr {
+    @include margin(4 0);
+
+    &:last-of-type {
+        background: transparent;
+    }
+}
+
+/**
+ * Gulliver's Text
+ * -----------------------------------------------------------------------------
+ * Normal text is ~1.6
+ */
+
+big, dt, .big, %big {
+    @include font-size(1.9);
+}
+
+cite, small, .small, %small {
+    letter-spacing: 0;
+    @include font-size(1.3);
+}
+
+/**
+ * Iframe and Image Sizes
+ * -----------------------------------------------------------------------------
+ */
+
+iframe, img {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+embed, iframe {
+    // Embedded and iframe content looks weird when printed.
+    @include media(print) {
+        display: none;
+    }
+}
+
+/**
+ * Blockquotes 
+ * -----------------------------------------------------------------------------
+ */
+
+blockquote {
+    border-left: 1px solid palette(black, light);
+    @include padding(1, left);
+
+    p, li {
+        font-style: italic;
+    }
+}
