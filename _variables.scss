@@ -27,7 +27,7 @@ $b-640:  max 640px;
  * -----------------------------------------------------------------------------
  */
 
-$theme-colors: (
+$default-colors: map-merge($default-colors, (
     tuairisc: (
         base: #506572
     ),
@@ -37,9 +37,7 @@ $theme-colors: (
     green: (
         base: #95c37c
     )
-);
-
-$default-colors: map-merge($default-colors, $theme-colors);
+));
 
 /*
  * Typeface Declarations
@@ -69,4 +67,3 @@ $sections: (
     ('nuacht', #516671),
     ('fallback', #caab60) 
 );
-
