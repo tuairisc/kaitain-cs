@@ -16,3 +16,7 @@ div.widget[id*=_tuairisc_] .widget-title-action {
     color: #fff;
     background: #506572;
 }
+
+.stickycheck, .expiryinfo {
+    display: none;
+}
