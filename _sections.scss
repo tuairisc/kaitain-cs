@@ -44,27 +44,30 @@ $section-trim-height: 4px;
 $section-trim-offset: -3%;
 
 @each $list in $sections {
-    .section-#{nth($list, 1)} {
-        // 1. Set trims for the main sections.
+    $class: nth($list, 1);
+    $color: nth($list, 2);
+
+    body.section-#{$class} {
+        // 1. Set trims for the main sections. Theme engine, tied to <body> tag.
         .section-trim-background, .section-trim-background-hover:hover {
-            background-color: nth($list, 2);
+            background-color: $color;
             color: #fff;
         }
 
         .section-trim-text, .section-trim-text-hover:hover {
-            color: nth($list, 2);
+            color: $color;
         }
     }
 
-    .section-#{nth($list, 1)}-background, .section-#{nth($list, 1)}-background-hover:hover {
+    .section-#{$class}-background, .section-#{$class}-background-hover:hover {
         // 2. Set background trim for the all given sections regardless of main.
-        background-color: nth($list, 2);
+        background-color: $color;
         color: #fff;
     }
 
-    .section-#{nth($list, 1)}-text, .section-#{nth($list, 1)}-text-hover:hover {
+    .section-#{$class}-text, .section-#{$class}-text-hover:hover {
         // 3. Set text trim for the all given sections regardless of main.
-        color: nth($list, 2);
+        color: $color;
     } 
 }
 
@@ -104,19 +107,17 @@ $section-trim-offset: -3%;
  *
  */
 
-body:not(.website-section) {
-    a#brand {
-        // Dark logo to match white background.
-        background-image: url(asset(brand, tuairisc black));
-    } 
-}
+a#brand {
+    // Dark logo to match white background for unsectioned site.
+    background-image: url(asset(brand, tuairisc black));
+} 
 
 /**
  * Sectioned Site Styles
  * -----------------------------------------------------------------------------
  */
 
-body.website-section {
+body[class*=section-]:not(.section-nuacht) {
     #header-logo {
         border: 0;
     }
