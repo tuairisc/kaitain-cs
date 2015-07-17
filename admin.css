@@ -18,5 +18,15 @@ div.widget[id*=_tuairisc_] .widget-title-action {
 }
 
 .stickycheck, .expiryinfo {
+    /* Featured/sticky post meta box. */
     display: none;
+}
+
+.author-widget-admin {
+    /* Author list widget. */
+    border: 1px solid #dfdfdf;
+    box-sizing: border-box;
+    height: 150px;
+    overflow-y: scroll;
+    padding: 5px;
 }
