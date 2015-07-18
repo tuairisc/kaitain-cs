@@ -11,7 +11,9 @@
  */
 
 div.widget[id*=_tuairisc_] h4,
-div.widget[id*=_tuairisc_] .widget-title-action {
+div.widget[id*=_tuairisc_] .widget-title-action,
+div.postbox[id*=tuairisc_] h3,
+div.postbox[id*=tuairisc_] .handlediv {
     /* Shade Tuairisc theme widgets for highlighting. */
     color: #fff;
     background: #506572;
