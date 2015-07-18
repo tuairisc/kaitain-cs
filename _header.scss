@@ -1,0 +1,38 @@
+/**
+ * Header Interior Elements
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Tuairisc.ie
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+nav#sections-menu {
+    @include padding(1, top);
+
+    ul {
+        text-align: center;
+        @include rem(min-height, 3);
+
+        &:nth-of-type(1) {
+            margin-bottom: -1px;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 5px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    li {
+        // TODO FIXME TEMPORARY
+        display: inline-block;
+    }
+}
