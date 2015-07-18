@@ -52,6 +52,10 @@ $section-trim-offset: -3%;
         .section-trim-background, .section-trim-background-hover:hover {
             background-color: $color;
             color: #fff;
+
+            a {
+                color: inherit;
+            }
         }
 
         .section-trim-text, .section-trim-text-hover:hover {
@@ -63,6 +67,10 @@ $section-trim-offset: -3%;
         // 2. Set background trim for the all given sections regardless of main.
         background-color: $color;
         color: #fff;
+
+        a {
+            color: inherit;
+        }
     }
 
     .section-#{$class}-text, .section-#{$class}-text-hover:hover {
