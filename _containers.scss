@@ -66,3 +66,33 @@ body {
     background-color: palette(tuairisc);
     @include height(10);
 }
+
+/**
+ * 404 Error Template
+ * -----------------------------------------------------------------------------
+ * Hide everything but the error message on a 404.
+ */
+
+body[class^=error] {
+    background: #fff;
+
+    #header, #sidebar, #footer {
+        display: none;    
+    }
+
+    #main {
+        margin: 0;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    a {
+        color: palette(green);
+    }
+}
+
+#error {
+    text-align: center; 
+    @include fixed(0);
+    @include flex-parent(column, center);
+}
