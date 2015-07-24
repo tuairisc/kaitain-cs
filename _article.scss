@@ -9,3 +9,57 @@
  * @version    2.0
  * @link       https://github.com/bhalash/tuairisc.ie
  */
+
+img.cover-fit {
+    // For fallback IE polyfill.
+    object-fit: cover;
+}
+
+.title, .attribution {
+    a:hover {
+        color: palette(green);
+    }
+}
+
+.attribution a {
+    font-weight: bold;
+}
+
+.title {
+    @include margin(0.6 0);
+}
+
+header {
+    @include margin(1.2, bottom);
+
+    .attribution {
+        display: inline-block;
+
+        @include media(smartphone) {
+            display: block;
+            @include margin(0.3, top);
+        }
+    }
+}
+
+article[class^=archive-] {
+    &:not(:last-child) {
+        @include margin(1.2, bottom);
+    }
+
+    >:first-child {
+        @include margin(0.8, bottom);
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.archive-lead img {
+    @include height(38.5);
+}
+
+.archive-small img {
+    @include height(12.5);
+}
