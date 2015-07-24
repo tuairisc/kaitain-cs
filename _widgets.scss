@@ -1,0 +1,119 @@
+/**
+ * Widgets
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Tuairisc.ie
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * Featured Widget Post Row
+ * -----------------------------------------------------------------------------
+ * 1x4 flexbox row, switches to 2x2 responsive. Fall back to floats in IE <= 10.
+ */
+
+.home-flex-row {
+    @include flex-parent(row, space-between, wrap);
+
+    @include media(ie) {
+        @include clearfix();        
+    }
+
+    > * {
+        @include flex-child(0 1 23.5%);
+
+        @include media(ie) {
+            float: left; 
+            width: 23%;
+
+            &:not(:last-child) {
+                margin-right: 2%;
+            }
+        }
+
+        @include media($b-640) {
+            @include flex-child(0 1 49%);
+        }
+    }
+}
+
+.widget_tuairisc_authors {
+    background: palette(white, light);
+    box-sizing: border-box;
+    @include padding(1.3);
+
+    img {
+        width: 100%;
+        @include height(15.1);
+        @include margin(0.8, bottom);
+    }
+
+    .tuairisc-author:nth-child(-n+2) {
+        @include media($b-640) {
+            @include margin(1.6, bottom);
+        }
+    }
+}
+
+.widget-title {
+    @include margin(0.8, bottom);
+}
+
+.category-widget-display {
+    @include flex-parent(row, space-between);
+
+    .left, .right {
+        @include flex-child(0 1 49%);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    article.left {
+        img {
+            @include height(20);
+        }
+
+        p {
+            box-sizing: border-box;
+            @include rem(min-height, 9);
+            @include padding(1);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .right {
+        img {
+            @include height(6);
+        }
+
+        article {
+            @include flex-parent(row, space-between);
+            @include margin(1, bottom);
+
+            .category-article-image {
+                @include flex-child(0 1 28%);
+            }
+
+            .category-article-title {
+                box-sizing: border-box;
+                @include padding(1, left);
+                @include flex-child(1);
+            }
+        }
+    }
+
+    .category-article-image {
+        /* Chrome treats it as display: inline-block and adds invisible font
+         * space below the div. */
+        font-size: 0;
+    }
+}
