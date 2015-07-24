@@ -20,8 +20,7 @@ body {
 
 #header {
     background-color: palette(white, x-light);
-    @include height(10);
-    @include fixed(0 0 0, top left right);
+    // @include fixed(0 0 0, top left right);
 }
 
 #main {
@@ -29,12 +28,12 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1140px;
-    width: 80%;
+    width: 95%;
     @include flex-parent(row);
     @include margin(5, top bottom);
     @include padding(1.5);
 
-    @include media($b-768) {
+    @include media($b-840) {
         @include flex-parent(column);
     }
 
@@ -50,6 +49,10 @@ body {
     @include media(ie 9) {
         float: left;
         width: calc($100% - #{$sidebar-width});
+    }
+
+    > div {
+        @include margin(2, bottom);
     }
 }
 
