@@ -57,10 +57,18 @@
             @include margin($vspace, bottom);
         }
     }
+
+    .author-name {
+        font-weight: bold;
+    }
+
+    a:hover .author-name {
+        color: palette(green);  
+    }
 }
 
 .widget-title {
-    @include margin($vspace * 0.5, bottom);
+    @include margin($vspace, bottom);
 
     a:hover {
         text-decoration: underline;
@@ -68,7 +76,40 @@
 }
 
 /**
- * Categories Widget
+ * Sidebar Widget Titles
+ * -----------------------------------------------------------------------------
+ */
+
+#sidebar div[class^=widget_tuairisc_] h3 {
+    // Bottom border and spacing for default sidebar widget title.
+    border-bottom: 1px solid palette(white, mid-light);
+    @include padding($vspace * 0.75, bottom);
+    @include margin($vspace, bottom);
+}
+
+/**
+ * Sidebar Featured Category Widget
+ * -----------------------------------------------------------------------------
+ */
+
+.widget_tuairisc_sidebar_category {
+    @include margin($vspace, bottom);
+
+    img {
+        position: relative;
+        @include height(14);
+        @include margin($vspace, bottom);
+    }
+}
+
+.sidebar-category-grey {
+    background: palette(white, light); 
+    box-sizing: border-box;
+    @include padding($vspace);
+}
+
+/**
+ * Home Categories Widget
  * -----------------------------------------------------------------------------
  * TODO: Responsive pass and IE fallback.
  */
@@ -87,12 +128,23 @@
     font-size: 0;
 }
 
+.category-widget {
+    // Children.
+    .category-left, .category-right {
+        @include flex-child(0 1 49%);
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
 div.category-right {
     img {
         @include height(6);
     }
 
-    article {
+    article > a {
         @include flex-parent(row, space-between);
         @include margin($vspace, bottom);
 
@@ -113,28 +165,21 @@ article.category-left {
         @include margin($vspace * 1.5, bottom);
     }
 
+    > a {
+        color: #fff;
+    }
+
     img {
         @include height(20);
     }
 
     p {
         box-sizing: border-box;
-        @include rem(min-height, 9);
         @include padding(1);
+        @include rem(min-height, 9);
     }
 
     a:hover {
         text-decoration: underline;
-    }
-}
-
-.category-widget {
-    // Children.
-    .category-left, .category-right {
-        @include flex-child(0 1 49%);
-    }
-
-    img {
-        width: 100%;
     }
 }
