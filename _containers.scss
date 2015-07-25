@@ -45,6 +45,11 @@ body {
 
 #content {
     @include flex-child(1);
+    @include padding(1.5, right);
+
+    @include media($b-840) {
+        padding: 0;
+    }
 
     @include media(ie 9) {
         float: left;
@@ -66,7 +71,6 @@ body {
 }
 
 #footer {
-    background-color: palette(tuairisc);
     @include height(10);
 }
 
