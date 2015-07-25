@@ -49,71 +49,92 @@
     img {
         width: 100%;
         @include height(15.1);
-        @include margin(0.8, bottom);
+        @include margin($vspace * 0.5, bottom);
     }
 
     .tuairisc-author:nth-child(-n+2) {
         @include media($b-640) {
-            @include margin(1.6, bottom);
+            @include margin($vspace, bottom);
         }
     }
 }
 
 .widget-title {
-    @include margin(0.8, bottom);
+    @include margin($vspace * 0.5, bottom);
+
+    a:hover {
+        text-decoration: underline;
+    }
 }
+
+/**
+ * Categories Widget
+ * -----------------------------------------------------------------------------
+ * TODO: Responsive pass and IE fallback.
+ */
 
 .category-widget-display {
     @include flex-parent(row, space-between);
 
-    .left, .right {
+    @include media(smartphone) {
+        display: block;
+    }
+}
+
+.category-article-image {
+    /* Chrome treats it as display: inline-block and adds invisible font
+     * space below the div. */
+    font-size: 0;
+}
+
+div.category-right {
+    img {
+        @include height(6);
+    }
+
+    article {
+        @include flex-parent(row, space-between);
+        @include margin($vspace, bottom);
+
+        .category-article-image {
+            @include flex-child(0 1 28%);
+        }
+
+        .category-article-title {
+            box-sizing: border-box;
+            @include padding(1, left);
+            @include flex-child(1);
+        }
+    }
+}
+
+article.category-left {
+    @include media(smartphone) {
+        @include margin($vspace * 1.5, bottom);
+    }
+
+    img {
+        @include height(20);
+    }
+
+    p {
+        box-sizing: border-box;
+        @include rem(min-height, 9);
+        @include padding(1);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.category-widget {
+    // Children.
+    .category-left, .category-right {
         @include flex-child(0 1 49%);
     }
 
     img {
         width: 100%;
-    }
-
-    article.left {
-        img {
-            @include height(20);
-        }
-
-        p {
-            box-sizing: border-box;
-            @include rem(min-height, 9);
-            @include padding(1);
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    }
-
-    .right {
-        img {
-            @include height(6);
-        }
-
-        article {
-            @include flex-parent(row, space-between);
-            @include margin(1, bottom);
-
-            .category-article-image {
-                @include flex-child(0 1 28%);
-            }
-
-            .category-article-title {
-                box-sizing: border-box;
-                @include padding(1, left);
-                @include flex-child(1);
-            }
-        }
-    }
-
-    .category-article-image {
-        /* Chrome treats it as display: inline-block and adds invisible font
-         * space below the div. */
-        font-size: 0;
     }
 }
