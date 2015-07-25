@@ -31,7 +31,7 @@ body {
     width: 95%;
     @include flex-parent(row);
     @include margin(5, top bottom);
-    @include padding(1.5);
+    @include padding($vspace);
 
     @include media($b-840) {
         @include flex-parent(column);
@@ -45,7 +45,7 @@ body {
 
 #content {
     @include flex-child(1);
-    @include padding(1.5, right);
+    @include padding($vspace, right);
 
     @include media($b-840) {
         padding: 0;
