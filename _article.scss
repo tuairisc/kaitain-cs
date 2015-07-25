@@ -11,7 +11,9 @@
  */
 
 img.cover-fit {
-    // For fallback IE polyfill.
+    /* For fallback IE polyfill.
+     * All images for polyfill (mostly post thumbnails) will have explicit
+     * dimensions set. */
     object-fit: cover;
 }
 
@@ -21,34 +23,40 @@ img.cover-fit {
     }
 }
 
-.attribution a {
-    font-weight: bold;
+.title {
+    @include margin($vspace * 0.5, bottom);
 }
 
-.title {
-    @include margin(0.6, bottom);
+.attribution {
+    display: inline-block;
+
+    @include media(smartphone) {
+        display: block;
+        @include margin(0.3, top);
+    }
+
+    a {
+        font-weight: bold;
+    }
 }
 
 header {
-    @include margin(1.2, bottom);
-
-    .attribution {
-        display: inline-block;
-
-        @include media(smartphone) {
-            display: block;
-            @include margin(0.3, top);
-        }
-    }
+    @include margin($vspace * 0.5, bottom);
 }
+
+/**
+ * Lead, Normal and Small Archive Templates
+ * -----------------------------------------------------------------------------
+ */
 
 article[class^=archive-] {
     &:not(:last-child) {
-        @include margin(1.2, bottom);
+        // Give all children but the last a bottom margin for spacing.
+        @include margin($vspace * 0.5, bottom);
     }
 
-    >:first-child {
-        @include margin(0.8, bottom);
+    .thumbnail {
+        position: relative;
     }
 
     img {
@@ -56,10 +64,28 @@ article[class^=archive-] {
     }
 }
 
-.archive-lead img {
-    @include height(38.5);
+.archive-trim {
+    // Bottom category trim for archive images.
+    @include absolute(0 0 0, right bottom left);
+    @include height(0.5);
 }
 
-.archive-small img {
-    @include height(12.5);
+.archive-lead {
+    >:first-child {
+        @include margin($vspace * 0.5, bottom);
+    }
+
+    img {
+        @include height(38.5);
+    }
+}
+
+.archive-small {
+    img {
+        @include height(12.5);
+    }
+
+    a >:first-child {
+        @include margin($vspace * 0.5, bottom);
+    }
 }
