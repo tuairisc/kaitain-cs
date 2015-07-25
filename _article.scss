@@ -24,7 +24,7 @@ img.cover-fit {
 }
 
 .title {
-    @include margin($vspace * 0.5, bottom);
+    @include margin($vspace, bottom);
 }
 
 .attribution {
@@ -44,6 +44,25 @@ header {
     @include margin($vspace * 0.5, bottom);
 }
 
+.post-date {
+    color: palette(white, x-dark);
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.archive-trim-bottom {
+    // Bottom category trim for archive images.
+    @include absolute(0 0 0, right bottom left);
+    @include height(0.5);
+}
+
+.archive-trim-side {
+    @include absolute(0 0 0, top right left);
+    @include height(0.5);
+}
+
 /**
  * Lead, Normal and Small Archive Templates
  * -----------------------------------------------------------------------------
@@ -55,24 +74,15 @@ article[class^=archive-] {
         @include margin($vspace * 0.5, bottom);
     }
 
-    .thumbnail {
-        position: relative;
-    }
-
     img {
         width: 100%;
     }
 }
 
-.archive-trim {
-    // Bottom category trim for archive images.
-    @include absolute(0 0 0, right bottom left);
-    @include height(0.5);
-}
-
-.archive-lead {
-    >:first-child {
-        @include margin($vspace * 0.5, bottom);
+article.archive-lead {
+    // Lead article.
+    > a >:last-child {
+        @include margin($vspace * 0.5 0);
     }
 
     img {
@@ -80,7 +90,8 @@ article[class^=archive-] {
     }
 }
 
-.archive-small {
+article.archive-small {
+    // Sub-article, front page. 
     img {
         @include height(12.5);
     }
@@ -89,3 +100,35 @@ article[class^=archive-] {
         @include margin($vspace * 0.5, bottom);
     }
 }
+
+/**
+ * Sidebar Article Template
+ * -----------------------------------------------------------------------------
+ */
+
+article.sidebar {
+    @include margin($vspace, bottom);
+
+    > a {
+        @include flex-parent(row);
+    }
+
+    .thumbnail {
+        @include flex-child(0 1 25%);
+        @include height(4.5);
+    }
+
+    header {
+        box-sizing: border-box;
+        @include flex-child(1);
+        @include padding(1, left);
+    }
+
+    img {
+        /* Width and height are interited from .thumbnail.
+         * Image is cover object-fit. */
+        height: 100%;
+        width: 100%;
+    }
+}
+
