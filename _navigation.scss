@@ -1,0 +1,56 @@
+/**
+ * Navigation Elements
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Tuairisc.ie
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * Pagintaion
+ * -----------------------------------------------------------------------------
+ */
+
+nav#pagination {
+    @include margin(3 0);
+    @include flex-parent(row, space-between);
+
+    h3 {
+        font-variant: small-caps;
+        white-space: nowrap;
+    }
+
+    > div {
+        @include flex-child(1);
+    }
+    
+    div.previous {
+        text-align: left;
+    }
+
+    div.count {
+        text-align: center;
+
+        @include media(smartphone) {
+            display: none;
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    div.next {
+        text-align: right;
+    }
+
+    .previous, .next {
+        @include media(smartphone) {
+            white-space: normal;
+        }
+    }
+}
