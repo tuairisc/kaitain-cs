@@ -61,7 +61,7 @@ a.tuairisc-advert {
  */
 
 .g-1, .g-2 {
-    padding: $padding-19 0;
+    @include padding(1.9 0);
 
     img.square {
         display: none;
@@ -105,14 +105,12 @@ a.tuairisc-advert {
     }
 
     > div {
-        content: 'FIXME: SIDBAR ADVERTS';
-        margin-bottom: $margin-19;
+        &:not(:last-child) {
+            @include margin($vspace, bottom);
+        }
 
         @include media(portrait) {
             @include flex-child(0 1 32.5%);
-        }
-
-        @include media(smartphone) {
         }
     }
 }
