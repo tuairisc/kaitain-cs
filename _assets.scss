@@ -27,14 +27,14 @@ $assets: (
     // Tuairisc and sponsor branding.
     brand: (
         tuairisc: (
-            black: 'tuairisc-black.svg',
-            white: 'tuairisc-white.svg'
+            black: $brands + 'tuairisc-black.svg',
+            white: $brands + 'tuairisc-white.svg'
         ),
         foras: (
             black: 'foras-black.svg',
             white: 'foras-white.svg'
         ),
-        greann: 'greann.svg'
+        greann: $brands + 'greann.svg'
     ), 
     // Tuairisc rainbow stripe backgrounds.
     bg: (
@@ -58,8 +58,7 @@ $assets: (
             205: (#89b0d4, $education + 'reading.svg'),
             206: (#e34284, $education + 'crossword.svg')
         ) 
-    ),
-
+    )
 );
 
 /**
