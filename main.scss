@@ -10,74 +10,16 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-/**
- * bhalash-helpers.scss
- * -----------------------------------------------------------------------------
- * @link https://github.com/bhalash/scss-helpers
- */
-
 @import 'scss-helpers/bhalash-helpers';
-
-/**
- * Template Assets
- * -----------------------------------------------------------------------------
- */
-
 @import 'assets';
-
-/**
- * Template Variables
- * -----------------------------------------------------------------------------
- */
-
 @import 'variables';
-
-/**
- * _normalize.scss
- * -----------------------------------------------------------------------------
- * @link https://github.com/necolas/normalize.css/blob/master/normalize.css
- */
-
 @import 'normalize';
-
-/**
- * Template Defaults
- * -----------------------------------------------------------------------------
- */
-
 @import 'defaults';
-
-/**
- * Template Containers
- * -----------------------------------------------------------------------------
- */
-
 @import 'containers';
-
-/**
- * Site Sections
- * -----------------------------------------------------------------------------
- */
-
 @import 'sections';
-
-/**
- * Header Interior Styles
- * -----------------------------------------------------------------------------
- */
-
 @import 'header';
-
-/**
- * Articles Template
- * -----------------------------------------------------------------------------
- */
-
 @import 'article';
-
-/**
- * Widgets
- * -----------------------------------------------------------------------------
- */
-
 @import 'widgets';
+@import 'navigation';
+@import 'adverts';
+@import 'footer';
