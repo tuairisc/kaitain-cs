@@ -10,20 +10,50 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+.widget-title {
+    @include margin($vspace, bottom);
+
+    a {
+        color: inherit;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/**
+ * Sidebar Widget Titles
+ * -----------------------------------------------------------------------------
+ * Title style for all sidebar widget titles.
+ */
+
+#sidebar div[class^=widget_tuairisc_] h3, .sidebar-widget-title {
+    // Bottom border and spacing for default sidebar widget title.
+    border-bottom: 1px solid palette(white, mid-light);
+    font-variant: small-caps;
+    @include padding($vspace * 0.75, bottom);
+    @include margin($vspace, bottom);
+}
+
 /**
  * Featured Widget Post Row
  * -----------------------------------------------------------------------------
  * 1x4 flexbox row, switches to 2x2 responsive. Fall back to floats in IE <= 10.
+ * This is a generic class used by two widgets.
+ * TODO: RESPONSIVE AND IE PASS
  */
 
 .home-flex-row {
+    // Each row is 1x4 in length to make IE float fallbacks easier.
     @include flex-parent(row, space-between, wrap);
 
     @include media(ie) {
         @include clearfix();        
     }
 
-    > * {
+    > a, > article {
+        // Children item are either hyperlinks or articles.
         @include flex-child(0 1 23.5%);
 
         @include media(ie) {
@@ -40,6 +70,12 @@
         }
     }
 }
+
+/**
+ * Author Widget
+ * -----------------------------------------------------------------------------
+ * TODO: RESPONSIVE AND IE PASS
+ */
 
 .widget_tuairisc_authors {
     background: palette(white, light);
@@ -63,28 +99,8 @@
     }
 
     a:hover .author-name {
-        color: palette(green);  
+        @extend %green-link;
     }
-}
-
-.widget-title {
-    @include margin($vspace, bottom);
-
-    a:hover {
-        text-decoration: underline;
-    }
-}
-
-/**
- * Sidebar Widget Titles
- * -----------------------------------------------------------------------------
- */
-
-#sidebar div[class^=widget_tuairisc_] h3 {
-    // Bottom border and spacing for default sidebar widget title.
-    border-bottom: 1px solid palette(white, mid-light);
-    @include padding($vspace * 0.75, bottom);
-    @include margin($vspace, bottom);
 }
 
 /**
@@ -100,10 +116,14 @@
         @include height(14);
         @include margin($vspace, bottom);
     }
+
+    .grey {
+        // Default grey background.
+        background: palette(white, light); 
+    }
 }
 
-.sidebar-category-grey {
-    background: palette(white, light); 
+.sidebar-category-widget-interior {
     box-sizing: border-box;
     @include padding($vspace);
 }
@@ -136,6 +156,13 @@
 
     img {
         width: 100%;
+    }
+
+    .widget-title {
+        border-color: inherit;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        @include padding(0.5, bottom);
     }
 }
 
