@@ -110,40 +110,19 @@ $section-trim-offset: -3%;
 }
 
 /**
- * Unsectioned Site Styles
- * -----------------------------------------------------------------------------
- *
- */
-
-a#brand {
-    // Dark logo to match white background for unsectioned site.
-    background-image: url(asset(brand, tuairisc black));
-} 
-
-/**
- * Sectioned Site Styles
+ * Article Trim Colours
  * -----------------------------------------------------------------------------
  */
 
-body[class*=section-]:not(.section-nuacht) {
-    #header-logo {
-        border: 0;
-    }
-
-    a#brand {
-        background-image: url(assets(brand, tuairisc white));
-    }
+.archive-trim-bottom {
+    // Bottom category trim for archive images.
+    @include absolute(0 0 0, right bottom left);
+    @include height(0.5);
 }
 
-/**
- * Greann Section Styles
- * -----------------------------------------------------------------------------
- */
-
-.section-greann { 
-    a#brand {
-        // Change background and increase size to give prominence.
-        background-image: url(asset(brand, greann));
-        background-size: auto 85%;
-    }
+.archive-trim-side {
+    // Right side tirm for archive images.
+    @include absolute(0 0 0, top right left);
+    @include height(0.5);
 }
+
