@@ -10,29 +10,122 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-nav#sections-menu {
-    @include padding(1, top);
+#header {
+    text-align: center;
 
     ul {
-        text-align: center;
-        @include rem(min-height, 3);
+        list-style-type: none;
+    }
 
-        &:nth-of-type(1) {
-            margin-bottom: -1px;
-        }
+    li {
+        display: inline-block;
     }
 
     a {
         display: block;
-        padding: 5px;
 
         &:hover {
             text-decoration: none;
         }
     }
+}
+
+nav#sections-menu {
+    ul {
+        @include rem(min-height, 3);
+    }
+
+}
+
+ul#primary a {
+    @include padding($vspace * 0.5 $vspace);
+}
+
+ul#secondary a {
+    @include padding($vspace * 0.5);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/**
+ * Header Brand Bar
+ * -----------------------------------------------------------------------------
+ * Complex bar: It holds the go-home link as well as a hamburger menu, search
+ * button and 
+ */
+
+#brand {
+    @include flex-parent(row, space-between);
+    @include height(7);
+
+    > nav {
+        // Center *ALL* the things! 
+        @include flex-child(1);
+        @include flex-parent(row, center, nowrap, center);
+    }
+
+    ul {
+        list-style-type: none;
+    }
+}
+
+/**
+ * Go Home Link
+ * -----------------------------------------------------------------------------
+ */
+
+#home {
+    // See _sections.scss for specifics of brand iamge and colour.
+    height: 100%;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        height: 50%;
+        @include width(20);
+    }
+}
+
+/**
+ * Righthand Buttons
+ * -----------------------------------------------------------------------------
+ */
+
+#external {
+    box-sizing: border-box;
+    text-align: right;
+    @include padding($vspace * 1.5, right);
+
+    ul {
+        @include flex-child(1 0 80%);
+    }
 
     li {
-        // TODO FIXME TEMPORARY
         display: inline-block;
+        z-index: 2;
+        @include margin(0.3, left);
+        @include square-flex(35px 1);
     }
+        
+    a {    
+        border: 1px solid rgba(255,255,255,0.3);
+        border-radius: 50%;
+        @include social-link(100% 1);
+    }
+}
+
+/**
+ * Sectioned Site Styles
+ * -----------------------------------------------------------------------------
+ */
+
+body[class*=section]:not(.section-greann) #brand a#home {
+    background: center center/contain no-repeat url(asset(brand, tuairisc white));
+}
+
+body.section-greann #brand a#home {
+    background: center center/contain no-repeat url(asset(brand, greann));
+    height: 75%;
 }
