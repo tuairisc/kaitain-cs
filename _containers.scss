@@ -24,13 +24,13 @@ body {
 }
 
 #main {
-    background-color: palette(white, x-light);
+    // background-color: palette(white, x-light);
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1140px;
     width: 95%;
     @include flex-parent(row);
-    @include margin(5, top bottom);
+    // @include margin(5, top bottom);
     @include padding($vspace);
 
     @include media($b-840) {
