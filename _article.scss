@@ -10,20 +10,7 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-img.cover-fit {
-    /* For fallback IE polyfill.
-     * All images for polyfill (mostly post thumbnails) will have explicit
-     * dimensions set. */
-    object-fit: cover;
-}
-
-.title, .attribution {
-    a:hover {
-        color: palette(green);
-    }
-}
-
-.title {
+.archive-title, .title {
     @include margin($vspace, bottom);
 }
 
@@ -48,19 +35,26 @@ header {
     color: palette(white, x-dark);
 }
 
+img.cover-fit {
+    /* For fallback IE polyfill.
+     * All images for polyfill (mostly post thumbnails) will have explicit
+     * dimensions set. */
+    object-fit: cover;
+}
+
 .thumbnail {
+    // Trim children can have absolute positions.
     position: relative;
 }
 
-.archive-trim-bottom {
-    // Bottom category trim for archive images.
-    @include absolute(0 0 0, right bottom left);
-    @include height(0.5);
+.post-body a, .green-link, %green-link {
+    &:hover {
+        color: palette(green);
+    }
 }
 
-.archive-trim-side {
-    @include absolute(0 0 0, top right left);
-    @include height(0.5);
+.title, .attribution {
+    @extend %green-link;
 }
 
 /**
@@ -68,10 +62,10 @@ header {
  * -----------------------------------------------------------------------------
  */
 
-article[class^=archive-] {
+article[class^=archive] {
     &:not(:last-child) {
         // Give all children but the last a bottom margin for spacing.
-        @include margin($vspace * 0.5, bottom);
+        @include margin($vspace * 2, bottom);
     }
 
     img {
@@ -98,6 +92,38 @@ article.archive-small {
 
     a >:first-child {
         @include margin($vspace * 0.5, bottom);
+    }
+}
+
+article.archive {
+    // TODO: RESPONSIVE PASS
+    // "Regular" archive, used on all archive pages.
+    &:not(:last-of-type) {
+        border-bottom: 1px solid palette(white);
+        @include padding($vspace, bottom);
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    img {
+        @include height(17);
+    }
+
+    > a {
+        // Hyperlink wraps the content.
+        @include flex-parent(row, space-between);
+
+        > div {
+            @include flex-child(0 1 49%);
+        }
+    }
+
+    p {
+        /* This is strictly to prevent the paragraph from lighting up on link
+         * hover. */
+        color: black !important;
     }
 }
 
