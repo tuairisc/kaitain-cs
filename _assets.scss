@@ -12,11 +12,11 @@
 
 $assets: '../images/';
 $article: $assets + 'article/';
+$buttons: $assets + 'buttons/';
 $background: $assets + 'background/';
 $brands: $assets + 'brands/';
 $buttons: $assets + 'buttons/';
 $education: $assets + 'education/';
-$social: $assets + 'social/';
 
 /**
  * Branding Images
@@ -24,8 +24,8 @@ $social: $assets + 'social/';
  */
 
 $assets: (
-    // Tuairisc and sponsor branding.
     brand: (
+        // Tuairisc and sponsor branding.
         tuairisc: (
             black: $brands + 'tuairisc-black.svg',
             white: $brands + 'tuairisc-white.svg'
@@ -36,18 +36,22 @@ $assets: (
         ),
         greann: $brands + 'greann.svg'
     ), 
-    // Tuairisc rainbow stripe backgrounds.
+    buttons: (
+        // UI button elements.
+        menu: $buttons + 'menu.svg' 
+    ),
     bg: (
+        // Tuairisc rainbow stripe backgrounds.
         stripe: 'stripe.svg',
         footer:  'stripe-footer.svg'
     ),
-    // Blockquote quotation marks.
     quote: (
+        // Blockquote quotation marks.
         close: 'quotation_close.svg',
         open: 'quotation_open.svg'
     ),
-    // Education section banners.
     edu: (
+        // Education section banners.
         download: (#d2d3d5, $education + 'download.svg'),
         soundwave: $education + 'soundwave.svg',
         banners: (
@@ -78,5 +82,5 @@ $assets: (
         }
     }
 
-    @return $asset;
+    @return url($asset);
 }
