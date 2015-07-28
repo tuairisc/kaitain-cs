@@ -10,6 +10,11 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+/**
+ * General Post Text Styles
+ * -----------------------------------------------------------------------------
+ */
+
 .archive-title, .title {
     @include margin($vspace, bottom);
 }
@@ -47,12 +52,6 @@ img.cover-fit {
     position: relative;
 }
 
-.post-body a, .green-link, %green-link {
-    &:hover {
-        color: palette(green);
-    }
-}
-
 .title, .attribution {
     @extend %green-link;
 }
@@ -60,6 +59,9 @@ img.cover-fit {
 /**
  * Lead, Normal and Small Archive Templates
  * -----------------------------------------------------------------------------
+ * Featured: Used at the head of each category index, and the head of home page.
+ * Small: Used below the featured on the home page.
+ * Archive: Used on all category and other archive pages.
  */
 
 article[class^=archive] {
@@ -122,7 +124,8 @@ article.archive {
 
     p {
         /* This is strictly to prevent the paragraph from lighting up on link
-         * hover. */
+         * hover. The entire article's interior is wrapped in a single 
+         * hyperlink. I only want the title to light up on hover. */
         color: black !important;
     }
 }
@@ -130,6 +133,7 @@ article.archive {
 /**
  * Sidebar Article Template
  * -----------------------------------------------------------------------------
+ * This is used in sidebar widget articles.
  */
 
 article.sidebar {
