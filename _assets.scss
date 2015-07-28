@@ -42,7 +42,7 @@ $assets: (
     ),
     bg: (
         // Tuairisc rainbow stripe backgrounds.
-        stripe: 'stripe.svg',
+        stripe: $background + 'stripe.svg',
         footer:  'stripe-footer.svg'
     ),
     quote: (
