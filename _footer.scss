@@ -10,9 +10,24 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-#sharing {
-    background: palette(white, x-light);
-    border-top: 1px solid palette(white);
-    @include height(3);
-    @include fixed(0 0 0, right bottom left);
+#footer {
+    color: palette(white, x-light);
+
+    a {
+        color: inherit;
+    }
+}
+
+#footer p {
+    text-align: center;
+}
+
+#foras {
+    background: palette(footer, blue);
+    @include padding(2);
+}
+
+.menus {
+    background: palette(footer, green);
+    @include padding(2);
 }
