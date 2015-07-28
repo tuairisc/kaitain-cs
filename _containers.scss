@@ -69,6 +69,11 @@ body {
     }
 }
 
+/**
+ * Sidebar and Sidebar Widgets
+ * -----------------------------------------------------------------------------
+ */
+
 #sidebar {
     // Interior to #main, right side.
     @include flex-child(0 1 $sidebar-width); 
@@ -79,8 +84,18 @@ body {
     }
 }
 
+.sidebar-widgets {
+    @include media($b-840) {
+        @include flex-parent(row, space-between);
+        
+        > div {
+            @include flex-child(0 1 32%);
+        } 
+    }
+}
+
 #footer {
-    // Sad unloved footer.
+    background: palette(white, x-light);
 }
 
 /**
