@@ -1,12 +1,6 @@
 /**
- * AdRotate Advert Containers
+ * Sidebar
  * -----------------------------------------------------------------------------
- * .g-1    Header
- * .g-2    Footer
- * .g-3    Sidebar #1
- * .g-4    Sidebar #2
- * .g-5    Sidebar #3
- * 
  * @category   Sass Template
  * @package    Tuairisc.ie
  * @author     Mark Grealish <mark@bhalash.com>
@@ -14,6 +8,17 @@
  * @license    All Rights Reserved
  * @version    2.0
  * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * AdRotate Advertisements
+ * -----------------------------------------------------------------------------
+ * .g-1    Header
+ * .g-2    Footer
+ * .g-3    Sidebar #1
+ * .g-4    Sidebar #2
+ * .g-5    Sidebar #3
+ * 
  */
 
 .g {
@@ -93,24 +98,35 @@ a.tuairisc-advert {
  */
 
 .sidebar-adverts {
-    width: 100%;
-
-    @include media(portrait) {
+    @include media($b-840) {
         // Spread out each of the three boxes evenly in tablet portrait mode.
         @include flex-parent(row, space-between);
+
+        > div {
+            @include flex-child(0 1 32.5%);
+        }
     }
 
     @include media(smartphone) {
         display: block;
     }
 
-    > div {
-        &:not(:last-child) {
-            @include margin($vspace, bottom);
-        }
+    > div:not(:last-child) {
+        @include margin($vspace, bottom);
+    }
+}
 
-        @include media(portrait) {
-            @include flex-child(0 1 32.5%);
-        }
+/**
+ * Sidebar Widget Container
+ * -----------------------------------------------------------------------------
+ */
+
+.sidebar-widgets {
+    @include media($b-840) {
+        @include flex-parent(row, space-between);
+        
+        > div {
+            @include flex-child(0 1 32%);
+        } 
     }
 }
