@@ -45,8 +45,8 @@ body {
     }
 
     @include media(ie 9) {
-        @include clearfix();
-        overflow-x: hidden;
+        // @include clearfix();
+        // overflow-x: hidden;
     }
 }
 
@@ -60,8 +60,8 @@ body {
     }
 
     @include media(ie 9) {
-        float: left;
-        width: calc($100% - #{$sidebar-width});
+        // float: left;
+        // width: calc($100% - #{$sidebar-width});
     }
 
     > div {
@@ -79,18 +79,12 @@ body {
     @include flex-child(0 1 $sidebar-width); 
 
     @include media(ie 9) {
-        float: right;
-        width: $sidebar-width;
+        // float: right;
+        // width: $sidebar-width;
     }
-}
 
-.sidebar-widgets {
     @include media($b-840) {
-        @include flex-parent(row, space-between);
-        
-        > div {
-            @include flex-child(0 1 32%);
-        } 
+        @include flex-child(1);
     }
 }
 
