@@ -97,10 +97,6 @@
     .author-name {
         font-weight: bold;
     }
-
-    a:hover .author-name {
-        @extend %green-link;
-    }
 }
 
 /**
