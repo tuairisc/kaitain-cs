@@ -70,21 +70,6 @@ ul.social li {
     }
 }
 
-
-/**
- * Sectioned Site Styles
- * -----------------------------------------------------------------------------
- */
-
-body[class*=section]:not(.section-greann) a#home {
-    background: center center/contain no-repeat asset(brand, tuairisc white);
-}
-
-body.section-greann a#home {
-    background: center center/contain no-repeat asset(brand, greann);
-    height: 75%;
-}
-
 /**
  * Primary and Secondary Navigation Menus
  * -----------------------------------------------------------------------------

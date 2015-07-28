@@ -40,9 +40,6 @@
  *      a given section regardless of what the main section is.
  */
 
-$section-trim-height: 4px;
-$section-trim-offset: -3%;
-
 @each $list in $sections {
     $class: nth($list, 1);
     $color: nth($list, 2);
@@ -90,15 +87,13 @@ $section-trim-offset: -3%;
  */
 
 .tuairisc-strip {
-    background: left top/cover repeat-y url(asset(bg, stripe));
-}
-
-.trim {
-    height: $section-trim-height;
+    background: left top/cover repeat-y asset(bg, stripe);
+    // background: palette(white, x-dark);
+    @include height(0.2);
 }
 
 .trim-absolute {
-    @include absolute($section-trim-offset $section-trim-offset, left right);
+    @include absolute(0 0, left right);
 }
 
 .trim-top {
@@ -126,3 +121,16 @@ $section-trim-offset: -3%;
     @include height(0.5);
 }
 
+/**
+ * Sectioned Site Styles
+ * -----------------------------------------------------------------------------
+ */
+
+body[class*=section]:not(.section-greann) a#home {
+    background: center center/contain no-repeat asset(brand, tuairisc white);
+}
+
+body.section-greann a#home {
+    background: center center/contain no-repeat asset(brand, greann);
+    height: 75%;
+}
