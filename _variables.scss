@@ -53,7 +53,12 @@ $default-colors: map-merge($default-colors, (
     ),
     green: (
         base: #95c37c
+    ),
+    footer: (
+        green: #4f6570,
+        blue: #627480
     )
+    
 ));
 
 /*
