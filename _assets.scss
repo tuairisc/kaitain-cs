@@ -31,8 +31,8 @@ $assets: (
             white: $brands + 'tuairisc-white.svg'
         ),
         foras: (
-            black: 'foras-black.svg',
-            white: 'foras-white.svg'
+            black: $brands + 'foras-black.svg',
+            white: $brands + 'foras-white.svg'
         ),
         greann: $brands + 'greann.svg'
     ), 
