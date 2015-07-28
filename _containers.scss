@@ -34,6 +34,7 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1140px;
+    position: relative;
     width: 95%;
     @include flex-parent(row);
     // @include margin(5, top bottom);
@@ -80,7 +81,6 @@ body {
 
 #footer {
     // Sad unloved footer.
-    @include height(10);
 }
 
 /**
@@ -97,6 +97,7 @@ body[class^=error] {
     }
 
     #main {
+        box-shadow: none;
         margin: 0;
         max-width: 100%;
         padding: 0;
