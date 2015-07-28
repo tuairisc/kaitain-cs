@@ -68,6 +68,11 @@ a.tuairisc-advert {
 .g-1, .g-2 {
     @include padding(1.9 0);
 
+    a.tuairisc-advert {
+        // Keeps it nicely in line with the edges of #main.
+        max-width: 95%;
+    }
+
     img.square {
         display: none;
 
