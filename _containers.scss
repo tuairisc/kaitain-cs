@@ -1,5 +1,5 @@
 /**
- * Theme Containers
+ * Theme Container Styles
  * -----------------------------------------------------------------------------
  * All of the rules for top-level containers in the theme.
  * 
@@ -12,19 +12,25 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-$sidebar-width: 25%;
-
 body {
-    background-color: #f2f2f2;
+    background-color: palette(white, light);
+    /* This padding is important: it dictates the separation between the fixed
+     * header and site content. This is the only separation if a visitor employs
+     * AdBlock. */
+    @include padding(8.3, top);    
 }
 
 #header {
     background-color: palette(white, x-light);
-    // @include fixed(0 0 0, top left right);
+    box-shadow: 0px 10px 6px -5px rgba(0,0,0,0.15);
+    text-align: center;
+    z-index: 2;
+    @include fixed(0 0 0, top left right);
 }
 
 #main {
-    // background-color: palette(white, x-light);
+    background-color: palette(white, x-light);
+    box-shadow: 1px 3px 3px 2px rgba(207,205,207,1);
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 1140px;
@@ -44,6 +50,7 @@ body {
 }
 
 #content {
+    // Interior to #main, left side.
     @include flex-child(1);
     @include padding($vspace, right);
 
@@ -62,6 +69,7 @@ body {
 }
 
 #sidebar {
+    // Interior to #main, right side.
     @include flex-child(0 1 $sidebar-width); 
 
     @include media(ie 9) {
@@ -71,6 +79,7 @@ body {
 }
 
 #footer {
+    // Sad unloved footer.
     @include height(10);
 }
 
@@ -91,10 +100,6 @@ body[class^=error] {
         margin: 0;
         max-width: 100%;
         padding: 0;
-    }
-
-    a {
-        color: palette(green);
     }
 }
 
