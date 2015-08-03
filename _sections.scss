@@ -8,40 +8,41 @@
  * @license    All rights reserved
  * @version    2.0
  * @link       https://github.com/bhalash/tuairisc.ie
- */
-
-/**
- * Each category has a custom #header bannner. Children have the same colour as
- * the parent. Colours are set via PHP. 
  * 
- * Eight classes are herein defined, four for background colour and four for
- * text colour:
- * 
- * 1.   .section-FOO .section-trim-{background, text}
- *      ---------------------------------------------
- *      The background or text colour for children when the main section is FOO.
+ * This is a theme engine tied to the section class attached to the body tag by
+ * a PHP script:
  *
- * 2.   .section-FOO .section-trim-{background, text}-hover:hover
- *      ---------------------------------------------------------
- *      The background or text colour for hovering over children when the main
- *      section is FOO. 
+ * @link https://github.com/bhalash/section-manager
  * 
+ * In these examples I use the fictional sections "elephant" and "hyena":
+ * 
+ * 1. body.section-elephant .section-trim-background
+ *    body.section-elephant .section-trim-background
  * -----------------------------------------------------------------------------
+ * The background or text colour when the main section is elephant. Repeated
+ * once for each section, e.g., section body.section-hyena ...
  *
- * 3.   .section-FOO-{background, text}
- *      -------------------------------
- *      Essentially the off-section colours, that are always generated. The 
- *      background or text colour for a given section regardless of what the 
- *      main section is.
+ * 2. body.section-elephant .section-trim-background-hover:hover
+ *    body.section-elephant .section-trim-text-hover:hover
+ * -----------------------------------------------------------------------------
+ * The background or text colour for trim hover when the main
+ * section is elephant. Repeated once for each section.
+ *
+ * 3. .section-elephant-background
+ *    .section-elephant-text
+ * -----------------------------------------------------------------------------
+ * Trim for all sections, regardless of what section is current. Repeated once
+ * for each section.
  * 
- * 4.   .section-FOO-{background, text}-hover:hover
- *      -------------------------------------------
- *      The off-section colours. The background or text colour for hovering over
- *      a given section regardless of what the main section is.
+ * 4. .section-elephant-background-hover:hover
+ *    .section-elephant-text-hover:hover
+ * -----------------------------------------------------------------------------
+ * The off-section colours. The background or text colour for hovering over
+ * a given section regardless of what the main section is. Repeated once for 
+ * each section.
  */
  
 $sections: (
-    // Keyed to category number, with single post, job posts and fallback:
     ('tuairimiocht', #8eb2d3), 
     ('sport', #c54b54), 
     ('cultur', #96c381), 
@@ -139,10 +140,10 @@ $sections: (
  */
 
 body[class*=section]:not(.section-greann) a#home {
-    background: center center/contain no-repeat asset(brand, tuairisc white);
+    background: center/contain no-repeat asset(brand, tuairisc white);
 }
 
 body.section-greann a#home {
-    background: center center/contain no-repeat asset(brand, greann);
+    background: center/contain no-repeat asset(brand, greann);
     height: 75%;
 }
