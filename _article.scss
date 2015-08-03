@@ -57,6 +57,53 @@ img.cover-fit {
 }
 
 /**
+ * Full Articles
+ * -----------------------------------------------------------------------------
+ */
+
+article.full {
+    // TODO FIXME No good dirty bad hack.
+    @include padding($vspace 0);
+
+    .post-content > * {
+        @include margin($vspace, bottom);
+    }
+
+    h1 {
+        font-weight: bold;
+    }
+
+    .post-excerpt, figcaption {
+        color: palette(white, dark);
+    }
+
+    .author-avatar {
+        img {
+            @include height(6.7);
+            @include margin($vspace, right);
+            @include width(6.7);
+        }
+    }
+
+    .author-meta {
+        border: 1px solid palette(white, light);
+        border-width: 1px 0;
+        @include padding(1 0);
+        @include margin(0.5 0);
+
+        > div {
+            display: inline-block;
+            margin: 0;
+        }
+    }
+
+    .author-link a {
+        font-weight: bold;
+    }
+}
+
+
+/**
  * Lead, Normal and Small Archive Templates
  * -----------------------------------------------------------------------------
  * Featured: Used at the head of each category index, and the head of home page.

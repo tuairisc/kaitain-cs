@@ -11,23 +11,74 @@
  */
 
 #footer {
+    // Footer interior element styles.
     color: palette(white, x-light);
+    font-family: map-get($fonts, open-sans);
+
+    p, li:not(.normal) {
+        @include font-size(1.3);
+    }
+
+    .normal:not(:nth-child(1)) {
+        @include margin($vspace, top);
+    }
+
+    p {
+        text-align: center;
+    }
 
     a {
         color: inherit;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    ul {
+        list-style-type: none;
     }
 }
 
-#footer p {
-    text-align: center;
-}
+/**
+ * Foras na Gaeilge Attribution
+ * -----------------------------------------------------------------------------
+ */
 
 #foras {
     background: palette(footer, blue);
     @include padding(2);
+
+    img {
+        width: 50%;
+        @include margin(2.5, top);
+        @include rem(max-width, 30);
+    }
 }
+
+/**
+ * Footer Menu Columns
+ * -----------------------------------------------------------------------------
+ */
 
 .menus {
     background: palette(footer, green);
     @include padding(2);
+}
+
+.menu-columns {
+    @include flex-parent(row);
+    @include margin($vspace, bottom);
+
+    > nav {
+        @include flex-child(1);
+
+        &:nth-child(1) {
+            @include flex-child(0 1 37.5%);
+        }
+
+        @include media($b-840) {
+            @include flex-child(0 1 49%);
+        }
+    }
 }
