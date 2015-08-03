@@ -59,7 +59,7 @@ $sections: (
     $color: nth($list, 2);
 
     body.section-#{$class} {
-        // 1. Set trims for the main sections. Theme engine, tied to <body> tag.
+        // 1. Set trims for current section background.
         .section-trim-background, .section-trim-background-hover:hover {
             background-color: $color;
             color: #fff;
@@ -70,12 +70,13 @@ $sections: (
         }
 
         .section-trim-text, .section-trim-text-hover:hover {
+            // 2. Set trims for current section text.
             color: $color;
         }
     }
 
     .section-#{$class}-background, .section-#{$class}-background-hover:hover {
-        // 2. Set background trim for the all given sections regardless of main.
+        // 3. Set trims for all sections background.
         background-color: $color;
         color: #fff;
 
@@ -85,7 +86,7 @@ $sections: (
     }
 
     .section-#{$class}-text, .section-#{$class}-text-hover:hover {
-        // 3. Set text trim for the all given sections regardless of main.
+        // 4. Set trims for all sections text.
         color: $color;
     } 
 }
