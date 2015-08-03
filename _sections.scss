@@ -39,6 +39,19 @@
  *      The off-section colours. The background or text colour for hovering over
  *      a given section regardless of what the main section is.
  */
+ 
+$sections: (
+    // Keyed to category number, with single post, job posts and fallback:
+    ('tuairimiocht', #8eb2d3), 
+    ('sport', #c54b54), 
+    ('cultur', #96c381), 
+    ('saol', #e04184),
+    ('greann', #e6192a), 
+    ('pobal', #7d5e90), 
+    ('foghlaimeoiri', #424045), 
+    ('nuacht', #516671),
+    ('other', #caab60) 
+);
 
 @each $list in $sections {
     $class: nth($list, 1);
