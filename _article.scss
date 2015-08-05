@@ -48,6 +48,10 @@ img.cover-fit {
 }
 
 .thumbnail {
+    border: 1px solid palette(white, light);
+    /* Chrome treats it as display: inline-block and adds invisible font
+     * space below the div. */
+    font-size: 0;
     // Trim children can have absolute positions.
     position: relative;
 }
