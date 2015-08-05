@@ -15,7 +15,7 @@
     color: palette(white, x-light);
     font-family: map-get($fonts, open-sans);
 
-    p, li:not(:nth-child(1)) {
+    p, li {
         @include font-size(1.3);
     }
 
@@ -41,9 +41,12 @@
  * -----------------------------------------------------------------------------
  */
 
-.footer-site-sections {
-    ul {
-        @include margin($vspace, bottom);
+ul.footer-section-menu {
+    @include margin($vspace, bottom);
+
+    li:nth-child(1) a {
+        font-weight: bold;
+        @include font-size(1.6);
     }
 }
 
@@ -53,6 +56,7 @@
  */
 
 #foras {
+    // Has a different shade of blue.
     background: palette(footer, blue);
     @include padding(2);
 
@@ -66,6 +70,9 @@
 /**
  * Footer Menu Columns
  * -----------------------------------------------------------------------------
+ * There are four footer text columns, split unevenly. The leftmost column is a 
+ * WordPress menu of site-relevant links, which takes most of the width, while
+ * the balancing three list all the site sections.
  */
 
 .menus {
@@ -74,7 +81,7 @@
 }
 
 .menu-columns {
-    @include flex-parent(row);
+    @include flex-parent(row, space-between, wrap);
     @include margin($vspace, bottom);
 
     > nav {
@@ -82,10 +89,6 @@
 
         &:nth-child(1) {
             @include flex-child(0 1 37.5%);
-        }
-
-        @include media($b-840) {
-            @include flex-child(0 1 49%);
         }
     }
 }
