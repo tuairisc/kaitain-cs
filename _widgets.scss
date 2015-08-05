@@ -138,12 +138,6 @@
     }
 }
 
-.category-article-image {
-    /* Chrome treats it as display: inline-block and adds invisible font
-     * space below the div. */
-    font-size: 0;
-}
-
 .category-widget {
     // Children.
     .category-left, .category-right {
@@ -163,15 +157,17 @@
 }
 
 div.category-right {
+    @include flex-parent(column, space-between);
+
     img {
         @include height(6);
     }
 
     article > a {
         @include flex-parent(row, space-between);
-        @include margin($vspace, bottom);
+        // @include margin($vspace, bottom);
 
-        .category-article-image {
+        .thumbnail {
             @include flex-child(0 1 28%);
         }
 
