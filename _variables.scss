@@ -57,8 +57,16 @@ $default-colors: map-merge($default-colors, (
     footer: (
         green: #4f6570,
         blue: #627480
+    ),
+    education: (
+        base: #e3393c,
+        download: #d2d3d5,
+        picture: #c44b54,
+        book: #7c5c91,
+        video: #c9ab5f,
+        reading: #89b0d4,
+        crossword: #e34284
     )
-    
 ));
 
 /*
