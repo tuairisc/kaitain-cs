@@ -13,22 +13,6 @@
 $menu-transition: .1s ease-in;
 
 /**
- * Social Links
- * -----------------------------------------------------------------------------
- */
-
-ul.social li {    
-    /* Social links. Should only be declared ONCE, as it generates a fucklot of
-     * CSS. */
-    @include social-link(100% 1);
-    font-size: 0;
-
-    a {
-        font-size: inherit;
-    }
-}
-
-/**
  * Header Interior Rules
  * -----------------------------------------------------------------------------
  */

@@ -11,6 +11,28 @@
  */
 
 /**
+ * Social Links
+ * -----------------------------------------------------------------------------
+ * Social links. Should only be declared ONCE, as it generates a fucklot of
+ * CSS.
+ */
+
+ul.social {
+    font-size: 0;
+
+    li {    
+        // Neutral border adds great contrast.
+        border: 1px solid rgba(palette(black, x-light), 0.2);
+        font-size: inherit;
+        @include social-link(100% 1);
+    }
+
+    a {
+        font-size: inherit;
+    }
+}
+
+/**
  * Pagintaion
  * -----------------------------------------------------------------------------
  */
