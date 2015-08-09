@@ -148,7 +148,7 @@ cite, small, .small, %small {
  * -----------------------------------------------------------------------------
  */
 
-code, kbd, pre, pre span, tt, var {
+code, pre, pre span {
     -webkit-font-smoothing: antialiased;
     font-family: map-get($fonts, courier);
     @include font-size(1.4);
@@ -180,9 +180,9 @@ hr {
  * -----------------------------------------------------------------------------
  */
 
-iframe, img {
+figure, iframe, img {
+    height: auto;
     max-width: 100%;
-    overflow: hidden;
 }
 
 embed, iframe {
