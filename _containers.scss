@@ -12,6 +12,8 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+$content-padding: $vspace * 3;
+
 body {
     background-color: palette(white, light);
     /* This padding is important: it dictates the separation between the fixed
@@ -35,10 +37,9 @@ body {
     margin: 0 auto;
     max-width: 1140px;
     position: relative;
-    width: 95%;
+    width: 100%;
     @include flex-parent(row);
-    // @include margin(5, top bottom);
-    @include padding($vspace);
+    @include padding($content-padding);
 
     @include media($b-840) {
         @include flex-parent(column);
@@ -53,7 +54,7 @@ body {
 #content {
     // Interior to #main, left side.
     @include flex-child(1);
-    @include padding($vspace, right);
+    @include padding($content-padding, right);
 
     @include media($b-840) {
         padding: 0;
@@ -64,7 +65,7 @@ body {
         // width: calc($100% - #{$sidebar-width});
     }
 
-    > div {
+    > div:not(:last-child) {
         @include margin(2, bottom);
     }
 }
