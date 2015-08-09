@@ -19,7 +19,7 @@ body {
     /* This padding is important: it dictates the separation between the fixed
      * header and site content. This is the only separation if a visitor employs
      * AdBlock. */
-    @include padding(8.3, top);    
+    @include padding(10.5, top);    
 }
 
 #header {
