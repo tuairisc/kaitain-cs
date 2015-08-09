@@ -76,3 +76,77 @@ nav#pagination {
         }
     }
 }
+
+/**
+ * Go Home Link
+ * -----------------------------------------------------------------------------
+ */
+
+#home-link {
+    // See _sections.scss for specifics of brand iamge and colour.
+    height: 100%;
+
+    a {
+        display: inline-block;
+        height: 50%;
+        @include width(20);
+    }
+}
+
+/**
+ * Brand Buttons
+ * -----------------------------------------------------------------------------
+ */
+
+.left-nav, .right-nav {
+    box-sizing: border-box;
+}
+
+.center-nav a {
+    align-self: center;
+}
+
+.left-nav {
+    @include padding($vspace * 1.5, left);
+
+    ul {
+        align-self: flex-start;
+    }
+
+    ul.social a.menu {
+        background-color: transparent;
+    }
+}
+
+.right-nav {
+    /* ¡IMPORTANT! WordPress menu items /must/ contain text, elsewise WordPress
+     * will remove the item. Therefore each menu item has text which I hide
+     * here. If you remove this you *will* break the vertical alignment of the 
+     * menu. */
+    font-size: 0;
+    @include padding($vspace * 1.5, right);
+
+    ul {
+        align-self: flex-end;
+    }
+}
+
+li.button, .right-nav li.menu-item {
+    // #brand button items.
+    display: inline-block;
+    @include margin(0 0.25);
+    @include square-flex(32px 1);
+
+    a {
+        @include square-flex(100% 1);
+    }
+}
+
+a.submenu-toggle {
+    background: center/60% no-repeat asset(buttons, menu);
+    transition: $menu-transition;
+    
+    &.open {
+        transform: rotate(90deg);
+    }
+}

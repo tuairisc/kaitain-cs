@@ -45,7 +45,7 @@ $menu-transition: .1s ease-in;
 #brand {
     // Sapce three children elements horizontallly.
     @include flex-parent(row, space-between);
-    @include height(5);
+    @include height(7);
 
     > nav {
         // Make each fill equal width and then vertically center grandchildren.
@@ -59,105 +59,23 @@ $menu-transition: .1s ease-in;
  * -----------------------------------------------------------------------------
  */
 
-nav#sections-menu a {
-    font-variant: small-caps;
-}
-
-ul#secondary {
-    height: 0;
-    overflow: hidden;
-    transition: $menu-transition;
-    @include flex-parent(row, center, nowrap, center);
-
-    &.open {
-        border-top: 1px solid palette(white, x-light);
-        @include height(4.5);
-    }
-
-    a {
-        @include padding($vspace * 0.5 $vspace);
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+nav#sections-menu ul:empty {
+    display: none;
 }
 
 ul#primary a {
     @include padding($vspace * 0.5 $vspace);
 }
 
-
-/**
- * Go Home Link
- * -----------------------------------------------------------------------------
- */
-
-#home {
-    // See _sections.scss for specifics of brand iamge and colour.
-    height: 100%;
+ul#secondary {
+    border-top: 1px solid palette(white, light);
 
     a {
-        display: inline-block;
-        height: 50%;
-        @include width(20);
-    }
-}
-
-/**
- * Brand Buttons
- * -----------------------------------------------------------------------------
- */
-
-.left-nav, .right-nav {
-    box-sizing: border-box;
-}
-
-.center-nav a {
-    align-self: center;
-}
-
-.left-nav {
-    @include padding($vspace * 1.5, left);
-
-    ul {
-        align-self: flex-start;
+        @include padding($vspace * 0.5 $vspace);
     }
 
-    ul.social a.menu {
-        background-color: transparent;
-    }
-}
-
-.right-nav {
-    /* ¡IMPORTANT! WordPress menu items /must/ contain text, elsewise WordPress
-     * will remove the item. Therefore each menu item has text which I hide
-     * here. If you remove this you *will* break the vertical alignment of the 
-     * menu. */
-    font-size: 0;
-    @include padding($vspace * 1.5, right);
-
-    ul {
-        align-self: flex-end;
-    }
-}
-
-li.button, .right-nav li.menu-item {
-    // #brand button items.
-    display: inline-block;
-    @include margin(0 0.25);
-    @include square-flex(32px 1);
-
-    a {
-        @include square-flex(100% 1);
-    }
-}
-
-a.submenu-toggle {
-    background: center/60% no-repeat asset(buttons, menu);
-    transition: $menu-transition;
-    
-    &.open {
-        transform: rotate(90deg);
+    li:hover a {
+        // li has a hover text colour class set.
+        color: inherit;
     }
 }
