@@ -10,13 +10,19 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+$article-vspace: $vspace * 1.3;
+
+article {
+    overflow: hidden;
+}
+
 /**
  * General Post Text Styles
  * -----------------------------------------------------------------------------
  */
 
 .archive-title, .title {
-    @include margin($vspace, bottom);
+    // @include margin($vspace, bottom);
 }
 
 .attribution {
@@ -37,7 +43,9 @@ img.cover-fit {
     /* For fallback IE polyfill.
      * All images for polyfill (mostly post thumbnails) will have explicit
      * dimensions set. */
+    height: 100%;
     object-fit: cover;
+    width: 100%;
 }
 
 .thumbnail {
@@ -47,6 +55,7 @@ img.cover-fit {
     font-size: 0;
     // Trim children can have absolute positions.
     position: relative;
+    width: 100%;
 }
 
 .title a:hover {
@@ -61,12 +70,18 @@ h1.title {
     color: palette(white, dark);
 }
 
-.post-excerpt {
-    @include margin($vspace, bottom);
-}
-
 a.post-edit-link {
     @extend %green-link;
+}
+
+figure.wp-caption {
+    // Bug with size in Chrome. Margin is applied evenly.
+    margin: 0 !important;
+}
+
+.post-date {
+    // Stops colour changing when I hover on parent link.
+    color: palette(white, x-dark) !important;
 }
 
 /**
@@ -75,53 +90,31 @@ a.post-edit-link {
  */
 
 header {
-    @include margin($vspace * 0.5, bottom);
-
-    .post-date {
-        color: palette(white, x-dark);
-    }
-
     .author-meta {
-        border: 1px solid palette(white, light);
+        border: 1px solid palette(white, mid-light);
         border-width: 1px 0;
+        @include flex-parent(row);
         @include padding(1 0);
         @include margin(0.5 0);
-
     }
 
-    .photo img {
+    .photo {
+        @include flex-child(1);
         @include height(6.7);
         @include margin($vspace, right);
-        @include width(6.7);
+        @include rem(max-width, 6.7);
+
+        img {
+            @include width(6.7);
+        }
     }
 
     .author-info {
-        display: inline-block;
+        @include flex-child(1);
     }
 
     .author-link a {
         font-weight: bold;
-    }
-}
-
-/**
- * Post Body
- * -----------------------------------------------------------------------------
- * Vertical spacing sucked in the original theme. These changes contract the 
- * vertical height of each paragraph et al. while increasing their separation.
- */
-
-.post-content {
-    > * {
-        @include margin($vspace * 1.3, bottom);
-    }
-
-    a {
-        @extend %green-link;
-    }
-    
-    p, li, blockquote {
-        @include line-height(2);
     }
 }
 
@@ -131,6 +124,7 @@ header {
  */
 
 footer {
+    @include margin(1 0);
 }
 
 /**
@@ -140,6 +134,45 @@ footer {
 
 article.full {
     @include padding($vspace 0);
+
+    header {
+        @include margin($article-vspace, bottom); 
+    }
+
+    .post-excerpt {
+        @include margin($vspace, bottom);
+    }
+
+    .post-content {
+        @include clearfix();
+
+        p, ul, ol, blockquote, iframe, figcaption {
+            @include margin($article-vspace, bottom);
+        }
+
+        a {
+            @extend %green-link;
+        }
+        
+        p, li, blockquote {
+            @include line-height(2);
+        }
+
+        figcaption {
+            @extend %small;
+            @include padding($vspace * 0.5, top);
+        }
+
+        .alignright {
+            float: right;
+            @include padding($vspace, left);
+        }
+
+        .alignleft {
+            float: left;
+            @include padding($vspace, right);
+        }
+    }
 }
 
 /**
@@ -150,9 +183,10 @@ article.full {
  * Archive: Used on all category and other archive pages.
  */
 
-article[class^=archive] img {
-    // object-fit image.
-    width: 100%;
+article[class^=archive] {
+    header {
+        @include margin($vspace * 0.5, bottom);
+    }
 }
 
 article.archive-lead {
@@ -161,14 +195,14 @@ article.archive-lead {
         @include margin($vspace * 0.5 0);
     }
 
-    .thumbnail img {
+    .thumbnail {
         @include height(38.5);
     }
 }
 
 article.archive-small {
     // Sub-article, front page. 
-    .thumbnail img {
+    .thumbnail {
         @include height(12.5);
     }
 
@@ -185,7 +219,7 @@ article.archive {
         font-weight: bold;
     }
 
-    .thumbnail img {
+    .thumbnail {
         @include height(17);
     }
 
@@ -229,12 +263,26 @@ article.sidebar {
         @include flex-child(1);
         @include padding(1, left);
     }
+}
 
-    .thumbnail img {
-        /* Width and height are interited from .thumbnail.
-         * Image is cover object-fit. */
-        height: 100%;
+/**
+ * Single Post Related Articles
+ * -----------------------------------------------------------------------------
+ */
+
+.related-articles {
+    @include flex-parent(row, space-between);
+
+    article {
+        @include flex-child(0 1 32%);
+    }
+
+    .title, .thumbnail {
+        @include margin($vspace * 0.5, bottom);
+    }
+
+    .thumbnail {
+        @include height(16.7);
         width: 100%;
     }
 }
-
