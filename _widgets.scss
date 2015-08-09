@@ -48,11 +48,15 @@
     // Each row is 1x4 in length to make IE float fallbacks easier.
     @include flex-parent(row, space-between, wrap);
 
+    &:not(:last-of-type) {
+        @include margin($vspace * 0.75, bottom);
+    }
+
     @include media(ie) {
         @include clearfix();        
     }
 
-    > a, > article {
+    > a, article {
         // Children item are either hyperlinks or articles.
         @include flex-child(0 1 23.5%);
 
@@ -117,6 +121,10 @@
         // Default grey background.
         background: palette(white, light); 
     }
+
+    .title {
+        @include margin($vspace * 0.75, bottom);
+    }
 }
 
 .sidebar-category-widget-interior {
@@ -152,17 +160,13 @@
 div.category-right {
     @include flex-parent(column, space-between);
 
-    img {
+    .thumbnail {
+        @include flex-child(0 1 28%);
         @include height(6);
     }
 
     article > a {
         @include flex-parent(row, space-between);
-        // @include margin($vspace, bottom);
-
-        .thumbnail {
-            @include flex-child(0 1 28%);
-        }
 
         .category-article-title {
             box-sizing: border-box;
@@ -181,7 +185,7 @@ article.category-left {
         color: #fff;
     }
 
-    img {
+    .thumbnail {
         @include height(20);
     }
 
@@ -191,7 +195,7 @@ article.category-left {
         @include rem(min-height, 9);
     }
 
-    a:hover {
+    a:hover p {
         text-decoration: underline;
     }
 }
