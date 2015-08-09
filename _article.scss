@@ -20,6 +20,7 @@
 }
 
 .attribution {
+    @extend %green-link;
     display: inline-block;
 
     @include media(smartphone) {
@@ -30,14 +31,6 @@
     a {
         font-weight: bold;
     }
-}
-
-header {
-    @include margin($vspace * 0.5, bottom);
-}
-
-.post-date {
-    color: palette(white, x-dark);
 }
 
 img.cover-fit {
@@ -56,37 +49,36 @@ img.cover-fit {
     position: relative;
 }
 
-.title, .attribution {
+.title a:hover {
+    @extend %green-link;
+}
+
+h1.title {
+    font-weight: bold;
+}
+
+.post-excerpt, figcaption {
+    color: palette(white, dark);
+}
+
+.post-excerpt {
+    @include margin($vspace, bottom);
+}
+
+a.post-edit-link {
     @extend %green-link;
 }
 
 /**
- * Full Articles
+ * Post Header
  * -----------------------------------------------------------------------------
  */
 
-article.full {
-    // TODO FIXME No good dirty bad hack.
-    @include padding($vspace 0);
+header {
+    @include margin($vspace * 0.5, bottom);
 
-    .post-content > * {
-        @include margin($vspace, bottom);
-    }
-
-    h1 {
-        font-weight: bold;
-    }
-
-    .post-excerpt, figcaption {
-        color: palette(white, dark);
-    }
-
-    .author-avatar {
-        img {
-            @include height(6.7);
-            @include margin($vspace, right);
-            @include width(6.7);
-        }
+    .post-date {
+        color: palette(white, x-dark);
     }
 
     .author-meta {
@@ -95,10 +87,16 @@ article.full {
         @include padding(1 0);
         @include margin(0.5 0);
 
-        > div {
-            display: inline-block;
-            margin: 0;
-        }
+    }
+
+    .photo img {
+        @include height(6.7);
+        @include margin($vspace, right);
+        @include width(6.7);
+    }
+
+    .author-info {
+        display: inline-block;
     }
 
     .author-link a {
@@ -106,6 +104,43 @@ article.full {
     }
 }
 
+/**
+ * Post Body
+ * -----------------------------------------------------------------------------
+ * Vertical spacing sucked in the original theme. These changes contract the 
+ * vertical height of each paragraph et al. while increasing their separation.
+ */
+
+.post-content {
+    > * {
+        @include margin($vspace * 1.3, bottom);
+    }
+
+    a {
+        @extend %green-link;
+    }
+    
+    p, li, blockquote {
+        @include line-height(2);
+    }
+}
+
+/**
+ * Post Footer
+ * -----------------------------------------------------------------------------
+ */
+
+footer {
+}
+
+/**
+ * Full Articles
+ * -----------------------------------------------------------------------------
+ */
+
+article.full {
+    @include padding($vspace 0);
+}
 
 /**
  * Lead, Normal and Small Archive Templates
@@ -115,15 +150,9 @@ article.full {
  * Archive: Used on all category and other archive pages.
  */
 
-article[class^=archive] {
-    &:not(:last-child) {
-        // Give all children but the last a bottom margin for spacing.
-        @include margin($vspace * 2, bottom);
-    }
-
-    img {
-        width: 100%;
-    }
+article[class^=archive] img {
+    // object-fit image.
+    width: 100%;
 }
 
 article.archive-lead {
@@ -132,14 +161,14 @@ article.archive-lead {
         @include margin($vspace * 0.5 0);
     }
 
-    img {
+    .thumbnail img {
         @include height(38.5);
     }
 }
 
 article.archive-small {
     // Sub-article, front page. 
-    img {
+    .thumbnail img {
         @include height(12.5);
     }
 
@@ -151,16 +180,12 @@ article.archive-small {
 article.archive {
     // TODO: RESPONSIVE PASS
     // "Regular" archive, used on all archive pages.
-    &:not(:last-of-type) {
-        border-bottom: 1px solid palette(white);
-        @include padding($vspace, bottom);
-    }
 
     .title {
         font-weight: bold;
     }
 
-    img {
+    .thumbnail img {
         @include height(17);
     }
 
@@ -205,7 +230,7 @@ article.sidebar {
         @include padding(1, left);
     }
 
-    img {
+    .thumbnail img {
         /* Width and height are interited from .thumbnail.
          * Image is cover object-fit. */
         height: 100%;
