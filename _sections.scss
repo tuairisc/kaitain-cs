@@ -40,6 +40,11 @@
  * The off-section colours. The background or text colour for hovering over
  * a given section regardless of what the main section is. Repeated once for 
  * each section.
+ * 
+ * 5. .section-elephant-shadow
+ *    .section-elephant-shadow-hover:hover
+ * -----------------------------------------------------------------------------
+ * Bottom box shadow that serves as an interior border.
  */
  
 $sections: (
@@ -89,6 +94,11 @@ $sections: (
         // 4. Set trims for all sections text.
         color: $color;
     } 
+
+    .section-#{$class}-shadow, .section-#{$class}-shadow-hover:hover {
+        // 5. Bottom box shadow. "Interior" box shadow.
+        box-shadow: inset 0px -5px 0px -1px rgba($color, 1);
+    }
 }
 
 /**
