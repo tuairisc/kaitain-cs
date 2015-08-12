@@ -21,10 +21,6 @@ article {
  * -----------------------------------------------------------------------------
  */
 
-.archive-title, .title {
-    // @include margin($vspace, bottom);
-}
-
 .attribution {
     @extend %green-link;
     display: inline-block;
@@ -48,8 +44,11 @@ img.cover-fit {
     width: 100%;
 }
 
+.thumbnail, .photo {
+    @extend %grey-border;
+}
+
 .thumbnail {
-    border: 1px solid palette(white, light);
     /* Chrome treats it as display: inline-block and adds invisible font
      * space below the div. */
     font-size: 0;
@@ -62,16 +61,20 @@ img.cover-fit {
     @extend %green-link;
 }
 
-h1.title {
-    font-weight: bold;
-}
-
 .post-excerpt, figcaption {
     color: palette(white, dark);
 }
 
+.post-excerpt {
+    @extend %small;
+}
+
 a.post-edit-link {
     @extend %green-link;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 figure.wp-caption {
@@ -91,22 +94,14 @@ figure.wp-caption {
 
 header {
     .author-meta {
-        border: 1px solid palette(white, mid-light);
-        border-width: 1px 0;
         @include flex-parent(row);
-        @include padding(1 0);
-        @include margin(0.5 0);
     }
 
     .photo {
         @include flex-child(1);
-        @include height(6.7);
+        @include height(5);
         @include margin($vspace, right);
-        @include rem(max-width, 6.7);
-
-        img {
-            @include width(6.7);
-        }
+        @include rem(max-width, 5);
     }
 
     .author-info {
@@ -124,7 +119,7 @@ header {
  */
 
 footer {
-    @include margin(1 0);
+    // @include margin(1 0);
 }
 
 /**
@@ -133,10 +128,13 @@ footer {
  */
 
 article.full {
-    @include padding($vspace 0);
-
     header {
-        @include margin($article-vspace, bottom); 
+        @extend %title-underline;
+        @include margin($vspace, bottom);
+    }
+
+    .title {
+        @include margin($vspace 0);
     }
 
     .post-excerpt {
@@ -145,6 +143,7 @@ article.full {
 
     .post-content {
         @include clearfix();
+        @include margin($vspace * 2 0);
 
         p, ul, ol, blockquote, iframe, figcaption {
             @include margin($article-vspace, bottom);
@@ -152,6 +151,10 @@ article.full {
 
         a {
             @extend %green-link;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
         
         p, li, blockquote {
@@ -269,6 +272,12 @@ article.sidebar {
  * Single Post Related Articles
  * -----------------------------------------------------------------------------
  */
+
+.related-articles-wrapper {
+    @include media(print) {
+        display: none;
+    }
+}
 
 .related-articles {
     @include flex-parent(row, space-between);
