@@ -2,3 +2,4 @@
 	path = scss-helpers
 	url = git@github.com:bhalash/scss-helpers.git
     branch = master
+    ignore = dirty
