@@ -49,9 +49,5 @@
 }
 
 .commentform-inputs {
-    @include flex-parent(1, space-between);
-
-    input {
-        @include flex-child(0 1 32.5%);
-    }
+    @include column-of(input, 3, 2);
 }
