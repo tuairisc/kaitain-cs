@@ -1,0 +1,57 @@
+/**
+ * Comment CSS
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Tuairisc.ie
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+#comments {
+    @include margin($vspace * 2, top);
+
+    @include media(print) {
+        display: none;
+    }
+
+    input {
+        @include padding($vspace * 0.5);
+    }
+
+    input[type=text], textarea {
+        @extend %grey-border;
+        background-color: palette(white, light);
+        box-sizing: border-box;
+        @include padding($vspace * 0.5);
+
+        &:focus {
+            @extend %grey-border-dark;
+            background-color: palette(white, x-light);
+            outline: 0;
+        }
+    }
+
+    input[type=button] {
+        @include margin($vspace 0);
+    }
+
+    p, input[type=text] {
+        @extend %small;
+        @include margin($vspace, bottom);
+    }
+
+    textarea {
+        @include rem(min-height, 20);
+    }
+}
+
+.commentform-inputs {
+    @include flex-parent(1, space-between);
+
+    input {
+        @include flex-child(0 1 32.5%);
+    }
+}
