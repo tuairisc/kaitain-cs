@@ -114,6 +114,10 @@ $sections: (
 .tuairisc-strip {
     background: left top/cover repeat-y asset(bg, stripe);
     @include height(0.2);
+
+    @include media(print) {
+        display: none;
+    }
 }
 
 .trim-absolute {
