@@ -29,10 +29,8 @@
  */
 
 #sidebar div[class^=widget_tuairisc_] h3, .sidebar-widget-title {
-    // Bottom border and spacing for default sidebar widget title.
-    border-bottom: 1px solid palette(white, mid-light);
+    @extend .title-underline;
     font-variant: small-caps;
-    @include padding($vspace * 0.75, bottom);
     @include margin($vspace, bottom);
 }
 

@@ -182,6 +182,9 @@ hr {
 
 figure, iframe, img {
     max-width: 100%;
+    page-break-after: auto;
+    page-break-before: auto;
+    page-break-inside: avoid;
 }
 
 embed, iframe {
@@ -205,4 +208,44 @@ embed, iframe {
     &:hover {
         color: palette(green);
     }
+}
+
+/**
+ * Title Underline
+ * -----------------------------------------------------------------------------
+ */
+
+%title-underline, .title-underline {
+    // Bottom border and spacing for default sidebar widget title.
+    border-bottom: 1px solid palette(white, mid-light);
+    @include padding($vspace * 0.75, bottom);
+
+    @include media(print) {
+        border: none;
+        padding: 0;
+    }
+}
+
+/**
+ * Borders
+ * -----------------------------------------------------------------------------
+ */
+
+%grey-border, .grey-border {
+    border: 1px solid palette(white, light);
+}
+
+%grey-border-dark, .grey-border-dark {
+    border: 1px solid palette(white, mid-dark);
+}
+
+/**
+ * Item Subtitle
+ * -----------------------------------------------------------------------------
+ */
+
+%subtitle, .subtitle {
+    @extend .title-underline;
+    font-weight: bold;
+    @include margin($vspace, bottom);
 }
