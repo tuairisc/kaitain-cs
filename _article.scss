@@ -280,11 +280,7 @@ article.sidebar {
 }
 
 .related-articles {
-    @include flex-parent(row, space-between);
-
-    article {
-        @include flex-child(0 1 32%);
-    }
+    @include column-of(article, 3, 2);
 
     .title, .thumbnail {
         @include margin($vspace * 0.5, bottom);
