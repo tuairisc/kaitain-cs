@@ -39,44 +39,17 @@
  * -----------------------------------------------------------------------------
  * 1x4 flexbox row, switches to 2x2 responsive. Fall back to floats in IE <= 10.
  * This is a generic class used by two widgets.
- * TODO: RESPONSIVE AND IE PASS
  */
 
 .home-flex-row {
-    // Each row is 1x4 in length to make IE float fallbacks easier.
-    @include flex-parent(row, space-between, wrap);
-
     &:not(:last-of-type) {
         @include margin($vspace * 0.75, bottom);
-    }
-
-    @include media(ie) {
-        @include clearfix();        
-    }
-
-    > a, article {
-        // Children item are either hyperlinks or articles.
-        @include flex-child(0 1 23.5%);
-
-        @include media(ie) {
-            float: left; 
-            width: 23%;
-
-            &:not(:last-child) {
-                margin-right: 2%;
-            }
-        }
-
-        @include media($b-640) {
-            @include flex-child(0 1 49%);
-        }
     }
 }
 
 /**
  * Author Widget
  * -----------------------------------------------------------------------------
- * TODO: RESPONSIVE AND IE PASS
  */
 
 .widget_tuairisc_authors {
@@ -98,6 +71,12 @@
 
     .author-name {
         font-weight: bold;
+    }
+}
+
+.tuairisc-author-list {
+    @include column-of(a, 4, 2) {
+        
     }
 }
 
