@@ -28,7 +28,13 @@ ul.social {
     }
 
     a {
+        display: block;
         font-size: inherit;
+        @include square-flex(100% 1);
+    }
+
+    @include media(print) {
+        display: none;
     }
 }
 
@@ -40,6 +46,10 @@ ul.social {
 nav#pagination {
     @include margin(3 0);
     @include flex-parent(row, space-between);
+    
+    @include media(print) {
+        display: none;
+    }
 
     h3 {
         font-variant: small-caps;
@@ -150,3 +160,18 @@ a.submenu-toggle {
         transform: rotate(90deg);
     }
 }
+
+/**
+ * Post Sharing Links
+ * -----------------------------------------------------------------------------
+ */
+
+ nav.share-links {
+    @extend %title-underline;
+
+    li {
+        @include square-flex(35px 1);
+        @include margin($vspace * 0.5, right);
+    }
+ }
+
