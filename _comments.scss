@@ -46,6 +46,16 @@
     textarea {
         @include rem(min-height, 20);
     }
+
+    input[type=submit] {
+        background-color: palette(green);
+        color: palette(white, x-light);
+        @include padding($vspace * 0.75 $vspace * 2);
+
+        &:active {
+            background: palette(tuairisc);
+        }
+    }
 }
 
 .commentform-inputs {
