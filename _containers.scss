@@ -28,7 +28,7 @@ body {
 
 #header {
     background-color: palette(white, x-light);
-    box-shadow: 0px 10px 6px -5px rgba(0,0,0,0.15);
+    box-shadow: 0px 10px 6px -9px rgba(0,0,0,0.15);
     text-align: center;
     z-index: 2;
     @include fixed(0 0 0, top left right);
@@ -49,13 +49,9 @@ body {
     @include flex-parent(row);
     @include padding($content-padding);
 
-    @include media($b-840) {
-        @include flex-parent(column);
-    }
-
-    @include media(ie 9) {
-        // @include clearfix();
-        // overflow-x: hidden;
+    @include media($b-768) {
+        padding: 2.5%;
+        display: block;
     }
 
     @include media(print) {
@@ -71,7 +67,7 @@ body {
     @include flex-child(1);
     @include padding($content-padding, right);
 
-    @include media($b-840) {
+    @include media($b-768) {
         padding: 0;
     }
 
@@ -97,15 +93,6 @@ body {
 #sidebar {
     // Interior to #main, right side.
     @include flex-child(0 1 $sidebar-width); 
-
-    @include media(ie 9) {
-        // float: right;
-        // width: $sidebar-width;
-    }
-
-    @include media($b-840) {
-        @include flex-child(1);
-    }
 
     @include media(print) {
         display: none;
