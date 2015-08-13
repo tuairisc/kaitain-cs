@@ -39,7 +39,6 @@ img.cover-fit {
     /* For fallback IE polyfill.
      * All images for polyfill (mostly post thumbnails) will have explicit
      * dimensions set. */
-    height: 100%;
     object-fit: cover;
     width: 100%;
 }
@@ -199,14 +198,14 @@ article.archive-lead {
         @include margin($vspace * 0.5 0);
     }
 
-    .thumbnail {
+    .thumbnail img {
         @include height(38.5);
     }
 }
 
 article.archive-small {
     // Sub-article, front page. 
-    .thumbnail {
+    .thumbnail img {
         @include height(12.5);
     }
 
@@ -222,7 +221,7 @@ article.archive {
         font-weight: bold;
     }
 
-    .thumbnail {
+    .thumbnail img {
         @include height(17);
     }
 
@@ -259,6 +258,10 @@ article.sidebar {
     .thumbnail {
         @include flex-child(0 1 25%);
         @include height(4.5);
+
+        img {
+            height: inherit;
+        }
     }
 
     header {
@@ -293,5 +296,9 @@ article.sidebar {
     .thumbnail {
         @include height(16.7);
         width: 100%;
+
+        img {
+            height: inherit;
+        }
     }
 }
