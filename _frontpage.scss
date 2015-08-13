@@ -10,6 +10,12 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+/**
+ * Widget Titles
+ * -----------------------------------------------------------------------------
+ * Title style for all sidebar widget titles.
+ */
+
 .widget-title {
     @include margin($vspace, bottom);
 
@@ -22,28 +28,33 @@
     }
 }
 
-/**
- * Sidebar Widget Titles
- * -----------------------------------------------------------------------------
- * Title style for all sidebar widget titles.
- */
-
-#sidebar div[class^=widget_tuairisc_] h3, .sidebar-widget-title {
+.widget-subtitle {
     @extend .title-underline;
     font-variant: small-caps;
-    @include margin($vspace, bottom);
 }
 
 /**
- * Featured Widget Post Row
+ * Home Rows
  * -----------------------------------------------------------------------------
- * 1x4 flexbox row, switches to 2x2 responsive. Fall back to floats in IE <= 10.
- * This is a generic class used by two widgets.
  */
 
-.home-flex-row {
-    &:not(:last-of-type) {
-        @include margin($vspace * 0.75, bottom);
+.tuairisc-author-list {
+    @include column-of(a, 4, 2);
+
+    @include media($b-640) {
+        @include column-of(a, 2, 2){
+            @include margin($vspace, bottom);
+        }
+    }
+}
+
+.featured-row {
+    @include column-of(article, 4, 2);
+
+    @include media($b-640) {
+        @include column-of(article, 2, 2) { 
+            @include margin($vspace, bottom);
+        }
     }
 }
 
@@ -73,13 +84,6 @@
         font-weight: bold;
     }
 }
-
-.tuairisc-author-list {
-    @include column-of(a, 4, 2) {
-        
-    }
-}
-
 /**
  * Sidebar Featured Category Widget
  * -----------------------------------------------------------------------------
@@ -118,8 +122,12 @@
 .category-widget-display {
     @include flex-parent(row, space-between);
 
-    @include media(smartphone) {
+    @include media($b-640) {
         display: block;
+
+        article:not(:last-child) {
+            @include margin($vspace, bottom); 
+        }
     }
 }
 
