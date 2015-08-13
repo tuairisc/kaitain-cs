@@ -215,7 +215,6 @@ article.archive-small {
 }
 
 article.archive {
-    // TODO: RESPONSIVE PASS
     // "Regular" archive, used on all archive pages.
 
     .title {
@@ -274,6 +273,10 @@ article.sidebar {
  */
 
 .related-articles-wrapper {
+    @include media(portrait) {
+        @include margin($vspace * 2, bottom);
+    }
+
     @include media(print) {
         display: none;
     }
