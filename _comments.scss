@@ -10,7 +10,52 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+/**
+ * Single Comment Style
+ * -----------------------------------------------------------------------------
+ */
+
+li.comment {
+    @include flex-parent(row);
+    @include margin($vspace, bottom);
+
+    .comment-photo, .comment-body {
+        @include flex-child(1);
+    }
+}
+
+.comment-photo {
+    @include height(5);
+    @include margin($vspace, right);
+    @include rem(max-width, 5);
+}
+
+.commentlist {
+    list-style-type: none;
+}
+
 #comments {
+
+    p:not(:last-child) {
+        @extend %small;
+        @include margin($vspace, bottom);
+    }
+
+    a {
+        @extend %green-link;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/**
+ * Comment Form Input Rules
+ * -----------------------------------------------------------------------------
+ */
+
+#commentform {
     @include margin($vspace * 2, top);
 
     @include media(print) {
@@ -38,7 +83,7 @@
         @include margin($vspace 0);
     }
 
-    p, input[type=text] {
+    input[type=text] {
         @extend %small;
         @include margin($vspace, bottom);
     }
