@@ -83,6 +83,7 @@ figure.wp-caption {
 }
 
 .post-date {
+    @extend %small;
     // Stops colour changing when I hover on parent link.
     color: palette(white, x-dark) !important;
 }
