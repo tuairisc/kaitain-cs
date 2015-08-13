@@ -79,6 +79,16 @@ figure.wp-caption {
     color: palette(white, x-dark) !important;
 }
 
+.photo {
+    background-position: center;
+    background-size: cover;
+
+    a {
+        display: block;
+        @include square-flex(100% 1);
+    }
+}
+
 /**
  * Post Header
  * -----------------------------------------------------------------------------
