@@ -81,14 +81,11 @@ ul.footer-section-menu {
 }
 
 .menu-columns {
-    @include flex-parent(row, space-between, wrap);
     @include margin($vspace, bottom);
 
-    > nav {
-        @include flex-child(1);
+    @include column-of(nav, 4, 0);
 
-        &:nth-child(1) {
-            @include flex-child(0 1 37.5%);
-        }
+    @include media($b-640) {
+        display: block;
     }
 }
