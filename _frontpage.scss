@@ -136,10 +136,6 @@
     .category-left, .category-right {
         @include flex-child(0 1 49%);
     }
-
-    img {
-        width: 100%;
-    }
 }
 
 div.category-right {
