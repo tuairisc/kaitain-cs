@@ -1,0 +1,35 @@
+/**
+ * IE9 Fallback Stylesheet
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Tuairisc.ie
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+@import 'scss-helpers/bhalash-helpers';
+@import 'variables';
+
+/**
+ * Main Column Floats
+ * -----------------------------------------------------------------------------
+ */
+
+.foo {
+    display: none;
+}
+
+.main-col {
+    @include asym-float(div, auto $sidebar-width, 2) {
+        @include media($b-768) {
+            @include nofloat(true) {
+                margin-right: 0 !important;
+            }
+        }
+    }
+}
+
+
