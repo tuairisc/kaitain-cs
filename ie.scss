@@ -22,6 +22,16 @@
     @include asym-float(div, auto $sidebar-width, 2);
 }
 
+/**
+ * Trim Strips
+ * -----------------------------------------------------------------------------
+ * Float fallbacks choke and die on these. display: none removes them from 
+ * DOM considerations.
+ */
+
+#main > .tuairisc-strip {
+    display: none;
+}
 
 /**
  * Home Featured Row
