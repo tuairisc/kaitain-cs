@@ -103,13 +103,17 @@ a.tuairisc-advert {
  */
 
 .sidebar-adverts {
-
     @include media(smartphone) {
         display: block;
     }
 
     > div:not(:last-child) {
         @include margin($vspace, bottom);
+    }
+
+    a {
+        // Stops an overflow in IE.
+        max-width: 100%;
     }
 }
 
