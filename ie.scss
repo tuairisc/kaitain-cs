@@ -18,18 +18,48 @@
  * -----------------------------------------------------------------------------
  */
 
-.foo {
-    display: none;
-}
-
-.main-col {
-    @include asym-float(div, auto $sidebar-width, 2) {
-        @include media($b-768) {
-            @include nofloat(true) {
-                margin-right: 0 !important;
-            }
-        }
-    }
+#main {
+    @include asym-float(div, auto $sidebar-width, 2);
 }
 
 
+/**
+ * Home Featured Row
+ * -----------------------------------------------------------------------------
+ */
+
+.home-featured-row {
+    @include float-of(article, 4, 2);
+}
+
+/**
+ * Home Author Widget List
+ * -----------------------------------------------------------------------------
+ */
+
+.tuairisc-author-list {
+    @include float-of(a, 4, 2);
+}
+
+/**
+ * Home Categories Widget
+ * -----------------------------------------------------------------------------
+ */
+
+.category-widget-display {
+    @include float-of(div, 2, 2);
+}
+
+div.category-right a {
+    @include asym-float(div, 27% auto, 3);
+}
+
+/**
+ * Header Brand
+ * -----------------------------------------------------------------------------
+ */
+
+#brand {
+    // Sapce three children elements horizontallly.
+    @include float-of(nav, 3, 0);
+}
