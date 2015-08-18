@@ -182,9 +182,12 @@ hr {
 
 figure, iframe, img {
     max-width: 100%;
-    page-break-after: auto;
-    page-break-before: auto;
-    page-break-inside: avoid;
+
+    @include media(print) {
+        page-break-after: auto;
+        page-break-before: auto;
+        page-break-inside: avoid;
+    }
 }
 
 embed, iframe {
