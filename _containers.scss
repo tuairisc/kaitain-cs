@@ -45,7 +45,7 @@ body {
     margin: 0 auto;
     max-width: $content-max-width;
     position: relative;
-    width: 100%;
+    width: 97%;
     @include flex-parent(row);
     @include padding($content-padding);
 
@@ -59,26 +59,16 @@ body {
         box-shadow: none;
         max-width: 100%;
         padding: 0;
+        width: 100%;
+    }
+
+    @include media(ssmartphone) {
+        width: 100%;
     }
 }
 
 #content {
-    // Interior to #main, left side.
     @include flex-child(1);
-    @include padding($content-padding, right);
-
-    @include media($b-768) {
-        padding: 0;
-    }
-
-    @include media(ie 9) {
-        // float: left;
-        // width: calc($100% - #{$sidebar-width});
-    }
-
-    @include media(print) {
-        padding: 0;
-    }
 
     > div:not(:last-child) {
         @include margin(2, bottom);
@@ -91,8 +81,13 @@ body {
  */
 
 #sidebar {
-    // Interior to #main, right side.
-    @include flex-child(0 1 $sidebar-width); 
+    @include flex-child(0 1 $sidebar-width);
+
+    @include media($b-768) {
+        @include nofloat(true) {
+            margin-right: 0;
+        }
+    }
 
     @include media(print) {
         display: none;
