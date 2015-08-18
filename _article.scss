@@ -36,7 +36,11 @@ article {
 }
 
 .thumbnail, .photo {
-    @extend %grey-border;
+    img {
+        @extend %grey-border;
+        height: auto;
+        width: 100%;
+    }
 }
 
 .thumbnail {
@@ -248,6 +252,7 @@ article.sidebar {
 
     .thumbnail {
         @include flex-child(0 1 25%);
+        // FIXME
         @include height(4.5);
     }
 
