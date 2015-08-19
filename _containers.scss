@@ -28,7 +28,7 @@ body {
 
 #header {
     background-color: palette(white, x-light);
-    box-shadow: 0px 10px 6px -9px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 6px -9px rgba(0,0,0,0.15);
     text-align: center;
     z-index: 2;
     @include fixed(0 0 0, top left right);
@@ -46,7 +46,8 @@ body {
     max-width: $content-max-width;
     position: relative;
     width: 97%;
-    @include flex-parent(row);
+
+    @include odd-columns(flex, div, auto $sidebar-width, 0);
     @include padding($content-padding);
 
     @include media($b-768) {
@@ -68,10 +69,14 @@ body {
 }
 
 #content {
-    @include flex-child(1);
+    @include padding($content-padding, right);
 
     > div:not(:last-child) {
         @include margin(2, bottom);
+    }
+
+    @include media($b-768) {
+        padding: 0;
     }
 }
 
@@ -81,14 +86,6 @@ body {
  */
 
 #sidebar {
-    @include flex-child(0 1 $sidebar-width);
-
-    @include media($b-768) {
-        @include nofloat(true) {
-            margin-right: 0;
-        }
-    }
-
     @include media(print) {
         display: none;
     }
