@@ -19,18 +19,7 @@
  */
 
 #main {
-    @include asym-float(div, auto $sidebar-width, 2);
-}
-
-/**
- * Trim Strips
- * -----------------------------------------------------------------------------
- * Float fallbacks choke and die on these. display: none removes them from 
- * DOM considerations.
- */
-
-#main > .tuairisc-strip {
-    display: none;
+    @include odd-columns(float, div, auto $sidebar-width, 0);
 }
 
 /**
@@ -39,7 +28,7 @@
  */
 
 .home-featured-row {
-    @include float-of(article, 4, 2);
+    @include columns(float, article, 4, 2);
 }
 
 /**
@@ -48,7 +37,7 @@
  */
 
 .tuairisc-author-list {
-    @include float-of(a, 4, 2);
+    @include columns(float, article, 4, 2);
 }
 
 /**
@@ -57,11 +46,11 @@
  */
 
 .category-widget-display {
-    @include float-of(div, 2, 2);
+    @include columns(float, div, 2, 2);
 }
 
 div.category-right a {
-    @include asym-float(div, 27% auto, 3);
+    @include odd-columns(float, div, 27% auto, 3);
 }
 
 /**
@@ -71,5 +60,5 @@ div.category-right a {
 
 #brand {
     // Sapce three children elements horizontallly.
-    @include float-of(nav, 3, 0);
+    @include odd-columns(float, nav, 3, 0);
 }
