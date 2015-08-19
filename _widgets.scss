@@ -1,6 +1,9 @@
 /**
  * Widgets
  * -----------------------------------------------------------------------------
+ * Home = Main column.
+ * Sidebar = Sidebar column.
+ * 
  * @category   Sass Template
  * @package    Tuairisc.ie
  * @author     Mark Grealish <mark@bhalash.com>
@@ -11,9 +14,10 @@
  */
 
 /**
- * Widget Titles
+ * Sidebar Widget Titles
  * -----------------------------------------------------------------------------
- * Title style for all sidebar widget titles.
+ * Title style for all sidebar widget titles. Main column widgets have different
+ * titles.
  */
 
 .widget-title {
@@ -29,25 +33,32 @@
 }
 
 .widget-subtitle {
+    // Some widgets have an underlned title.
     @extend .title-underline;
     font-variant: small-caps;
 }
 
 /**
- * Home Rows
+ * Home Featured Article Widget
  * -----------------------------------------------------------------------------
+ * Inside articles are styles in _articles.scss
  */
 
 .featured-row {
     @include columns(flex, article, 4, 2);
+    @include margin($vspace * 0.5, bottom);
 
     @include media($b-640) {
-        @include columns(flex, article, 2, 2);
+        @include columns(flex, article, 2, 2) {
+            @include margin($vspace * 0.5, bottom);
+        }
+
+        margin: 0;
     }
 }
 
 /**
- * Author Widget
+ * Home Author Widget
  * -----------------------------------------------------------------------------
  */
 
@@ -66,7 +77,7 @@
     box-sizing: border-box;
     @include padding(1.3);
 
-    .author-photo{ 
+    .author-photo { 
         @include margin($vspace * 0.5, bottom);
     }
 
@@ -115,8 +126,9 @@
 }
 
 /**
- * Home Categories Widget
+ * Home Featured Category Widget
  * -----------------------------------------------------------------------------
+ * This widget is used at several points through the site.
  */
 
 .category-widget-display {
@@ -152,7 +164,6 @@ div.category-right {
 
     article {
         @include flex-child(0 1 25%);
-        // @include margin($vspace * 0.5, bottom);
     }
 
     a {
