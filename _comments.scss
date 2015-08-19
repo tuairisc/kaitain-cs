@@ -129,9 +129,7 @@ li.comment {
 
 .commentform-inputs {
     // Wrapper container for the inputs on the commentform.
-    @include margin($vspace, bottom);
-
-    @include columns(flex, input, 3, 2) {
+    @include columns(flex, input, 3, 3) {
         @include media($b-640) {
             width: 100%;
             @include margin($vspace, bottom);
