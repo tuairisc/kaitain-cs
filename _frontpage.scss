@@ -39,20 +39,20 @@
  */
 
 .tuairisc-author-list {
-    @include column-of(a, 4, 2);
+    @include columns(flex, a, 4, 2);
 
     @include media($b-640) {
-        @include column-of(a, 2, 2){
+        @include columns(flex, a, 2, 2) {
             @include margin($vspace, bottom);
         }
     }
 }
 
 .home-featured-row {
-    @include column-of(article, 4, 2);
+    @include columns(flex, article, 4, 2);
 
     @include media($b-640) {
-        @include column-of(article, 2, 2);
+        @include columns(flex, article, 2, 2);
     }
 }
 
@@ -96,6 +96,8 @@
     @include margin($vspace, bottom);
 
     img {
+        height: auto;
+        width: 100%;
         @include margin($vspace, bottom);
     }
 
@@ -120,9 +122,9 @@
  */
 
 .category-widget-display {
-    @include column-of(div, 2, 2);
+    @include columns(flex, div, 2, 2);
 
-    @include media($b-640) {
+    @include media(smartphone) {
         display: block;
     }
 }
@@ -133,7 +135,7 @@ div.category-left article {
     }
 
     > a {
-        color: #fff;
+        color: palette(white, x-light);
     }
 
     p {
@@ -151,26 +153,19 @@ div.category-right {
     @include flex-parent(column, space-between);
 
     article {
-        @include media($b-640) {
-            @include margin($vspace, bottom);
-        }
+        @include flex-child(0 1 25%);
+        // @include margin($vspace * 0.5, bottom);
     }
 
     a {
-        @include flex-parent(row); 
-    }
-
-    .thumbnail {
-        @include flex-child(0 1 30%);
+        @include odd-columns(flex, div, 30% auto, 0);
     }
 
     .post-content {
-        @include flex-child(1);
         @include padding($vspace, left);
     }
-
-    .category-article-title {
-        // Only needed if title strecthes.
-        @include margin($vspace * 0.25, bottom);
+    
+    p {
+        @extend %small;
     }
 }
