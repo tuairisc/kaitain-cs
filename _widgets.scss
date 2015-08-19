@@ -160,10 +160,19 @@ div.category-left article {
 }
 
 div.category-right { 
+    // Vertical flex changes early to stop article content overwriting the element below.
     @include flex-parent(column, space-between);
+
+    @include media($b-768) {
+        display: block;
+    }
 
     article {
         @include flex-child(0 1 25%);
+
+        @include media($b-768) {
+            @include margin($vspace, bottom);
+        }
     }
 
     a {
@@ -177,4 +186,9 @@ div.category-right {
     p {
         @extend %small;
     }
+}
+
+body.home .widget_tuairisc_home_category:last-of-type hr {
+    // Hide hr element on bottom home category widget.
+    display: none;
 }
