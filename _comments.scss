@@ -126,9 +126,18 @@ li.comment {
 }
 
 .commentform-inputs {
-    @include column-of(input, 3, 2);
+    // Wrapper container for the inputs on the commentform.
+    @include margin($vspace, bottom);
 
-    @include media(smartphone) {
+    @include columns(flex, input, 3, 2) {
+        @include media($b-640) {
+            width: 100%;
+            @include margin($vspace, bottom);
+        }
+    }
+
+    @include media($b-640) {
         display: block;
+        margin: 0;
     }
 }
