@@ -10,47 +10,14 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-$article-vspace: $vspace * 1.3;
-
 article {
     overflow: hidden;
 }
 
 /**
- * General Post Text Styles
+ * Miscellaneous Styling elements
  * -----------------------------------------------------------------------------
  */
-
-.attribution {
-    @extend %green-link;
-    display: inline-block;
-
-    @include media(smartphone) {
-        display: block;
-        @include margin(0.3, top);
-    }
-
-    a {
-        font-weight: bold;
-    }
-}
-
-.thumbnail, .photo {
-    img {
-        @extend %grey-border;
-        height: auto;
-        width: 100%;
-    }
-}
-
-.thumbnail {
-    /* Chrome treats it as display: inline-block and adds invisible font
-     * space below the div. */
-    font-size: 0;
-    // Trim children can have absolute positions.
-    position: relative;
-    width: 100%;
-}
 
 .title a:hover {
     @extend %green-link;
@@ -72,25 +39,83 @@ a.post-edit-link {
     }
 }
 
-figure.wp-caption {
-    // Bug with size in Chrome. Margin is applied evenly.
-    margin: 0 !important;
-}
-
 .post-date {
     @extend %small;
     // Stops colour changing when I hover on parent link.
     color: palette(white, x-dark) !important;
 }
 
-.photo {
-    background-position: center;
-    background-size: cover;
+/**
+ * Author Attribution
+ * -----------------------------------------------------------------------------
+ */
+
+.attribution {
+    @extend %green-link;
+    display: inline-block;
+
+    @include media(smartphone) {
+        display: block;
+        @include margin(0.3, top);
+    }
 
     a {
-        display: block;
-        @include square-flex(100% 1);
+        font-weight: bold;
     }
+}
+
+/**
+ * WordPress Element Styles
+ * -----------------------------------------------------------------------------
+ */
+
+figcaption {
+    @extend %small;
+    @include padding($vspace * 0.5, top);
+}
+
+.alignright {
+    float: right;
+    @include padding($vspace, left);
+}
+
+.alignleft {
+    float: left;
+    @include padding($vspace, right);
+}
+
+figure.wp-caption {
+    /* Bug with size in Chrome. Margin is applied evenly instead of to one side
+     * alone. */
+    margin: 0 !important;
+}
+
+/**
+ * Thumbnails and Avatars
+ * -----------------------------------------------------------------------------
+ */
+
+.thumbnail, .author-photo {
+    img {
+        @extend %grey-border;
+        height: auto;
+        width: 100%;
+    }
+}
+
+.thumbnail {
+    /* Chrome treats it as display: inline-block and adds invisible font
+     * space below the div. */
+    font-size: 0;
+    // Trim children can have absolute positions.
+    position: relative;
+    width: 100%;
+}
+
+.author-photo {
+    background: center/cover no-repeat;
+    display: block;
+    @include square-flex(100% 1);
 }
 
 /**
@@ -100,18 +125,7 @@ figure.wp-caption {
 
 header {
     .author-meta {
-        @include flex-parent(row);
-    }
-
-    .photo {
-        @include flex-child(1);
-        @include height(5);
-        @include margin($vspace, right);
-        @include rem(max-width, 5);
-    }
-
-    .author-info {
-        @include flex-child(1);
+        @include odd-columns(flex, div, 10% auto, 2);
     }
 
     .author-link a {
@@ -152,7 +166,7 @@ article.full {
         @include margin($vspace * 2 0);
 
         p, ul, ol, blockquote, iframe, figcaption {
-            @include margin($article-vspace, bottom);
+            @include margin($vspace * 1.3, bottom);
         }
 
         img {
@@ -170,21 +184,6 @@ article.full {
         
         p, li, blockquote {
             @include line-height(2);
-        }
-
-        figcaption {
-            @extend %small;
-            @include padding($vspace * 0.5, top);
-        }
-
-        .alignright {
-            float: right;
-            @include padding($vspace, left);
-        }
-
-        .alignleft {
-            float: left;
-            @include padding($vspace, right);
         }
     }
 }
@@ -238,7 +237,7 @@ article.archive {
         /* This is strictly to prevent the paragraph from lighting up on link
          * hover. The entire article's interior is wrapped in a single 
          * hyperlink. I only want the title to light up on hover. */
-        color: black !important;
+        color: palette(black, x-dark) !important;
     }
 }
 
