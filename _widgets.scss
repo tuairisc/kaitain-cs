@@ -38,7 +38,7 @@
  * -----------------------------------------------------------------------------
  */
 
-.home-featured-row {
+.featured-row {
     @include columns(flex, article, 4, 2);
 
     @include media($b-640) {
