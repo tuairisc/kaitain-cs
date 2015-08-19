@@ -13,6 +13,7 @@
 $assets: '../images/';
 $article: $assets + 'article/';
 $buttons: $assets + 'buttons/';
+$misc: $assets + 'misc/';
 $background: $assets + 'background/';
 $brands: $assets + 'brands/';
 $buttons: $assets + 'buttons/';
@@ -42,8 +43,8 @@ $assets: (
     ),
     quote: (
         // Blockquote quotation marks.
-        close: 'quotation_close.svg',
-        open: 'quotation_open.svg'
+        close: $misc + 'quotation-close.svg',
+        open: $misc + 'quotation-open.svg'
     ),
     education: (
         // Education section banners.
