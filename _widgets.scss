@@ -38,16 +38,6 @@
  * -----------------------------------------------------------------------------
  */
 
-.tuairisc-author-list {
-    @include columns(flex, a, 4, 2);
-
-    @include media($b-640) {
-        @include columns(flex, a, 2, 2) {
-            @include margin($vspace, bottom);
-        }
-    }
-}
-
 .home-featured-row {
     @include columns(flex, article, 4, 2);
 
@@ -61,19 +51,23 @@
  * -----------------------------------------------------------------------------
  */
 
+.tuairisc-author-list {
+    @include columns(flex, div, 4, 2);
+
+    @include media(smartphone) {
+        @include columns(flex, div, 2, 2) {
+            @include margin($vspace, bottom);
+        }
+    }
+}
+
 .widget_tuairisc_authors {
     background: palette(white, light);
     box-sizing: border-box;
     @include padding(1.3);
 
-    .author-photo {
+    .author-photo{ 
         @include margin($vspace * 0.5, bottom);
-        @include height(10);
-
-        a {
-            display: block;
-            @include square-flex(100% 1);
-        }
     }
 
     .tuairisc-author:nth-child(-n+2) {
@@ -84,6 +78,10 @@
 
     .author-name {
         font-weight: bold;
+    }
+
+    a:hover .author-name {
+        color: inherit;
     }
 }
 
