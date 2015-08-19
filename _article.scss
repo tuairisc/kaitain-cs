@@ -119,18 +119,16 @@ figure.wp-caption {
 }
 
 /**
- * Post Header
+ * Post Author Meta
  * -----------------------------------------------------------------------------
  */
 
-header {
-    .author-meta {
-        @include odd-columns(flex, div, 10% auto, 2);
-    }
+.author-meta {
+    @include odd-columns(flex, div, 10% auto, 2);
+}
 
-    .author-link a {
-        font-weight: bold;
-    }
+.author-link a {
+    font-weight: bold;
 }
 
 /**
@@ -139,7 +137,7 @@ header {
  */
 
 footer {
-    // @include margin(1 0);
+    // Add whatever.
 }
 
 /**
@@ -282,8 +280,8 @@ article.sidebar {
 .related-articles {
     @include columns(flex, article, 3, 2);
 
-    @include media($b-640) {
-        display: block;
+    @include media(smartphone) {
+        @include columns(flex, article, 3, 5);
     }
 
     .title, .thumbnail {
