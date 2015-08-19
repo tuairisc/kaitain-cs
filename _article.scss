@@ -155,6 +155,11 @@ article.full {
             @include margin($article-vspace, bottom);
         }
 
+        img {
+            // Overrides set attribute and stops images looking weird.
+            height: auto;
+        }
+
         a {
             @extend %green-link;
 
@@ -247,18 +252,15 @@ article.sidebar {
     @include margin($vspace, bottom);
 
     > a {
-        @include flex-parent(row);
+        @include odd-columns(flex, div, 25% auto, 0);
     }
 
     .thumbnail {
-        @include flex-child(0 1 25%);
-        // FIXME
         @include height(4.5);
     }
 
     header {
         box-sizing: border-box;
-        @include flex-child(1);
         @include padding(1, left);
     }
 }
@@ -279,7 +281,11 @@ article.sidebar {
 }
 
 .related-articles {
-    @include column-of(article, 3, 2);
+    @include columns(flex, article, 3, 2);
+
+    @include media($b-640) {
+        display: block;
+    }
 
     .title, .thumbnail {
         @include margin($vspace * 0.5, bottom);
