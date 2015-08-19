@@ -124,7 +124,7 @@ h5, %h5 {
 }
 
 h6, %h6 { 
-    color: white(mid-dark);
+    color: palette(white, mid-dark);
     @include font-size(1.2);
 }
 
@@ -134,7 +134,7 @@ h6, %h6 {
  * Normal text is ~1.6
  */
 
-big, dt, .big, %big {
+.big, %big {
     @include font-size(1.9);
 }
 
