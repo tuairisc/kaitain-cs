@@ -125,6 +125,10 @@ figure.wp-caption {
 
 .author-meta {
     @include odd-columns(flex, div, 10% auto, 2);
+
+    @include media(smartphone) {
+        @include odd-columns(flex, div, 20% auto, 5);
+    }
 }
 
 .author-link a {
