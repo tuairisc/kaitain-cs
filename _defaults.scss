@@ -66,7 +66,6 @@ input, button, textarea {
     @include prefix(border-radius, 0);
 
     &:focus {
-        border: 0;
         outline: 0;
     }
 }
@@ -74,6 +73,44 @@ input, button, textarea {
 textarea {
     resize: none;
     width: 100%;
+    @include rem(min-height, 20);
+}
+
+input {
+    @include padding($vspace * 0.5);
+
+    &[type=button] {
+        @include margin($vspace 0);
+    }
+
+    &[type=text] {
+        @extend %small;
+        @include margin($vspace, bottom);
+    }
+
+    &[type=submit] {
+        background-color: palette(green);
+        color: palette(white, x-light);
+        @include padding($vspace * 0.75 $vspace * 2);
+
+        &:active {
+            background: palette(tuairisc);
+        }
+    }
+
+}
+
+input[type=text], textarea {
+    @extend %grey-border;
+    background-color: palette(white, light);
+    box-sizing: border-box;
+    @include padding($vspace * 0.5);
+
+    &:focus {
+        @extend %grey-border-dark;
+        background-color: palette(white, x-light);
+        outline: 0;
+    }
 }
 
 /** 
@@ -195,60 +232,4 @@ embed, iframe {
     @include media(print) {
         display: none;
     }
-}
-
-/**
- * Tuairisc Green Link
- * -----------------------------------------------------------------------------
- * Signature colour for several links.
- */
-
-.green-link, %green-link {
-    color: palette(green);
-}
-
-.green-link-hover, %green-link-hover {
-    &:hover {
-        color: palette(green);
-    }
-}
-
-/**
- * Title Underline
- * -----------------------------------------------------------------------------
- */
-
-%title-underline, .title-underline {
-    // Bottom border and spacing for default sidebar widget title.
-    border-bottom: 1px solid palette(white, mid-light);
-    @include padding($vspace * 0.75, bottom);
-
-    @include media(print) {
-        border: none;
-        padding: 0;
-    }
-}
-
-/**
- * Borders
- * -----------------------------------------------------------------------------
- */
-
-%grey-border, .grey-border {
-    border: 1px solid palette(white, light);
-}
-
-%grey-border-dark, .grey-border-dark {
-    border: 1px solid palette(white, mid-dark);
-}
-
-/**
- * Item Subtitle
- * -----------------------------------------------------------------------------
- */
-
-%subtitle, .subtitle {
-    @extend .title-underline;
-    font-weight: bold;
-    @include margin($vspace, bottom);
 }
