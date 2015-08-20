@@ -189,7 +189,25 @@
     }
 }
 
-body.home .widget_tuairisc_home_category:last-of-type hr {
-    // Hide hr element on bottom home category widget.
-    display: none;
+/**
+ * Author Archive Output
+ * -----------------------------------------------------------------------------
+ */
+
+.author-profile-info {
+    @include odd-columns(flex, div, 10% auto, 3);
+
+    .author-photo {
+        border-radius: 50%;
+    }
+
+    .author-name-wrapper {
+        position: relative;
+
+        .author-name {
+            @include absolute(50% 0, top left);
+            transform: translateY(-50%);
+        }
+
+    }
 }
