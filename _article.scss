@@ -190,6 +190,11 @@ article.full {
     }
 }
 
+/**
+ * Article Blockquotes
+ * -----------------------------------------------------------------------------
+ */
+
 blockquote {
     background-image: asset(quote, open), asset(quote, close);
     background-position: -4% 4%, 104% 88%;
@@ -256,11 +261,7 @@ article.archive {
 
     > a {
         // Hyperlink wraps the content.
-        @include flex-parent(row, space-between);
-
-        > div {
-            @include flex-child(0 1 49%);
-        }
+        @include columns(flex, div, 2, 2);
     }
 
     p {
