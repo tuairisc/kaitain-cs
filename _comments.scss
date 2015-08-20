@@ -85,46 +85,6 @@ li.comment {
     @include media(print) {
         display: none;
     }
-
-    input {
-        @include padding($vspace * 0.5);
-    }
-
-    input[type=text], textarea {
-        @extend %grey-border;
-        background-color: palette(white, light);
-        box-sizing: border-box;
-        @include padding($vspace * 0.5);
-
-        &:focus {
-            @extend %grey-border-dark;
-            background-color: palette(white, x-light);
-            outline: 0;
-        }
-    }
-
-    input[type=button] {
-        @include margin($vspace 0);
-    }
-
-    input[type=text] {
-        @extend %small;
-        @include margin($vspace, bottom);
-    }
-
-    textarea {
-        @include rem(min-height, 20);
-    }
-
-    input[type=submit] {
-        background-color: palette(green);
-        color: palette(white, x-light);
-        @include padding($vspace * 0.75 $vspace * 2);
-
-        &:active {
-            background: palette(tuairisc);
-        }
-    }
 }
 
 .commentform-inputs {
