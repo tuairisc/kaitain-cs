@@ -177,15 +177,12 @@ nav.share-links {
         @include margin($vspace * 0.5, right);
         @include social(35px 1);
 
-        @include media($b-640) {
+        @include media(smartphone) {
             margin: 0;
+            @include square-flex(100% 1);
 
             &:not(.facebook):not(.twitter):not(.email) {
                 display: none;
-            }
-
-            &.facebook {
-                content: 'FACEBOOK';
             }
         }
     }
