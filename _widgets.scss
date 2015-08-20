@@ -139,7 +139,7 @@
     }
 }
 
-div.category-left article {
+.category-left article {
     @include media($b-640) {
         @include margin($vspace * 1.5, bottom);
     }
@@ -159,8 +159,9 @@ div.category-left article {
     }
 }
 
-div.category-right { 
-    // Vertical flex changes early to stop article content overwriting the element below.
+.category-right { 
+    /* Vertical flex changes early to stop article content overwriting the 
+     * element below. */
     @include flex-parent(column, space-between);
 
     @include media($b-768) {
