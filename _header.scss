@@ -46,7 +46,7 @@ $menu-transition: .1s ease-in;
     // Sapce three children elements horizontallly.
     @include columns(flex, nav, 3, 0) {
         @include media($b-768) {
-            &:not(#brand) {
+            &:not(.center-nav) {
                 display: none;
             }
         }
