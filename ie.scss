@@ -19,7 +19,11 @@
  */
 
 #main {
-    @include odd-columns(float, div, auto $sidebar-width, 0);
+    @include odd-columns(float, div, auto $sidebar-width, 2.5);
+}
+
+#content {
+    padding: 0;
 }
 
 /**
@@ -27,8 +31,12 @@
  * -----------------------------------------------------------------------------
  */
 
-.home-featured-row {
+.featured-row {
     @include columns(float, article, 4, 2);
+
+    @include media($b-640) {
+        @include columns(float, article, 2, 2);
+    }
 }
 
 /**
@@ -37,7 +45,26 @@
  */
 
 .tuairisc-author-list {
-    @include columns(float, article, 4, 2);
+    @include columns(float, div, 4, 2);
+}
+
+/**
+ * Sidebar Articles
+ * -----------------------------------------------------------------------------
+ */
+
+article.sidebar {
+    > a {
+        @include odd-columns(float, div, 25% auto, 5);
+    }
+
+    header {
+        padding: 0;
+    }
+}
+
+article.archive > a {
+    @include columns(float, div, 2, 2);
 }
 
 /**
@@ -49,8 +76,67 @@
     @include columns(float, div, 2, 2);
 }
 
-div.category-right a {
-    @include odd-columns(float, div, 27% auto, 3);
+.category-right {
+    a {
+        @include odd-columns(float, div, 30% auto, 2);
+    }
+
+    .post-content {
+        padding: 0;
+    }
+
+    article {
+        @include margin($vspace * 0.5, bottom);
+    }
+}
+
+/**
+ * Single Post Author Meta
+ * -----------------------------------------------------------------------------
+ */
+
+.author-meta {
+    @include odd-columns(float, div, 10% auto, 2);
+}
+
+/**
+ * Single Post Related Articles
+ * -----------------------------------------------------------------------------
+ */
+
+.related-articles {
+    @include columns(float, article, 3, 2);    
+}
+
+/**
+ * Comments
+ * -----------------------------------------------------------------------------
+ */
+
+li.comment {
+    @include odd-columns(float, div, 7.5% auto, 2);
+}
+
+.commentform-inputs {
+    @include columns(float, input, 3, 3);
+}
+
+/**
+ * Pagination
+ * -----------------------------------------------------------------------------
+ */
+
+nav#pagination {
+    @include columns(float, div, 3, 0);
+}
+
+/**
+ * Footer Columns
+ * -----------------------------------------------------------------------------
+ */
+
+.menu-columns {
+    @include odd-columns(float, nav, 40% auto auto auto, 0);
 }
 
 /**
@@ -60,5 +146,16 @@ div.category-right a {
 
 #brand {
     // Sapce three children elements horizontallly.
-    @include odd-columns(float, nav, 3, 0);
+    height: auto;
+    @include columns(float, nav, 3, 0);
+
+
+    a#home {
+        @include height(4.5);
+        @include padding(1 0);
+    }
+}
+
+body.section-greann a#home { 
+    background-size: auto 75%;;
 }
