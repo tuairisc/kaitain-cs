@@ -139,13 +139,6 @@ $sections: (
 
 .archive-trim-bottom {
     // Bottom category trim for archive images.
-    @include absolute(0 0 0, right bottom left);
-    @include height(0.5);
-}
-
-.archive-trim-side {
-    // Right side tirm for archive images.
-    @include absolute(0 0 0, top right left);
     @include height(0.5);
 }
 
