@@ -93,3 +93,59 @@ $fonts: (
     courier: #{'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace},
     open-sans: #{'Open Sans', Verdana, Geneva, sans-serif, sans-serif}
 );
+
+/**
+ * Tuairisc Green Link
+ * -----------------------------------------------------------------------------
+ * Signature colour for several links.
+ */
+
+.green-link, %green-link {
+    color: palette(green);
+}
+
+.green-link-hover, %green-link-hover {
+    &:hover {
+        color: palette(green);
+    }
+}
+
+/**
+ * Title Underline
+ * -----------------------------------------------------------------------------
+ */
+
+%title-underline, .title-underline {
+    // Bottom border and spacing for default sidebar widget title.
+    border-bottom: 1px solid palette(white, mid-light);
+    @include padding($vspace * 0.75, bottom);
+
+    @include media(print) {
+        border: none;
+        padding: 0;
+    }
+}
+
+/**
+ * Borders
+ * -----------------------------------------------------------------------------
+ */
+
+%grey-border, .grey-border {
+    border: 1px solid palette(white, light);
+}
+
+%grey-border-dark, .grey-border-dark {
+    border: 1px solid palette(white, mid-dark);
+}
+
+/**
+ * Item Subtitle
+ * -----------------------------------------------------------------------------
+ */
+
+%subtitle, .subtitle {
+    @extend .title-underline;
+    font-weight: bold;
+    @include margin($vspace, bottom);
+}
