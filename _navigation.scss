@@ -24,7 +24,7 @@ ul.social {
         // Neutral border adds great contrast.
         border: 1px solid rgba(palette(black, x-light), 0.2);
         font-size: inherit;
-        @include social-link(100% 1);
+        // @include social(100% 1);
     }
 
     a {
@@ -45,7 +45,7 @@ ul.social {
 
 nav#pagination {
     @include margin(3 0);
-    @include flex-parent(row, space-between);
+    @include columns(flex, div, 3, 0);
     
     @include media(print) {
         display: none;
@@ -54,10 +54,6 @@ nav#pagination {
     h3 {
         font-variant: small-caps;
         white-space: nowrap;
-    }
-
-    > div {
-        @include flex-child(1);
     }
     
     div.previous {
@@ -162,16 +158,40 @@ a.submenu-toggle {
 }
 
 /**
- * Post Sharing Links
+ * Full Article Sharing Links
  * -----------------------------------------------------------------------------
  */
 
- nav.share-links {
+nav.share-links {
     @extend %title-underline;
 
-    li {
-        @include square-flex(35px 1);
-        @include margin($vspace * 0.5, right);
+    @include media(smartphone) {
+        background: palette(white, x-light);
+        @include fixed(0 0 0, right bottom left);
+        padding: 0;
+        z-index: 3;
     }
- }
 
+    li {
+        display: inline-block;        
+        @include margin($vspace * 0.5, right);
+        @include social(35px 1);
+
+        @include media($b-640) {
+            margin: 0;
+
+            &:not(.facebook):not(.twitter):not(.email) {
+                display: none;
+            }
+
+            &.facebook {
+                content: 'FACEBOOK';
+            }
+        }
+    }
+
+    a {
+        display: block;
+        @include square-flex(100% 1);
+    }
+}
