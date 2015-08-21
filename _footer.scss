@@ -91,7 +91,7 @@ ul.footer-section-menu {
 
 .menu-columns {
     @include margin($vspace, bottom);
-    @include odd-columns(flex, nav, 40% auto auto auto, 0);
+    @include columns(flex, nav, 40% auto auto auto, 0);
 
     @include media($b-640) {
         display: block;

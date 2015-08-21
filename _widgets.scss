@@ -177,7 +177,7 @@
     }
 
     a {
-        @include odd-columns(flex, div, 30% auto, 0);
+        @include columns(flex, div, 30% auto, 0);
     }
 
     .post-content {
@@ -195,7 +195,7 @@
  */
 
 .author-profile-info {
-    @include odd-columns(flex, div, 10% auto, 3);
+    @include columns(flex, div, 10% auto, 3);
 
     .author-photo {
         border-radius: 50%;

@@ -123,10 +123,10 @@ figure.wp-caption {
  */
 
 .author-meta {
-    @include odd-columns(flex, div, 10% auto, 2);
+    @include columns(flex, div, 10% auto, 2);
 
     @include media(smartphone) {
-        @include odd-columns(flex, div, 20% auto, 5);
+        @include columns(flex, div, 20% auto, 5);
     }
 }
 
@@ -281,7 +281,7 @@ article.sidebar {
     @include margin($vspace, bottom);
 
     > a {
-        @include odd-columns(flex, div, 25% auto, 0);
+        @include columns(flex, div, 25% auto, 0);
     }
 
     .thumbnail {

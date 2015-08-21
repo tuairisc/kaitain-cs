@@ -53,8 +53,7 @@ body {
     background-color: palette(white, x-light);
     box-shadow: 1px 2px 2px 2px rgba(207,205,207,1);
     box-sizing: border-box;
-
-    @include odd-columns(flex, div, auto $sidebar-width, 0);
+    @include columns(flex, div, auto $sidebar-width, 0);
     @include padding($content-padding);
 
     @include media($b-768) {
