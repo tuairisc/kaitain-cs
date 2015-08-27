@@ -204,10 +204,11 @@ blockquote {
     border-width: 1px 0;
     color: palette(black, mid-light);
     @include padding(2 3);
+
     @include margin(1 3);
 
     p:last-child {
-        margin-bottom: 0 !important;
+        margin-bottom: 0;
     }
 }
 

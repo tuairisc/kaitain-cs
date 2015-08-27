@@ -62,7 +62,7 @@ body {
     }
 
     @include media(print) {
-        background-color: white !important;
+        background-color: palette(white, x-light);
         box-shadow: none;
         max-width: 100%;
         padding: 0;
