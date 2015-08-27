@@ -41,7 +41,11 @@ a.post-edit-link {
 
 .post-date {
     @extend %small;
-    // Stops colour changing when I hover on parent link.
+    /* Stop colour changing when I hover on parent link.
+     * Hover colour propagates down from %greenlink, but I specifically do not 
+     * want this colour to be overridden.
+     */
+
     color: palette(white, x-dark) !important;
 }
 
@@ -85,8 +89,11 @@ figcaption {
 }
 
 figure.wp-caption {
-    /* Bug with size in Chrome. Margin is applied evenly instead of to one side
-     * alone. */
+    /* Bug with size in Chrome. Margin is inivisibly applied to each side 
+     * instead of to one side alone. WordPress applies some default margin 
+     * to these image elments. 
+     */
+
     margin: 0 !important;
 }
 
@@ -104,7 +111,9 @@ figure.wp-caption {
 
 .thumbnail {
     /* Chrome treats it as display: inline-block and adds invisible font
-     * space below the div. */
+     * space below the div.
+     */
+
     font-size: 0;
     // Trim children can have absolute positions.
     position: relative;
@@ -267,7 +276,9 @@ article.archive {
     p {
         /* This is strictly to prevent the paragraph from lighting up on link
          * hover. The entire article's interior is wrapped in a single 
-         * hyperlink. I only want the title to light up on hover. */
+         * hyperlink. I only want the title to light up on hover.
+         */
+
         color: palette(black, x-dark) !important;
     }
 }
