@@ -1,0 +1,35 @@
+/**
+ * WordPress CSS Element Rules
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Tuairisc.ie
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+figure.wp-caption {
+    /* Bug with size in Chrome. Margin is inivisibly applied to each side 
+     * instead of to one side alone. WordPress applies some default margin 
+     * to these image elments. 
+     */
+
+    margin: 0 !important;
+}
+
+figcaption {
+    @extend %small;
+    @include padding($vspace * 0.5, top);
+}
+
+.alignright {
+    float: right;
+    @include padding($vspace, left);
+}
+
+.alignleft {
+    float: left;
+    @include padding($vspace, right);
+}

@@ -69,35 +69,6 @@ a.post-edit-link {
 }
 
 /**
- * WordPress Element Styles
- * -----------------------------------------------------------------------------
- */
-
-figcaption {
-    @extend %small;
-    @include padding($vspace * 0.5, top);
-}
-
-.alignright {
-    float: right;
-    @include padding($vspace, left);
-}
-
-.alignleft {
-    float: left;
-    @include padding($vspace, right);
-}
-
-figure.wp-caption {
-    /* Bug with size in Chrome. Margin is inivisibly applied to each side 
-     * instead of to one side alone. WordPress applies some default margin 
-     * to these image elments. 
-     */
-
-    margin: 0 !important;
-}
-
-/**
  * Thumbnails and Avatars
  * -----------------------------------------------------------------------------
  */
