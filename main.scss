@@ -10,21 +10,53 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-@import 'scss-helpers/bhalash-helpers';
+// SCSS helper library.
+@import 'scss-helpers/helpers';
+
+// Theme image assets.
 @import 'assets';
+
+// Variables.
 @import 'variables';
+
+// Reusable classes and partials.
+@import 'partials';
+
+// normalize.css
 @import 'normalize';
+
+// Default layout rules.
 @import 'defaults';
 
-// Order matters.
-
-@import 'containers';
+// Theme header.
 @import 'header';
-@import 'sections';
+
+// Main theme containers.
+@import 'containers';
+
+// Theme widgets.
 @import 'widgets';
+
+// Article rules.
 @import 'article';
+
+// Navigational elements (pagination, etc).
 @import 'navigation';
+
+// Theme sidebar. 
 @import 'sidebar';
+
+// AdRotate adverts.
 @import 'adverts';
+
+// Comments.
 @import 'comments';
+
+// WordPress required elements.
+@import 'wordpress';
+
+// Theme footer.
 @import 'footer';
+
+// Site section scss.
+@import 'sections';
