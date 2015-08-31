@@ -2,7 +2,7 @@
  * Reusable Partials and Classes
  * -----------------------------------------------------------------------------
  * @category   Sass Template
- * @package    Tuairisc.ie
+ * @package    Kaitain CSS
  * @author     Mark Grealish <mark@bhalash.com>
  * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
  * @license    All Rights Reserved 
@@ -37,4 +37,9 @@
 
 .vspace-double, %vspace-double {
     @include margin($vspace * 2, bottom);
+}
+
+.no-widgets {
+    font-weight: bold;
+    @include margin($vspace 0);
 }

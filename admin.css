@@ -2,7 +2,7 @@
  * Site Admin Stylesheets
  * -----------------------------------------------------------------------------
  * @category   Sass Template
- * @package    Tuairisc.ie
+ * @package    Kaitain CSS
  * @author     Mark Grealish <mark@bhalash.com>
  * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
  * @license    All Rights Reserved 
@@ -10,10 +10,10 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-div.widget[id*=_tuairisc_] h4,
-div.widget[id*=_tuairisc_] .widget-title-action,
-div.postbox[id*=tuairisc_] h3,
-div.postbox[id*=tuairisc_] .handlediv {
+div.widget[id*=_kaitain_] h4,
+div.widget[id*=_kaitain_] .widget-title-action,
+div.postbox[id*=kaitain_] h3,
+div.postbox[id*=kaitain_] .handlediv {
     /* Shade Tuairisc theme widgets for highlighting. */
     color: #fff;
     background: #506572;

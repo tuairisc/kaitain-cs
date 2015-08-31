@@ -5,7 +5,7 @@
  * Sidebar = Sidebar column.
  * 
  * @category   Sass Template
- * @package    Tuairisc.ie
+ * @package    Kaitain CSS
  * @author     Mark Grealish <mark@bhalash.com>
  * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
  * @license    All Rights Reserved
@@ -139,7 +139,7 @@
     }
 }
 
-.category-left article {
+.bhalash-category-widget-left > article {
     @include media($b-640) {
         @include margin($vspace * 1.5, bottom);
     }
@@ -159,7 +159,7 @@
     }
 }
 
-.category-right { 
+.bhalash-category-widget-right { 
     /* Vertical flex changes early to stop article content overwriting the 
      * element below. */
     @include flex-parent(column, space-between);
