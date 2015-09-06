@@ -11,7 +11,7 @@
  */
 
 div.widget[id*=_kaitain_] h4,
-div.widget[id*=_kaitain_] .widget-title-action,
+div.widget[id*=ukaitain_] .widget-title-action,
 div.postbox[id*=kaitain_] h3,
 div.postbox[id*=kaitain_] .handlediv {
     /* Shade Tuairisc theme widgets for highlighting. */
@@ -19,7 +19,11 @@ div.postbox[id*=kaitain_] .handlediv {
     background: #506572;
 }
 
-.stickycheck, .expiryinfo {
+div.postbox[id*=kaitain_] fieldset {
+    display: inline-block;
+}
+
+.kaitain-stickycheck, .kaitain-expiryinfo {
     /* Featured/sticky post meta box. */
     display: none;
 }
@@ -31,4 +35,9 @@ div.postbox[id*=kaitain_] .handlediv {
     height: 150px;
     overflow-y: scroll;
     padding: 5px;
+}
+
+.input-error {
+    /* WordPress CSS overrides the background colour unless it is important. */
+    background-color: red !important;
 }
