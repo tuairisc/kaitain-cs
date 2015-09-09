@@ -11,7 +11,7 @@
  */
 
 div.widget[id*=_kaitain_] h4,
-div.widget[id*=ukaitain_] .widget-title-action,
+div.widget[id*=_kaitain_] .widget-title-action,
 div.postbox[id*=kaitain_] h3,
 div.postbox[id*=kaitain_] .handlediv {
     /* Shade Tuairisc theme widgets for highlighting. */
