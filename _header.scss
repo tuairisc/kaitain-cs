@@ -51,7 +51,8 @@ $menu-transition: .1s ease-in;
             }
         }
     }
-    @include height(6);
+
+    @include height($header-brand-height);
 
     nav {
         // Make each fill equal width and then vertically center grandchildren.
