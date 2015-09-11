@@ -9,3 +9,85 @@
  * @version    2.0
  * @link       https://github.com/bhalash/tuairisc.ie
  */
+
+/**
+ * Big Search Form Container
+ * -----------------------------------------------------------------------------
+ */
+
+#bigsearch {
+    // background: palette(rmwb);
+    opacity: 0;
+    transition: opacity .15s;
+    visibility: hidden;
+    z-index: 3;
+    @include fixed($header-brand-height 0 0 0);
+
+    &.show {
+        opacity: 1;
+        transition: opacity .15s;
+        visibility: visible;
+    }
+
+    @include media($b-1024) {
+        bottom: auto;
+        height: auto;
+    }
+}
+
+/**
+ * Big Search Form
+ * -----------------------------------------------------------------------------
+ */
+
+.bigsearch-form {
+    // Important for absoute centering.
+    border: 0;
+    height: inherit;
+
+    fieldset {
+        width: 100%;
+        @include absolute-center;
+
+        @include media($b-1024) {
+            position: static;
+            transform: none;
+        }
+    }
+}
+
+/**
+ * Big Search Text Input
+ * -----------------------------------------------------------------------------
+ */
+
+.bigsearch-input {
+    background: transparent;
+    color: palette(white, x-light);
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    @include font-size(7);
+
+    @include placeholder-style {
+        color: palette(white, x-light);
+    }
+
+    @include media($b-1024) {
+        box-sizing: border-box;
+        @include font-size(3);
+        @include padding(2);
+    }
+}
+
+/**
+ * Regular Search Form
+ * -----------------------------------------------------------------------------
+ */
+
+input#s {
+    @include padding(1);
+    @include font-size(2);
+    width: 100%;
+}
