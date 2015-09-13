@@ -19,7 +19,11 @@ body {
     /* This padding is important: it dictates the separation between the fixed
      * header and site content. This is the only separation if a visitor employs
      * AdBlock. */
-    // @include padding($header-height-submenu, top);    
+    @include padding($navrow-height-full, top);    
+
+    @include media($b-540) {
+        @include padding($navrow-height-mobile, top);    
+    }
 
     @include media(print) {
         padding: 0;
@@ -30,8 +34,8 @@ body {
     background-color: palette(white, x-light);
     box-shadow: 0 10px 6px -9px rgba(0,0,0,0.15);
     text-align: center;
-    // z-index: 2;
-    // @include fixed(0 0 0, top left right);
+    z-index: 2;
+    @include fixed(0 0 0, top left right);
 
     @include media(print) {
         display: none;
