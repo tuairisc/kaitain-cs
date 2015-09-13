@@ -26,12 +26,8 @@ $menu-transition: .1s ease-in;
         display: inline-block;
     }
 
-    a {
-        display: block;
-
-        &:hover {
-            text-decoration: none;
-        }
+    a:hover {
+        text-decoration: none;
     }
 }
 
@@ -42,23 +38,80 @@ $menu-transition: .1s ease-in;
  * button and 
  */
 
-#brand {
-    // Sapce three children elements horizontallly.
-    @include columns(flex, nav, 3, 0) {
-        @include media($b-768) {
-            &:not(.center-nav) {
-                display: none;
-            }
-        }
+#navrow {
+    transition: height $menu-transition;
+    @include columns(flex, nav, 3, 0);
+    @include height($navrow-height-full);
+
+    @include media($b-768) {
+        @include columns(flex, nav, auto 80% auto, 0);
     }
 
-    @include height($header-brand-height);
-
-    nav {
-        // Make each fill equal width and then vertically center grandchildren.
-        @include flex-parent(column, center);
+    @include media($b-540) {
+        @include height($navrow-height-mobile);
     }
 }
+
+#menu-header-social {
+    @include media($b-768) {
+        display: none;
+    }
+}
+
+/**
+ * Go Home Link
+ * -----------------------------------------------------------------------------
+ */
+
+#home-link {
+    // See _sections.scss for specifics of brand iamge and colour.
+    height: 100%;
+}
+
+#home {
+    background: center/contain no-repeat;
+    display: inline-block;
+    height: 100%;
+    @include width(20);
+
+    @include media($b-540) {
+        background-size: auto 70%;
+    }
+}
+
+body #home {
+    background-image: asset(brand, tuairisc white);
+}
+
+body.section-greann #home {
+    background-image: asset(brand, greann);
+}
+
+/**
+ * Brand Buttons
+ * -----------------------------------------------------------------------------
+ */
+
+li.button, .right-nav li.menu-item {
+    // #brand button items.
+    display: inline-block;
+    @include margin(0 0.25);
+    @include square-flex(32px 1);
+
+    a {
+        @include square-flex(100% 1);
+    }
+}
+
+a.submenu-toggle {
+    background: center/60% no-repeat asset(buttons, menu);
+    transition: $menu-transition;
+    
+    &.open {
+        transform: rotate(90deg);
+    }
+}
+
 
 /**
  * Primary and Secondary Navigation Menus
