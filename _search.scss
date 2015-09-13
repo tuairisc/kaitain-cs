@@ -21,7 +21,11 @@
     transition: opacity .15s;
     visibility: hidden;
     z-index: 3;
-    @include fixed($header-brand-height 0 0 0);
+    @include fixed($navrow-height-full 0 0 0);
+
+    @include media($b-540) {
+        @include rem(top, $navrow-height-mobile);
+    }
 
     &.show {
         opacity: 1;
