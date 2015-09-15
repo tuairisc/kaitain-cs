@@ -17,31 +17,6 @@
  * CSS.
  */
 
-ul.social {
-    /* ¡IMPORTANT! WordPress menu items /must/ contain text, elsewise WordPress
-     * will remove the item. Therefore each menu item has text which I hide
-     * here. If you remove this you *will* break the vertical alignment of the 
-     * menu. */
-    font-size: 0;
-
-    li {    
-        // Neutral border adds great contrast.
-        border: 1px solid rgba(palette(black, x-light), 0.2);
-        font-size: inherit;
-        // @include social(100% 1);
-    }
-
-    a {
-        display: block;
-        font-size: inherit;
-        @include square-flex(100% 1);
-    }
-
-    @include media(print) {
-        display: none;
-    }
-}
-
 /**
  * Pagintaion
  * -----------------------------------------------------------------------------
