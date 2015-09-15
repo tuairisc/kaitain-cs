@@ -42,7 +42,14 @@ body {
     }
 }
 
-.advert-block, #main {
+.trim-block, #main {
+    /* .trim-block is the parent container for header/footer trims. 
+     * These trims are held outside of #main because of how columns are set.
+     * Having extra elements inside #main made a mess of splits.
+     * Also, AdBlock hides the child advert block, hence it has a min-height as
+     * set below.
+     */
+
     margin: 0 auto;
     max-width: $content-max-width;
     position: relative;
@@ -51,6 +58,10 @@ body {
     @include media(print) {
         display: none;
     }
+}
+
+.trim-block {
+    @include rem(min-height, 3);
 }
 
 #main {
