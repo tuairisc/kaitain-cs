@@ -10,7 +10,7 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-$menu-transition: .1s ease-in;
+$header-transition: .1s ease-in;
 
 /**
  * Header Interior Rules
@@ -39,22 +39,115 @@ $menu-transition: .1s ease-in;
  */
 
 #navrow {
-    transition: height $menu-transition;
-    @include columns(flex, nav, 3, 0);
-    @include height($navrow-height-full);
+    @include clearfix;
+    overflow: hidden;
+    transition: height $header-transition;
 
-    @include media($b-768) {
-        @include columns(flex, nav, auto 80% auto, 0);
+    @include columns(flex, nav, 3, 0) {
+        @include media($b-540) {
+            @include flex-child(1 0 auto);
+        }
     }
 
-    @include media($b-540) {
-        @include height($navrow-height-mobile);
+    nav {
+        @include height($navrow-height-full);
+
+        @include media($b-540) {
+            @include height($navrow-height-mobile);
+        }
     }
 }
 
+/**
+ * Navigation Row Child Nav Elements
+ * -----------------------------------------------------------------------------
+ */
+
+.left-nav, .right-nav {
+    @include media($b-640) {
+        @include width(6);
+    }
+}
+
+.left-nav {
+    text-align: left;
+
+    button {
+        float: left;
+    }
+}
+
+.right-nav {
+    text-align: center;
+
+    button {
+        float: right;
+    }
+}
+
+/**
+ * Nav Row Button and Socialspan
+ * -----------------------------------------------------------------------------
+ * Social 
+ */
+
+.navbutton {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    transition: height $header-transition;
+    @include size($navrow-height-full $navrow-height-full);
+
+    @include media($b-540) {
+        @include size($navrow-height-mobile $navrow-height-mobile);
+    }
+
+    @include social(60% 1, '.nav-socialspan', close menu search) {
+        background-color: transparent;
+    }
+}
+
+.nav-socialspan {
+    /* ¡IMPORTANT! WordPress menu items /must/ contain text, elsewise WordPress
+     * will remove the item. Therefore each menu item has text which I hide
+     * here. If you remove this you *will* break the vertical alignment of the 
+     * menu. */
+    font-size: 0;
+    display: block;
+    margin: 0 auto;
+}
+
+/**
+ * External Social Menu
+ * -----------------------------------------------------------------------------
+ */
+
 #menu-header-social {
-    @include media($b-768) {
+    display: inline-block;
+    height: 100%;
+
+    @include media($b-640) {
         display: none;
+    }
+
+    .menu-item {
+        font-size: 0;
+        height: inherit;
+        margin-right: 1px;
+        @include width(4.4);
+
+        @include social(90% 1, a span);
+    }
+
+    a {
+        display: block;
+        height: inherit;
+        position: relative;
+        width: 100%;
+
+        > .nav-socialspan {
+            @include absolute-center;
+        }
     }
 }
 
@@ -64,7 +157,6 @@ $menu-transition: .1s ease-in;
  */
 
 #home-link {
-    // See _sections.scss for specifics of brand iamge and colour.
     height: 100%;
 }
 
@@ -72,10 +164,11 @@ $menu-transition: .1s ease-in;
     background: center/contain no-repeat;
     display: inline-block;
     height: 100%;
+    transition: $header-transition;
     @include width(20);
 
     @include media($b-540) {
-        background-size: auto 70%;
+        background-size: auto 50%;
     }
 }
 
@@ -86,32 +179,6 @@ body #home {
 body.section-greann #home {
     background-image: asset(brand, greann);
 }
-
-/**
- * Brand Buttons
- * -----------------------------------------------------------------------------
- */
-
-li.button, .right-nav li.menu-item {
-    // #brand button items.
-    display: inline-block;
-    @include margin(0 0.25);
-    @include square-flex(32px 1);
-
-    a {
-        @include square-flex(100% 1);
-    }
-}
-
-a.submenu-toggle {
-    background: center/60% no-repeat asset(buttons, menu);
-    transition: $menu-transition;
-    
-    &.open {
-        transform: rotate(90deg);
-    }
-}
-
 
 /**
  * Primary and Secondary Navigation Menus
@@ -134,6 +201,7 @@ ul#primary a {
 
 ul#secondary {
     border-top: 1px solid palette(white, light);
+    box-sizing: border-box;
 
     a {
         @include padding($vspace * 0.5 $vspace);
