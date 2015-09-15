@@ -70,6 +70,11 @@ input, button, textarea {
     }
 }
 
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
 fieldset {
     border: 0;
     margin: 0;
