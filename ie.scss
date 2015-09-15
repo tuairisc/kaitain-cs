@@ -14,6 +14,22 @@
 @import 'variables';
 
 /**
+ * Header Row
+ * -----------------------------------------------------------------------------
+ */
+
+#navrow  {
+    // Order and !important are both important, to stop IE9 wrapping.
+    @include clearfix;
+    overflow: hidden !important;
+    @include columns(float, nav, 3, 0);
+
+    @include media($b-540) {
+        @include columns(float, nav, 10% auto 10%, 0);
+    }
+}
+
+/**
  * Main Column Floats
  * -----------------------------------------------------------------------------
  */
