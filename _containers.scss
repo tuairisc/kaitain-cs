@@ -31,37 +31,9 @@ body {
 }
 
 #header {
-    background-color: palette(white, x-light);
     box-shadow: 0 10px 6px -9px rgba(0,0,0,0.15);
     text-align: center;
-    z-index: 2;
-    @include fixed(0 0 0, top left right);
-
-    @include media(print) {
-        display: none;
-    }
-}
-
-.trim-block, #main {
-    /* .trim-block is the parent container for header/footer trims. 
-     * These trims are held outside of #main because of how columns are set.
-     * Having extra elements inside #main made a mess of splits.
-     * Also, AdBlock hides the child advert block, hence it has a min-height as
-     * set below.
-     */
-
-    margin: 0 auto;
-    max-width: $content-max-width;
-    position: relative;
-    width: 97%;
-
-    @include media(print) {
-        display: none;
-    }
-}
-
-.trim-block {
-    @include rem(min-height, 3);
+    @include navbar-size;
 }
 
 #main {
@@ -69,6 +41,7 @@ body {
     box-shadow: 1px 2px 2px 2px rgba(207,205,207,1);
     box-sizing: border-box;
     @include columns(flex, div, auto $sidebar-width, 0);
+    @include main-size;
     @include padding($content-padding);
 
     @include media($b-768) {

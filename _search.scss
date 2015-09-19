@@ -16,23 +16,21 @@
  */
 
 #bigsearch {
-    height: auto;
     opacity: 0;
     transition: opacity .15s;
     visibility: hidden;
-    z-index: 3;
-    // @include fixed($navrow-height-full 0 0 0);
-    @include fixed($navrow-height-full 0 auto 0);
-
-    @include media($b-540) {
-        @include rem(top, $navrow-height-mobile);
-    }
+    @include navbar-size;
 
     &.show {
         opacity: 1;
-        transition: opacity .15s;
         visibility: visible;
     }
+
+    &:focus {
+        outline: none;
+    }
+
+    @include padding(2);
 }
 
 /**
@@ -42,10 +40,11 @@
 
 .bigsearch-form {
     // Important for absoute centering.
-    border: 0;
-    height: inherit;
+    height: 100%;
 
     fieldset {
+        height: 100%;
+        position: relative;
         width: 100%;
     }
 }
@@ -56,18 +55,15 @@
  */
 
 .bigsearch-input {
-    background: transparent;
-    box-sizing: border-box;
     color: palette(white, x-light);
     display: block;
     margin: 0 auto;
     text-align: center;
     width: 90%;
     @include font-size(2);
-    @include padding(2);
 
     @include placeholder-style {
-        color: palette(white, x-light);
+        color: rgba(palette(white, light), 0.5);
     }
 }
 
