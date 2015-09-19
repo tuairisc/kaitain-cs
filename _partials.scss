@@ -10,12 +10,21 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+/**
+ * Navbar/Header Size and Position
+ * -----------------------------------------------------------------------------
+ */
+
 @mixin navbar-size {
     -webkit-transform:translateZ(0);
     box-sizing: border-box;
     z-index: 3;
     @include fixed(0 0 auto 0);
     @include height($navrow-height-full);
+
+    @include media($b-1024) {
+        @include absolute(0 0 auto 0);
+    }
 
     @include media($b-540) {
         @include height($navrow-height-mobile);
@@ -25,6 +34,11 @@
         display: none;
     }
 }
+
+/**
+ * Main Block Size and Position
+ * -----------------------------------------------------------------------------
+ */
 
 @mixin main-size {
     margin: 0 auto;
@@ -37,18 +51,10 @@
     }
 }
 
-.trim-block {
-    /* .trim-block is the parent container for header/footer trims. 
-     * These trims are held outside of #main because of how columns are set.
-     * Having extra elements inside #main made a mess of splits.
-     * Also, AdBlock hides the child advert block, hence it has a min-height as
-     * set below.
-     */
-
-    @include main-size;
-    @include rem(min-height, 3);
-}
-
+/**
+ * Misc Rules
+ * -----------------------------------------------------------------------------
+ */
 
 .left-float {
     float: left;
@@ -82,4 +88,16 @@
 .no-widgets {
     font-weight: bold;
     @include margin($vspace 0);
+}
+
+.trim-block {
+    /* .trim-block is the parent container for header/footer trims. 
+     * These trims are held outside of #main because of how columns are set.
+     * Having extra elements inside #main made a mess of splits.
+     * Also, AdBlock hides the child advert block, hence it has a min-height as
+     * set below.
+     */
+
+    @include main-size;
+    @include rem(min-height, 3);
 }
