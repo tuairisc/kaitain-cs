@@ -90,6 +90,12 @@ $sections: (
         }
     }
 
+    .section-#{$class}-background-hover {
+        @include media($b-640) {
+            background-color: $color;
+        }
+    }
+
     .section-#{$class}-text, .section-#{$class}-text-hover:hover {
         // 4. Set trims for all sections text.
         color: $color;
@@ -98,6 +104,10 @@ $sections: (
     .section-#{$class}-shadow, .section-#{$class}-shadow-hover:hover {
         // 5. Bottom box shadow. "Interior" box shadow.
         box-shadow: inset 0px -5px 0px -1px rgba($color, 1);
+
+        @include media($b-640) {
+            box-shadow: none;
+        }
     }
 }
 
