@@ -10,8 +10,6 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-$header-transition: .1s ease-in;
-
 /**
  * Header Interior Rules
  * -----------------------------------------------------------------------------
@@ -40,21 +38,18 @@ $header-transition: .1s ease-in;
 
 #navrow {
     @include clearfix;
+    @include height($navrow-height-full);
     overflow: hidden;
-    transition: height $header-transition;
+    transition: height $transition-time;
 
     @include columns(flex, nav, 3, 0) {
-        @include media($b-540) {
-            @include flex-child(1 0 auto);
-        }
+        height: 100%;
+        position: relative;
     }
 
-    nav {
-        @include height($navrow-height-full);
-
-        @include media($b-540) {
-            @include height($navrow-height-mobile);
-        }
+    @include media($b-640) {
+        @include columns(flex, nav, 15% auto 15%, 0);
+        @include height($navrow-height-mobile);
     }
 }
 
@@ -64,8 +59,6 @@ $header-transition: .1s ease-in;
  */
 
 .left-nav, .right-nav {
-    position: relative;
-
     @include media($b-640) {
         @include width(6);
     }
@@ -80,103 +73,15 @@ $header-transition: .1s ease-in;
 }
 
 /**
- * Nav Row Button and Socialspan
- * -----------------------------------------------------------------------------
- * Social 
- */
-
-.navbutton {
-    -webkit-appearance: button;
-    background: transparent;
-    cursor: pointer;
-    margin: 0;
-    opacity: 0.8;
-    padding: 0;
-    @include size($navrow-height-full $navrow-height-full);
-
-    &:active {
-        opacity: 1;
-    }
-
-    @include media($b-540) {
-        @include size($navrow-height-mobile $navrow-height-mobile);
-    }
-}
-
-.nav-buttonicon {
-    font-size: 0;
-    display: block;
-    margin: 0 auto;
-
-    @include social(50% 1, null, search menu close) {
-        background-color: transparent;
-    }
-}
-
-#search-searchtoggle {
-    @include absolute(0 0 auto auto);
-}
-
-#nav-searchtoggle {
-    float: right;
-}
-
-.menutoggle {
-    @include absolute(0 auto auto 0);
-}
-
-/**
- * External Social Menu
- * -----------------------------------------------------------------------------
- */
-
-#menu-header-social {
-    display: inline-block;
-    height: 100%;
-
-    @include media($b-640) {
-        display: none;
-    }
-
-    .menu-item {
-        font-size: 0;
-        height: inherit;
-        margin-right: 1px;
-        @include width(4.4);
-        @include social(90% 1, a span);
-    }
-
-    a {
-        display: block;
-        height: inherit;
-        position: relative;
-        width: 100%;
-
-        > .nav-socialspan {
-            @include absolute-center;
-        }
-    }
-}
-
-/**
  * Go Home Link
  * -----------------------------------------------------------------------------
  */
 
-#home-link {
-    height: 100%;
-}
-
 #home {
-    background: center/contain no-repeat;
-    display: inline-block;
+    background: center/auto 50% no-repeat;
+    display: block;
     height: 100%;
-    transition: $header-transition;
-    @include width(20);
-
-    @include media($b-540) {
-        background-size: auto 50%;
-    }
+    transition: $transition-time;
 }
 
 body #home {
@@ -188,35 +93,3 @@ body.section-greann #home {
     background-image: asset(brand, greann);
 }
 
-/**
- * Primary and Secondary Navigation Menus
- * -----------------------------------------------------------------------------
- */
-
-nav#sections-menu {
-    ul:empty {
-        display: none;
-    }
-
-    a {
-        @include font-size(1.3);
-    }
-}
-
-ul#primary a {
-    @include padding($vspace * 0.5 $vspace);
-}
-
-ul#secondary {
-    border-top: 1px solid palette(white, light);
-    box-sizing: border-box;
-
-    a {
-        @include padding($vspace * 0.5 $vspace);
-    }
-
-    li:hover a {
-        // li has a hover text colour class set.
-        color: inherit;
-    }
-}
