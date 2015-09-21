@@ -19,14 +19,14 @@
     -webkit-transform:translateZ(0);
     box-sizing: border-box;
     z-index: 3;
-    @include fixed(0 0 auto 0);
+    @include absolute(0 0 auto 0);
     @include height($navrow-height-full);
 
     @include media($b-1024) {
         @include absolute(0 0 auto 0);
     }
 
-    @include media($b-540) {
+    @include media($b-640) {
         @include height($navrow-height-mobile);
     }
 
@@ -35,16 +35,20 @@
     }
 }
 
+@mixin navbar-box-shadow {
+    box-shadow: 0 10px 6px -9px rgba(0,0,0,0.15);
+}
+
 /**
  * Main Block Size and Position
  * -----------------------------------------------------------------------------
  */
 
-@mixin main-size {
+@mixin main-size($max: $content-max-width, $width: $content-width) {
     margin: 0 auto;
-    max-width: $content-max-width;
     position: relative;
-    width: 97%;
+    width: $width;
+    @include rem(max-width, $max);
 
     @include media(print) {
         display: none;
