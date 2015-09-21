@@ -17,17 +17,17 @@
 
 #bigsearch {
     opacity: 0;
-    transition: opacity .15s;
+    transition: opacity $transition-time;
     visibility: hidden;
     @include navbar-size;
+
+    &:focus {
+        outline: none;
+    }
 
     &.show {
         opacity: 1;
         visibility: visible;
-    }
-
-    &:focus {
-        outline: none;
     }
 }
 
@@ -61,11 +61,11 @@ input[type="search"].bigsearch-input {
     margin: 0 auto;
     text-align: center;
     width: 90%;
-    @include font-size(3.5);
+    @include font-size($navbar-bigsearch-font-size);
     @include padding(1);
 
     @include media($b-540) {
-        @include font-size(2.5);
+        @include font-size($navbar-bigsearch-font-size-mobile);
     }
 
     @include placeholder-style {
