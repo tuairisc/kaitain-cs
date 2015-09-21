@@ -246,6 +246,10 @@ article.archive {
     > a {
         // Hyperlink wraps the content.
         @include columns(flex, div, 2, 2);
+
+        @include media($b-640) {
+            display: block;
+        }
     }
 
     p {
@@ -255,6 +259,12 @@ article.archive {
          */
 
         color: palette(black, x-dark) !important;
+    }
+
+    .thumbnail {
+        @include media($b-640) {
+            @include margin($vspace * 0.5, bottom);
+        }
     }
 }
 
