@@ -1,0 +1,38 @@
+/**
+ * 404 Template
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Kaitain CSS
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * 404 Error Template
+ * -----------------------------------------------------------------------------
+ * Hide everything but the error message on a 404.
+ */
+
+body[class^=error] {
+    background: #fff;
+
+    #header, #sidebar, #footer {
+        display: none;    
+    }
+
+    #main {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+#error {
+    text-align: center; 
+    @include fixed(0);
+    @include flex-parent(column, center);
+}

@@ -170,6 +170,8 @@
 
     article {
         @include flex-child(0 1 25%);
+        // Important for Safari!
+        -webkit-flex: 1 !important;
 
         @include media($b-768) {
             @include margin($vspace, bottom);

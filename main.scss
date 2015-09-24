@@ -10,56 +10,31 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-// SCSS helper library.
-@import 'scss-helpers/helpers';
+$helper-path: 'includes/';
 
-// Theme image assets.
-@import 'assets';
+@import 'includes/scss-helpers/helpers';
+@import 'includes/normalize';
 
-// Variables.
-@import 'variables';
+@import 'base/variables';
+@import 'base/assets';
+@import 'base/sections';
+@import 'base/reset';
 
-// Reusable classes and partials.
-@import 'partials';
+@import 'components/mixins';
+@import 'components/partials';
+@import 'components/adverts';
+@import 'components/buttons';
+@import 'components/menus';
+@import 'components/navigation';
+@import 'components/social';
+@import 'components/search';
+@import 'components/wordpress';
 
-// normalize.css
-@import 'normalize';
-
-// Default layout rules.
-@import 'defaults';
-
-// Theme header.
-@import 'header';
-
-// Main theme containers.
-@import 'containers';
-
-// Theme widgets.
-@import 'widgets';
-
-// Article rules.
-@import 'article';
-
-// Navigational elements (pagination, etc).
-@import 'navigation';
-
-// Theme sidebar. 
-@import 'sidebar';
-
-// AdRotate adverts.
-@import 'adverts';
-
-// Comments.
-@import 'comments';
-
-// WordPress required elements.
-@import 'wordpress';
-
-// Theme footer.
-@import 'footer';
-
-// Site section scss.
-@import 'sections';
-
-// Site search.
-@import 'search';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/article';
+@import 'layout/archives';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/404';
+@import 'layout/comments';

@@ -1,0 +1,67 @@
+/**
+ * Buttons
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Kaitain CSS
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * Nav Row Button and Socialspan
+ * -----------------------------------------------------------------------------
+ * Social 
+ */
+
+.navbutton {
+    -webkit-appearance: button;
+    background: transparent;
+    cursor: pointer;
+    margin: 0;
+    opacity: 0.8;
+    padding: 0;
+    z-index: 3;
+    @include size($nav-height-full $nav-height-full);
+
+    &:active {
+        opacity: 1;
+    }
+
+    @include media($b-640) {
+        @include size($nav-height-mobile $nav-height-mobile);
+    }
+}
+
+.nav-buttonicon {
+    font-size: 0;
+    display: block;
+    margin: 0 auto;
+
+    @include social($nav-buttonicon-size-full, null, search menu close) {
+        background-color: transparent;
+    }
+
+    @include media($b-640) {
+        @include square-flex($nav-buttonicon-size-mobile);
+    }
+}
+
+#search-searchtoggle {
+    @include absolute(0 0 auto auto);
+}
+
+#nav-searchtoggle {
+    float: right;
+}
+
+.menutoggle {
+    display: none;
+    @include absolute(0 auto auto 0);
+
+    @include media($b-640) {
+        display: block;
+    }
+}

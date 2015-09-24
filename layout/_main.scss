@@ -12,28 +12,20 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-$content-padding: $vspace * 2;
-
 body {
     background-color: palette(white, light);
     /* This padding is important: it dictates the separation between the fixed
      * header and site content. This is the only separation if a visitor employs
      * AdBlock. */
-    @include padding($navrow-height-full * 2, top);
+    @include padding($nav-height-full * 2, top);
 
     @include media($b-640) {
-        @include padding($navrow-height-mobile, top);    
+        @include padding($nav-height-mobile, top);    
     }
 
     @include media(print) {
         padding: 0;
     }
-}
-
-#header {
-    text-align: center;
-    @include navbar-box-shadow;
-    @include navbar-size;
 }
 
 #main {
@@ -72,50 +64,4 @@ body {
     @include media($b-768) {
         padding: 0;
     }
-}
-
-/**
- * Sidebar and Sidebar Widgets
- * -----------------------------------------------------------------------------
- */
-
-#sidebar {
-    @include media(print) {
-        display: none;
-    }
-}
-
-#footer {
-    background: palette(white, x-light);
-
-    @include media(print) {
-        display: none;
-    }
-}
-
-/**
- * 404 Error Template
- * -----------------------------------------------------------------------------
- * Hide everything but the error message on a 404.
- */
-
-body[class^=error] {
-    background: #fff;
-
-    #header, #sidebar, #footer {
-        display: none;    
-    }
-
-    #main {
-        box-shadow: none;
-        margin: 0;
-        max-width: 100%;
-        padding: 0;
-    }
-}
-
-#error {
-    text-align: center; 
-    @include fixed(0);
-    @include flex-parent(column, center);
 }

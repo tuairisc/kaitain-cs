@@ -19,15 +19,16 @@
     -webkit-transform:translateZ(0);
     box-sizing: border-box;
     z-index: 3;
+
     @include absolute(0 0 auto 0);
-    @include height($navrow-height-full);
+    @include height($nav-height-full);
 
     @include media($b-1024) {
         @include absolute(0 0 auto 0);
     }
 
     @include media($b-640) {
-        @include height($navrow-height-mobile);
+        @include height($nav-height-mobile);
     }
 
     @include media(print) {
@@ -55,53 +56,3 @@
     }
 }
 
-/**
- * Misc Rules
- * -----------------------------------------------------------------------------
- */
-
-.left-float {
-    float: left;
-}
-
-.right-float {
-    float: right;
-}
-
-.clearfix {
-    @include clearfix;
-}
-
-/**
- * Vertical Spacing
- * -----------------------------------------------------------------------------
- */
-
-.vspace-full, %vspace-full {
-    @include margin($vspace, bottom);
-}
-
-.vspace-half, %vspace-half {
-    @include margin($vspace * 0.5, bottom);
-}
-
-.vspace-double, %vspace-double {
-    @include margin($vspace * 2, bottom);
-}
-
-.no-widgets {
-    font-weight: bold;
-    @include margin($vspace 0);
-}
-
-.trim-block {
-    /* .trim-block is the parent container for header/footer trims. 
-     * These trims are held outside of #main because of how columns are set.
-     * Having extra elements inside #main made a mess of splits.
-     * Also, AdBlock hides the child advert block, hence it has a min-height as
-     * set below.
-     */
-
-    @include main-size;
-    @include rem(min-height, 3);
-}

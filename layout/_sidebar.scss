@@ -10,6 +10,17 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+/**
+ * Sidebar and Sidebar Widgets
+ * -----------------------------------------------------------------------------
+ */
+
+#sidebar {
+    @include media(print) {
+        display: none;
+    }
+}
+
 .sidebar-container {
     @include media($b-768) {
         @include columns(flex, div, 3, 2);

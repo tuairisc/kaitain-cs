@@ -10,8 +10,10 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-@import 'scss-helpers/helpers';
-@import 'variables';
+$helper-path: 'includes/';
+
+@import 'includes/scss-helpers/helpers';
+@import 'base/variables';
 
 /**
  * Header Row
@@ -19,10 +21,7 @@
  */
 
 #navrow  {
-    // Order and !important are both important, to stop IE9 wrapping.
-    @include clearfix;
-    overflow: hidden !important;
-    @include columns(float, nav, 3, 0);
+    @include columns(float, nav, 3, 0, left, hidden);
 
     @include media($b-540) {
         @include columns(float, nav, 10% auto 10%, 0);

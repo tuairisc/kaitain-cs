@@ -7,7 +7,6 @@ sftp-config.json
 
 # Sass and CSS
 .sass-cache/
-sass/.sass-cache/
 *.css
 *.css.map
 

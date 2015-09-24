@@ -16,6 +16,10 @@
  */
 
 #header {
+    text-align: center;
+    @include navbar-box-shadow;
+    @include navbar-size;
+
     ul {
         list-style-type: none;
     }
@@ -38,7 +42,7 @@
 
 #navrow {
     @include clearfix;
-    @include height($navrow-height-full);
+    @include height($nav-height-full);
     overflow: hidden;
     transition: height $transition-time;
 
@@ -49,7 +53,7 @@
 
     @include media($b-640) {
         @include columns(flex, nav, 15% auto 15%, 0);
-        @include height($navrow-height-mobile);
+        @include height($nav-height-mobile);
     }
 }
 
@@ -92,4 +96,3 @@ body.section-greann #home {
     background-size: auto 80%;
     background-image: asset(brand, greann);
 }
-

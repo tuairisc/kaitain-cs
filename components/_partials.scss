@@ -1,0 +1,118 @@
+/**
+ * Reusable Partials and Classes
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Kaitain CSS
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * Misc Rules
+ * -----------------------------------------------------------------------------
+ */
+
+.left-float {
+    float: left;
+}
+
+.right-float {
+    float: right;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+/**
+ * Vertical Spacing
+ * -----------------------------------------------------------------------------
+ */
+
+.vspace-full, %vspace-full {
+    @include margin($vspace, bottom);
+}
+
+.vspace-half, %vspace-half {
+    @include margin($vspace * 0.5, bottom);
+}
+
+.vspace-double, %vspace-double {
+    @include margin($vspace * 2, bottom);
+}
+
+.no-widgets {
+    font-weight: bold;
+    @include margin($vspace 0);
+}
+
+.trim-block {
+    /* .trim-block is the parent container for header/footer trims. 
+     * These trims are held outside of #main because of how columns are set.
+     * Having extra elements inside #main made a mess of splits.
+     * Also, AdBlock hides the child advert block, hence it has a min-height as
+     * set below.
+     */
+
+    @include main-size;
+    @include rem(min-height, 3);
+}
+
+/**
+ * Tuairisc Green Link
+ * -----------------------------------------------------------------------------
+ * Signature colour for several links.
+ */
+
+.green-link, %green-link {
+    color: palette(green);
+}
+
+.green-link-hover, %green-link-hover {
+    &:hover {
+        color: palette(green);
+    }
+}
+
+/**
+ * Title Underline
+ * -----------------------------------------------------------------------------
+ */
+
+%title-underline, .title-underline {
+    // Bottom border and spacing for default sidebar widget title.
+    border-bottom: 1px solid palette(white, mid-light);
+    @include padding($vspace * 0.75, bottom);
+
+    @include media(print) {
+        border: none;
+        padding: 0;
+    }
+}
+
+/**
+ * Borders
+ * -----------------------------------------------------------------------------
+ */
+
+%grey-border, .grey-border {
+    border: 1px solid palette(white, light);
+}
+
+%grey-border-dark, .grey-border-dark {
+    border: 1px solid palette(white, mid-dark);
+}
+
+/**
+ * Item Subtitle
+ * -----------------------------------------------------------------------------
+ */
+
+%subtitle, .subtitle {
+    @extend .title-underline;
+    font-weight: bold;
+    @include margin($vspace, bottom);
+}

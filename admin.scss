@@ -1,0 +1,46 @@
+/**
+ * Site Admin Stylesheets
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Kaitain CSS
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+@import 'includes/scss-helpers/helpers';
+@import 'base/variables';
+
+.widget[id*=_kaitain_], .postbox[id*=kaitain_] {
+    h3, h4, .widget-title-action, .handlediv {
+        // Shade Tuairisc theme widgets for highlighting.
+        background: palette(tuairisc);
+        color: palette(white, x-light);
+    }
+}
+
+.postbox[id*=kaitain_] fieldset {
+    display: inline-block;
+}
+
+.kaitain-stickycheck, .kaitain-sticky-expiryinfo,
+.kaitain-noticecheck, .kaitain-notice-expiryinfo {
+    // Featured/sticky post meta box.
+    display: none;
+}
+
+.author-widget-admin {
+    // Author list widget.
+    border: 1px solid palette(white, mid-light);
+    box-sizing: border-box;
+    overflow-y: scroll;
+    @include height(15);
+    @include padding(0.5);
+}
+
+.input-error {
+    // WordPress CSS overrides the background colour unless it is important.
+    background-color: red !important;
+}

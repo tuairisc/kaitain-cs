@@ -11,9 +11,13 @@
  */
 
 #footer {
-    // Footer interior element styles.
+    background: palette(white, x-light);
     color: palette(white, x-light);
     font-family: map-get($fonts, open-sans);
+
+    @include media(print) {
+        display: none;
+    }
 
     p, li {
         @include font-size(1.3);

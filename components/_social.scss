@@ -1,0 +1,83 @@
+/**
+ * Navigation Elements
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Kaitain CSS
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved 
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * External Social Menu
+ * -----------------------------------------------------------------------------
+ */
+
+.navbar-social {
+    display: inline-block;
+    height: 100%;
+
+    @include media($b-640) {
+        display: none;
+    }
+
+    .menu-item {
+        font-size: 0;
+        height: inherit;
+        margin-right: 1px;
+        @include width(4.4);
+        @include social(80% 1, a span);
+    }
+
+    a {
+        display: block;
+        height: inherit;
+        position: relative;
+        width: 100%;
+
+        > .nav-socialspan {
+            @include absolute-center;
+        }
+    }
+}
+
+/**
+ * Full Article Sharing Links
+ * -----------------------------------------------------------------------------
+ */
+
+nav.share-links {
+    @extend %title-underline;
+
+    @include media(smartphone) {
+        padding: 0;
+    }
+
+    ul {
+        @include media(smartphone) {
+            @include columns(flex, li, 3, 0);
+        }
+    }
+
+    li {
+        display: inline-block;        
+        @include margin($vspace * 0.5, right);
+        @include social(35px 1);
+
+        @include media(smartphone) {
+            margin: 0;
+            @include square-flex(100% 1);
+
+            &:not(.facebook):not(.twitter):not(.email) {
+                display: none;
+            }
+        }
+    }
+
+    a {
+        display: block;
+        @include square-flex(100% 1);
+    }
+}
