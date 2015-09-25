@@ -182,26 +182,3 @@
         @extend %small;
     }
 }
-
-/**
- * Author Archive Output
- * -----------------------------------------------------------------------------
- */
-
-.author-profile-info {
-    @include columns(flex, div, 10% auto, 3);
-
-    .author-photo {
-        border-radius: 50%;
-    }
-
-    .author-name-wrapper {
-        position: relative;
-
-        .author-name {
-            @include absolute(50% 0, top left);
-            transform: translateY(-50%);
-        }
-
-    }
-}
