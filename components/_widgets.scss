@@ -121,33 +121,46 @@
  * Home Featured Category Widget
  * -----------------------------------------------------------------------------
  * This widget is used at several points through the site.
+ *
+ * The styles for this are complex:
+ *
+ *  1. Left side is a big thumbnail and title below in a section-coloured box.
+ *  2. Right side is a vertical, evenly-spaced list of articles.
+ *
+ *  Collapses down to a single, compact list of posts at ~540px.
  */
 
 .category-widget-display {
     @include columns(flex, div, 2, 2);
 
-    @include media(smartphone) {
+    @include media($b-540) {
         display: block;
     }
 }
 
-.bhalash-category-widget-left > article {
-    @include media($b-640) {
-        @include margin($vspace * 1.5, bottom);
+.bhalash-category-widget-left {
+    .category-article { 
+        @include media($b-640) {
+            @include margin($vspace * 1.5, bottom);
+        }
     }
 
-    > a {
+    .category-article-link {
         color: palette(white, x-light);
+
+        &:hover .category-article-title {
+            text-decoration: underline;
+        }
     }
 
-    p {
+    .category-article-title {
         box-sizing: border-box;
         @include padding(1);
         @include rem(min-height, 9);
-    }
 
-    a:hover p {
-        text-decoration: underline;
+        @include media($b-540) {
+            min-height: auto;
+        }
     }
 }
 
@@ -160,25 +173,19 @@
         display: block;
     }
 
-    article {
-        @include flex-child(0 1 25%);
-        // Important for Safari!
-        -webkit-flex: 1 !important;
+    .category-article-link {
+        @include columns(flex, div, 30% auto, 2%);
+    }
+
+    .category-article-title {
+        @extend %small;
+    }
+
+    .category-article {
+        @include flex-child(1);
 
         @include media($b-768) {
             @include margin($vspace, bottom);
         }
-    }
-
-    a {
-        @include columns(flex, div, 30% auto, 0);
-    }
-
-    .post-content {
-        @include padding($vspace, left);
-    }
-    
-    p {
-        @extend %small;
     }
 }
