@@ -52,7 +52,7 @@ span[style^=font-weight] {
     // Way to use a generic classname, AdRotate.
     max-width: 100%;
 
-    @include media($b-640) {
+    @include media(smartphone) {
         display: none;
     }
 }
@@ -71,7 +71,7 @@ span[style^=font-weight] {
     .square {
         display: none;
 
-        @include media($b-640) {
+        @include media(smartphone) {
             display: initial;
         }
     }
