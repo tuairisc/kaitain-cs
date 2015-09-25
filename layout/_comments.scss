@@ -1,0 +1,103 @@
+/**
+ * Comment CSS
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Kaitain CSS
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * Comment Element
+ * -----------------------------------------------------------------------------
+ */
+
+#comments {
+    p:not(.comment-meta) {
+        @extend %small;
+        @include margin($vspace, bottom);
+    }
+
+    a {
+        @extend %green-link;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/**
+ * Single Comment Style
+ * -----------------------------------------------------------------------------
+ */
+
+li.comment {
+    @include columns(flex, div, 7.5% auto, 2) {
+        @include media($b-640) {
+            // Grow avatar at smaller screen sizes.
+            &:nth-child(1) {
+                @include flex-child(0 1 12%);
+                @include margin($vspace, right);
+            }
+        }
+    }
+
+    @include margin($vspace, bottom);
+}
+
+.comment-photo {
+    @include margin($vspace, right);
+    @include rem(max-width, 5);
+}
+
+.commentlist {
+    list-style-type: none;
+}
+
+.comment-body p:not(:last-child) {
+    @include margin($vspace, bottom);
+}
+
+.comment-author-link {
+    font-weight: bold;
+
+    a {
+        font-weight: inherit;
+    }
+}
+
+.comment-unapproved {
+    color: red;
+    font-variant: small-caps;
+    @include padding($vspace * 0.5 0);
+}
+
+/**
+ * Comment Form Input Rules
+ * -----------------------------------------------------------------------------
+ */
+
+#commentform {
+    @include media(print) {
+        display: none;
+    }
+}
+
+.commentform-inputs {
+    // Wrapper container for the inputs on the commentform.
+    @include columns(flex, input, 3, 3) {
+        @include media($b-640) {
+            width: 100%;
+            @include margin($vspace, bottom);
+        }
+    }
+
+    @include media($b-640) {
+        display: block;
+        margin: 0;
+    }
+}
