@@ -19,10 +19,6 @@
     @include columns(flex, div, 10% auto, 3);
 }
 
-.author-profile-name-wrapper {
-    position: relative;
-}
-
 .author-profile-name {
     @include absolute(50% 0, top left);
     transform: translateY(-50%);
