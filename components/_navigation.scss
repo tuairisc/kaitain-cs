@@ -32,7 +32,7 @@
 .pagination-count {
     text-align: center;
 
-    @include media(smartphone) {
+    @include media($b-640) {
         display: none;
     }
 
