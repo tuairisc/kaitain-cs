@@ -39,12 +39,12 @@
 .bigsearch-form {
     // Important for absoute centering.
     height: 100%;
+}
 
-    fieldset {
-        height: 100%;
-        position: relative;
-        width: 100%;
-    }
+fieldset[form=bigsearch-form] {
+    height: 100%;
+    position: relative;
+    width: 100%;
 }
 
 /**
@@ -52,13 +52,16 @@
  * -----------------------------------------------------------------------------
  */
 
-input[type="search"].bigsearch-input {
+.bigsearch-input {
     background: transparent;
-    box-sizing: border-box;
+    // Normalize.css overwrites this with a more specific selector.
+    box-sizing: border-box !important;
     color: palette(white, x-light);
     display: block;
     height: 100%;
     margin: 0 auto;
+    // Stop weird wrapping behaviour in IE10 and IE 11.
+    overflow: hidden;
     text-align: center;
     width: 90%;
     @include font-size($nav-bigsearch-font-size);
@@ -78,7 +81,7 @@ input[type="search"].bigsearch-input {
  * -----------------------------------------------------------------------------
  */
 
-input#s {
+.searchform-input {
     @include padding(1);
     @include font-size(2);
     width: 100%;
