@@ -95,21 +95,21 @@
 
 .widget_kaitain_sidebar_category {
     @include margin($vspace, bottom);
+}
 
-    img {
-        height: auto;
-        width: 100%;
-        @include margin($vspace, bottom);
-    }
+.sidebar-category-grey {
+    // Default grey background.
+    background: palette(white, light); 
+}
 
-    .grey {
-        // Default grey background.
-        background: palette(white, light); 
-    }
+.sidebar-category-title {
+    @include margin($vspace * 0.75, bottom);
+}
 
-    .title {
-        @include margin($vspace * 0.75, bottom);
-    }
+.sidebar-category-thumbnail {
+    height: auto;
+    width: 100%;
+    @include margin($vspace, bottom);
 }
 
 .sidebar-category-widget-interior {
