@@ -27,6 +27,18 @@
     @include clearfix;
 }
 
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
 /**
  * Vertical Spacing
  * -----------------------------------------------------------------------------
