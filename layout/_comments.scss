@@ -35,7 +35,7 @@
  * -----------------------------------------------------------------------------
  */
 
-li.comment {
+.comment {
     @include columns(flex, div, 7.5% auto, 2) {
         @include media($b-640) {
             // Grow avatar at smaller screen sizes.
