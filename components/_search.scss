@@ -81,8 +81,9 @@ fieldset[form=bigsearch-form] {
  * -----------------------------------------------------------------------------
  */
 
-.searchform-input {
-    @include padding(1);
-    @include font-size(2);
+input[type=text].searchform-input {
+    // Specifity required to override normalize.css
     width: 100%;
+    @include padding($vspace * 0.75);
+    @include font-size(2);
 }
