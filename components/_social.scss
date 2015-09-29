@@ -46,38 +46,59 @@
 /**
  * Full Article Sharing Links
  * -----------------------------------------------------------------------------
+ * Icons change at mobile sizes: the row is fixed to the bottom of the page; as 
+ * well as this icons except Facebook, Twitter and email are hidden, and their 
+ * shape changes.
  */
 
-nav.share-links {
+.kaitain-share-links {
     @extend %title-underline;
 
     @include media(smartphone) {
+        border-bottom: 0;
         padding: 0;
+        z-index: 3;
+        @include fixed(auto 0 0 0);
     }
+}
 
-    ul {
-        @include media(smartphone) {
-            @include columns(flex, li, 3, 0);
+.kaitain-social {
+    @include media(smartphone) {
+        @include columns(flex, li, 3, 0);
+    }
+}
+
+.share-item {
+    // li
+    display: inline-block;        
+    @include margin($vspace * 0.5, right);
+    @include social(100% 1, '.social-share-span', true);
+    @include size(4 4);
+
+    @include media(smartphone) {
+        margin: 0;
+        // Width is overridden by flexbox layout, above.
+        @include size(auto 4);
+
+        &:not(.facebook):not(.twitter):not(.email) {
+            // Hide everything but the Key Three Networks.
+            display: none;
         }
     }
+}
 
-    li {
-        display: inline-block;        
-        @include margin($vspace * 0.5, right);
-        @include social(35px 1);
+.social-share-link {
+    // a
+    display: block;
+    @include square-flex(100% 1);
 
-        @include media(smartphone) {
-            margin: 0;
-            @include square-flex(100% 1);
-
-            &:not(.facebook):not(.twitter):not(.email) {
-                display: none;
-            }
-        }
+    @include media(smartphone) {
+        @include square-flex(40px 1);
+        margin: 0 auto;
     }
+}
 
-    a {
-        display: block;
-        @include square-flex(100% 1);
-    }
+.social-share-span {
+    // span
+    display: inherit;
 }
