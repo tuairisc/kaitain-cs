@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, %h1 { 
-    @include font-size(3.2);
+    @include font-size(3);
     @include line-height(4);
 }
 
