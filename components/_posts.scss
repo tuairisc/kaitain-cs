@@ -221,50 +221,49 @@ article[class^=archive] {
     }
 }
 
-article.archive-lead {
-    // Lead article.
-    > a >:last-child {
-        @include margin($vspace * 0.5 0);
+// Lead article.
+
+.archive-lead-link {
+    @include margin($vspace * 0.5 0);
+}
+
+.archive-lead-title, .archive-title {
+    @include margin($vspace * 0.5 0);
+}
+
+// Small article (front page top section only)
+
+.archive-small-title {
+    @include margin($vspace * 0.5 0);
+}
+
+// "Regular" archive, used on all archive pages.
+
+.archive-title {
+    font-weight: bold;
+}
+
+.archive-link  {
+    // Hyperlink wraps the content.
+    @include columns(flex, div, 2, 2);
+
+    @include media($b-640) {
+        display: block;
     }
 }
 
-article.archive-small {
-    // Sub-article, front page. 
+.archive-excerpt {
+    /* This is strictly to prevent the paragraph from lighting up on link
+     * hover. The entire article's interior is wrapped in a single 
+     * hyperlink. I only want the title to light up on hover.
+     */
 
-    a >:first-child {
+    color: palette(black, x-dark) !important;
+}
+
+.archive-thumbnail {
+    @include media($b-640) {
         @include margin($vspace * 0.5, bottom);
-    }
-}
-
-article.archive {
-    // "Regular" archive, used on all archive pages.
-
-    .title {
-        font-weight: bold;
-    }
-
-    > a {
-        // Hyperlink wraps the content.
-        @include columns(flex, div, 2, 2);
-
-        @include media($b-640) {
-            display: block;
-        }
-    }
-
-    p {
-        /* This is strictly to prevent the paragraph from lighting up on link
-         * hover. The entire article's interior is wrapped in a single 
-         * hyperlink. I only want the title to light up on hover.
-         */
-
-        color: palette(black, x-dark) !important;
-    }
-
-    .thumbnail {
-        @include media($b-640) {
-            @include margin($vspace * 0.5, bottom);
-        }
     }
 }
 
@@ -276,19 +275,19 @@ article.archive {
 
 article.sidebar {
     @include margin($vspace, bottom);
+}
 
-    > a {
-        @include columns(flex, div, 25% auto, 0);
-    }
+.sidebar-thumbnail {
+    @include height(4.5);
+}
 
-    .thumbnail {
-        @include height(4.5);
-    }
+.sidebar-header {
+    box-sizing: border-box;
+    @include padding(1, left);
+}
 
-    header {
-        box-sizing: border-box;
-        @include padding(1, left);
-    }
+.sidebar-link {
+    @include columns(flex, div, 25% auto, 0);
 }
 
 /**
