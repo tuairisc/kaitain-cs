@@ -17,7 +17,7 @@ body {
     /* This padding is important: it dictates the separation between the fixed
      * header and site content. This is the only separation if a visitor employs
      * AdBlock. */
-    @include padding($nav-height-full * 2, top);
+    @include padding(15, top);
 
     @include media($b-640) {
         @include padding($nav-height-mobile, top);    
