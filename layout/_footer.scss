@@ -45,7 +45,8 @@
  * -----------------------------------------------------------------------------
  */
 
-ul.footer-section-menu {
+.footer-section-menu {
+    // Generated dynamically.
     @include margin($vspace, bottom);
 
     li:nth-child(1) a {
