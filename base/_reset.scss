@@ -30,6 +30,7 @@ body {
 
 blockquote, cite, li, footer p, ins, p, q, %text {
     @include font-size(1.6);
+    @include line-height(1.8);
 }
 
 /*
