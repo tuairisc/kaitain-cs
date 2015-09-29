@@ -37,14 +37,9 @@
  */
 
 .featured-row {
-    @include columns(flex, article, 4, 2);
     @include margin($vspace * 0.5, bottom);
 
     @include media($b-640) {
-        @include columns(flex, article, 2, 2) {
-            @include margin($vspace * 0.5, bottom);
-        }
-
         margin: 0;
     }
 }
@@ -61,16 +56,6 @@
 
     a:hover .columnist-name {
         color: inherit;
-    }
-}
-
-.kaitain-columnist-list {
-    @include columns(flex, div, 4, 2);
-
-    @include media($b-540) {
-        @include columns(flex, div, 2, 2) {
-            @include margin($vspace, bottom);
-        }
     }
 }
 
@@ -131,8 +116,7 @@
  */
 
 .category-widget-display {
-    @include columns(flex, div, 2, 2);
-
+    // Flex display is set via separate class. This overrides it.
     @include media($b-540) {
         display: block;
     }
