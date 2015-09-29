@@ -175,6 +175,10 @@
 
     .category-article-link {
         @include columns(flex, div, 30% auto, 2%);
+
+        @include media($b-768) {
+            @include columns(flex, div, 15% auto, 2%);
+        }
     }
 
     .category-article-title {
