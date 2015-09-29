@@ -17,6 +17,7 @@
 
 .pagination {
     @include margin(3 0);
+    // Not using columns partial because number of children is variable.
     @include flex-parent(row, space-between, wrap);
 
     p {
