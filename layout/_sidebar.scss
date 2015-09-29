@@ -18,7 +18,7 @@
 
 .sidebar-container {
     @include media($b-768) {
-        @include columns(flex, div, 3, 2);
+        @include columns(flex, div, 3, 2%);
 
         @include media($b-540) {
             display: block;
