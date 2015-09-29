@@ -71,7 +71,7 @@
     border-top: 1px solid palette(white, light);
 
     @include media($b-640) {
-        @include columns(flex, li, 3, 1%);
+        @include columns(flex, li, 3, 2%);
     }
 
     a {
