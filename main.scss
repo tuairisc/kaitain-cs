@@ -24,6 +24,7 @@ $helper-path: 'includes/';
 @import 'components/partials';
 @import 'components/adverts';
 @import 'components/buttons';
+@import 'components/posts';
 @import 'components/menus';
 @import 'components/navigation';
 @import 'components/social';
@@ -34,7 +35,6 @@ $helper-path: 'includes/';
 
 @import 'layout/header';
 @import 'layout/main';
-@import 'layout/article';
 @import 'layout/footer';
 @import 'layout/sidebar';
 @import 'layout/404';
