@@ -19,7 +19,7 @@
     display: inline-block;
     height: 100%;
 
-    @include media($b-640) {
+    @include media(small) {
         display: none;
     }
 
@@ -54,7 +54,7 @@
 .kaitain-share-links {
     @extend %title-underline;
 
-    @include media($b-540) {
+    @include media(mobile) {
         border-bottom: 0;
         padding: 0;
         z-index: 3;
@@ -63,7 +63,7 @@
 }
 
 .kaitain-social {
-    @include media($b-540) {
+    @include media(mobile) {
         @include columns(flex, li, 3, 0);
     }
 }
@@ -75,7 +75,7 @@
     @include social(100% 1, '.social-share-span', true);
     @include size(4 4);
 
-    @include media($b-540) {
+    @include media(mobile) {
         margin: 0;
         // Width is overridden by flexbox layout, above.
         @include size(auto 4);
@@ -92,7 +92,7 @@
     display: block;
     @include square-flex(100% 1);
 
-    @include media($b-540) {
+    @include media(mobile) {
         @include square-flex(40px 1);
         margin: 0 auto;
     }
