@@ -51,9 +51,8 @@
         position: relative;
     }
 
-    @include media($b-640) {
+    @include media(small) {
         @include columns(flex, nav, 15% auto 15%, 0);
-        @include height($nav-height-mobile);
     }
 }
 
@@ -63,7 +62,7 @@
  */
 
 .left-nav, .right-nav {
-    @include media($b-640) {
+    @include media(small) {
         @include width(6);
     }
 }

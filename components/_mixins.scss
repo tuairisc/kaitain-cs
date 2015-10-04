@@ -20,15 +20,11 @@
     box-sizing: border-box;
     z-index: 3;
 
-    @include absolute(0 0 auto 0);
+    @include fixed(0 0 auto 0);
     @include height($nav-height-full);
 
-    @include media($b-1024) {
+    @include media(tablet, smartphone) {
         @include absolute(0 0 auto 0);
-    }
-
-    @include media($b-640) {
-        @include height($nav-height-mobile);
     }
 
     @include media(print) {

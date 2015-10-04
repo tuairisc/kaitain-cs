@@ -67,7 +67,7 @@ fieldset[form=bigsearch-form] {
     @include font-size($nav-bigsearch-font-size);
     @include padding(1);
 
-    @include media($b-540) {
+    @include media(mobile) {
         @include font-size($nav-bigsearch-font-size-mobile);
     }
 

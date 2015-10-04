@@ -98,7 +98,7 @@
     @include margin($vspace, bottom);
     @include columns(flex, nav, 40% auto auto auto, 0);
 
-    @include media($b-640) {
+    @include media(small) {
         display: block;
     }
 }

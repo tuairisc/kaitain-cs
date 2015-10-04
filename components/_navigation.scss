@@ -33,7 +33,7 @@
 .pagination-count {
     text-align: center;
 
-    @include media($b-640) {
+    @include media(small) {
         display: none;
     }
 

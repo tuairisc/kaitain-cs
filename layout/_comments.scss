@@ -37,7 +37,7 @@
 
 .comment {
     @include columns(flex, div, 7.5% auto, 2) {
-        @include media($b-640) {
+        @include media(small) {
             // Grow avatar at smaller screen sizes.
             &:nth-child(1) {
                 @include flex-child(0 1 12%);
@@ -90,13 +90,13 @@
 .commentform-inputs {
     // Wrapper container for the inputs on the commentform.
     @include columns(flex, input, 3, 3) {
-        @include media($b-640) {
+        @include media(small) {
             width: 100%;
             @include margin($vspace, bottom);
         }
     }
 
-    @include media($b-640) {
+    @include media(small) {
         display: block;
         margin: 0;
     }
