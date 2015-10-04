@@ -31,7 +31,7 @@ $helper-path: 'includes/';
 .flex-four-cols-div {
     @include columns(float, div, 4, 2%);
 
-    @include media($b-640) {
+    @include media(small) {
         @include columns(float, article, 2, 0)
     }
 }
@@ -49,7 +49,7 @@ $helper-path: 'includes/';
 .flex-four-cols-article {
     @include columns(float, article, 4, 2%);
 
-    @include media($b-640) {
+    @include media(small) {
         @include columns(float, article, 2, 0);
     }
 }
@@ -75,7 +75,7 @@ $helper-path: 'includes/';
 #navrow  {
     @include columns(float, nav, 3, 0, left, hidden);
 
-    @include media($b-540) {
+    @include media(mobile) {
         @include columns(float, nav, 10% auto 10%, 0);
     }
 }
