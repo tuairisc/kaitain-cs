@@ -18,8 +18,7 @@ $transition-time: .1s ease-in;
  */
 
 $nav-height-submenu: 14;
-$nav-height-full: 7;
-$nav-height-mobile: 6;
+$nav-height-full: 6;
 $nav-bigsearch-font-size: 2.5;
 $nav-bigsearch-font-size-mobile: 2.5;
 $nav-sections-menu-height: 4;
@@ -55,14 +54,12 @@ $content-width: 97%;
  * -----------------------------------------------------------------------------
  */
 
-$b-1280: max 1280px;
-$b-1140: max 1140px;
-$b-1024: max 1028px;
-$b-960: max 960px;
-$b-840: max 840px;
-$b-768: max 768px;
-$b-640: max 640px;
-$b-540: max 540px;
+$media-presets: map-merge($media-presets, (
+    large: 'only screen and (max-width: 1024px)',
+    medium: 'only screen and (max-width: 768px)',
+    small: 'only screen and (max-width: 640px)',
+    mobile: 'only screen and (max-width: 540px)'
+));
 
 /*
  * Colors
