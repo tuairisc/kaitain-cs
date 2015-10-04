@@ -91,7 +91,7 @@ $sections: (
     }
 
     .section-#{$class}-background-hover {
-        @include media($b-640) {
+        @include media(small) {
             background-color: $color;
         }
     }
@@ -105,8 +105,19 @@ $sections: (
         // 5. Bottom box shadow. "Interior" box shadow.
         box-shadow: inset 0px -5px 0px -1px rgba($color, 1);
 
-        @include media($b-640) {
+        @include media(small) {
             box-shadow: none;
+        }
+    }
+
+    .active {
+        // DEBUG FIXME
+        .section-#{$class}-background-hover {
+            background-color: $color;
+
+            a {
+                color: #fff;
+            }
         }
     }
 }
