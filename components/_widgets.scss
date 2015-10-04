@@ -39,7 +39,7 @@
 .featured-row {
     @include margin($vspace * 0.5, bottom);
 
-    @include media($b-640) {
+    @include media(small) {
         margin: 0;
     }
 }
@@ -64,7 +64,7 @@
 }
 
 .kaitain-columnist:nth-child(-n+2) {
-    @include media($b-640) {
+    @include media(small) {
         @include margin($vspace, bottom);
     }
 }
@@ -117,14 +117,14 @@
 
 .category-widget-display {
     // Flex display is set via separate class. This overrides it.
-    @include media($b-540) {
+    @include media(mobile) {
         display: block;
     }
 }
 
 .bhalash-category-widget-left {
     .category-article { 
-        @include media($b-640) {
+        @include media(small) {
             @include margin($vspace * 1.5, bottom);
         }
     }
@@ -142,7 +142,7 @@
         @include padding(1);
         @include rem(min-height, 9);
 
-        @include media($b-540) {
+        @include media(mobile) {
             min-height: auto;
         }
     }
@@ -153,14 +153,14 @@
      * element below. */
     @include flex-parent(column, space-between);
 
-    @include media($b-768) {
+    @include media(medium) {
         display: block;
     }
 
     .category-article-link {
         @include columns(flex, div, 30% auto, 2%);
 
-        @include media($b-768) {
+        @include media(medium) {
             @include columns(flex, div, 15% auto, 2%);
         }
     }
@@ -172,7 +172,7 @@
     .category-article {
         @include flex-child(1);
 
-        @include media($b-768) {
+        @include media(medium) {
             @include margin($vspace, bottom);
         }
     }
