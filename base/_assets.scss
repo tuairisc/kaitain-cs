@@ -19,7 +19,7 @@ $brands: $assets + 'brands/';
 $buttons: $assets + 'buttons/';
 $education: $assets + 'education/';
 
-$assets: (
+$kaitain-assets: sh-add-assets((
     brand: (
         // Tuairisc and sponsor branding.
         tuairisc: (
@@ -55,4 +55,4 @@ $assets: (
         reading: $education + 'reading.svg',
         crossword: $education + 'crossword.svg'
     )
-);
+));

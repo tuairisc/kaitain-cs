@@ -11,8 +11,8 @@
  */
 
 #footer {
-    background: palette(white, x-light);
-    color: palette(white, x-light);
+    background: sh-palette(white, x-light);
+    color: sh-palette(white, x-light);
     font-family: map-get($fonts, open-sans);
 
     @include media(print) {
@@ -62,7 +62,7 @@
 
 #foras {
     // Has a different shade of blue.
-    background: palette(footer, blue);
+    background: sh-palette(footer, blue);
     @include padding(2);
 
     img {
@@ -90,7 +90,7 @@
  */
 
 .menus {
-    background: palette(footer, green);
+    background: sh-palette(footer, green);
     @include padding(2);
 }
 

@@ -54,7 +54,7 @@ $content-width: 97%;
  * -----------------------------------------------------------------------------
  */
 
-$media-presets: map-merge($media-presets, (
+$kaitain-media-presets: sh-add-media-presets((
     large: 'only screen and (max-width: 1024px)',
     medium: 'only screen and (max-width: 768px)',
     small: 'only screen and (max-width: 640px)',
@@ -66,7 +66,7 @@ $media-presets: map-merge($media-presets, (
  * -----------------------------------------------------------------------------
  */
 
-$default-colors: map-merge($default-colors, (
+$kaitain-colours: sh-add-palettes((
     tuairisc: (
         base: #506572
     ),

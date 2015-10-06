@@ -133,7 +133,7 @@ $sections: (
  */
 
 .tuairisc-strip {
-    background: left top/cover repeat-y asset(bg, stripe);
+    background: left top/cover repeat-y asset(bg stripe);
     @include height(0.4);
 
     @include media(print) {

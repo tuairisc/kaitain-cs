@@ -50,7 +50,7 @@
  */
 
 .widget_kaitain_authors {
-    background: palette(white, light);
+    background: sh-palette(white, light);
     box-sizing: border-box;
     @include padding(1.3);
 
@@ -84,7 +84,7 @@
 
 .sidebar-category-grey {
     // Default grey background.
-    background: palette(white, light); 
+    background: sh-palette(white, light); 
 }
 
 .sidebar-category-title {
@@ -130,7 +130,7 @@
     }
 
     .category-article-link {
-        color: palette(white, x-light);
+        color: sh-palette(white, x-light);
 
         &:hover .category-article-title {
             text-decoration: underline;

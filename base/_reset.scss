@@ -11,12 +11,12 @@
  */
 
 html {
-    color: palette(black, x-dark);
+    color: sh-palette(black, x-dark);
     font: 100% map-get($fonts, georgia);
 }
 
 body {
-    background-color: palette(white, mid-dark);
+    background-color: sh-palette(white, mid-dark);
 
     @include media(print) {
         margin: 0;
@@ -49,7 +49,7 @@ a img, blockquote, h1, h2, h3, h4, h5, h6, ol, p, pre, ul, %zero {
  */
 
 a, %default-anchor {
-    color: palette(black, x-dark);
+    color: sh-palette(black, x-dark);
     text-decoration: none;
 }
 
@@ -101,12 +101,12 @@ input {
     }
 
     &[type=submit] {
-        background-color: palette(green);
-        color: palette(white, x-light);
+        background-color: sh-palette(green);
+        color: sh-palette(white, x-light);
         @include padding($vspace * 0.75 $vspace * 2);
 
         &:active {
-            background: palette(tuairisc);
+            background: sh-palette(tuairisc);
         }
     }
 
@@ -114,13 +114,13 @@ input {
 
 input[type=text], textarea {
     @extend %grey-border;
-    background-color: palette(white, light);
+    background-color: sh-palette(white, light);
     box-sizing: border-box;
     @include padding($vspace * 0.5);
 
     &:focus {
         @extend %grey-border-dark;
-        background-color: palette(white, x-light);
+        background-color: sh-palette(white, x-light);
         outline: 0;
     }
 }
@@ -173,7 +173,7 @@ h5, %h5 {
 }
 
 h6, %h6 { 
-    // color: palette(white, mid-dark);
+    // color: sh-palette(white, mid-dark);
     @include font-size(1.2);
 }
 
@@ -205,8 +205,8 @@ code, pre, pre span {
 
 pre {
     // White on black.
-    background-color: palette(black, x-dark);
-    color: palette(white, x-light);
+    background-color: sh-palette(black, x-dark);
+    color: sh-palette(white, x-light);
     font-weight: bold;
     overflow: auto;
     @include padding(1.5);
@@ -218,7 +218,7 @@ pre {
  */
 
 hr {
-    background: palette(white, mid-light);
+    background: sh-palette(white, mid-light);
     border: 0;
     height: 1px;
     @include margin(2.6 0);

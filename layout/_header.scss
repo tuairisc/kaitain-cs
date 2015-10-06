@@ -88,10 +88,10 @@
 }
 
 body #home {
-    background-image: asset(brand, tuairisc white);
+    background-image: asset(brand tuairisc white);
 }
 
 body.section-greann #home {
     background-size: auto 80%;
-    background-image: asset(brand, greann);
+    background-image: asset(brand greann);
 }
