@@ -24,7 +24,7 @@ article {
 }
 
 .post-excerpt, figcaption {
-    color: sh-palette(white, dark);
+    color: palette(white, dark);
 }
 
 .post-excerpt {
@@ -46,7 +46,7 @@ a.post-edit-link {
      * want this colour to be overridden.
      */
 
-    color: sh-palette(white, x-dark) !important;
+    color: palette(white, x-dark) !important;
 }
 
 /**
@@ -175,9 +175,9 @@ article.full {
  */
 
 blockquote {
-    border: 1px solid sh-palette(white, mid-light);
+    border: 1px solid palette(white, mid-light);
     border-width: 1px 0;
-    color: sh-palette(black, mid-light);
+    color: palette(black, mid-light);
     position: relative;
     @include margin(1 3);
     @include padding(2 3);
@@ -207,7 +207,7 @@ blockquote {
 }
 
 cite {
-    color: sh-palette(white, mid-light);
+    color: palette(white, mid-light);
     display: block;
     font-weight: bold;
     width: 100%;
@@ -265,7 +265,7 @@ article[class^=archive] {
      * hyperlink. I only want the title to light up on hover.
      */
 
-    color: sh-palette(black, x-dark) !important;
+    color: palette(black, x-dark) !important;
 }
 
 .archive-thumbnail {

@@ -80,12 +80,12 @@
  */
 
 .green-link, %green-link {
-    color: sh-palette(green);
+    color: palette(green);
 }
 
 .green-link-hover, %green-link-hover {
     &:hover {
-        color: sh-palette(green);
+        color: palette(green);
     }
 }
 
@@ -96,7 +96,7 @@
 
 %title-underline, .title-underline {
     // Bottom border and spacing for default sidebar widget title.
-    border-bottom: 1px solid sh-palette(white, mid-light);
+    border-bottom: 1px solid palette(white, mid-light);
     @include padding($vspace * 0.75, bottom);
 
     @include media(print) {
@@ -111,11 +111,11 @@
  */
 
 %grey-border, .grey-border {
-    border: 1px solid sh-palette(white, light);
+    border: 1px solid palette(white, light);
 }
 
 %grey-border-dark, .grey-border-dark {
-    border: 1px solid sh-palette(white, mid-dark);
+    border: 1px solid palette(white, mid-dark);
 }
 
 /**

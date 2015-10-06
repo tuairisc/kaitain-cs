@@ -1,0 +1,69 @@
+/**
+ * Education Section Template
+ * -----------------------------------------------------------------------------
+ * @category   Sass Template
+ * @package    Kaitain CSS
+ * @author     Mark Grealish <mark@bhalash.com>
+ * @copyright  Copyright (c) 2014-2015, Tuairisc Bheo Teo
+ * @license    All Rights Reserved
+ * @version    2.0
+ * @link       https://github.com/bhalash/tuairisc.ie
+ */
+
+/**
+ * Sraith Pictuir Download Link
+ * -----------------------------------------------------------------------------
+ */
+
+.download-link {
+    background: palette(white, mid-light) sprite(education, download);
+    color: palette(black, x-dark) !important;
+    @include padding($vspace 5 $vspace $vspace);
+}
+
+/**
+ * Sraith Pictuir Modal Soundcloud Boxes
+ * -----------------------------------------------------------------------------
+ */
+
+.modal-boxes {
+    @include flex-parent(row, space-between, wrap);
+}
+
+.modal-box {
+    @include flex-child(0 1 32.67%);
+}
+
+/**
+ * Sraith Pictuir Banners
+ * -----------------------------------------------------------------------------
+ */
+
+.edu-heading, .edu-subheading {
+    background: palette(education, base);
+    color: palette(white, x-light);
+    @include margin($vspace * 1.5 0 $vspace 0);
+}
+
+.edu-heading {
+    @include padding($vspace * 0.75);
+}
+
+.edu-subheading {
+    @include padding($vspace / 2 3);
+}
+
+/**
+ * Education Landing Page Section Panes
+ * -----------------------------------------------------------------------------
+ */
+
+
+.education-landing-section {
+    color: palette(white, x-light);
+    display: block;
+}
+
+.education-crosfhocal {
+    background: green;
+}

@@ -43,7 +43,7 @@ $kaitain-vector-assets: sh-add-assets((
 
 $kaitain-education-sprites: sh-add-spritesheet(education, (
     path: $assets + 'education.svg',
-    dimensions: (4,2),
+    dimensions: (2,4),
     sprites: (
         video: (0,0),
         book: (0,1),

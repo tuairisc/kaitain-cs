@@ -56,7 +56,7 @@ fieldset[form=bigsearch-form] {
     background: transparent;
     // Normalize.css overwrites this with a more specific selector.
     box-sizing: border-box !important;
-    color: sh-palette(white, x-light);
+    color: palette(white, x-light);
     display: block;
     height: 100%;
     margin: 0 auto;
@@ -72,7 +72,7 @@ fieldset[form=bigsearch-form] {
     }
 
     @include placeholder-style {
-        color: rgba(sh-palette(white, light), 0.5);
+        color: rgba(palette(white, light), 0.5);
     }
 }
 
