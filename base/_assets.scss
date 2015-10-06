@@ -11,48 +11,47 @@
  */
 
 $assets: '../images/';
-$article: $assets + 'article/';
-$buttons: $assets + 'buttons/';
-$misc: $assets + 'misc/';
-$background: $assets + 'background/';
-$brands: $assets + 'brands/';
-$buttons: $assets + 'buttons/';
-$education: $assets + 'education/';
 
-$kaitain-assets: sh-add-assets((
-    brand: (
-        // Tuairisc and sponsor branding.
-        tuairisc: (
-            black: $brands + 'tuairisc-black.svg',
-            white: $brands + 'tuairisc-white.svg'
-        ),
-        foras: (
-            black: $brands + 'foras-black.svg',
-            white: $brands + 'foras-white.svg'
-        ),
-        greann: $brands + 'greann.svg'
-    ), 
-    buttons: (
-        // UI button elements.
-        menu: $buttons + 'menu.svg' 
+/**
+ * Non-spritesheet Vector Assets
+ * -----------------------------------------------------------------------------
+ */
+
+$kaitain-vector-assets: sh-add-assets((
+    // Tuairisc and sponsor branding.
+    tuairisc: (
+        black: $assets + 'tuairisc-dark.svg',
+        white: $assets + 'tuairisc-white.svg'
+    ),
+    foras: (
+        black: $assets + 'foras-dark.svg',
+        white: $assets + 'foras-white.svg'
+    ),
+    greann: (
+        black: $assets + 'greann-dark.svg',
+        white: $assets + 'greann-white.svg'
     ),
     bg: (
-        // Tuairisc rainbow stripe backgrounds.
-        stripe: $background + 'stripe.svg',
-        footer:  'stripe-footer.svg'
-    ),
-    quote: (
-        // Blockquote quotation marks.
-        close: $misc + 'quotation-close.svg',
-        open: $misc + 'quotation-open.svg'
-    ),
-    education: (
-        // Education section banners.
-        soundwave: $education + 'soundwave.svg',
-        picture: $education + 'picture.svg',
-        book: $education + 'book.svg',
-        video: $education + 'video.svg',
-        reading: $education + 'reading.svg',
-        crossword: $education + 'crossword.svg'
+        stripe: $assets + 'stripe.svg',
+    )
+));
+
+/**
+ * Education Spritesheet Vector Assets
+ * -----------------------------------------------------------------------------
+ */
+
+$kaitain-education-sprites: sh-add-spritesheet(education, (
+    path: $assets + 'education.svg',
+    dimensions: (4,2),
+    sprites: (
+        video: (0,0),
+        book: (0,1),
+        crossword: (0,2),
+        soundwave: (0,3),
+        picture: (1,0),
+        reading: (1,1),
+        jigsaw: (1,2),
+        download: (1,3)
     )
 ));
