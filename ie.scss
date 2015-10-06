@@ -158,3 +158,22 @@ $helper-path: 'includes/';
     @include columns(float, nav, 40% auto auto auto, 0);
 }
 
+/**
+ * Education Landing Boxes
+ * -----------------------------------------------------------------------------
+ */
+
+.education-landing-section {
+    @include columns(float, div, 15% auto, 0);
+    display: block;
+}
+
+.modal-boxes {
+    @include clearfix(hidden);
+}
+
+.modal-box {
+    float: left;
+    margin-right: 1%;
+    width: 30%;
+}
