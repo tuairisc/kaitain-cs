@@ -43,15 +43,15 @@ $kaitain-vector-assets: sh-add-assets((
 
 $kaitain-education-sprites: sh-add-spritesheet(education, (
     path: $assets + 'education.svg',
-    dimensions: (2,4),
+    dimensions: (4,2),
     sprites: (
         video: (0,0),
-        book: (0,1),
-        crossword: (0,2),
-        soundwave: (0,3),
-        picture: (1,0),
+        book: (1,0),
+        crossword: (2,0),
+        soundwave: (3,0),
+        picture: (0, 1),
         reading: (1,1),
-        jigsaw: (1,2),
-        download: (1,3)
+        jigsaw: (2,1),
+        download: (3,1)
     )
 ));
