@@ -10,6 +10,17 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+// Not the best solution. IDs of categories are mutable between live and dev.
+
+$education-sections: (
+    crosfhocal: crossword,
+    fiseain: video,
+    mireanna-mearai: jigsaw,
+    sraith-pictuir: picture,
+    ursceal-dfhoghlaimeoiri: reading,
+    leamhthuiscinti: book
+);
+
 /**
  * Sraith Pictuir Download Link
  * -----------------------------------------------------------------------------
@@ -81,52 +92,12 @@
     @include square-flex(100% 1);
 }
 
-.education-icon-sraith-pictuir {
-    background: sprite(education, picture);
-}
+@each $key, $value in $education-sections {
+    .education-#{$key} {
+        background: palette(education, $value);
 
-.education-icon-crosfhocal {
-    background: sprite(education, crossword);
-}
-
-.education-icon-mireanna-mearai {
-    background: sprite(education, jigsaw);
-}
-
-.education-icon-fiseain {
-    background: sprite(education, video);
-}
-
-.education-icon-ursceal-dfhoghlaimeoiri {
-    background: sprite(education, reading);
-}
-
-.education-icon-leamhthuiscinti {
-    background: sprite(education, book);
-}
-
-// Not the best solution. IDs of categories are mutable between live and dev.
-
-.education-crosfhocal {
-    background: palette(education, crossword);
-}
-
-.education-fiseain {
-    background: palette(education, video);
-}
-
-.education-mireanna-mearai {
-    background: palette(education, jigsaw);
-}
-
-.education-sraith-pictuir {
-    background: palette(education, picture);
-}
-
-.education-ursceal-dfhoghlaimeoiri {
-    background: palette(education, reading);
-}
-
-.education-leamhthuiscinti {
-    background: palette(education, book);
+        .education-icon {
+            background: sprite(education, $value);
+        }
+    }
 }
