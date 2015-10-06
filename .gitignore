@@ -9,6 +9,7 @@ sftp-config.json
 .sass-cache/
 *.css
 *.css.map
+vectors/
 
 #################
 ## jQuery Library
