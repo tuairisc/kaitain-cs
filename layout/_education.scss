@@ -22,14 +22,48 @@ $education-sections: (
 );
 
 /**
+ * Education Section Box Link
+ * -----------------------------------------------------------------------------
+ * I hate all of the !important, but it is rquired for backward compatability.
+ */
+
+%education-special-snowflake-box {
+    color: palette(black, x-dark) !important;
+    font-family: map-get($fonts, arial);
+    position: relative;
+
+    &:hover {
+        background: palette(education, hover);
+        color: palette(white, x-light) !important;
+        text-decoration: none !important;
+    }
+}
+
+/**
  * Sraith Pictuir Download Link
  * -----------------------------------------------------------------------------
+ * Don't like specific selectors, but this overrides the article default styling.
+ * In fact, this is a fucking mess full of !important, but it is required to
+ * keep backward compatability with a bunch of older posts. D:
  */
 
 .download-link {
-    background: palette(white, mid-light) sprite(education, download);
-    color: palette(black, x-dark) !important;
+    @extend %education-special-snowflake-box;
+    background-color: palette(white);
+    // It is otherwise overwriten.
+    display: inline-block;
     @include padding($vspace 5 $vspace $vspace);
+
+    &:after {
+        // Sprites need to be dumped into a square container, *and* this has to
+        // be backward compatible with old posts without fucking around or 
+        // additions.
+        background: sprite(education, download);
+        content: '';
+        // It isn't a perfect square, but it is close enough.
+        @include absolute(0 0 0 auto);
+        @include width(4.5);
+    }
 }
 
 /**
@@ -38,11 +72,39 @@ $education-sections: (
  */
 
 .modal-boxes {
-    @include flex-parent(row, space-between, wrap);
+    @include columns(flex, div, 3, 1%);
 }
 
 .modal-box {
-    @include flex-child(0 1 32.67%);
+    text-align: center;
+    @include margin(0.4, bottom);
+
+    a {
+        @extend %education-special-snowflake-box;
+        background-color: palette(white);
+        box-sizing: border-box;
+        display: block;
+        // z-index is required to stop the :before pesuedoclass from overlaying
+        // the text.
+        z-index: 2;
+
+        @include font-size(3);
+        @include padding(3 0);
+        @include rem(min-height, 8);
+
+        &:before {
+            content: '';
+            background: sprite(education, soundwave);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            @include absolute(50% auto auto 50%);
+            @include size(8 8);
+        }
+
+        &:hover:before {
+            background: none;
+        }
+    }
 }
 
 /**
@@ -50,17 +112,17 @@ $education-sections: (
  * -----------------------------------------------------------------------------
  */
 
-.edu-heading, .edu-subheading {
+[class^=education-banner] {
     background: palette(education, base);
     color: palette(white, x-light);
     @include margin($vspace * 1.5 0 $vspace 0);
 }
 
-.edu-heading {
+.education-banner { 
     @include padding($vspace * 0.75);
 }
 
-.edu-subheading {
+.education-banner-subheading { 
     @include padding($vspace / 2 3);
 }
 
@@ -86,6 +148,10 @@ $education-sections: (
 .education-icon-wrapper {
     box-sizing: border-box;
     @include padding($vspace, right);
+
+    @include media(mobile) {
+        padding: 0; 
+    }
 }
 
 .education-icon {
