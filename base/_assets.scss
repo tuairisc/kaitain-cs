@@ -10,7 +10,8 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-$assets: '../images/';
+$image-assets: '../images/';
+$font-assets: '../fonts/';
 
 /**
  * Non-spritesheet Vector Assets
@@ -20,19 +21,19 @@ $assets: '../images/';
 $kaitain-vector-assets: sh-add-assets((
     // Tuairisc and sponsor branding.
     tuairisc: (
-        black: $assets + 'tuairisc-dark.svg',
-        white: $assets + 'tuairisc-white.svg'
+        black: $image-assets + 'tuairisc-dark.svg',
+        white: $image-assets + 'tuairisc-white.svg'
     ),
     foras: (
-        black: $assets + 'foras-dark.svg',
-        white: $assets + 'foras-white.svg'
+        black: $image-assets + 'foras-dark.svg',
+        white: $image-assets + 'foras-white.svg'
     ),
     greann: (
-        black: $assets + 'greann-dark.svg',
-        white: $assets + 'greann-white.svg'
+        black: $image-assets + 'greann-dark.svg',
+        white: $image-assets + 'greann-white.svg'
     ),
     bg: (
-        stripe: $assets + 'stripe.svg',
+        stripe: $image-assets + 'stripe.svg',
     )
 ));
 
@@ -42,7 +43,7 @@ $kaitain-vector-assets: sh-add-assets((
  */
 
 $kaitain-education-sprites: sh-add-spritesheet(education, (
-    path: $assets + 'education.svg',
+    path: $image-assets + 'education.svg',
     dimensions: (4,2),
     sprites: (
         video: (0,0),
@@ -54,4 +55,16 @@ $kaitain-education-sprites: sh-add-spritesheet(education, (
         jigsaw: (2,1),
         download: (3,1)
     )
+));
+
+/**
+ * Education Spritesheet Vector Assets
+ * -----------------------------------------------------------------------------
+ */
+
+@include font-face((
+    family: 'butterfly',
+    path: $font-assets + 'butterfly/',
+    filename: 'butterfly',
+    types: ('ttf', 'woff', 'eot', 'woff2', 'svg')
 ));
