@@ -21,15 +21,15 @@ $font-assets: '../fonts/';
 $kaitain-vector-assets: sh-add-assets((
     // Tuairisc and sponsor branding.
     tuairisc: (
-        black: $image-assets + 'tuairisc-dark.svg',
+        black: $image-assets + 'tuairisc-black.svg',
         white: $image-assets + 'tuairisc-white.svg'
     ),
     foras: (
-        black: $image-assets + 'foras-dark.svg',
+        black: $image-assets + 'foras-black.svg',
         white: $image-assets + 'foras-white.svg'
     ),
     greann: (
-        black: $image-assets + 'greann-dark.svg',
+        black: $image-assets + 'greann-black.svg',
         white: $image-assets + 'greann-white.svg'
     ),
     bg: (
