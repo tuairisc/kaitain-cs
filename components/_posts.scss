@@ -19,12 +19,8 @@
     @extend %green-link;
 }
 
-.post-excerpt, figcaption {
+figcaption {
     color: palette(white, dark);
-}
-
-.post-excerpt {
-    @extend %small;
 }
 
 a.post-edit-link {
