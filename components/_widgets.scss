@@ -26,7 +26,7 @@
 
 .widget-subtitle {
     // Some widgets have an underlned title.
-    @extend .title-underline;
+    @include title-underline(true);
     font-variant: small-caps;
     text-transform: uppercase;
 }
@@ -101,6 +101,10 @@
 .sidebar-category-widget-interior {
     box-sizing: border-box;
     @include padding($vspace);
+
+    article:last-child {
+        margin-bottom: 0;
+    }
 }
 
 /**
@@ -168,6 +172,7 @@
 
     .category-article-title {
         @extend %small;
+        @include line-height(1.8);
     }
 
     .category-article {
