@@ -55,7 +55,7 @@
         box-sizing: border-box;
         display: block;
         transition: all .2s;
-        @include font-size(1.3);
+        // @include font-size(1.3);
         @include padding($vspace * 0.5 $vspace);
 
         @include media(small) {
