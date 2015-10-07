@@ -16,30 +16,29 @@
  */
 
 .navbar-social {
-    display: inline-block;
-    height: 100%;
-
-    @include media(small) {
-        display: none;
-    }
+    text-align: center;
+    @include margin($vspace * 1.5 0);
 
     .menu-item {
-        font-size: 0;
-        height: inherit;
-        margin-right: 1px;
-        @include width(4.4);
-        @include social(80% 1, a span);
+        // Prevent the text of the WordPress menu item from displaying.
+        display: inline-block;
+        font-size: 0 !important;
+        @include margin(0 $vspace);
+        @include square-flex(70px 1);
+        @include social(100% 1, a);
+
+        @include media(mobile) {
+            margin: 0;
+        }
     }
 
     a {
         display: block;
-        height: inherit;
-        position: relative;
-        width: 100%;
+    }
 
-        > .nav-socialspan {
-            @include absolute-center;
-        }
+    span {
+        display: block;
+        @include square-flex(100% 1);
     }
 }
 
