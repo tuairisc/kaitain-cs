@@ -90,22 +90,6 @@
 }
 
 /**
- * Title Underline
- * -----------------------------------------------------------------------------
- */
-
-%title-underline, .title-underline {
-    // Bottom border and spacing for default sidebar widget title.
-    border-bottom: 1px solid palette(white, mid-light);
-    @include padding($vspace * 0.75, bottom);
-
-    @include media(print) {
-        border: none;
-        padding: 0;
-    }
-}
-
-/**
  * Borders
  * -----------------------------------------------------------------------------
  */
@@ -124,9 +108,8 @@
  */
 
 %subtitle, .subtitle {
-    @extend .title-underline;
     font-weight: bold;
-    @include margin($vspace, bottom);
+    @include title-underline(true);
 }
 
 /**
@@ -173,3 +156,4 @@
         }
     }   
 }
+

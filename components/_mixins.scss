@@ -52,3 +52,37 @@
     }
 }
 
+/**
+ * Hover Bottom Box Shadow
+ * -----------------------------------------------------------------------------
+ */
+
+@mixin box-shadow-underline($color) {
+    &:hover {
+        box-shadow: inset 0px -5px 0px -1px $color;
+    }
+
+    @include media(small) {
+        box-shadow: none;
+    }
+}
+
+/**
+ * Title Underline
+ * -----------------------------------------------------------------------------
+ */
+
+@mixin title-underline($hide: false, $padding: $vspace * 0.75, $margin: $vspace * 0.75) {
+    border-bottom: 1px solid palette(white, mid-light);
+    
+    @include margin($margin, bottom);
+    @include padding($padding, bottom);
+
+    @if ($hide) {
+        @include media(print) {
+            border: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+}
