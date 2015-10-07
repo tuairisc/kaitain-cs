@@ -170,8 +170,6 @@
     }
 
     .category-article {
-        @include flex-child(1);
-
         @include media(medium) {
             @include margin($vspace, bottom);
         }
