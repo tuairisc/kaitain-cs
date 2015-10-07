@@ -78,6 +78,12 @@ $sections: (
             // 2. Set trims for current section text.
             color: $color;
         }
+
+        // Menu state variables follow.
+
+        .active .section-background-active {
+            background-color: $color;
+        }
     }
 
     .section-#{$class}-background, .section-#{$class}-background-hover:hover {
@@ -92,6 +98,7 @@ $sections: (
 
     .section-#{$class}-background-hover {
         @include media(small) {
+            // Remove the solid-background hover effect at smaller screen sizes.
             background-color: $color;
         }
     }
@@ -100,26 +107,6 @@ $sections: (
         // 4. Set trims for all sections text.
         color: $color;
     } 
-
-    .section-#{$class}-shadow, .section-#{$class}-shadow-hover:hover {
-        // 5. Bottom box shadow. "Interior" box shadow.
-        box-shadow: inset 0px -5px 0px -1px rgba($color, 1);
-
-        @include media(small) {
-            box-shadow: none;
-        }
-    }
-
-    .active {
-        // DEBUG FIXME
-        .section-#{$class}-background-hover {
-            background-color: $color;
-
-            a {
-                color: #fff;
-            }
-        }
-    }
 }
 
 /**
