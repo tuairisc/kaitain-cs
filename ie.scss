@@ -155,7 +155,7 @@ $helper-path: 'includes/';
  */
 
 .menu-columns {
-    @include columns(float, nav, 40% auto auto auto, 0);
+    @include columns(float, nav, 4, 0);
 }
 
 /**
