@@ -143,6 +143,10 @@ $education-sections: (
     }
 }
 
+.education-name, .education-description {
+    font-family: map-get($fonts, butterfly);
+}
+
 // Section box icons.
 
 .education-icon-wrapper {
