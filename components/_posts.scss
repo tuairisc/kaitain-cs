@@ -142,6 +142,10 @@ article.full {
             @include margin($vspace * 1.3, bottom);
         }
 
+        .alignnone {
+            width: 100%;
+        }
+
         img {
             // Overrides set attribute and stops images looking weird.
             height: auto;
@@ -185,7 +189,7 @@ blockquote {
     &:before {
         content: '‘';
         position: absolute;
-        @include absolute(1 auto auto 0);
+        @include absolute(2 auto auto 0);
         @include font-size(10);
         @include line-height(7.5);
     }
@@ -194,7 +198,11 @@ blockquote {
         content: '’';
         @include absolute(auto 0 0 auto);
         @include font-size(10);
-        @include line-height(1);
+        @include line-height(2);
+    }
+
+    p:last-child {
+        margin: 0 !important;
     }
 }
 
