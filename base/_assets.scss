@@ -58,12 +58,12 @@ $kaitain-education-sprites: sh-add-spritesheet(education, (
 ));
 
 /**
- * Education Spritesheet Vector Assets
+ * Butterfly @font-face
  * -----------------------------------------------------------------------------
  */
 
 @include font-face((
-    family: 'butterfly',
+    family: 'Butterfly',
     path: $font-assets + 'butterfly/',
     filename: 'butterfly',
     types: ('ttf', 'woff', 'eot', 'woff2', 'svg')
