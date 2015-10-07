@@ -90,15 +90,42 @@ a.post-edit-link {
 }
 
 /**
+ * Post Meta
+ * -----------------------------------------------------------------------------
+ */
+
+.post-meta {
+    display: flex;   
+}
+
+.author-meta {
+    flex: 1 0 auto;
+}
+
+.kaitain-share-links {
+    flex: 0 1 auto;
+}
+
+/**
  * Post Author Meta
  * -----------------------------------------------------------------------------
  */
 
 .author-meta {
-    @include columns(flex, div, 10% auto, 2);
+    display: flex;
+
+    .avatar {
+        flex: 0 1 75px;
+        @include width(7.5);
+        @include margin($vspace * 0.5, right);
+    }
+
+    .author-info {
+        flex: 1 0 200px;
+    }
 
     @include media(smartphone) {
-        @include columns(flex, div, 20% auto, 5);
+        // @include columns(flex, div, 20% auto, 5);
     }
 }
 
@@ -122,8 +149,7 @@ footer {
 
 article.full {
     header {
-        @extend %title-underline;
-        @include margin($vspace, bottom);
+        @include title-underline(true);
     }
 
     .title {
@@ -135,7 +161,7 @@ article.full {
     }
 
     .post-content {
-        @include clearfix();
+        @include clearfix;
         @include margin($vspace * 2 0);
 
         p, ul, ol, blockquote, iframe, figcaption {
@@ -160,7 +186,7 @@ article.full {
         }
         
         p, li, blockquote {
-            @include line-height(2);
+            // @include line-height(2);
         }
     }
 }
@@ -282,6 +308,18 @@ article[class^=archive] {
 
 .sidebar-article {
     @include margin($vspace, bottom);
+}
+
+.sidebar-lead-thumbnail {
+    @include margin($vspace * 0.5, bottom);
+}
+
+.sidebar-lead-article {
+    @include title-underline(false);
+}
+
+.sidebar-category-subtitle:hover a {
+    color: inherit;
 }
 
 .sidebar-thumbnail {
