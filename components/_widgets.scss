@@ -28,6 +28,7 @@
     // Some widgets have an underlned title.
     @extend .title-underline;
     font-variant: small-caps;
+    text-transform: uppercase;
 }
 
 /**

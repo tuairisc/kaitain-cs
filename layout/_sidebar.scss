@@ -17,6 +17,8 @@
 }
 
 .sidebar-container {
+    @include margin($vspace, bottom);
+
     @include media(medium) {
         @include columns(flex, div, 3, 2%);
 
