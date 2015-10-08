@@ -44,15 +44,15 @@
  * -----------------------------------------------------------------------------
  */
 
-.margin-full, %margin-full {
+.vspace, .margin-full, %margin-full {
     @include margin($vspace, bottom);
 }
 
-.margin-half, %margin-half {
+.vspace-half, .margin-half, %margin-half {
     @include margin($vspace * 0.5, bottom);
 }
 
-.margin-double, %margin-double {
+.vspace-dbl, .margin-double, %margin-double {
     @include margin($vspace * 2, bottom);
 }
 
