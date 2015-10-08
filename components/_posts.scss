@@ -147,7 +147,7 @@ footer {
  * -----------------------------------------------------------------------------
  */
 
-article.full {
+.main-article-full {
     header {
         @include title-underline(true);
     }
@@ -314,12 +314,18 @@ article[class^=archive] {
     @include margin($vspace * 0.5, bottom);
 }
 
-.sidebar-lead-article {
-    @include title-underline(false);
+.sidebar-category-title, .sidebar-category-subtitle {
+    @include margin($vspace * 0.75, bottom);
 }
 
 .sidebar-category-subtitle:hover a {
     color: inherit;
+}
+
+.sidebar-category-thumbnail {
+    height: auto;
+    width: 100%;
+    @include margin($vspace, bottom);
 }
 
 .sidebar-thumbnail {
