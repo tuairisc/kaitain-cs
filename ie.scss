@@ -85,13 +85,9 @@ $helper-path: 'includes/';
  * -----------------------------------------------------------------------------
  */
 
-.sidebar-article {
-    > a {
-        @include columns(float, div, 25% auto, 5%);
-    }
-
-    header {
-        padding: 0;
+.side-article-flex {
+    @include media(not-mobile) {
+        @include columns(float, div, 25% auto, 0);
     }
 }
 
@@ -119,8 +115,24 @@ $helper-path: 'includes/';
  * -----------------------------------------------------------------------------
  */
 
+.post-meta {
+    @include clearfix;
+}
+
+.kaitan-share-links {
+    float: right;
+    width: calc(100% - 300px);
+    @include clearfix;
+
+    ul {
+        float: right;
+    }
+}
+
 .author-meta {
-    @include columns(float, div, 10% auto, 2%);
+    float: left;
+    width: 50%;
+    @include columns(float, div, 15% auto, 2%);
 }
 
 /**
@@ -164,8 +176,8 @@ $helper-path: 'includes/';
  */
 
 .education-landing-section {
-    @include columns(float, div, 15% auto, 0);
     display: block;
+    @include columns(float, div, 15% auto, 0);
 }
 
 .modal-boxes {
@@ -173,6 +185,7 @@ $helper-path: 'includes/';
 }
 
 .modal-box {
+    // Modals wigged out at a higher width. Not messing with it! 
     float: left;
     margin-right: 1%;
     width: 30%;
