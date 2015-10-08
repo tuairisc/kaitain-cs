@@ -20,8 +20,9 @@ $helper-path: 'includes/';
 @import 'base/sections';
 @import 'base/reset';
 
-@import 'components/mixins';
-@import 'components/partials';
+@import 'util/mixins';
+@import 'util/partials';
+
 @import 'components/adverts';
 @import 'components/buttons';
 @import 'components/posts';
