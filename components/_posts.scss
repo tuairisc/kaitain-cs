@@ -23,7 +23,7 @@ figcaption {
     color: palette(white, dark);
 }
 
-a.post-edit-link {
+.post-edit-link {
     @extend %green-link;
 
     &:hover {
@@ -123,10 +123,6 @@ a.post-edit-link {
     .author-info {
         flex: 1 0 200px;
     }
-
-    @include media(smartphone) {
-        // @include columns(flex, div, 20% auto, 5);
-    }
 }
 
 .author-link a {
@@ -157,7 +153,7 @@ footer {
     }
 
     .post-excerpt {
-        @include margin($vspace, bottom);
+        @include title-underline; 
     }
 
     .post-content {
@@ -322,23 +318,27 @@ article[class^=archive] {
     color: inherit;
 }
 
-.sidebar-category-thumbnail {
-    height: auto;
-    width: 100%;
-    @include margin($vspace, bottom);
+.side-thumb {
+    @include media(not-mobile) {
+        @include height(4.5);
+    }
+
+    @include media(width max 540px) {
+        @include margin($vspace * 0.5, bottom);
+    }
 }
 
-.sidebar-thumbnail {
-    @include height(4.5);
+.side-head {
+    @include media(not-mobile) {
+        box-sizing: border-box;
+        @include padding(1, left);
+    }
 }
 
-.sidebar-header {
-    box-sizing: border-box;
-    @include padding(1, left);
-}
-
-.sidebar-link {
-    @include columns(flex, div, 25% auto, 0);
+.side-article-flex {
+    @include media(not-mobile) {
+        @include columns(flex, div, 25% auto, 0);
+    }
 }
 
 /**
