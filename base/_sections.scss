@@ -109,6 +109,10 @@ $sections: (
     } 
 }
 
+.section-background-active a {
+    color: palette(White, x-light);
+}
+
 /**
  * Tuairisc Trim Colours
  * -----------------------------------------------------------------------------
