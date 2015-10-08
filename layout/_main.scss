@@ -21,6 +21,10 @@ body {
 
     @include padding($nav-height-full + $nav-sections-menu-height, top);
 
+    @include media(mobile) {
+        @include padding($nav-height-full, top);
+    }
+
     @include media(print) {
         padding: 0;
     }
