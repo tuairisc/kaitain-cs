@@ -15,16 +15,17 @@
  * -----------------------------------------------------------------------------
  */
 
-@mixin navbar-size {
+@mixin nav-position {
+    // Shared between header and search.
     -webkit-transform:translateZ(0);
     box-sizing: border-box;
+    box-shadow: 0 10px 6px -9px rgba(0,0,0,0.15);
+    text-align: center;
     z-index: 3;
-
     @include fixed(0 0 auto 0);
-    @include height($nav-height-full);
 
-    @include media(tablet, smartphone) {
-        @include absolute(0 0 auto 0);
+    @include media(mobile) {
+        position: absolute;
     }
 
     @include media(print) {
