@@ -16,9 +16,7 @@
  */
 
 #header {
-    text-align: center;
-    @include navbar-box-shadow;
-    @include navbar-size;
+    @include nav-position;
 
     ul {
         list-style-type: none;
