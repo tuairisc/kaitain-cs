@@ -26,9 +26,12 @@
 
 .widget-subtitle {
     // Some widgets have an underlned title.
-    @include title-underline(true);
+    @include title-underline(true, $vspace);
     font-variant: small-caps;
     text-transform: uppercase;
+}
+
+.subtitle-underline {
 }
 
 /**
@@ -79,28 +82,32 @@
  * -----------------------------------------------------------------------------
  */
 
-.widget_kaitain_sidebar_category {
-    @include margin($vspace, bottom);
+.side-cat-lr-padding {
+    box-sizing: border-box;
+    @include padding(0 $vspace);
 }
 
-.sidebar-category-grey {
+.widget_kaitain_sidebar_category {
+    @include margin($vspace, bottom);
+
+    .widget-title {
+        @extend .side-cat-lr-padding;
+    }
+    
+    .widget-subtitle {
+        // Dirty no good hack.
+        border-bottom: none;
+    }
+}
+
+.side-cat-bg-grey {
     // Default grey background.
     background: palette(white, light); 
 }
 
-.sidebar-category-title {
-    @include margin($vspace * 0.75, bottom);
-}
-
-.sidebar-category-thumbnail {
-    height: auto;
-    width: 100%;
-    @include margin($vspace, bottom);
-}
-
-.sidebar-category-widget-interior {
+.side-cat-interior {
     box-sizing: border-box;
-    @include padding($vspace);
+    @include padding($vspace 0);
 
     article:last-child {
         margin-bottom: 0;
