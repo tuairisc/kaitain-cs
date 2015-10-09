@@ -303,8 +303,24 @@ article[class^=archive] {
  */
 
 .sidebar-article {
-    @include margin($vspace, bottom);
+    &__thumb {
+        @include media(not-mobile) {
+            @include height(4.5);
+        }
+
+        @include media(width max 540px) {
+            @include margin($vspace * 0.5, bottom);
+        }
+    }
+
+    &__header {
+        @include media(not-mobile) {
+            box-sizing: border-box;
+            @include padding(1, left);
+        }
+    }
 }
+
 
 .sidebar-lead-thumbnail {
     @include margin($vspace * 0.5, bottom);
@@ -316,29 +332,6 @@ article[class^=archive] {
 
 .sidebar-category-subtitle:hover a {
     color: inherit;
-}
-
-.side-thumb {
-    @include media(not-mobile) {
-        @include height(4.5);
-    }
-
-    @include media(width max 540px) {
-        @include margin($vspace * 0.5, bottom);
-    }
-}
-
-.side-head {
-    @include media(not-mobile) {
-        box-sizing: border-box;
-        @include padding(1, left);
-    }
-}
-
-.side-article-flex {
-    @include media(not-mobile) {
-        @include columns(flex, div, 25% auto, 0);
-    }
 }
 
 /**
