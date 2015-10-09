@@ -17,18 +17,11 @@
 
 #bigsearch {
     @include nav-position;
-    opacity: 0;
     transition: opacity $transition-time;
-    visibility: hidden;
     @include height($nav-height-full);
 
     &:focus {
         outline: none;
-    }
-
-    &.show {
-        opacity: 1;
-        visibility: visible;
     }
 }
 
