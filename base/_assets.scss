@@ -66,5 +66,5 @@ $kaitain-education-sprites: sh-add-spritesheet(education, (
     family: 'Butterfly',
     path: $font-assets + 'butterfly/',
     filename: 'butterfly',
-    types: ('ttf', 'woff', 'eot', 'woff2', 'svg')
+    formats: ('ttf', 'woff', 'eot', 'woff2', 'svg')
 ));
