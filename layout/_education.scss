@@ -120,10 +120,10 @@ $education-sections: (
 
 .education-banner { 
     @include padding($vspace * 0.75);
-}
 
-.education-banner-subheading { 
-    @include padding($vspace / 2 3);
+    &-subheading {
+        @include padding($vspace / 2 3);
+    }
 }
 
 /**
@@ -131,7 +131,7 @@ $education-sections: (
  * -----------------------------------------------------------------------------
  */
 
-.education-landing-section {
+.ed-pane {
     box-sizing: border-box;
     color: palette(white, x-light);
     @include columns(flex, div, 15% auto, 0);
@@ -141,33 +141,38 @@ $education-sections: (
     @include media(mobile) {
        display: block; 
     }
-}
 
-.education-name, .education-description {
-    font-family: map-get($fonts, butterfly);
-}
-
-// Section box icons.
-
-.education-icon-wrapper {
-    box-sizing: border-box;
-    @include padding($vspace, right);
-
-    @include media(mobile) {
-        padding: 0; 
+    &__title {
+        font-family: map-get($fonts, butterfly);
     }
-}
 
-.education-icon {
-    @include square-flex(100% 1);
-}
+    &__desc {
+        font-family: map-get($fonts, arial);
+    }
 
-@each $key, $value in $education-sections {
-    .education-#{$key} {
-        background: palette(education, $value);
+    &__icon-wrapper {
+        box-sizing: border-box;
+        @include padding($vspace, right);
 
-        .education-icon {
-            background: sprite(education, $value);
+        @include media(mobile) {
+            padding: 0; 
+        }
+    }
+
+    &__icon {
+        @include square-flex(100% 1);
+
+        @each $key, $value in $education-sections {
+            &--#{$key} {
+                background: sprite(education, $value);
+            }
+        }
+    }
+
+    @each $key, $value in $education-sections {
+        &--#{$key} {
+            background: palette(education, $value);
         }
     }
 }
+
