@@ -63,9 +63,11 @@ $sections: (
     $class: nth($list, 1);
     $color: nth($list, 2);
 
-    body.section-#{$class} {
-        // 1. Set trims for current section background.
-        .section-trim-background, .section-trim-background-hover:hover {
+    .section {
+        // Individual sections.
+
+        &--#{$class}-bg, &--#{$class}-bg-hover:hover {
+            // 1. Set trims for all sections background.
             background-color: $color;
             color: #fff;
 
@@ -74,39 +76,43 @@ $sections: (
             }
         }
 
-        .section-trim-text, .section-trim-text-hover:hover {
-            // 2. Set trims for current section text.
+        &--#{$class}-bg--hover {
+            // 1b. Remove the solid-background hover effect at smaller screen sizes.
+            @include media(small) {
+                background-color: $color;
+            }
+        }
+
+        &--#{$class}-text, &--#{$class}-text-hover:hover {
+            // 2. Set trims for all sections text.
+            color: $color;
+        } 
+    }
+
+    body.section--#{$class} .section {
+        // Current section, tied to <body> tag.
+        &--current-bg, &--current-bg-hover:hover {
+            // 3. Set trims for current section background.
+            background-color: $color;
+            color: #fff;
+
+            a {
+                color: inherit;
+            }
+        }
+
+        &--current-text, &--current-text-hover:hover {
+            // 4. Set trims for current section text.
             color: $color;
         }
-
-        // Menu state variables follow.
-
-        .active .section-background-active {
-            background-color: $color;
-        }
-    }
-
-    .section-#{$class}-background, .section-#{$class}-background-hover:hover {
-        // 3. Set trims for all sections background.
-        background-color: $color;
-        color: #fff;
-
-        a {
-            color: inherit;
-        }
-    }
-
-    .section-#{$class}-background-hover {
-        @include media(small) {
-            // Remove the solid-background hover effect at smaller screen sizes.
-            background-color: $color;
-        }
-    }
-
-    .section-#{$class}-text, .section-#{$class}-text-hover:hover {
-        // 4. Set trims for all sections text.
-        color: $color;
     } 
+}
+
+// TODO FIXME 
+
+// Menu state variables follow.
+.active .section-background-active {
+    // background-color: $color;
 }
 
 .section-background-active a {
@@ -123,25 +129,21 @@ $sections: (
  * parent.
  */
 
-.tuairisc-strip {
+.stripe {
     background: left top/cover repeat-y asset(bg stripe);
     @include height(0.4);
 
     @include media(print) {
         display: none;
     }
-}
 
-.trim-absolute {
-    @include absolute(0 0, left right);
-}
+    &__absolute-top {
+        @include absolute(0 0 auto 0);
+    }
 
-.trim-top {
-    top: 0;
-}
-
-.trim-bottom {
-    bottom: 0;
+    &__absolute-bottom {
+        @include absolute(auto 0 0 0);
+    }
 }
 
 /**
