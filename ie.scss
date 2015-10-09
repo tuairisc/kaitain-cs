@@ -20,37 +20,51 @@ $helper-path: 'includes/';
  * -----------------------------------------------------------------------------
  */
 
-.flex-two-cols-div {
-    @include columns(float, div, 2, 2%);
-}
+.flex {
+    &--two-col {
+        &-div {
+            @include columns(float, div, 2, 2%);
+        }
 
-.flex-three-cols-div {
-    @include columns(float, div, 3, 2%);
-}
-
-.flex-four-cols-div {
-    @include columns(float, div, 4, 2%);
-
-    @include media(small) {
-        @include columns(float, article, 2, 0)
+        &-article {
+            @include columns(float, article, 2, 2%);
+        }
     }
-}
 
-// Article
+    &--three-col {
+        &-div {
+            @include columns(float, div, 3, 2%);
+        }
 
-.flex-two-cols-article {
-    @include columns(float, article, 2, 2%);
-}
+        &-article {
+            @include columns(float, article, 3, 2%);
+        }
+    }
 
-.flex-three-cols-article {
-    @include columns(float, article, 3, 2%);
-}
+    &--four-col {
+        &-nav {
+            @include columns(float, nav, 4, 2%);
+        }
 
-.flex-four-cols-article {
-    @include columns(float, article, 4, 2%);
+        &-div {
+            @include columns(float, div, 4, 2%);
 
-    @include media(small) {
-        @include columns(float, article, 2, 0);
+            @include media(small) {
+                @include columns(float, div, 2, 2%) {
+                    @include margin($vspace * 0.5, bottom);
+                }
+            }
+        }
+
+        &-article {
+            @include columns(float, article, 4, 2%);
+
+            @include media(small) {
+                @include columns(float, article, 2, 2%) {
+                    @include margin($vspace * 0.5, bottom);
+                }
+            }   
+        }
     }
 }
 

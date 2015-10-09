@@ -11,32 +11,81 @@
  */
 
 /**
- * Misc Rules
+ * Display State with Opacity Transition
  * -----------------------------------------------------------------------------
  */
 
-.left-float {
-    float: left;
+.disp {
+    transition: .15s opacity ease-in;
+
+   &--hidden {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &--shown {
+        display: initial;
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
-.right-float {
-    float: right;
+/**
+ * Text Alignment
+ * -----------------------------------------------------------------------------
+ */
+
+.text {
+    &--left {
+        text-align: left;
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }
 }
 
-.clearfix {
-    @include clearfix;
+/**
+ * Floats
+ * -----------------------------------------------------------------------------
+ */
+
+.float {
+    &--left {
+        float: left;
+    }
+
+    &--right {
+        float: right;
+    }
+
+    &--clear {
+        @include clearfix;
+    }
 }
 
-.relative {
-    position: relative;
-}
+/**
+ * Position
+ * -----------------------------------------------------------------------------
+ */
 
-.absolute {
-    position: absolute;
-}
+.pos {
+    &--relative {
+        position: relative;
+    }
 
-.fixed {
-    position: fixed;
+    &--absolute {
+        position: absolute;
+    }
+
+    &--fixed {
+        position: fixed;
+    }
 }
 
 /**
@@ -81,10 +130,8 @@
 
 .green-link, %green-link {
     color: palette(green);
-}
-
-.green-link-hover, %green-link-hover {
-    &:hover {
+    
+    &--hover:hover {
         color: palette(green);
     }
 }
@@ -117,43 +164,50 @@
  * -----------------------------------------------------------------------------
  */
 
-// div
+.flex {
+    &--two-col {
+        &-div {
+            @include columns(flex, div, 2, 2%);
+        }
 
-.flex-two-cols-div {
-    @include columns(flex, div, 2, 2%);
-}
-
-.flex-three-cols-div {
-    @include columns(flex, div, 3, 2%);
-}
-
-.flex-four-cols-div {
-    @include columns(flex, div, 4, 2%);
-
-    @include media(small) {
-        @include columns(flex, div, 2, 2%) {
-            @include margin($vspace * 0.5, bottom);
+        &-article {
+            @include columns(flex, article, 2, 2%);
         }
     }
-}   
 
-// Article
-
-.flex-two-cols-article {
-    @include columns(flex, article, 2, 2%);
-}
-
-.flex-three-cols-article {
-    @include columns(flex, article, 3, 2%);
-}
-
-.flex-four-cols-article {
-    @include columns(flex, article, 4, 2%);
-
-    @include media(small) {
-        @include columns(flex, article, 2, 2%) {
-            @include margin($vspace * 0.5, bottom);
+    &--three-col {
+        &-div {
+            @include columns(flex, div, 3, 2%);
         }
-    }   
-}
 
+        &-article {
+            @include columns(flex, article, 3, 2%);
+        }
+    }
+
+    &--four-col {
+        &-nav {
+            @include columns(flex, nav, 4, 2%);
+        }
+
+        &-div {
+            @include columns(flex, div, 4, 2%);
+
+            @include media(small) {
+                @include columns(flex, div, 2, 2%) {
+                    @include margin($vspace * 0.5, bottom);
+                }
+            }
+        }
+
+        &-article {
+            @include columns(flex, article, 4, 2%);
+
+            @include media(small) {
+                @include columns(flex, article, 2, 2%) {
+                    @include margin($vspace * 0.5, bottom);
+                }
+            }   
+        }
+    }
+}
