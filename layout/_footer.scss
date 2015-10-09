@@ -41,21 +41,6 @@
 }
 
 /**
- * Sections Menu
- * -----------------------------------------------------------------------------
- */
-
-.footer-section-menu {
-    // Generated dynamically.
-    @include margin($vspace, bottom);
-
-    li:nth-child(1) a {
-        font-weight: bold;
-        @include font-size(1.6);
-    }
-}
-
-/**
  * Foras na Gaeilge Attribution
  * -----------------------------------------------------------------------------
  */
@@ -78,27 +63,5 @@
 
     @include media(smartphone) {
         @include padding(1 0 6);
-    }
-}
-
-/**
- * Footer Menu Columns
- * -----------------------------------------------------------------------------
- * There are four footer text columns, split unevenly. The leftmost column is a 
- * WordPress menu of site-relevant links, which takes most of the width, while
- * the balancing three list all the site sections.
- */
-
-.menus {
-    background: palette(footer, green);
-    @include padding(2);
-}
-
-.menu-columns {
-    @include margin($vspace, bottom);
-    @include columns(flex, nav, 4, 0);
-
-    @include media(small) {
-        display: block;
     }
 }
