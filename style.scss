@@ -12,17 +12,20 @@
 
 $helper-path: 'includes/';
 
+// Included libraries.
 @import 'includes/scss-helpers/helpers';
 @import 'includes/normalize';
 
+// Site base files.
 @import 'base/variables';
 @import 'base/assets';
-@import 'base/sections';
 @import 'base/reset';
 
+// Site partial and mixins.
 @import 'util/mixins';
 @import 'util/partials';
 
+// Site reusable components.
 @import 'components/adverts';
 @import 'components/buttons';
 @import 'components/posts';
@@ -34,6 +37,10 @@ $helper-path: 'includes/';
 @import 'components/widgets';
 @import 'components/archives';
 
+// Site themes.
+@import 'theme/sections';
+
+// Site section layout.
 @import 'layout/header';
 @import 'layout/education';
 @import 'layout/main';
