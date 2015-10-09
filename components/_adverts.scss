@@ -73,8 +73,14 @@ span[style^=font-weight] {
     .square {
         display: none;
 
-        @include media(smartphone) {
+        @include media(mobile) {
             display: initial;
+        }
+    }
+
+    .banner {
+        @include media(mobile) {
+            display: none;
         }
     }
 
@@ -96,7 +102,7 @@ span[style^=font-weight] {
 
 .sidebar-advert-block {
     // Parent group.
-    @include media(smartphone) {
+    @include media(mobile) {
         display: block;
     }
 
