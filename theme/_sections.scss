@@ -129,6 +129,11 @@ $sections: (
  * parent.
  */
 
+.trim-block {
+    @include main-size;
+    @include rem(min-height, 3);
+}
+
 .stripe {
     background: left top/cover repeat-y asset(bg stripe);
     @include height(0.4);
