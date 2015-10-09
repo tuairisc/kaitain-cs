@@ -29,31 +29,30 @@
     &:active {
         opacity: 1;
     }
-}
 
-.nav-buttonicon {
-    font-size: 0;
-    display: block;
-    margin: 0 auto;
-
-    @include social($nav-buttonicon-size-full, null, search menu close) {
-        background-color: transparent;
-    }
-}
-
-#search-searchtoggle {
-    @include absolute(0 0 auto auto);
-}
-
-#nav-searchtoggle {
-    float: right;
-}
-
-.menutoggle {
-    // display: none;
-    @include absolute(0 auto auto 0);
-
-    @include media(small) {
+    &__icon {
+        font-size: 0;
         display: block;
+        margin: 0 auto;
+
+        @include social($nav-buttonicon-size-full, null, search menu close) {
+            background-color: transparent;
+        }
     }
+
+    &__menu {
+        @include absolute(0 auto auto 0);
+
+        @include media(not-mobile) {
+            display: none;
+        }
+
+        @include media(small) {
+            display: block;
+        }
+    }
+}
+
+#searchtoggle__search {
+    @include absolute(0 0 auto auto);
 }
