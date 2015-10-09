@@ -38,11 +38,13 @@
  * button and 
  */
 
-#navrow {
+.navrow {
     @include clearfix;
     @include height($nav-height-full);
     overflow: hidden;
     transition: height $transition-time;
+
+    // Responsive rules.
 
     @include columns(flex, nav, 3, 0) {
         height: 100%;
@@ -52,44 +54,28 @@
     @include media(small) {
         @include columns(flex, nav, 15% auto 15%, 0);
     }
-}
 
-/**
- * Navigation Row Child Nav Elements
- * -----------------------------------------------------------------------------
- */
+    // Child elements.
 
-.left-nav, .right-nav {
-    @include media(small) {
-        @include width(6);
+    &__left, &__right {
+        @include media(small) {
+            @include width(6);
+        }
     }
 }
-
-.left-nav {
-    text-align: left;
-}
-
-.right-nav {
-    text-align: center;
-}
-
 /**
  * Go Home Link
  * -----------------------------------------------------------------------------
  */
 
 #home {
-    background: center/auto 50% no-repeat;
+    background: center/auto 50% no-repeat asset(tuairisc white);
     display: block;
     height: 100%;
     transition: $transition-time;
-}
 
-body #home {
-    background-image: asset(tuairisc white);
-}
-
-body.section-greann #home {
-    background-size: auto 80%;
-    background-image: asset(greann white);
+    body.section-greann & {
+        background-image: asset(greann white);
+        background-size: auto 80%;
+    }
 }
