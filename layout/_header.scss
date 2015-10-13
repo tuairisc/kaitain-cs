@@ -47,7 +47,7 @@
 
     // Responsive rules.
 
-    @include columns(flex, nav, 3, 0) {
+    nav {
         height: 100%;
         position: relative;
     }
