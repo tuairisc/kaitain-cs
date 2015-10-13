@@ -11,6 +11,17 @@
  */
 
 /**
+ * Print
+ * -----------------------------------------------------------------------------
+ */
+
+.noprint {
+    @include media(print) {
+        display: none;
+    }
+}
+
+/**
  * Display State with Opacity Transition
  * -----------------------------------------------------------------------------
  */
@@ -105,6 +116,14 @@
     &--double {
         @include margin($vspace * 2, bottom);
     }
+
+    &--quarter {
+        @include margin($vspace * 0.25, bottom);
+    }
+
+    &--threequarter {
+        @include margin($vspace * 0.75, bottom);
+    }
 }
 
 .no-widgets {
@@ -156,9 +175,7 @@
 
 .flex {
     &--asym-quarter-auto {
-        @include media(not-mobile) {
-            @include columns(flex, div, 25% auto, 0);
-        }
+        @include columns(flex, div, 25% auto, 0);
     }
 
     &--two-col {
