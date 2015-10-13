@@ -51,6 +51,8 @@
  */
 
 .kaitain-share-links {
+    flex: 0 1 auto;
+
     @include media(mobile) {
         border-bottom: 0;
         padding: 0;
