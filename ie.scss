@@ -104,35 +104,11 @@
 }
 
 /**
- * Header Row
- * -----------------------------------------------------------------------------
- */
-
-#navrow  {
-    @include columns(float, nav, 3, 0, left, hidden);
-
-    @include media(mobile) {
-        @include columns(float, nav, 10% auto 10%, 0);
-    }
-}
-
-/**
- * Sidebar Articles
- * -----------------------------------------------------------------------------
- */
-
-.side-article-flex {
-    @include media(not-mobile) {
-        @include columns(float, div, 25% auto, 0);
-    }
-}
-
-/**
  * Home Categories Widget
  * -----------------------------------------------------------------------------
  */
 
-.bhalash-category-widget-right { 
+.widget--category {
     .category-article-link {
         @include columns(float, div, 30% auto, 2%);
     }
