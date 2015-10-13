@@ -24,6 +24,10 @@ figcaption {
     @include padding($vspace * 0.5, top);
 }
 
+.alignnone {
+    width: 100%;
+}
+
 .alignright {
     float: right;
     @include padding($vspace, left);
