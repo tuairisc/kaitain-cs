@@ -28,26 +28,26 @@
         color: palette(black);
         white-space: nowrap;
     }
-}
 
-.pagination-count {
-    text-align: center;
+    &__count {
+        text-align: center;
 
-    @include media(small) {
-        display: none;
+        @include media(small) {
+            display: none;
+        }
+
+        &:empty {
+            display: none;
+        }
     }
 
-    &:empty {
-        display: none;
+    &__next {
+        text-align: right;  
     }
-}
 
-.pagination-next {
-    text-align: right;  
-}
-
-.pagination-previous-post, .pagination-next-post {
-    @include media(smartphone) {
-        white-space: normal;
+    &__previous-post, &__next-post {
+        @include media(smartphone) {
+            white-space: normal;
+        }
     }
 }
