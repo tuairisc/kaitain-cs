@@ -10,8 +10,6 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-// Not the best solution. IDs of categories are mutable between live and dev.
-
 $education-sections: (
     crosfhocal: crossword,
     fiseain: video,
@@ -36,6 +34,82 @@ $education-sections: (
         background: palette(education, hover);
         color: palette(white, x-light) !important;
         text-decoration: none !important;
+    }
+}
+
+.education {
+    /**
+     * Sraith Pictuir Banners
+     * -------------------------------------------------------------------------
+     */
+
+    &__banner {
+        background: palette(education, base);
+        color: palette(white, x-light);
+        @include margin($vspace * 1.5 0 $vspace 0);
+        @include padding($vspace * 0.75);
+
+        &--subheading {
+            // Extend parent and modify padding.
+            @extend .education__banner;
+            @include padding($vspace / 2 3);
+        }
+    }
+
+    /**
+     * Education Landing Page Section Panes
+     * -------------------------------------------------------------------------
+     */
+
+    // Used to iterate icons, below.
+    $parent: #{&};
+
+    &__section {
+        box-sizing: border-box;
+        color: palette(white, x-light);
+        @include columns(flex, div, 15% auto, 0);
+        @include margin($vspace, bottom);
+        @include padding($vspace);
+
+        @include media(mobile) {
+           display: block; 
+        }
+
+        @each $key, $value in $education-sections {
+            // Iterate variant backgrouns and icons.
+            &--#{$key} {
+                background: palette(education, $value);
+
+                #{$parent}__icon {
+                    background: sprite(education, $value);
+                }
+            }
+        }
+    }
+
+    &__title {
+        // Section box title.
+        font-family: map-get($fonts, butterfly);
+    }
+
+    &__description {
+        // Category description.
+        font-family: map-get($fonts, arial);
+    }
+
+    &__iconwrap {
+        // Wrapper. Icon is a square sprite inside.
+        box-sizing: border-box;
+        @include padding($vspace, right);
+
+        @include media(mobile) {
+            padding: 0; 
+        }
+    }
+
+    &__icon {
+        // Square icon.
+        @include square-flex(100% 1);
     }
 }
 
@@ -107,72 +181,4 @@ $education-sections: (
     }
 }
 
-/**
- * Sraith Pictuir Banners
- * -----------------------------------------------------------------------------
- */
-
-[class^=education-banner] {
-    background: palette(education, base);
-    color: palette(white, x-light);
-    @include margin($vspace * 1.5 0 $vspace 0);
-}
-
-.education-banner { 
-    @include padding($vspace * 0.75);
-
-    &-subheading {
-        @include padding($vspace / 2 3);
-    }
-}
-
-/**
- * Education Landing Page Section Panes
- * -----------------------------------------------------------------------------
- */
-
-.ed-pane {
-    box-sizing: border-box;
-    color: palette(white, x-light);
-    @include columns(flex, div, 15% auto, 0);
-    @include margin($vspace, bottom);
-    @include padding($vspace);
-
-    @include media(mobile) {
-       display: block; 
-    }
-
-    &__title {
-        font-family: map-get($fonts, butterfly);
-    }
-
-    &__desc {
-        font-family: map-get($fonts, arial);
-    }
-
-    &__icon-wrapper {
-        box-sizing: border-box;
-        @include padding($vspace, right);
-
-        @include media(mobile) {
-            padding: 0; 
-        }
-    }
-
-    &__icon {
-        @include square-flex(100% 1);
-
-        @each $key, $value in $education-sections {
-            &--#{$key} {
-                background: sprite(education, $value);
-            }
-        }
-    }
-
-    @each $key, $value in $education-sections {
-        &--#{$key} {
-            background: palette(education, $value);
-        }
-    }
-}
 
