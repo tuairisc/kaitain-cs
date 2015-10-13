@@ -125,24 +125,19 @@
  * the balancing three list all the site sections.
  */
 
-.footer-menu {
-    background: palette(footer, green);
-    @include padding(2);
+.footer__columns {
+    @include margin($vspace, bottom);
 
-    &__columns {
+    ul {
         @include margin($vspace, bottom);
+    }
 
-        ul {
-            @include margin($vspace, bottom);
-        }
+    @include media(small) {
+        display: block;
+    }
 
-        @include media(small) {
-            display: block;
-        }
-
-        li:nth-child(1) a {
-            font-weight: bold;
-            @include font-size(1.6);
-        }
+    li:nth-child(1) a {
+        font-weight: bold;
+        @include font-size(1.6);
     }
 }
