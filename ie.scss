@@ -125,7 +125,6 @@
  * -----------------------------------------------------------------------------
  */
 
-
 .article--full {
     &__postmeta {
         @include columns(float, div, 30% auto, 0);
@@ -151,13 +150,16 @@
  * -----------------------------------------------------------------------------
  */
 
-.comment {
-    @include columns(float, div, 7.5% auto, 2%);
+.comments {
+    &__comment {
+        @include columns(float, div, 7.5% auto, 2%);
+    }
+
+    &__inputs{
+        @include columns(float, input, 3, 3%);
+    }
 }
 
-.commentform-inputs {
-    @include columns(float, input, 3, 3%);
-}
 
 /**
  * Pagination
@@ -173,20 +175,11 @@
 }
 
 /**
- * Footer Columns
+ * Education Section
  * -----------------------------------------------------------------------------
  */
 
-.menu-columns {
-    @include columns(float, nav, 4, 0);
-}
-
-/**
- * Education Landing Boxes
- * -----------------------------------------------------------------------------
- */
-
-.education-landing-section {
+.education__section {
     display: block;
     @include columns(float, div, 15% auto, 0);
 }
