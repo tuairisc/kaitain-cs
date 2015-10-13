@@ -279,7 +279,7 @@
         &--article {
             @include columns(flex, article, 4, 2%);
 
-            @include media(small) {
+            @include media(mobile) {
                 @include columns(flex, article, 2, 2%) {
                     @include margin($vspace * 0.5, bottom);
                 }
@@ -289,7 +289,7 @@
         &--div {
             @include columns(flex, div, 4, 2%);
 
-            @include media(small) {
+            @include media(mobile) {
                 @include columns(flex, div, 2, 2%) {
                     @include margin($vspace * 0.5, bottom);
                 }
