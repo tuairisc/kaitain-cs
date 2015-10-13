@@ -11,6 +11,58 @@
  */
 
 /**
+ * Article Blockquotes
+ * -----------------------------------------------------------------------------
+ */
+
+blockquote {
+    border: 1px solid palette(white, mid-light);
+    border-width: 1px 0;
+    color: palette(black, mid-light);
+    position: relative;
+    @include margin(1 3);
+    @include padding(2 3);
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    @include media(smartphone) {
+        @include margin(1 0);
+    }
+
+    &:before {
+        content: '‘';
+        position: absolute;
+        @include absolute(2 auto auto 0);
+        @include font-size(10);
+        @include line-height(7.5);
+    }
+
+    &:after {
+        content: '’';
+        @include absolute(auto 0 0 auto);
+        @include font-size(10);
+        @include line-height(2);
+    }
+
+    p:last-child {
+        margin: 0 !important;
+    }
+}
+
+cite {
+    color: palette(white, mid-light);
+    display: block;
+    font-weight: bold;
+    width: 100%;
+
+    &:before {
+        content: ' -';
+    }
+}
+
+/**
  * Miscellaneous Styling elements
  * -----------------------------------------------------------------------------
  */
@@ -98,10 +150,6 @@ figcaption {
     display: flex;   
 }
 
-.author-meta {
-    flex: 1 0 auto;
-}
-
 .kaitain-share-links {
     flex: 0 1 auto;
 }
@@ -112,30 +160,18 @@ figcaption {
  */
 
 .author-meta {
+    flex: 1 0 auto;
     display: flex;
 
-    .avatar {
+    &__avatar {
         flex: 0 1 75px;
         @include width(7.5);
         @include margin($vspace * 0.5, right);
     }
 
-    .author-info {
+    &__info {
         flex: 1 0 200px;
     }
-}
-
-.author-link a {
-    font-weight: bold;
-}
-
-/**
- * Post Footer
- * -----------------------------------------------------------------------------
- */
-
-footer {
-    // Add whatever.
 }
 
 /**
@@ -143,29 +179,26 @@ footer {
  * -----------------------------------------------------------------------------
  */
 
-.main-article-full {
-    header {
+.article--full {
+    &__header {
         @include title-underline(true);
     }
 
-    .title {
+    &__title {
         @include margin($vspace 0);
     }
 
-    .post-excerpt {
+    &__excerpt {
         @include title-underline; 
     }
 
-    .post-content {
+    &__content {
+        // Main article content, output dynamically by WordPress.
         @include clearfix;
         @include margin($vspace * 2 0);
 
         p, ul, ol, blockquote, iframe, figcaption {
             @include margin($vspace * 1.3, bottom);
-        }
-
-        .alignnone {
-            width: 100%;
         }
 
         img {
@@ -180,62 +213,6 @@ footer {
                 text-decoration: underline;
             }
         }
-        
-        p, li, blockquote {
-            // @include line-height(2);
-        }
-    }
-}
-
-/**
- * Article Blockquotes
- * -----------------------------------------------------------------------------
- */
-
-blockquote {
-    border: 1px solid palette(white, mid-light);
-    border-width: 1px 0;
-    color: palette(black, mid-light);
-    position: relative;
-    @include margin(1 3);
-    @include padding(2 3);
-
-    p:last-child {
-        margin-bottom: 0;
-    }
-
-    @include media(smartphone) {
-        @include margin(1 0);
-    }
-
-    &:before {
-        content: '‘';
-        position: absolute;
-        @include absolute(2 auto auto 0);
-        @include font-size(10);
-        @include line-height(7.5);
-    }
-
-    &:after {
-        content: '’';
-        @include absolute(auto 0 0 auto);
-        @include font-size(10);
-        @include line-height(2);
-    }
-
-    p:last-child {
-        margin: 0 !important;
-    }
-}
-
-cite {
-    color: palette(white, mid-light);
-    display: block;
-    font-weight: bold;
-    width: 100%;
-
-    &:before {
-        content: ' -';
     }
 }
 
@@ -300,57 +277,36 @@ article[class^=archive] {
  * Sidebar Article Template
  * -----------------------------------------------------------------------------
  * This is used in sidebar widget articles.
+ * Side-by-side layout is set via preset class in utils.
  */
 
-.sidebar-article {
-    &__thumb {
-        @include media(not-mobile) {
-            @include height(4.5);
-        }
+.article--sidebar {
+    &__link {
+        // Useful as override.
+        display: block;
+        height: 100%;
+    }
 
-        @include media(width max 540px) {
-            @include margin($vspace * 0.5, bottom);
+    &__thumbnail {
+        &--small {
+            // ??
         }
     }
 
     &__header {
-        @include media(not-mobile) {
-            box-sizing: border-box;
-            @include padding(1, left);
-        }
-    }
-}
-
-
-.sidebar-lead-thumbnail {
-    @include margin($vspace * 0.5, bottom);
-}
-
-.sidebar-category-title, .sidebar-category-subtitle {
-    @include margin($vspace * 0.75, bottom);
-}
-
-.sidebar-category-subtitle:hover a {
-    color: inherit;
-}
-
-/**
- * Single Post Related Articles
- * -----------------------------------------------------------------------------
- */
-
-.related-articles-wrapper {
-    @include media(smartphone) {
-        @include margin($vspace * 2, bottom);
+        // Had problems with margin and floats, so use inside padding instead.
+        box-sizing: border-box;
+        @include padding(1, left);
     }
 
-    @include media(print) {
-        display: none;
+    &__subtitle:hover a {
+        // Links would otherwise turn green.
+        color: inherit;
     }
-}
 
-.related-articles {
-    .title, .thumbnail {
-        @include margin($vspace * 0.5, bottom);
+    &__padding {
+        // Lead category post has padding to inset the title.
+        box-sizing: border-box;
+        @include padding(0 $vspace);
     }
 }
