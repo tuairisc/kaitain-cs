@@ -10,43 +10,71 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-$helper-path: 'includes/';
-
 @import 'includes/scss-helpers/helpers';
 @import 'base/variables';
 
 /**
- * Partials
+ * Display State with Opacity Transition
+ * -----------------------------------------------------------------------------
+ * IE9 doesn't like visibility.
+ */
+
+.disp {
+    &--hidden {
+       display: none;
+    }
+
+    &--shown {
+       display: block;
+    }
+}
+
+/**
+ * Flexbox Columns
  * -----------------------------------------------------------------------------
  */
 
 .flex {
+    &--asym-quarter-auto {
+        @include columns(float, div, 25% auto, 0);
+    }
+
     &--two-col {
-        &-div {
-            @include columns(float, div, 2, 2%);
+        &--article {
+            @include columns(float, article, 2, 2%);
         }
 
-        &-article {
-            @include columns(float, article, 2, 2%);
+        &--div {
+            @include columns(float, div, 2, 2%);
         }
     }
 
     &--three-col {
-        &-div {
+        &--article {
+            @include columns(float, article, 3, 2%);
+        }
+
+        &--div {
             @include columns(float, div, 3, 2%);
         }
 
-        &-article {
-            @include columns(float, article, 3, 2%);
+        &--nav {
+            @include columns(float, nav, 3, 0);
         }
     }
 
     &--four-col {
-        &-nav {
-            @include columns(float, nav, 4, 2%);
+        &--article {
+            @include columns(float, article, 4, 2%);
+
+            @include media(small) {
+                @include columns(float, article, 2, 2%) {
+                    @include margin($vspace * 0.5, bottom);
+                }
+            }   
         }
 
-        &-div {
+        &--div {
             @include columns(float, div, 4, 2%);
 
             @include media(small) {
@@ -56,14 +84,8 @@ $helper-path: 'includes/';
             }
         }
 
-        &-article {
-            @include columns(float, article, 4, 2%);
-
-            @include media(small) {
-                @include columns(float, article, 2, 2%) {
-                    @include margin($vspace * 0.5, bottom);
-                }
-            }   
+        &--nav {
+            @include columns(float, nav, 4, 2%);
         }
     }
 }
