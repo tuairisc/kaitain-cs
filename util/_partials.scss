@@ -30,13 +30,11 @@
     transition: .15s opacity ease-in;
 
    &--hidden {
-        display: none;
-        visibility: hidden;
         opacity: 0;
+        visibility: hidden;
     }
 
     &--shown {
-        display: initial;
         opacity: 1;
         visibility: visible;
     }
@@ -179,31 +177,41 @@
     }
 
     &--two-col {
-        &-div {
-            @include columns(flex, div, 2, 2%);
+        &--article {
+            @include columns(flex, article, 2, 2%);
         }
 
-        &-article {
-            @include columns(flex, article, 2, 2%);
+        &--div {
+            @include columns(flex, div, 2, 2%);
         }
     }
 
     &--three-col {
-        &-div {
+        &--article {
+            @include columns(flex, article, 3, 2%);
+        }
+
+        &--div {
             @include columns(flex, div, 3, 2%);
         }
 
-        &-article {
-            @include columns(flex, article, 3, 2%);
+        &--nav {
+            @include columns(flex, nav, 3, 0);
         }
     }
 
     &--four-col {
-        &-nav {
-            @include columns(flex, nav, 4, 2%);
+        &--article {
+            @include columns(flex, article, 4, 2%);
+
+            @include media(small) {
+                @include columns(flex, article, 2, 2%) {
+                    @include margin($vspace * 0.5, bottom);
+                }
+            }   
         }
 
-        &-div {
+        &--div {
             @include columns(flex, div, 4, 2%);
 
             @include media(small) {
@@ -213,14 +221,8 @@
             }
         }
 
-        &-article {
-            @include columns(flex, article, 4, 2%);
-
-            @include media(small) {
-                @include columns(flex, article, 2, 2%) {
-                    @include margin($vspace * 0.5, bottom);
-                }
-            }   
+        &--nav {
+            @include columns(flex, nav, 4, 2%);
         }
     }
 }
