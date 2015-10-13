@@ -17,6 +17,7 @@
 
 #header {
     @include nav-position;
+    @include nav-box-shadow;
 
     ul {
         list-style-type: none;
@@ -74,7 +75,7 @@
     height: 100%;
     transition: $transition-time;
 
-    body.section-greann & {
+    body.section--greann & {
         background-image: asset(greann white);
         background-size: auto 80%;
     }
