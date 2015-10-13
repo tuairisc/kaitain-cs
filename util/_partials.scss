@@ -8,7 +8,82 @@
  * @license    All Rights Reserved 
  * @version    2.0
  * @link       https://github.com/bhalash/tuairisc.ie
+ 
+/**
+ * Miscellaneous Post Styling elements
+ * -----------------------------------------------------------------------------
  */
+
+.title a:hover {
+    @extend %green-link;
+}
+
+.post-edit-link {
+    @extend %green-link;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.post-date {
+    @extend %small;
+    /* Stop colour changing when I hover on parent link.
+     * Hover colour propagates down from %greenlink, but I specifically do not 
+     * want this colour to be overridden.
+     */
+
+    color: palette(white, x-dark) !important;
+}
+
+/**
+ * Author Attribution
+ * -----------------------------------------------------------------------------
+ */
+
+.attribution {
+    @extend %green-link;
+    display: inline-block;
+
+    @include media(smartphone) {
+        display: block;
+        @include margin(0.3, top);
+    }
+
+    a {
+        font-weight: bold;
+    }
+}
+
+
+/**
+ * Thumbnails and Avatars
+ * -----------------------------------------------------------------------------
+ */
+
+.thumbnail, .author-photo {
+    img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+.thumbnail {
+    /* Chrome treats it as display: inline-block and adds invisible font
+     * space below the div.
+     */
+
+    font-size: 0;
+    // Trim children can have absolute positions.
+    position: relative;
+    width: 100%;
+}
+
+.author-photo {
+    background: center/cover no-repeat;
+    display: block;
+    @include square-flex(100% 1);
+}
 
 /**
  * Print

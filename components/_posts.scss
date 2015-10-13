@@ -11,157 +11,20 @@
  */
 
 /**
- * Article Blockquotes
+ * Full Articles
  * -----------------------------------------------------------------------------
  */
 
-blockquote {
-    border: 1px solid palette(white, mid-light);
-    border-width: 1px 0;
-    color: palette(black, mid-light);
-    position: relative;
-    @include margin(1 3);
-    @include padding(2 3);
-
-    p:last-child {
-        margin-bottom: 0;
+.article--full {
+    &__postmeta {
+        display: flex;
     }
 
-    @include media(smartphone) {
-        @include margin(1 0);
+    // Author meta.
+    &__author {
+        display: flex;
+        flex: 1 0 auto;
     }
-
-    &:before {
-        content: '‘';
-        position: absolute;
-        @include absolute(2 auto auto 0);
-        @include font-size(10);
-        @include line-height(7.5);
-    }
-
-    &:after {
-        content: '’';
-        @include absolute(auto 0 0 auto);
-        @include font-size(10);
-        @include line-height(2);
-    }
-
-    p:last-child {
-        margin: 0 !important;
-    }
-}
-
-cite {
-    color: palette(white, mid-light);
-    display: block;
-    font-weight: bold;
-    width: 100%;
-
-    &:before {
-        content: ' -';
-    }
-}
-
-/**
- * Miscellaneous Styling elements
- * -----------------------------------------------------------------------------
- */
-
-.title a:hover {
-    @extend %green-link;
-}
-
-figcaption {
-    color: palette(white, dark);
-}
-
-.post-edit-link {
-    @extend %green-link;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-.post-date {
-    @extend %small;
-    /* Stop colour changing when I hover on parent link.
-     * Hover colour propagates down from %greenlink, but I specifically do not 
-     * want this colour to be overridden.
-     */
-
-    color: palette(white, x-dark) !important;
-}
-
-/**
- * Author Attribution
- * -----------------------------------------------------------------------------
- */
-
-.attribution {
-    @extend %green-link;
-    display: inline-block;
-
-    @include media(smartphone) {
-        display: block;
-        @include margin(0.3, top);
-    }
-
-    a {
-        font-weight: bold;
-    }
-}
-
-/**
- * Thumbnails and Avatars
- * -----------------------------------------------------------------------------
- */
-
-.thumbnail, .author-photo {
-    img {
-        height: auto;
-        width: 100%;
-    }
-}
-
-.thumbnail {
-    /* Chrome treats it as display: inline-block and adds invisible font
-     * space below the div.
-     */
-
-    font-size: 0;
-    // Trim children can have absolute positions.
-    position: relative;
-    width: 100%;
-}
-
-.author-photo {
-    background: center/cover no-repeat;
-    display: block;
-    @include square-flex(100% 1);
-}
-
-/**
- * Post Meta
- * -----------------------------------------------------------------------------
- */
-
-.post-meta {
-    display: flex;   
-}
-
-.kaitain-share-links {
-    flex: 0 1 auto;
-}
-
-/**
- * Post Author Meta
- * -----------------------------------------------------------------------------
- */
-
-.author-meta {
-    flex: 1 0 auto;
-    display: flex;
 
     &__avatar {
         flex: 0 1 75px;
@@ -169,17 +32,11 @@ figcaption {
         @include margin($vspace * 0.5, right);
     }
 
-    &__info {
-        flex: 1 0 200px;
+    &__author-info {
+        // Fixed width is to prevent thumbnail from shrinking.
+        flex: 1 0 to-rem(20);
     }
-}
 
-/**
- * Full Articles
- * -----------------------------------------------------------------------------
- */
-
-.article--full {
     &__header {
         @include title-underline(true);
     }
@@ -217,6 +74,23 @@ figcaption {
 }
 
 /**
+ * Lead Archive Article.
+ * -----------------------------------------------------------------------------
+ */
+
+.article--lead {
+    &__title {
+        @include margin($vspace * 0.5 0);
+    }
+
+    &__author:hover a {
+        // It's impratical to add this directly to the child link, as it has a 
+        // sibling element.
+        @extend %green-link--hover;
+    }
+}
+
+/**
  * Lead, Normal and Small Archive Templates
  * -----------------------------------------------------------------------------
  * Featured: Used at the head of each category index, and the head of home page.
@@ -224,29 +98,9 @@ figcaption {
  * Archive: Used on all category and other archive pages.
  */
 
-article[class^=archive] {
-    header {
-        @include margin($vspace * 0.5, bottom);
-    }
+.article--archive {
+
 }
-
-// Lead article.
-
-.archive-lead-link {
-    @include margin($vspace * 0.5 0);
-}
-
-.archive-lead-title, .archive-title {
-    @include margin($vspace * 0.5 0);
-}
-
-// Small article (front page top section only)
-
-.archive-small-title {
-    @include margin($vspace * 0.5 0);
-}
-
-// "Regular" archive, used on all archive pages.
 
 .archive-title {
     font-weight: bold;
