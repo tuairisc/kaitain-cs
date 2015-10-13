@@ -154,10 +154,6 @@
     &__comment {
         @include columns(float, div, 7.5% auto, 2%);
     }
-
-    &__inputs{
-        @include columns(float, input, 3, 3%);
-    }
 }
 
 
