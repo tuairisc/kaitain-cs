@@ -10,13 +10,7 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-#sidebar {
-    @include media(print) {
-        display: none;
-    }
-}
-
-.sidebar-container {
+.sidebar__widgets {
     @include margin($vspace, bottom);
 
     @include media(medium) {
