@@ -13,6 +13,12 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
+.widget--sidebar__title {
+    @include title-underline(true);
+    font-variant: small-caps;
+    text-transform: uppercase;
+}
+
 /**
  * Home Author Widget
  * -----------------------------------------------------------------------------
@@ -25,16 +31,14 @@
     @include padding(1.3);
 }
 
-.widget--authors {
-    &__author {
-        // Hyperlink.
-        display: block;
+.widget--authors__author {
+    // Hyperlink.
+    display: block;
 
-        &:nth-child(-n+2) {
-            // It collapses to two columns at smaller sizes.
-            @include media(small) {
-                @include margin($vspace, bottom);
-            }
+    &:nth-child(-n+2) {
+        // It collapses to two columns at smaller sizes.
+        @include media(small) {
+            @include margin($vspace, bottom);
         }
     }
 }
@@ -45,27 +49,11 @@
  * Inside articles are styles in _posts.scss
  */
 
-.widget--featured {
-    &__row {
-        // Collapses to two columns. The margin looks bad in that state.
-        @include media(small) {
-            margin: 0;
-        }
+.widget--featured__row {
+    // Collapses to two columns. The margin looks bad in that state.
+    @include media(small) {
+        margin: 0;
     }
-}
-
-/**
- * Sidebar Widget Titles
- * -----------------------------------------------------------------------------
- * Title style for all sidebar widget titles. Main column widgets have different
- * titles.
- */
-
-.widget-subtitle {
-    // Some widgets have an underlned title.
-    @include title-underline(true, $vspace);
-    font-variant: small-caps;
-    text-transform: uppercase;
 }
 
 /**
@@ -73,36 +61,21 @@
  * -----------------------------------------------------------------------------
  */
 
-.side-cat-lr-padding {
-    // FIXME
-    box-sizing: border-box;
-    @include padding(0 $vspace);
-}
-
-.widget_kaitain_sidebar_category {
-    @include margin($vspace, bottom);
-
-    .widget-title {
-        @extend .side-cat-lr-padding;
-    }
-    
-    .widget-subtitle {
-        // Dirty no good hack.
-        border-bottom: none;
-    }
-}
-
-.side-cat-bg-grey {
-    // Default grey background.
-    background: palette(white, light); 
-}
-
-.side-cat-interior {
-    box-sizing: border-box;
+.widget--sidebarcat {
+    // Pad interior content to match sides.
     @include padding($vspace 0);
 
-    article:last-child {
-        margin-bottom: 0;
+    &__bg {
+        // Default grey background.
+        background: palette(white, light); 
+    }
+
+    .widget--sidebar__title {
+        // Don't like nesting, but there's no other great way to do this.
+        // Dirty no good hack.
+        border-bottom: none;
+        box-sizing: border-box;
+        @include padding(0 $vspace);
     }
 }
 
@@ -116,67 +89,76 @@
  *  1. Left side is a big thumbnail and title below in a section-coloured box.
  *  2. Right side is a vertical, evenly-spaced list of articles.
  *
- *  Collapses down to a single, compact list of posts at ~540px.
+ *  Collapses down to a single, compact list of posts at ~640px.
  */
 
-.category-widget-display {
-    // Flex display is set via separate class. This overrides it.
-    @include media(mobile) {
-        display: block;
+.article--category {
+    @include media(small) {
+        @include margin($vspace * 1.5, bottom);
     }
 }
 
-.bhalash-category-widget-left {
-    .category-article { 
-        @include media(small) {
-            @include margin($vspace * 1.5, bottom);
-        }
-    }
-
-    .category-article-link {
-        color: palette(white, x-light);
-
-        &:hover .category-article-title {
-            text-decoration: underline;
-        }
-    }
-
-    .category-article-title {
-        box-sizing: border-box;
-        @include padding(1);
-        @include rem(min-height, 9);
-
+.widget--category {
+    &__split {
         @include media(mobile) {
-            min-height: auto;
-        }
-    }
-}
-
-.bhalash-category-widget-right { 
-    /* Vertical flex changes early to stop article content overwriting the 
-     * element below. */
-    @include flex-parent(column, space-between);
-
-    @include media(medium) {
-        display: block;
-    }
-
-    .category-article-link {
-        @include columns(flex, div, 30% auto, 2%);
-
-        @include media(medium) {
-            @include columns(flex, div, 15% auto, 2%);
+            // Flex display is set via separate class. This overrides it.
+            display: block;
         }
     }
 
-    .category-article-title {
-        @extend %small;
-        @include line-height(1.8);
+    &__left {
+        // Left side of widget.
+        .article--category {
+            &__link:hover h5 {
+                // Nastyyyyyy.
+                text-decoration: underline;
+            }
+
+            &__title {
+                // Title text.
+                box-sizing: border-box;
+                color: palette(white, x-light);
+                @include padding(1);
+                @include rem(min-height, 9);
+
+                @include media(mobile) {
+                    min-height: auto;
+                }
+            }
+        }
     }
 
-    .category-article {
+    &__right {
+        /* Vertical flex changes early to stop article content overwriting the 
+         * element below. */
+        @include flex-parent(column, space-between);
+
         @include media(medium) {
-            @include margin($vspace, bottom);
+            display: block;
+        }
+
+        .article--category {
+            @include media(medium) {
+                @include margin($vspace, bottom);
+            }
+
+            &__link {
+                // Side-by-side flex.
+                @include columns(flex, div, 30% auto, 2%);
+
+                @include media(medium) {
+                    @include columns(flex, div, 15% auto, 2%);
+                }
+
+                &:hover h5 {
+                    color: inherit !important;
+                }
+            }
+
+            &__title {
+                @extend %small;
+                @include line-height(1.8);
+            }
         }
     }
 }
