@@ -16,18 +16,32 @@
  * Social 
  */
 
-.navbutton {
-    -webkit-appearance: button;
-    background: transparent;
-    cursor: pointer;
-    margin: 0;
-    opacity: 0.8;
-    padding: 0;
-    z-index: 3;
-    @include size($nav-height-full $nav-height-full);
+.navrow {
+    &__button {
+        -webkit-appearance: button;
+        background: transparent;
+        cursor: pointer;
+        margin: 0;
+        opacity: 0.8;
+        padding: 0;
+        z-index: 3;
+        @include size($nav-height-full $nav-height-full);
 
-    &:active {
-        opacity: 1;
+        &:active {
+            opacity: 1;
+        }
+
+        &--menu {
+            @include absolute(0 auto auto 0);
+
+            @include media(not-mobile) {
+                display: none;
+            }
+
+            @include media(small) {
+                display: block;
+            }
+        }
     }
 
     &__icon {
@@ -37,18 +51,6 @@
 
         @include social($nav-buttonicon-size-full, null, search menu close) {
             background-color: transparent;
-        }
-    }
-
-    &__menu {
-        @include absolute(0 auto auto 0);
-
-        @include media(not-mobile) {
-            display: none;
-        }
-
-        @include media(small) {
-            display: block;
         }
     }
 }
