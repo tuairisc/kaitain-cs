@@ -95,12 +95,12 @@
  * -----------------------------------------------------------------------------
  */
 
-#main {
+.main {
     @include columns(float, div, auto $sidebar-width, 2.5%);
-}
 
-#content {
-    padding: 0;
+    &__content {
+        padding: 0;
+    }
 }
 
 /**
@@ -108,17 +108,15 @@
  * -----------------------------------------------------------------------------
  */
 
-.widget--category {
-    .category-article-link {
-        @include columns(float, div, 30% auto, 2%);
-    }
+.widget--category__right {
+    // No flex available on IE9. Floats are /almost/ as good here.
 
-    .post-content {
-        padding: 0;
-    }
+    .article--category {
+        &__link {
+            @include columns(float, div, 30% auto, 2%);
+        }
 
-    article {
-        @include margin($vspace * 0.5, bottom);
+        @include margin($vspace 0.5, bottom);
     }
 }
 
@@ -127,11 +125,18 @@
  * -----------------------------------------------------------------------------
  */
 
-.post-meta {
-    @include clearfix;
+
+.article--full {
+    &__postmeta {
+        @include columns(float, div, 30% auto, 0);
+    }
+
+    &__author {
+        @include columns(float, div, 30% auto, 2%);
+    }
 }
 
-.kaitan-share-links {
+.article__sharing {
     float: right;
     width: calc(100% - 300px);
     @include clearfix;
@@ -139,12 +144,6 @@
     ul {
         float: right;
     }
-}
-
-.author-meta {
-    float: left;
-    width: 50%;
-    @include columns(float, div, 15% auto, 2%);
 }
 
 /**
