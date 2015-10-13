@@ -19,7 +19,7 @@ body {
      * header and site content. This is the only separation if a visitor employs
      * AdBlock. */
 
-    @include padding($nav-height-full + $nav-sections-menu-height, top);
+    @include padding($nav-height-full + $nav-primary-menu-height + $nav-secondary-menu-height, top);
 
     @include media(mobile) {
         @include padding($nav-height-full, top);
