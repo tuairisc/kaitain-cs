@@ -10,14 +10,10 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-#footer {
+.footer {
     background: palette(white, x-light);
     color: palette(white, x-light);
     font-family: map-get($fonts, open-sans);
-
-    @include media(print) {
-        display: none;
-    }
 
     p, li {
         @include font-size(1.3);
@@ -38,30 +34,42 @@
     ul {
         list-style-type: none;
     }
-}
 
-/**
- * Foras na Gaeilge Attribution
- * -----------------------------------------------------------------------------
- */
+    /**
+     * Footer Menu Columns
+     * -------------------------------------------------------------------------
+     */
 
-#foras {
-    // Has a different shade of blue.
-    background: palette(footer, blue);
-    @include padding(2);
+    &__menus {
+        background: palette(footer, green);
+        @include padding(2);
+    }
 
-    img {
-        width: 50%;
-        @include margin(2.5, top);
-        @include rem(max-width, 30);
-        
-        @include media(smartphone) {
-            max-width: 100%;
-            width: 80%;
+    /**
+     * Foras na Gaeilge Attribution
+     * -------------------------------------------------------------------------
+     */
+
+    &__foras {
+        // Has a different shade of blue.
+        background: palette(footer, blue);
+        @include padding(2);
+
+        img {
+            width: 50%;
+            @include margin(2.5, top);
+            @include rem(max-width, 30);
+            
+            @include media(mobile) {
+                max-width: 100%;
+                width: 80%;
+            }
+        }
+
+        @include media(mobile) {
+            @include padding(1 0 6);
         }
     }
-
-    @include media(smartphone) {
-        @include padding(1 0 6);
-    }
 }
+
+
