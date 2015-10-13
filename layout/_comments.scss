@@ -98,8 +98,10 @@
      */
 
     &__inputs {
-        // Wrapper container for the inputs on the commentform.
-        @include columns(flex, input, 3, 2%);
+        // IE10 and 11 wig the fuck out on flexbox inputs. Tl;DR: they ignore
+        // box-sizing: border-box and /add/ padding to the widget. This causes
+        // the element to wrap.
+        @include columns(float, input, 3, 2%);
 
         @include media(small) {
             display: block;
@@ -107,9 +109,9 @@
         }
 
         input {
-            width: 100%;
-            @include padding($vspace);
+            box-sizing: border-box;
             @include margin($vspace, bottom);
+            @include padding($vspace);
         }
     }
 }
