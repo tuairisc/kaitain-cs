@@ -14,15 +14,52 @@
  */
 
 /**
+ * Home Author Widget
+ * -----------------------------------------------------------------------------
+ */
+
+.widget_kaitain_authors {
+    // Thanks, WordPress.
+    background: palette(white, light);
+    box-sizing: border-box;
+    @include padding(1.3);
+}
+
+.widget--authors {
+    &__author {
+        // Hyperlink.
+        display: block;
+
+        &:nth-child(-n+2) {
+            // It collapses to two columns at smaller sizes.
+            @include media(small) {
+                @include margin($vspace, bottom);
+            }
+        }
+    }
+}
+
+/**
+ * Home Featured Article Widget
+ * -----------------------------------------------------------------------------
+ * Inside articles are styles in _posts.scss
+ */
+
+.widget--featured {
+    &__row {
+        // Collapses to two columns. The margin looks bad in that state.
+        @include media(small) {
+            margin: 0;
+        }
+    }
+}
+
+/**
  * Sidebar Widget Titles
  * -----------------------------------------------------------------------------
  * Title style for all sidebar widget titles. Main column widgets have different
  * titles.
  */
-
-.widget-title {
-    @include margin($vspace, bottom);
-}
 
 .widget-subtitle {
     // Some widgets have an underlned title.
@@ -31,58 +68,13 @@
     text-transform: uppercase;
 }
 
-.subtitle-underline {
-}
-
-/**
- * Home Featured Article Widget
- * -----------------------------------------------------------------------------
- * Inside articles are styles in _articles.scss
- */
-
-.featured-row {
-    @include margin($vspace * 0.5, bottom);
-
-    @include media(small) {
-        margin: 0;
-    }
-}
-
-/**
- * Home Author Widget
- * -----------------------------------------------------------------------------
- */
-
-.widget_kaitain_authors {
-    background: palette(white, light);
-    box-sizing: border-box;
-    @include padding(1.3);
-
-    a:hover .columnist-name {
-        color: inherit;
-    }
-}
-
-.columnist-photo { 
-    @include margin($vspace * 0.5, bottom);
-}
-
-.kaitain-columnist:nth-child(-n+2) {
-    @include media(small) {
-        @include margin($vspace, bottom);
-    }
-}
-
-.columnist-name {
-    font-weight: bold;
-}
-
 /**
  * Sidebar Featured Category Widget
  * -----------------------------------------------------------------------------
  */
 
 .side-cat-lr-padding {
+    // FIXME
     box-sizing: border-box;
     @include padding(0 $vspace);
 }
