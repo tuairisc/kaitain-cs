@@ -10,12 +10,7 @@
  * @link       https://github.com/bhalash/tuairisc.ie
  */
 
-/**
- * Comment Element
- * -----------------------------------------------------------------------------
- */
-
-#comments {
+.comments {
     p:not(.comment-meta) {
         @extend %small;
         @include margin($vspace, bottom);
@@ -28,77 +23,98 @@
             text-decoration: underline;
         }
     }
-}
 
-/**
- * Single Comment Style
- * -----------------------------------------------------------------------------
- */
+    /**
+     * Comments List
+     * -------------------------------------------------------------------------
+     */
 
-.comment {
-    @include columns(flex, div, 7.5% auto, 2) {
-        @include media(small) {
-            // Grow avatar at smaller screen sizes.
-            &:nth-child(1) {
-                @include flex-child(0 1 12%);
-                @include margin($vspace, right);
+    &__commentlist {
+        list-style-type: none;
+    }
+
+    /**
+     * Single Comment Style
+     * -------------------------------------------------------------------------
+     */
+
+    &__comment {
+        @include columns(flex, div, 7.5% auto, 2) {
+            @include media(small) {
+                // Grow avatar at smaller screen sizes.
+                &:nth-child(1) {
+                    @include flex-child(0 1 12%);
+                    @include margin($vspace, right);
+                }
             }
         }
     }
 
-    @include margin($vspace, bottom);
-}
-
-.comment-photo {
-    @include margin($vspace, right);
-    @include rem(max-width, 5);
-}
-
-.commentlist {
-    list-style-type: none;
-}
-
-.comment-body p:not(:last-child) {
-    @include margin($vspace, bottom);
-}
-
-.comment-author-link {
-    font-weight: bold;
-
-    a {
-        font-weight: inherit;
-    }
-}
-
-.comment-unapproved {
-    color: red;
-    font-variant: small-caps;
-    @include padding($vspace * 0.5 0);
-}
-
-/**
- * Comment Form Input Rules
- * -----------------------------------------------------------------------------
- */
-
-#commentform {
-    @include media(print) {
-        display: none;
-    }
-}
-
-.commentform-inputs {
-    // Wrapper container for the inputs on the commentform.
-    @include columns(flex, input, 3, 2%);
-
-    @include media(small) {
-        display: block;
-        margin: 0;
+    &__photo {
+        // Comment author photo.
+        @include margin($vspace, right);
+        @include rem(max-width, 5);
     }
 
-    input {
-        width: 100%;
-        @include padding($vspace);
+    &__comment-body p:not(:last-child) {
+        // Comment content.
         @include margin($vspace, bottom);
     }
+
+    &__author-website {
+        // Author homepage.
+        font-weight: bold;
+
+        a {
+            font-weight: inherit;
+
+            &:hover {
+                @extend %green-link--hover;
+            }
+        }
+    }
+
+    &__unapproved {
+        // Bad newbie user.
+        color: red;
+        font-variant: small-caps;
+        @include padding($vspace * 0.5 0);
+    }
+
+    /**
+     * Comment Form Input Rules
+     * -------------------------------------------------------------------------
+     */
+
+    &__form {
+        @include media(print) {
+            display: none;
+        }
+    }
+
+    /**
+     * Author, Website and Email Inputs
+     * -------------------------------------------------------------------------
+     */
+
+    &__inputs {
+        // Wrapper container for the inputs on the commentform.
+        @include columns(flex, input, 3, 2%);
+
+        @include media(small) {
+            display: block;
+            margin: 0;
+        }
+
+        input {
+            width: 100%;
+            @include padding($vspace);
+            @include margin($vspace, bottom);
+        }
+    }
+}
+
+.comment-edit-link {
+    // Thanks WordPress
+    @extend %green-link;
 }
