@@ -19,9 +19,16 @@ body {
      * header and site content. This is the only separation if a visitor employs
      * AdBlock. */
 
+    // Non-Greann sections at @desktop size.
     @include padding($nav-height-full + $nav-primary-menu-height + $nav-secondary-menu-height, top);
 
-    @include media(mobile) {
+    &.section--greann {
+        // Greann section has no submenu.
+        @include padding($nav-height-full + $nav-primary-menu-height, top);
+    }
+
+    @include media(small) {
+        // No header menu.
         @include padding($nav-height-full, top);
     }
 
@@ -37,13 +44,14 @@ body {
     box-sizing: border-box;
 
     // Sidebar width is implicitly set here.
+    // Fallback float size is set in ie.scss.
     @include columns(flex, div, auto $sidebar-width, 0);
     @include main-size;
     @include padding($content-padding);
 
     @include media(medium) {
-        padding: 2.5%;
         display: block;
+        padding: 2.5%;
     }
 
     @include media(print) {
