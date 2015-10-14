@@ -18,12 +18,20 @@
 .article--full {
     &__postmeta {
         display: flex;
+
+        @include media(small) {
+            display: block;
+        }
     }
 
     // Author meta.
     &__author {
         display: flex;
         flex: 1 0 auto;
+
+        @include media(small) {
+            @include margin($vspace, bottom);
+        }
     }
 
     &__avatar {
