@@ -23,7 +23,7 @@
     z-index: 3;
     @include fixed(0 0 auto 0);
 
-    @include media(mobile) {
+    @include media(smartphone) {
         position: absolute;
     }
 
