@@ -15,7 +15,7 @@
         @include margin($vspace * 2, bottom);
     }
 
-    p:not(.comment-meta) {
+    p:not(.comment-meta):not(:last-child) {
         @extend %small;
         @include margin($vspace, bottom);
     }
