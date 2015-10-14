@@ -33,14 +33,6 @@
 
         &--menu {
             @include absolute(0 auto auto 0);
-
-            @include media(not-mobile) {
-                display: none;
-            }
-
-            @include media(small) {
-                display: block;
-            }
         }
     }
 
