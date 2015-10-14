@@ -99,6 +99,27 @@
 }
 
 /**
+ * Navbar/Header Size and Position
+ * -----------------------------------------------------------------------------
+ * Animated scrolling up.
+ *
+ * NB: Element must have an explicit height or padding-bottom (from
+ * square-flex) for this to work!
+ */
+
+.scroll {
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+    &--up {
+        padding-bottom: 0 !important;
+        height: 0 !important;
+    }
+}
+
+/**
  * Display State with Opacity Transition
  * -----------------------------------------------------------------------------
  */
@@ -112,6 +133,7 @@
     }
 
     &--shown {
+        display: block;
         opacity: 1;
         visibility: visible;
     }
