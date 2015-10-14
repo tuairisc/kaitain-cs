@@ -192,9 +192,8 @@ blockquote {
     &:before {
         content: '‘';
         position: absolute;
-        @include absolute(2 auto auto 0);
+        @include absolute(0 auto auto 0);
         @include font-size(10);
-        @include line-height(7.5);
     }
 
     &:after {
