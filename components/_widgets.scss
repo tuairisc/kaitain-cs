@@ -157,7 +157,7 @@
 
             &__title {
                 @extend %small;
-                @include line-height(1.8);
+                @include line-height(2);
                 // Ensure separation when title spills out.
                 @include margin($vspace * 0.25, bottom);
             }
