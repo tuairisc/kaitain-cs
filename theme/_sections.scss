@@ -87,6 +87,10 @@ $sections: (
             // 2. Set trims for all sections text.
             color: $color;
         } 
+
+        &--#{$class}-shadow, &--#{$class}-shadow-hover:hover {
+            box-shadow: inset 0px -5px 0px -1px $color;
+        }
     }
 
     body.section--#{$class} .section {
@@ -106,17 +110,6 @@ $sections: (
             color: $color;
         }
     } 
-}
-
-// TODO FIXME 
-
-// Menu state variables follow.
-.active .section-background-active {
-    // background-color: $color;
-}
-
-.section-background-active a {
-    color: palette(White, x-light);
 }
 
 /**
