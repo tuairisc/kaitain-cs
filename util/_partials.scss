@@ -14,8 +14,10 @@
  * -----------------------------------------------------------------------------
  */
 
-.title a:hover {
-    @extend %green-link;
+.title  {
+    a:hover {
+        @extend %green-link;
+    }
 }
 
 .post-edit-link {
