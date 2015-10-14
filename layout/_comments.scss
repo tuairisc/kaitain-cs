@@ -11,6 +11,10 @@
  */
 
 .comments {
+    @include media(mobile) {
+        @include margin($vspace * 2, bottom);
+    }
+
     p:not(.comment-meta) {
         @extend %small;
         @include margin($vspace, bottom);
@@ -50,10 +54,14 @@
         }
     }
 
+    /**
+     * Single Comment Interior
+     * -------------------------------------------------------------------------
+     */
+
     &__photo {
         // Comment author photo.
-        @include margin($vspace, right);
-        @include rem(max-width, 5);
+        @include rem(max-width, 6);
     }
 
     &__comment-body p:not(:last-child) {
@@ -95,23 +103,25 @@
     /**
      * Author, Website and Email Inputs
      * -------------------------------------------------------------------------
+     * Order is important: The floats come last, and take priority. Rearranging
+     * this will break the style!
      */
 
     &__inputs {
-        // IE10 and 11 wig the fuck out on flexbox inputs. Tl;DR: they ignore
-        // box-sizing: border-box and /add/ padding to the widget. This causes
-        // the element to wrap.
-        @include columns(float, input, 3, 2%);
-
-        @include media(small) {
-            display: block;
-            margin: 0;
-        }
-
         input {
             box-sizing: border-box;
-            @include margin($vspace, bottom);
+            display: block;
+            width: 100%;
+
+            @include margin(0 0 $vspace * 0.5 0);
             @include padding($vspace);
+        }
+
+        @include media(not-mobile) {
+            // IE10 and 11 wig the fuck out on flexbox inputs. Tl;DR: they ignore
+            // box-sizing: border-box and /add/ padding to the widget. This causes
+            // the element to wrap.
+            @include columns(float, input, 3, 1%);
         }
     }
 }
