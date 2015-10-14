@@ -15,8 +15,9 @@
  * -----------------------------------------------------------------------------
  */
 
-.menu {
-    position: relative;
+.navmenu {
+    // Explicit height is needed for the scroll transition effect to work.
+    @include height($nav-primary-menu-height + $nav-secondary-menu-height);
 
     @include media(small) {
         display: none; 
