@@ -51,6 +51,9 @@
  * shape changes.
  */
 
+$icon-size-desktop: 4;
+$icon-size-mobile: 3;
+
 .article {
     &__sharing {
         // Share links parent container.
@@ -74,8 +77,16 @@
     &__shareitem {
         // Sharing li.
         display: inline-block;        
-        @include social(100% 1, '.article__sharespan', true);
-        @include size(4 4);
+        @include size($icon-size-desktop $icon-size-desktop);
+
+        @include social(100% 1, '.article__sharespan', true) {
+            display: block;
+
+            @include media(mobile) {
+                @include square-flex($icon-size-mobile 1);
+            }
+        }
+
 
         &:not(:last-child) {
             @include media(not-mobile) {
@@ -86,7 +97,7 @@
         @include media(mobile) {
             margin: 0;
             // Width is overridden by flexbox layout, above.
-            @include size(auto 3);
+            @include size(auto $icon-size-mobile);
 
             &:not(.facebook):not(.twitter):not(.email) {
                 // Hide everything but the Key Three Networks.
@@ -96,18 +107,14 @@
     }
 
     &__sharelink {
-        // a
         display: block;
-        @include square-flex(100% 1);
-
-        @include media(mobile) {
-            @include square-flex(30px 1);
-            margin: 0 auto;
-        }
+        height: 100%;
+        width: 100%;
     }
 
     &__sharespan {
-        // span
-        display: inherit;
+        @include media(mobile) {
+            margin: 0 auto;
+        }
     }
 }
