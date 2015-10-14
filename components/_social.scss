@@ -59,7 +59,7 @@ $icon-size-mobile: 3;
         // Share links parent container.
         flex: 0 1 auto;
 
-        @include media(mobile) {
+        @include media(smartphone) {
             border-bottom: 0;
             padding: 0;
             z-index: 3;
@@ -69,7 +69,7 @@ $icon-size-mobile: 3;
  
     &__sharemenu {
         // Interior sharing menu.
-        @include media(mobile) {
+        @include media(smartphone) {
             @include columns(flex, li, 3, 0);
         }
     }   
@@ -77,24 +77,26 @@ $icon-size-mobile: 3;
     &__shareitem {
         // Sharing li.
         display: inline-block;        
+        @include margin(0 0 $vspace * 0.25 $vspace * 0.5);
         @include size($icon-size-desktop $icon-size-desktop);
 
         @include social(100% 1, '.article__sharespan', true) {
             display: block;
 
-            @include media(mobile) {
+            @include media(smartphone) {
                 @include square-flex($icon-size-mobile 1);
             }
         }
 
 
-        &:not(:last-child) {
-            @include media(not-mobile) {
-                @include margin($vspace * 0.5, right);
+        @include media(tablet) {
+            &.print {
+                // ...it isn't like you'd normally print from an iPad.
+                display: none;
             }
         }
 
-        @include media(mobile) {
+        @include media(smartphone) {
             margin: 0;
             // Width is overridden by flexbox layout, above.
             @include size(auto $icon-size-mobile);
@@ -113,7 +115,7 @@ $icon-size-mobile: 3;
     }
 
     &__sharespan {
-        @include media(mobile) {
+        @include media(smartphone) {
             margin: 0 auto;
         }
     }
