@@ -24,39 +24,6 @@ body {
 }
 
 /**
- * Default Text Size and Weight
- * -----------------------------------------------------------------------------
- */
-
-blockquote, cite, li, footer p, ins, p, q, %text {
-    @include font-size(1.6);
-}
-
-p {
-    @include line-height(2.2);
-}
-
-/*
- * Remove Margins and Padding
- * -----------------------------------------------------------------------------
- */
-
-a img, blockquote, h1, h2, h3, h4, h5, h6, ol, p, pre, ul, %zero {
-    margin: 0;
-    padding: 0;
-}
-
-/**
- * Anchors
- * -----------------------------------------------------------------------------
- */
-
-a, %default-anchor {
-    color: palette(black, x-dark);
-    text-decoration: none;
-}
-
-/**
  * Forms
  * -----------------------------------------------------------------------------
  */
@@ -145,58 +112,6 @@ table.tg {
     a {
         text-decoration: none;
     }
-}
-
-/**
- * Headline Items
- * -----------------------------------------------------------------------------
- */
-
-h1, h2, h3, h4, h5, h6 {
-    // font-weight: bold;
-    // Ciaran put this in the mockups, in case he asks! 
-    font-weight: normal;
-}
-
-h1, %h1 { 
-    @include font-size(3);
-    @include line-height(4);
-}
-
-h2, %h2 { 
-    @include font-size(2.6); 
-}
-
-h3, %h3 { 
-    @include font-size(2.2);
-}
-
-h4, %h4 { 
-    @extend %text;
-}
-
-h5, %h5 { 
-    @include font-size(1.4);
-}
-
-h6, %h6 { 
-    // color: palette(white, mid-dark);
-    @include font-size(1.2);
-}
-
-/**
- * Gulliver's Text
- * -----------------------------------------------------------------------------
- * Normal text is ~1.6
- */
-
-.big, %big {
-    @include font-size(1.9);
-}
-
-cite, small, .small, %small {
-    letter-spacing: 0;
-    @include font-size(1.4);
 }
 
 /**
