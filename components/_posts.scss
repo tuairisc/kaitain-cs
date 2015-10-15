@@ -63,6 +63,7 @@
         @include margin($vspace * 2 0);
 
         p, ul, ol, blockquote, iframe, figcaption {
+            @include line-height(2.4);
             @include margin($vspace * 1.3, bottom);
         }
 
