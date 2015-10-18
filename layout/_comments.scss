@@ -15,11 +15,6 @@
         @include margin($vspace * 2, bottom);
     }
 
-    p:not(.comment-meta):not(:last-child) {
-        @extend %small;
-        @include margin($vspace, bottom);
-    }
-
     a {
         @extend %green-link;
 
@@ -64,9 +59,15 @@
         @include rem(max-width, 6);
     }
 
-    &__comment-body p:not(:last-child) {
-        // Comment content.
-        @include margin($vspace, bottom);
+    &__comment-body {
+        p, li, pre {
+            @extend .text--small;
+        }
+
+        > *:not(:last-child) {
+            // This is a nasty selector, but it works.
+            @include margin($vspace, bottom);
+        }
     }
 
     &__author-website {
