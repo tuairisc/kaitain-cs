@@ -13,14 +13,16 @@
 /**
  * Default Text Size and Weight
  * -----------------------------------------------------------------------------
+ * Font sizes and line heights are now completely in line with both the 
+ * golden ratio and modular scale.
  */
 
-blockquote, cite, li, footer p, ins, p, q, %text {
-    @include font-size(1.6);
+blockquote, cite, li, footer p, ins, p, q {
+    @include font-size($font-size--paragraph);
 }
 
-p {
-    @include line-height(2.2);
+blockquote p, cite, li, footer p, ins, p, q {
+    @include line-height($line-height--paragraph);
 }
 
 /*
@@ -28,7 +30,7 @@ p {
  * -----------------------------------------------------------------------------
  */
 
-a img, blockquote, h1, h2, h3, h4, h5, h6, ol, p, pre, ul, %zero {
+a img, blockquote, h1, h2, h3, h4, h5, h6, ol, p, pre, ul {
     margin: 0;
     padding: 0;
 }
@@ -38,8 +40,8 @@ a img, blockquote, h1, h2, h3, h4, h5, h6, ol, p, pre, ul, %zero {
  * -----------------------------------------------------------------------------
  */
 
-a, %default-anchor {
-    color: palette(black, x-dark);
+a {
+    color: inherit;
     text-decoration: none;
 }
 
@@ -49,48 +51,71 @@ a, %default-anchor {
  */
 
 h1, h2, h3, h4, h5, h6 {
-    // font-weight: bold;
-    // Ciaran put this in the mockups, in case he asks! 
     font-weight: normal;
 }
 
-h1, %h1 { 
+h1 { 
     @include font-size(3);
     @include line-height(4);
 }
 
-h2, %h2 { 
+h2 { 
     @include font-size(2.6); 
 }
 
-h3, %h3 { 
+h3 { 
     @include font-size(2.2);
 }
 
-h4, %h4 { 
-    @extend %text;
+h4 { 
+    // h4 extends normal text sizes.
+    @include font-size($font-size--paragraph);
 }
 
-h5, %h5 { 
+h5 { 
     @include font-size(1.4);
+    @include line-height(1.8);
 }
 
-h6, %h6 { 
-    // color: palette(white, mid-dark);
+h6 { 
     @include font-size(1.2);
 }
 
 /**
- * Gulliver's Text
+ * Text Aliignment and Styles
  * -----------------------------------------------------------------------------
- * Normal text is ~1.6
+ * There may be cases where I need to toggle text styles, which I wold prefer to
+ * do via addClass(class, bool). 
  */
 
-.big, %big {
-    @include font-size(1.9);
-}
+.text {
+    &--left {
+        text-align: left;
+    }
 
-cite, small, .small, %small {
-    letter-spacing: 0;
-    @include font-size(1.4);
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    &--small {
+        line-height: normal;
+        @include font-size(1.4);
+    }
+
+    &--big {
+        font-size: 120%;
+        @include font-size(1.8);
+    }
+
+    &--bold {
+        font-weight: bold;
+    }
+
+    &--italic {
+        font-style: italic;
+    }
 }
