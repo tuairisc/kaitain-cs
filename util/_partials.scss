@@ -14,12 +14,6 @@
  * -----------------------------------------------------------------------------
  */
 
-.title  {
-    a:hover {
-        @extend %green-link;
-    }
-}
-
 .post-edit-link {
     @extend %green-link;
 
@@ -29,7 +23,6 @@
 }
 
 .post-date {
-    @extend %small;
     /* Stop colour changing when I hover on parent link.
      * Hover colour propagates down from %greenlink, but I specifically do not 
      * want this colour to be overridden.
@@ -136,25 +129,6 @@
         display: block;
         opacity: 1;
         visibility: visible;
-    }
-}
-
-/**
- * Text Alignment
- * -----------------------------------------------------------------------------
- */
-
-.text {
-    &--left {
-        text-align: left;
-    }
-
-    &--center {
-        text-align: center;
-    }
-
-    &--right {
-        text-align: right;
     }
 }
 
