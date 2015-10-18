@@ -20,7 +20,7 @@ figure.wp-caption {
 }
 
 figcaption {
-    @extend %small;
+    @extend .text--small;
     @include padding($vspace * 0.5, top);
 }
 
