@@ -13,22 +13,44 @@
 $transition-time: .1s ease-in;
 
 /**
+ * Modular Scale Font Sies with the Golden Ratio
+ * -----------------------------------------------------------------------------
+ * 1.6 / golden ratio. $mod-scale--size * $mod-scale--ratio = 1.6 exactly with 
+ * Sass's ten-digits-of-precision rounding.
+ *
+ * @link https://en.wikipedia.org/wiki/Golden_ratio
+ * @link http://www.modularscale.com/
+ * @link http://www.pearsonified.com/typography/
+ */
+
+$mod-scale--size: 0.988854382;
+$mod-scale--ratio: 1.61803398875;
+
+$font-size--paragraph: modular-scale(1, $mod-scale--size, $mod-scale--ratio);
+$line-height--paragraph: $font-size--paragraph * $mod-scale--ratio;
+
+/**
  * Navbar
  * -----------------------------------------------------------------------------
  */
 
+// Full submenu height (+ menus below).
 $nav-height-submenu: 14;
-
+// Collpased submenu height (- menus below).
 $nav-height-full: 6;
 
+// Primary and secondary menu height.
 $nav-primary-menu-height: 3.5;
 $nav-secondary-menu-height: 3;
 
+// Override font size for the bigsearch input.
 $nav-bigsearch-font-size: 2.5;
+// Smaller, collapsed size for mobule devices.
 $nav-bigsearch-font-size-mobile: 2.5;
+
+// Smaller desktop, bigger mobile for better touch targets.
 $nav-buttonicon-size-full: 50% 1;
 $nav-buttonicon-size-mobile: 60% 1;
-$nav-homelink-width: 20;
 
 /**
  * Fallback Dimensions for Internet Explorer
@@ -42,7 +64,7 @@ $sidebar-width: 27.5%;
  * -----------------------------------------------------------------------------
  */
 
-$vspace: 1.3 !default;
+$vspace: $font-size--paragraph;
 
 /**
  * Main Content
