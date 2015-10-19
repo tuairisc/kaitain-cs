@@ -20,9 +20,6 @@
     @include height($nav-primary-menu-height + $nav-secondary-menu-height);
 
     @include media(small) {
-        // TODO FIXME DEBUG
-        display: none;
-
         .sections-menu {
             display: block;
         }
