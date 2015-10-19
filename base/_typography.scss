@@ -102,7 +102,7 @@ h6 {
     }
 
     &--small {
-        line-height: normal;
+        @include line-height(1.8);
         @include font-size(1.4);
     }
 
