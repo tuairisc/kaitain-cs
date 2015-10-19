@@ -76,7 +76,7 @@ body {
         @include padding($content-padding, right);
 
         > div:not(:last-child) {
-            @include margin(2, bottom);
+            @include margin($vspace, bottom);
         }
 
         @include media(medium) {
