@@ -75,10 +75,6 @@ body {
         // Left side: home columns.
         @include padding($content-padding, right);
 
-        > div:not(:last-child) {
-            @include margin($vspace, bottom);
-        }
-
         @include media(medium) {
             padding: 0;
         }
