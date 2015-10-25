@@ -76,7 +76,7 @@ $sections: (
             }
         }
 
-        &--#{$class}-bg--hover {
+        &--#{$class}-bg-hover {
             // 1b. Remove the solid-background hover effect at smaller screen sizes.
             @include media(small) {
                 background-color: $color;
@@ -102,6 +102,12 @@ $sections: (
 
             a {
                 color: inherit;
+            }
+        }
+
+        &--current-bg-submenu--mobile {
+            @include media(small) {
+                background-color: $color;
             }
         }
 
