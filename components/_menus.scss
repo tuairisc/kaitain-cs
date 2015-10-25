@@ -1,4 +1,4 @@
-/**
+/*
  * Navigation Menus
  * -----------------------------------------------------------------------------
  * @category   Sass Template
@@ -16,13 +16,21 @@
  */
 
 .navmenu {
-    // Explicit height is needed for the scroll transition effect to work.
-    @include height($nav-primary-menu-height + $nav-secondary-menu-height);
+    $self: #{&};
+
+    &#{$self + '--display'} {
+        // Element is hidden by the .conceal class, which reduces the max-height
+        // to zero and hides overflow. State is controlled by Knockout.
+        @include rem(max-height, $nav-primary-menu-height + $nav-secondary-menu-height);
+
+        @include media(small) {
+            max-height: 130vh;
+        }
+    }
 
     @include media(small) {
-        .sections-menu {
-            display: block;
-        }
+        background: palette(white, x-light);
+        overflow-y: scroll;
     }
 
     &__menu {
@@ -36,9 +44,16 @@
             display: none;
         }
 
-        @include media(smartphone) {
+        @include media(small) {
             border-top: 1px solid palette(white, x-dark);
             border-width: 1px 0;
+        }
+
+        li {
+            @include media(small) {
+                display: block;
+                width: 100%;
+            }
         }
         
         a {
@@ -47,6 +62,10 @@
 
             @include media(medium) {
                 @include padding(0 $vspace * 0.75);
+            }
+
+            @include media(small) {
+                text-align: left;
             }
         }
 
@@ -65,8 +84,7 @@
                 transition: $transition-time all;
 
                 @include media(small) {
-                    display: block;
-                    width: 100%;
+                    transition: none;
                 }
             }
 
@@ -84,6 +102,8 @@
 
                 @include media(small) {
                     color: palette(white, x-light);
+                    @include font-size(2);
+                    @include padding($vspace);
                 }
             }
         }
@@ -95,11 +115,6 @@
 
         &--secondary {
             border-top: 1px solid palette(white, mid-light);
-
-            @include media(small) {
-                // Collapse to 3 columns wide at mobile sizes.
-                @include columns(flex, li, 3, 2%);
-            }
 
             li {
                 // Box-shadow hover transitions.
@@ -114,6 +129,12 @@
 
                 @include media(not-small) {
                     @include line-height($nav-secondary-menu-height);
+                }
+
+                @include media(small) {
+                    color: palette(White, x-light);
+                    @include font-size(1.6);
+                    @include padding($vspace * 0.5 $vspace $vspace * 0.5 $vspace * 2);
                 }
             }
         }
