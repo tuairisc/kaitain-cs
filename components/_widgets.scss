@@ -118,6 +118,8 @@
                 // Title text.
                 box-sizing: border-box;
                 color: palette(white, x-light);
+                @include font-size(1.6);
+                @include line-height(2);
                 @include padding(1);
                 @include rem(min-height, 9);
 
