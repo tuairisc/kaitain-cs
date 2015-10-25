@@ -32,7 +32,15 @@
         }
 
         &--menu {
+            $self: #{&};
+
             @include absolute(0 auto auto 0);
+
+            &#{$self + '--display'} {
+                // Element is hidden by the .conceal class, which reduces the max-height
+                // to zero and hides overflow. State is controlled by Knockout.
+                @include rem(max-height, $nav-height-full);
+            }
         }
     }
 
