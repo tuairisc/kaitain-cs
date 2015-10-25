@@ -67,7 +67,7 @@
         }
     }
 
-    @include media(mobile) {
+    @include media(smartphone) {
         @include padding(1 0 6);
     }
 }
