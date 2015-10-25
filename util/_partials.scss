@@ -92,24 +92,17 @@
 }
 
 /**
- * Navbar/Header Size and Position
+ * Soft Conceal Elements
  * -----------------------------------------------------------------------------
- * Animated scrolling up.
- *
- * NB: Element must have an explicit height or padding-bottom (from
- * square-flex) for this to work!
+ * max-height: 0 accomplishes two things: 
+ * 1. Ensure the menu is hidden until it must display.
+ * 2. Accomodate the transition effect.
  */
 
-.scroll {
+.conceal {
+    max-height: 0; 
     overflow: hidden;
-    transition-property: all;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-
-    &--up {
-        padding-bottom: 0 !important;
-        height: 0 !important;
-    }
+    transition: max-height .2s;
 }
 
 /**
