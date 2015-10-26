@@ -66,7 +66,7 @@ $sections: (
     .section {
         // Individual sections.
 
-        &--#{$class}-bg, &--#{$class}-bg-hover:hover {
+        &--#{$class}--bg, &--#{$class}--bg-hover:hover {
             // 1. Set trims for all sections background.
             background-color: $color;
             color: #fff;
@@ -76,26 +76,26 @@ $sections: (
             }
         }
 
-        &--#{$class}-bg-hover {
+        &--#{$class}--bg-hover {
             // 1b. Remove the solid-background hover effect at smaller screen sizes.
             @include media(small) {
                 background-color: $color;
             }
         }
 
-        &--#{$class}-text, &--#{$class}-text-hover:hover {
+        &--#{$class}--text, &--#{$class}--text-hover:hover {
             // 2. Set trims for all sections text.
             color: $color;
         } 
 
-        &--#{$class}-shadow, &--#{$class}-shadow-hover:hover {
+        &--#{$class}--shadow, &--#{$class}--shadow-hover:hover {
             box-shadow: inset 0px -5px 0px -1px $color;
         }
     }
 
     body.section--#{$class} .section {
         // Current section, tied to <body> tag.
-        &--current-bg, &--current-bg-hover:hover {
+        &--current--bg, &--current--bg-hover:hover {
             // 3. Set trims for current section background.
             background-color: $color;
             color: #fff;
@@ -105,13 +105,13 @@ $sections: (
             }
         }
 
-        &--current-bg-submenu--mobile {
+        &--current--bg-submenu--mobile {
             @include media(small) {
                 background-color: $color;
             }
         }
 
-        &--current-text, &--current-text-hover:hover {
+        &--current--text, &--current--text-hover:hover {
             // 4. Set trims for current section text.
             color: $color;
         }
