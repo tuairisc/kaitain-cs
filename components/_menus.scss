@@ -33,15 +33,47 @@
         overflow-y: scroll;
     }
 
+    /**
+     * Focus/Current Displayed Submenu
+     * -------------------------------------------------------------------------
+     */
+
+    &--focused .sub-menu {
+        display: initial !important;
+        @include nav-box-shadow;
+
+        a {
+            color: #000 !important;
+        }
+    }
+
+    // &--focused, .section--menu-item:hover {
+    //     .sub-menu {
+    //         display: initial;
+    //         @include nav-box-shadow;
+
+    //         a {
+    //             color: #000;
+    //         }
+    //     }    
+    // }
+
+    /**
+     * Parent Menu
+     * -------------------------------------------------------------------------
+     */
+
     &__menu {
         margin: 0 auto;
-
-        @include media(not-small) {
-            background: palette(white, x-light);
-        }
+        position: relative;
+        text-align: center;
 
         &:empty {
             display: none;
+        }
+
+        @include media(not-small) {
+            background: palette(white, x-light);
         }
 
         @include media(small) {
@@ -49,13 +81,18 @@
             border-width: 1px 0;
         }
 
-        li {
+        /**
+         * Child Menu Item and Anchor Element
+         * ---------------------------------------------------------------------
+         */
+
+        .menu-item {
             @include media(small) {
                 display: block;
                 width: 100%;
             }
         }
-        
+
         a {
             box-sizing: border-box;
             display: block;
@@ -74,21 +111,17 @@
          * ---------------------------------------------------------------------
          */
 
-        &--primary {
+        .section--menu-item {
+            // Primary parentless menu item.
+            transition: $transition-time all;
+            // This removes the space after caused by display: inline-block;
+            @include margin(-0.4, right);
+
             @include media(small) {
-                width: 100%;
+                transition: none;
             }
 
-            li {
-                // Background-color and color transitions.
-                transition: $transition-time all;
-
-                @include media(small) {
-                    transition: none;
-                }
-            }
-
-            a {
+            > a {
                 @include padding(0 $vspace);
 
                 @include media(not-small) {
@@ -113,8 +146,13 @@
          * ---------------------------------------------------------------------
          */
 
-        &--secondary {
+       .sub-menu {
+            background: palette(White, x-light);
             border-top: 1px solid palette(white, mid-light);
+            display: none;
+            width: 100vw;
+
+            @include absolute(100% auto auto 0);
 
             li {
                 // Box-shadow hover transitions.
@@ -137,7 +175,7 @@
                     @include padding($vspace * 0.5 $vspace $vspace * 0.5 $vspace * 2);
                 }
             }
-        }
+       }
     }    
 }
 
@@ -167,3 +205,4 @@
         @include font-size(1.6);
     }
 }
+
