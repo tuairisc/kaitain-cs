@@ -1,5 +1,5 @@
 [submodule "scss-helpers"]
-	path = includes/scss-helpers
+    path = includes/scss-helpers
 	url = git@github.com:bhalash/scss-helpers.git
-    branch = master
-    ignore = dirty
+	branch = master
+	ignore = dirty
