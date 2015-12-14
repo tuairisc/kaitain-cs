@@ -3,6 +3,3 @@
 	url = git@github.com:bhalash/scss-helpers.git
     branch = master
     ignore = dirty
-[submodule "includes/scss-helpers"]
-	path = includes/scss-helpers
-	url = git@github.com:bhalash/scss-helpers.git
