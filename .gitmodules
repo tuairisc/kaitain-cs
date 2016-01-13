@@ -1,5 +1,3 @@
 [submodule "scss-helpers"]
     path = includes/scss-helpers
     url = https://github.com/bhalash/charon.git
-    branch = master
-    ignore = dirty
