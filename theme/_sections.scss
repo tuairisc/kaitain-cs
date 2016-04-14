@@ -66,8 +66,10 @@ $sections: (
     .section {
         // Individual sections.
 
-        &--#{$class}-bg, &--#{$class}-bg-hover:hover {
+        &--#{$class}-bg, &--#{$class}-bg-hover:hover,
+        &--#{$class}--bg, &--#{$class}--bg-hover:hover {
             // 1. Set trims for all sections background.
+            //     Added extra selectors for double dashed namespaced articles
             background-color: $color;
             color: #fff;
 

@@ -187,7 +187,10 @@
  * the balancing three list all the site sections.
  */
 
+
+/* Container for columns */
 .footer__columns {
+
     ul {
         @include margin($vspace, bottom);
     }
@@ -200,9 +203,38 @@
         display: block;
     }
 
-    li:nth-child(1) a {
-        font-weight: bold;
-        @include font-size(1.6);
+
+/* Footer site navigation menu and submenu styles */
+   
+    .footer__site-links-1 {
+        width: 33%;
+        float: left;
+    }
+
+    .footer__site-links-2 {
+        width: 65%;
+        margin-left:33.5%;
+        // Sets columns for site navigation        
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+
+        .menu li {
+            margin-bottom: 1rem;
+        }
+
+        .menu li a {
+            font-weight: bold;
+            @include font-size(1.6);
+        }
+
+        .menu li ul li {
+            margin-bottom: 0;
+        }
+
+        .menu li ul li a{
+            font-weight: normal;
+        }
     }
 }
 
