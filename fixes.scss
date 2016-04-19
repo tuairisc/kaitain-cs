@@ -1,0 +1,35 @@
+// Fixes
+body.post-featured-image {
+
+    padding-top: 80px;
+    @media screen and (max-width: 640px) {
+	    padding-top: 50px;
+	}
+}
+
+.trim-block {
+	transition: all 0.4s ease;
+	@media screen and (max-width: 360px) {
+		min-height: 10px;
+	}
+}
+
+
+// Single Post  featured image shadow
+.post-featured-image .post-thumbnail {
+	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.5);
+}
+
+
+/**
+ * Transparent and opaque
+ * -----------------------------------------------------------------------------
+ */
+
+.transparent {
+    opacity: 0;
+}
+
+.opaque {
+    opacity: 1;
+}
