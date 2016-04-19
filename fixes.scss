@@ -1,7 +1,19 @@
-// Fixes
-body.post-featured-image {
+/**
+ * Fixes
+ *-----------------------------------------------------------------------------
+ */
 
+
+
+/**
+ * Single post with featured image
+ *-----------------------------------------------------------------------------
+ */
+
+
+body.post-featured-image {
     padding-top: 80px;
+
     @media screen and (max-width: 640px) {
 	    padding-top: 50px;
 	}
@@ -14,16 +26,90 @@ body.post-featured-image {
 	}
 }
 
-
-// Single Post  featured image shadow
 .post-featured-image .post-thumbnail {
 	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.5);
 }
 
 
 /**
- * Transparent and opaque
+ * Main navigation - vertically stacked sub-menus
+ *-----------------------------------------------------------------------------
+ */
+
+#header li {
+	position: relative;
+
+	.sub-menu{
+		width: auto;
+		
+		li {
+	    	display: block;
+	    	width: auto;
+	    	white-space: nowrap;
+		}
+	} 
+}
+
+.navmenu__menu {
+
+	.menu-item > a {
+	    padding: 0 16px;
+	    padding: 0 1rem;
+
+		@media only screen and (min-width: 640px) {
+		    line-height: 35px;
+		    line-height: 2.1875rem;
+		}
+	}
+
+	.sub-menu a {
+	    font-size: 16px;
+	    font-size: 0.9rem;
+	}
+}
+
+/**
+ * Footer
+ *-----------------------------------------------------------------------------
+ * Footer site navigation menu and submenu styles
+ */
+
+.footer__columns {
+
+    .footer__site-links-1 {
+        width: 33%;
+        float: left;
+    }
+
+    .footer__site-links-2 {
+        width: 65%;   
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+
+        .menu li {
+            margin-bottom: 1rem;
+        
+        	a {
+	            font-weight: bold;
+	            @include font-size(1.6);
+        	}
+
+			ul li {
+	            margin-bottom: 0;
+			
+				a{
+		            font-weight: normal;
+		        }	        
+	        }
+        }
+    }
+}
+
+/**
+ *  Partials 
  * -----------------------------------------------------------------------------
+ * Transparent and opaque classes for hiding and displaying things nicely
  */
 
 .transparent {
