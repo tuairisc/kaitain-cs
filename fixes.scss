@@ -9,6 +9,13 @@
  *-----------------------------------------------------------------------------
  */
 
+.main>div:nth-child(1) {
+	flex: none;
+}
+.main>div:nth-child(2) {
+	flex: none;
+}
+
 #main .main__content {
 	display: block;
 	flex: none;
