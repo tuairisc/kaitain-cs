@@ -9,25 +9,59 @@
  *-----------------------------------------------------------------------------
  */
 
-.main>div:nth-child(1) {
-	flex: none;
-}
-.main>div:nth-child(2) {
-	flex: none;
+// Move the main content down if the admin bar is present
+@import 'includes/scss-helpers/decimal';
+
+.admin-bar {
+	#header {
+		margin-top: 30px;
+	}
+
+	#bigsearch {
+		margin-top: 30px;
+	}
 }
 
-#main .main__content {
+.main>div:nth-child(1) {
+	flex: unset;
+}
+.main>div:nth-child(2) {
+	flex: unset;
+}
+#main {
+	flex: unset;
 	display: block;
+}
+
+#main .main__content{
+/*	display: inline-block;
 	flex: none;
 	width: 70%;
-	padding-right: 16px;
+	padding-right: 16px;*/
+
+	width: 70%;
+ 	display: inline-block;
+    margin-right: -2px;
+    padding-right: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+
 }
 
 #main .main__sidebar {
-	display: block;
+/*	display: inline-block;
 	flex: none;
-	width: 28%;
-	float: left;
+	width: 27%;
+	/*width:30%;
+	margin: 0 -2px;
+	float: right;
+*/
+	width: 30%;
+ 	display: inline-block;
+    margin: 0 -2px;
+    padding-left: 16px;
+    vertical-align: top;
+    box-sizing: border-box;
 }
 
 /**
@@ -44,17 +78,35 @@ body.post-featured-image {
 	}
 }
 
-.trim-block {
+.single .trim-block {
 	transition: all 0.4s ease;
 	@media screen and (max-width: 360px) {
 		min-height: 10px;
 	}
 }
 
-.post-featured-image .post-thumbnail {
+.single .post-featured-image .post-thumbnail {
 	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.5);
 }
 
+.single #main {
+	flex-direction: column;
+}
+
+.single #main .flex-row {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+}
+
+
+.single #main .flex-row .title.article--full__title {
+	margin-top: 0;	
+}
+
+.single .article--lead__thumb {
+	min-width: 100%;
+}
 
 /**
  * Main navigation - vertically stacked sub-menus
@@ -92,6 +144,76 @@ body.post-featured-image {
 	    font-size: 16px;
 	    font-size: 0.9rem;
 	}
+}
+
+
+
+/**
+ * Home Page Widgets
+ *-----------------------------------------------------------------------------
+ */
+
+.featured-top-container {
+	width: 100%;
+}
+
+.featured-top-70 {
+ 	width: 70%;
+ 	display: inline-block;
+    margin: 0 -2px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.featured-top-30 {
+ 	width: 30%;
+ 	display: inline-block;
+    margin: 0 -2px;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding-left: 16px;
+ }
+
+.featured-main-area {
+	display: inline-block;
+	flex: none;
+	width: 70%;
+	padding-right: 16px;
+}
+
+
+.featured-sidebar-area {
+	display: inline-block;
+	flex: none;
+	width: 27%;
+	float: right;
+}
+
+
+.featured-50 {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 0 -2px;
+    padding: 0 8px 0 0;
+}
+
+.featured-25 {
+    max-width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 0 -2px;
+    padding: 0 0 8px 8px;
+}
+
+.featured-side-50 {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 0 -2px;
 }
 
 /**
@@ -240,7 +362,8 @@ $columnist-padding: 0px;
     display: inline-block;
     overflow: hidden;
 }
-.widget--category__right .article--category__link > div.article--category__thumb .post-thumbnail{
+.widget--category__right .article--category__link > div.article--category__thumb .post-thumbnail,
+.featured-post-image-inner {
     min-width: 100%;
     min-height:100%;
     width: unset;
@@ -259,6 +382,31 @@ $columnist-padding: 0px;
 	margin: 16px 0;
 }
 
+/**
+ *  Widgets 
+ * -----------------------------------------------------------------------------
+ * 
+ */
+
+
+/* Sidebar */
+.sidebar__widgets {
+
+	.widget--category {
+
+		.widget--category__split {
+			display: block;
+		}	
+	}
+}
+
+
+/* Columnist home page widget */
+.widget_kaitain_authors {
+	background: #434044;
+	color: #fff;
+}
+
 
 /**
  *  Partials 
@@ -272,4 +420,30 @@ $columnist-padding: 0px;
 
 .opaque {
     opacity: 1;
+}
+
+.flex-column {
+	display:flex;
+	flex-direction: column;
+}
+
+.flex-row {
+	display:flex;
+	flex-direction: row;
+}
+
+.gutter-full{
+	padding: 16px;
+}
+
+.gutter-half {
+	padding: 8px;
+}
+
+.gutter-half-left {
+	padding-left: 8px;
+}
+
+.gutter-half-right {
+	padding-right: 8px;
 }

@@ -24,6 +24,10 @@
 @media only screen and (max-width: 640px) {
 	#header__menu {
 		overflow: hidden;
+
+		li .sub-menu {
+			position: static;
+		}
 	}
 
 	.navmenu__menu .section--menu-item>a {
