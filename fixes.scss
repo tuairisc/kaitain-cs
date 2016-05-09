@@ -1,8 +1,19 @@
 /**
- * Fixes
+ * Variables
  *-----------------------------------------------------------------------------
  */
 
+$gutter: 16px;
+$half-gutter: $gutter / 2;
+
+/**
+ * Fonts
+ *-----------------------------------------------------------------------------
+ */
+
+h6 {
+	font-family: Helvetica, Arial, Sans-serif;
+}
 
 /**
  * Layout
@@ -153,8 +164,10 @@ body.post-featured-image {
  *-----------------------------------------------------------------------------
  */
 
-.featured-top-container {
+.featured-top-row-1,
+.featured-top-row-2 {
 	width: 100%;
+	position: relative;
 }
 
 .featured-top-70 {
@@ -168,19 +181,88 @@ body.post-featured-image {
 .featured-top-30 {
  	width: 30%;
  	display: inline-block;
-    margin: 0 -2px;
     vertical-align: top;
     box-sizing: border-box;
-    padding-left: 16px;
+ 	height: 100%;
+ 	position: absolute;
+ 	bottom: 0;
+ 	margin-left: $gutter + 2;
+ 	padding-right: $gutter;
  }
+
+.featured-top-30-bottom {
+	/*width: 100%;*/
+	position: absolute;
+	right: $gutter;
+	left: 0;
+	bottom: 0;
+}
+
+.featured-top-30-bottom .featured-side-50.gutter-half-right {
+	margin-left: 0;
+}
+
+.featured-top-30-bottom .featured-side-50.gutter-half-left {
+	margin-right: 0;
+}
+
+.featured-top-row-2-30 {
+	width: 30%;
+ 	display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+ 	position: absolute; /* comment out if float */
+ 	top:0;
+ 	margin-left: $gutter + 2; /* comment out if float */
+ 	padding-right: $gutter;
+ 	/*float: right;*/ /* comment IN if float */
+}
+
+.featured-top-33-container {
+	width: 30%;
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.featured-top-33-inner-container {
+	width: 100%;
+	margin-right: 0;
+	margin-left: $gutter - 2;
+	padding-right: $gutter;
+}
+
+.featured-top-33-inner-container .thumbnail,
+.featured-top-33-inner-container .title {
+	display: inline;
+}
+
+.featured-top-33-inner-container .thumbnail {
+    display: inline-block;
+    /*width: 33%;*/
+    width: 90px;
+    height: 90px; /* Set dimensions intended to make a square */
+    float: left;
+    padding-right: $gutter;
+    padding-bottom: $half-gutter;
+}
+
+.featured-top-33-inner-container .thumbnail img {
+	height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    width: unset;
+}
+
+.featured-top-33-inner-container .archive-trim-bottom {
+	margin-right: $gutter;
+}
 
 .featured-main-area {
 	display: inline-block;
 	flex: none;
 	width: 70%;
-	padding-right: 16px;
+	padding-right: $gutter;
 }
-
 
 .featured-sidebar-area {
 	display: inline-block;
@@ -189,14 +271,13 @@ body.post-featured-image {
 	float: right;
 }
 
-
 .featured-50 {
     width: 50%;
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
     margin: 0 -2px;
-    padding: 0 8px 0 0;
+    padding: 0 $half-gutter 0 0;
 }
 
 .featured-25 {
@@ -205,7 +286,7 @@ body.post-featured-image {
     vertical-align: top;
     box-sizing: border-box;
     margin: 0 -2px;
-    padding: 0 0 8px 8px;
+    padding: 0 0 $half-gutter $half-gutter;
 }
 
 .featured-side-50 {
@@ -433,7 +514,7 @@ $columnist-padding: 0px;
 }
 
 .gutter-full{
-	padding: 16px;
+	padding: $gutter;
 }
 
 .gutter-half {
@@ -446,4 +527,11 @@ $columnist-padding: 0px;
 
 .gutter-half-right {
 	padding-right: 8px;
+}
+
+.inner-image {
+	height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    width: unset;
 }
