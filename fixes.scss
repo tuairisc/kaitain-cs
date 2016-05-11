@@ -45,28 +45,15 @@ h6 {
 }
 
 #main .main__content{
-/*	display: inline-block;
-	flex: none;
-	width: 70%;
-	padding-right: 16px;*/
-
 	width: 70%;
  	display: inline-block;
     margin-right: -2px;
     padding-right: 0;
     vertical-align: top;
     box-sizing: border-box;
-
 }
 
 #main .main__sidebar {
-/*	display: inline-block;
-	flex: none;
-	width: 27%;
-	/*width:30%;
-	margin: 0 -2px;
-	float: right;
-*/
 	width: 30%;
  	display: inline-block;
     margin: 0 -2px;
@@ -74,6 +61,19 @@ h6 {
     vertical-align: top;
     box-sizing: border-box;
 }
+
+
+@media screen and (max-width: 560px) {
+
+	#main .main__content{
+		width: 100%;	
+	}
+
+	#main .main__sidebar {
+		width: 100%;
+	}
+}
+
 
 /**
  * Single post with featured image
@@ -352,9 +352,7 @@ body.post-featured-image {
 }
 
 
-@media (max-width: 560px) {
-// make responsive!
-}
+
 
 /**
  * Footer
