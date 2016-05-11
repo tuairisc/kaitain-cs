@@ -628,12 +628,24 @@ h5.article--category__title {
 
 /* Sets main and sidebar widths to 100% on mobile/small tablet */
 @media screen and (max-width: 600px) {
+
+	.single #main .flex-row {
+		flex-direction: column;
+	}
+
 	#main .main__content{
 		width: 100%;	
 	}
 	#main .main__sidebar {
 		width: 100%;
 	}
+
+	/* unset the height for the category widget so not to mess up the flow */
+	.widget--category {
+		height: unset;
+	}
+
+
 }
 
 
