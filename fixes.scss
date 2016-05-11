@@ -23,6 +23,11 @@ h6 {
 // Move the main content down if the admin bar is present
 @import 'includes/scss-helpers/decimal';
 
+
+div, article, .thumbnail {
+	transition: all 0.4s ease;
+}
+
 .admin-bar {
 	#header {
 		margin-top: 30px;
@@ -61,19 +66,6 @@ h6 {
     vertical-align: top;
     box-sizing: border-box;
 }
-
-
-@media screen and (max-width: 560px) {
-
-	#main .main__content{
-		width: 100%;	
-	}
-
-	#main .main__sidebar {
-		width: 100%;
-	}
-}
-
 
 /**
  * Single post with featured image
@@ -239,12 +231,23 @@ body.post-featured-image {
 
 	height: 300px;
 	margin-bottom: $gutter;
+	display: table;
 
 	.featured-top-70 .featured-50 .thumbnail {
 		height: 200px;
 	}
 
+	.featured-top-70 {
+		display: table-cell;
+	}
+
+	.featured-top-30 {
+		display: table-cell;
+	}
+
 }
+
+
 
 .featured-top-row-2 .featured-top-advert {
 	width: 300px;
@@ -325,7 +328,7 @@ body.post-featured-image {
 	float: right;
 }
 
-.featured-50 {
+.featured-50-a {
     width: 50%;
     display: inline-block;
     vertical-align: top;
@@ -334,7 +337,8 @@ body.post-featured-image {
     padding: 0 $half-gutter 0 0;
 }
 
-.featured-25 {
+.featured-25-b,
+.featured-25-c {
     max-width: 25%;
     display: inline-block;
     vertical-align: top;
@@ -615,3 +619,52 @@ h5.article--category__title {
 	display:block;
 	padding: 8px;
 }
+
+
+/**
+ * Media Queries
+ *-----------------------------------------------------------------------------
+ */
+
+/* Sets main and sidebar widths to 100% on mobile/small tablet */
+@media screen and (max-width: 600px) {
+	#main .main__content{
+		width: 100%;	
+	}
+	#main .main__sidebar {
+		width: 100%;
+	}
+}
+
+
+@media screen and (max-width: 700px) {
+	.featured-50-a {
+	    width: 100%;
+	    padding-right: 0;
+	}
+	.featured-25-b,
+	.featured-25-c {
+		max-width: 50%;
+	}
+	.featured-25-b {
+		padding-left: 0;
+		padding-right: $half-gutter;
+	}
+}
+
+
+/**
+ *	Sets top article's fixed height and visually dependant sidebar articles'
+ *	fixed heights to be shorter on tablets to maintain a readability and design
+ */
+@media screen and (max-width: 880px) {
+	.featured-top-row-1 .featured-top-70 .thumbnail {
+		height: 300px;
+	}
+	.featured-top-30 .featured-side-100 {
+		height: 215px;
+	}
+}
+
+
+
