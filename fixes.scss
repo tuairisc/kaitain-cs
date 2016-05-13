@@ -601,13 +601,24 @@ h5.article--category__title {
 
 .img-frame {
 	overflow: hidden;
+	position: relative;
 }
 
 .img-frame img {
-	height: auto;
+/*	height: auto;
     min-height: 100%;
     min-width: 100%;
     width: unset;
+*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    max-width: unset;
 }
 
 .section-trim {
@@ -620,11 +631,30 @@ h5.article--category__title {
 	padding: 8px;
 }
 
-
 /**
  * Media Queries
  *-----------------------------------------------------------------------------
  */
+
+@media screen and (max-width: 425px) {
+
+	.footer__columns {
+		flex-direction: column;
+	}
+
+	.footer__columns .footer__site-links-1 {
+		width: 100%;
+		float: none;
+	}
+
+	.footer__columns .footer__site-links-2 {
+		width: 100%;
+		column-count: 1;
+	}
+
+}
+
+
 
 /* Sets main and sidebar widths to 100% on mobile/small tablet */
 @media screen and (max-width: 600px) {
@@ -645,9 +675,10 @@ h5.article--category__title {
 		height: unset;
 	}
 
-
+	.footer__columns .footer__site-links-2 {
+		column-count: 2;
+	}
 }
-
 
 @media screen and (max-width: 700px) {
 	.featured-50-a {
@@ -664,7 +695,6 @@ h5.article--category__title {
 	}
 }
 
-
 /**
  *	Sets top article's fixed height and visually dependant sidebar articles'
  *	fixed heights to be shorter on tablets to maintain a readability and design
@@ -677,6 +707,3 @@ h5.article--category__title {
 		height: 215px;
 	}
 }
-
-
-
