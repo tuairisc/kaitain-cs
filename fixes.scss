@@ -173,10 +173,28 @@ body.post-featured-image {
     margin: 0 -2px;
     vertical-align: top;
     box-sizing: border-box;
+
 }
 
-.featured-top-row-1 .featured-top-70 .thumbnail {
-	height: 380px;
+.featured-top-row-1 .featured-top-70 {
+
+	.thumbnail {
+		height: 380px;
+	}
+
+	.article--lead__title {
+		margin: 0;
+	}
+
+	.article--lead__title,
+	.article--lead__header,
+	.article--lead__excerpt {
+		padding: 10px;
+	}
+
+	.featured-top-70-text {
+		min-height: 174px;
+	}
 }
 
 .article--lead__excerpt {
@@ -340,18 +358,34 @@ body.post-featured-image {
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
-    margin: 0 -2px;
-    padding: 0 $half-gutter 0 0;
+    /*margin: 0 -2px;*/
+    /*padding: 0 $half-gutter 0 0;*/
+    margin-right: $gutter;
+    padding: 0;
+    height:	300px;
+	background: #f3f3f3;
 }
 
 .featured-25-b,
 .featured-25-c {
-    max-width: 25%;
+    /*max-width: 25%;*/
+    max-width: 22%;
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
     margin: 0 -2px;
-    padding: 0 0 $half-gutter $half-gutter;
+    /*padding: 0 0 $half-gutter $half-gutter;*/
+    height: 300px;    
+	background: #f3f3f3;
+}
+
+.featured-25-b .thumbnail,
+.featured-25-c .thumbnail {
+	height: 120px;
+}
+
+.featured-25-b {
+    margin-right: $gutter;
 }
 
 .featured-side-50 {
@@ -440,7 +474,7 @@ $columnist-padding: 0px;
 	margin-left: 16px;
 	width: 140px;
     vertical-align: top;
-    /*background-color: #F5F5F5;*/
+    background-color: #f3f3f3; // #F5F5F5;
     padding: $columnist-padding; /*maybe not, forces columnist-avatar to do negative margins of same amount */
 }
 
