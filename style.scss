@@ -16,6 +16,9 @@ $helper-path: 'includes/';
 @import 'includes/scss-helpers/helpers';
 @import 'includes/normalize';
 
+// Bootstrap Grid
+@import 'bootstrap/bootstrap';
+
 // Site base files.
 @import 'base/variables';
 @import 'base/typography';
@@ -49,9 +52,6 @@ $helper-path: 'includes/';
 @import 'layout/sidebar';
 @import 'layout/404';
 @import 'layout/comments';
-
-// Bootstrap Grid
-@import 'bootstrap/bootstrap';
 
 // Fixes
 @import 'fixes';

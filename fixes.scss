@@ -659,7 +659,7 @@ h5.article--category__title {
 
 
 /**
- *  Partials 
+ *  Partials and misc
  * -----------------------------------------------------------------------------
  * Transparent and opaque classes for hiding and displaying things nicely
  */
@@ -728,6 +728,26 @@ h5.article--category__title {
 .title-container {
 	display:block;
 	padding: 8px;
+}
+
+.stripe.top-trim {
+	width: 100%;
+	margin: 0;
+	/*max-width: 1144px;*/
+	/*max-width: 71.435rem;*/
+	background: none;
+	background-image: url("../images/stripe.svg");
+    background-position: center;
+    background-size: 101%;
+}
+
+.trim-block {
+	width: 100%; // instead of 97%
+	overflow: hidden;
+
+	.stripe {
+		background-size: 101%; // gets around that weird behavior in chrome
+	}
 }
 
 /**
