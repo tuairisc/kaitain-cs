@@ -11,9 +11,16 @@ $half-gutter: $gutter / 2;
  *-----------------------------------------------------------------------------
  */
 
-h6 {
-	font-family: Helvetica, Arial, Sans-serif;
+h1, h2, h3,
+.featured-top-row-1 .featured-top-70,
+.featured-top-row-1 .featured-top-30 .featured-side-100 {
+	font-family: Georgia, serif;
 }
+
+h6 {
+	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+}
+
 
 /**
  * Layout
@@ -199,7 +206,7 @@ body.post-featured-image {
 
 	.article--lead__title {
 		margin: 0;
-		font-family: serif;
+		font-family: Georgia, serif;
 		font-size: 27px;
 		line-height: 33px;
 	}
@@ -462,13 +469,26 @@ $columnist-padding: 0px;
 	text-align: center; // on mobile
 }
 
-.popular-widget	.article-popular .article-popular-header, 
+
 .recent-post-container-widget .article-recent-header {
 	padding: $half-gutter;
-	min-height: 141px;
+	min-height: 165px;
+}
+.recent-post-container-widget .article-recent .thumbnail {
+	height: 96px;
 }
 
 
+.popular-widget	.article-popular .article-popular-header {
+	height: 76px;
+	padding: $half-gutter;
+}
+.popular-widget .article-popular .thumbnail {
+	height: 76px;
+}
+.popular-widget .article-popular-header {
+	overflow: hidden;
+}
 
 
 /**
@@ -510,6 +530,7 @@ $columnist-padding: 0px;
 
 .widget--category__left .article--category__title {
 	min-height: 76px;
+	height: 76px;
 }
 
 .widget--category__right .article--category__link {
@@ -558,17 +579,6 @@ h5.article--category__title {
 }
 
 
-
-/**
- *  Homepage Recent Posts in Category Widget
- * -----------------------------------------------------------------------------
- *
- */
-
-.home {
-
-}
-
 /**
  *  Partials and misc
  * -----------------------------------------------------------------------------
@@ -578,49 +588,39 @@ h5.article--category__title {
 .transparent {
     opacity: 0;
 }
-
 .opaque {
     opacity: 1;
 }
-
 .flex-column {
 	display:flex;
 	flex-direction: column;
 }
-
 .flex-row {
 	display:flex;
 	flex-direction: row;
 }
-
 .gutter-full{
 	padding: $gutter;
 }
-
 .gutter-half {
-	padding: 8px;
+	padding: $half-gutter;
 }
-
 .gutter-half-left {
-	padding-left: 8px;
+	padding-left: $half-gutter;
 }
-
 .gutter-half-right {
-	padding-right: 8px;
+	padding-right: $half-gutter;
 }
-
 .img-frame {
 	overflow: hidden;
     padding: 0;
 /*	position: relative;*/
 }
-
 .img-frame img {
 	height: auto;
     min-height: 100%;
     min-width: 100%;
     width: unset;
-
 /*  position: absolute;
     left: 50%;
     top: 50%;
@@ -631,17 +631,14 @@ h5.article--category__title {
     transform: translate(-50%,-50%);
     max-width: unset;*/
 }
-
 .section-trim {
 	height: 3px;
 	background-color: #AAB;
 }
-
 .title-container {
 	display:block;
 	padding: 8px;
 }
-
 .stripe.top-trim {
 	width: 100%;
 	margin: 0;
@@ -650,7 +647,6 @@ h5.article--category__title {
     background-position: center;
     background-size: 101%;
 }
-
 .trim-block {
 	width: 100%; 
 	overflow: hidden;
@@ -662,6 +658,26 @@ h5.article--category__title {
 
 .post-date {
 	color: rgba(250,250,250,0.7);	
+}
+
+.thumbnail.col-lg-3,
+.thumbnail.col-md-3,
+.thumbnail.col-sm-3,
+.thumbnail.col-xs-3 {
+	width: 25%;
+}
+
+
+
+.widget--category__left .youtube-embed-post .article--category__title   {
+	min-height:56px;
+	height:56px;
+	margin-top:20px;
+	line-height: 21px;
+	line-height: 1.35rem;
+}
+.youtube-embed-post .thumbnail.youtube-embed-container {
+	overflow: visible;
 }
 /**
  * Media Queries
@@ -759,6 +775,7 @@ h5.article--category__title {
 	.adrotate_widgets {
 		text-align: left;
 	}
+
 }
 
 @media screen and (min-width: 880px) {
@@ -791,11 +808,6 @@ h5.article--category__title {
 			min-height: 139px;
 		}
 	}
-
-	.popular-widget .article-popular .thumbnail,
-	.recent-post-container-widget .article-recent .thumbnail {
-		height: 96px;
-	}
 }
 
 
@@ -813,6 +825,10 @@ h5.article--category__title {
 
 	.featured-top-30 .featired-side-100 {
 		height: auto;
+	}
+
+	.home .sidebar__widgets {
+		display: block;
 	}
 }
 
@@ -873,6 +889,18 @@ h5.article--category__title {
 	.home .widget--category__right .article--category__title {
 		font-size: 14px;
 		line-height: 17px;
+	}
+
+	// fix larger broken stuff
+	.home .article-popular-header h5 {
+	    font-size: 14px;
+	    font-size: .875rem;
+	    line-height: 20px;
+	    line-height: 1.25rem;
+	}
+	.home .article-popular-header h6 {
+	    font-size: 12px;
+	    font-size: .75rem;
 	}
 }
 
