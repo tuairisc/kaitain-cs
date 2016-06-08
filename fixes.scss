@@ -7,13 +7,35 @@ $gutter: 16px;
 $half-gutter: $gutter / 2;
 
 /**
+ * Mixins
+ *-----------------------------------------------------------------------------
+ */
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+@mixin object-fit($fit: fill, $position: null){
+  -o-object-fit: $fit;
+     object-fit: $fit;
+  @if $position {
+	  -o-object-position: $position;
+	     object-position: $position;
+  	font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+  	font-family: 'object-fit: #{$fit}';
+  }
+}
+
+/**
  * Fonts
  *-----------------------------------------------------------------------------
  */
 
 // fix oddness on iOS chrome, font-weight: normal makes h tags bold
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
+	font-weight: 400 !important;
 }
 
 h1, h2, h3,
@@ -31,8 +53,10 @@ h6 {
 .home h6 {
     font-size: 15px;
     font-size: 0.937rem;
-    line-height: 20px;
-    line-height: 1.3rem;
+/*    line-height: 20px;
+    line-height: 1.3rem;*/
+    line-height: 16px;
+    line-height: 1rem;
 }
 
 /**
@@ -157,10 +181,8 @@ body.post-featured-image {
 
 #header li {
 	position: relative;
-
 	.sub-menu{
 		width: auto;
-		
 		li {
 	    	display: block;
 	    	width: auto;
@@ -171,21 +193,24 @@ body.post-featured-image {
 }
 
 .navmenu__menu {
-
 	.menu-item > a {
 	    padding: 0 16px;
 	    padding: 0 1rem;
-
 		@media only screen and (min-width: 640px) {
 		    line-height: 35px;
 		    line-height: 2.1875rem;
 		}
 	}
-
 	.sub-menu a {
 	    font-size: 16px;
 	    font-size: 0.9rem;
 	}
+}
+
+// Fix menu hover
+
+.navmenu__menu .section--menu-item {
+	margin-right: 0;
 }
 
 /**
@@ -202,7 +227,6 @@ body.post-featured-image {
 	width: 100%;
 	position: relative;
 	margin: 0;
-
 	article {
 		background: #f3f3f3;
 	}
@@ -216,20 +240,17 @@ body.post-featured-image {
 }
 
 .featured-top-row-1 .featured-top-70 {
-
 	.article--lead__title {
 		margin: 0;
 		font-family: Georgia, serif;
 		font-size: 27px;
 		line-height: 33px;
 	}
-
 	.article--lead__title,
 	.article--lead__header,
 	.article--lead__excerpt {
 		padding: 10px;
 	}
-
 }
 
 .article--lead__excerpt {
@@ -238,7 +259,6 @@ body.post-featured-image {
 }
 
 .featured-top-30 {
-  /*  width: 30%;*/
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
@@ -271,18 +291,13 @@ body.post-featured-image {
  	display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
- /*	position: absolute;*/ /* comment out if float */
  	top:0;
- 	margin-left: $gutter + 2; /* comment out if float */
+ 	margin-left: $gutter + 2;
  	padding-right: $gutter;
- 	/*float: right;*/ /* comment IN if float */
 }
 
 .featured-top-33-container {
     height: 86px;
-}
-
-.featured-top-33-inner-container {
 }
 
 .featured-top-33-inner-container .title {
@@ -428,25 +443,21 @@ $columnist-padding: 0px;
 /* Sidebar */
 .sidebar__widgets {
 	.widget--category {
-
 		height: auto;
 
 		.widget--category__split {
 			display: block;
 		}	
-	
+
 		.widget--category__left {
 			flex-basis: 100%;
-
 			.article--category {
 				height: 270px;
 			    margin-bottom: 16px;
 			}
-
 			.article--category__thumb.thumbnail {
 				height: 190px;
 			}
-
 			.article--category__thumb.thumbnail img {
 				min-height: 190px;
 			}
@@ -472,24 +483,28 @@ $columnist-padding: 0px;
 	text-align: center; // on mobile
 }
 
-.recent-post-container-widget .article-recent-header {
+/* Recent Posts Container Widget */
+.recent-post-container-widget .article-recent .post-content {
 	padding: $half-gutter;
-	min-height: 165px;
+	min-height: 100px;
 }
 .recent-post-container-widget .article-recent .thumbnail {
-	height: 96px;
+	height: 100px;
+}
+.article-recent .archive-trim-top {
+	display: block; // hidden on larger devices
 }
 
 
 .popular-widget	.article-popular .article-popular-header {
-	height: 76px;
+	min-height: 76px;
 	padding: $half-gutter;
 }
 .popular-widget .article-popular .thumbnail {
 	height: 76px;
 }
 .popular-widget .article-popular-header {
-	overflow: hidden;
+	overflow: visible;
 }
 
 
@@ -616,20 +631,47 @@ h5.article--category__title {
 .img-frame {
 	overflow: hidden;
     padding: 0;
+    position: relative;
 /*	position: relative;*/
 }
 .img-frame img {
-	height: auto;
+	/*height: auto;
     min-height: 100%;
     min-width: 100%;
-    width: unset;
+    width: unset;*/
+/*    //
+    // crop wide images to container while maintaining height
+    //
+    height:100%;
+    width: auto;
+    max-width: none;
+    //
+    // center img within .img-frame container
+    //
+    position: absolute;
+	left: 50%;
+	top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+
+*/
+    height: 100%; // set media queries for heights
+    width: 100%;
+    max-width: none;
+    @include object-fit( cover, center );
 }
 .section-trim {
 	height: 3px;
 	/*background-color: #AAB;*/
 }
+.archive-trim-top {
+	height: 5px;
+    height: .3125rem;
+}
+	
 .title-container {
-	display:block;
+	display: block;
 	padding: 8px;
 }
 .stripe.top-trim {
@@ -650,6 +692,7 @@ h5.article--category__title {
 }
 
 .post-date {
+	display: none;
 	color: rgba(250,250,250,0.7);	
 }
 
@@ -686,12 +729,24 @@ h5.article--category__title {
 	.thumbnail.col-xs-4 {width: 33.33333333%;}
 	.thumbnail.col-xs-6 {width: 50%;}
 	.thumbnail.col-xs-8 {width: 66.66666667%;}
+
 }
 
 /* col-sm starts here */
 @media screen and (min-width: 768px) {
 
+	.featured-top-row-1 .title-container, 
+	.featured-top-row-2 .title-container {
+	    min-height: 100px;
+	}
 
+	.featured-side-50 .thumbnail,
+	.featured-top-33-inner-container .thumbnail,
+	.featured-top-row-1 .featured-side-100 .thumbnail,
+	.featured-top-row-2 .featured-50-a .thumbnail {
+		height: 150px;
+	}
+	
 	.featured-top-row-1 {
 
 		.featured-top-70 {
@@ -700,7 +755,7 @@ h5.article--category__title {
 				height: 300px;
 			}
 			.featured-top-70-text {
-				min-height: 182px;
+				min-height: 239px; // lines up bottom of lead article with bottom of side article
 			}
 			.article--lead__excerpt {
 			    display: block;
@@ -740,8 +795,9 @@ h5.article--category__title {
 		}
 	}
 
-	.featured-top-30-middle .featured-side-50 .thumbnail {
-	    height: 75px;
+	.featured-top-30-middle .featured-side-50 .thumbnail,
+	.featured-top-30 .featured-top-33-inner-container .thumbnail {
+	    height: 100px;
 	}
 
 	.featured-top-30 .featured-top-33-inner-container {
@@ -752,7 +808,7 @@ h5.article--category__title {
 		}
 		.thumbnail {
 		    display: inline-block;
-		    height: 83px; /* Set dimensions intended to make a square */
+		    /*height: 83px;  Set dimensions intended to make a square */
 		    float: left;
 		    padding-right: 0;
 		    padding-left: 0;
@@ -765,36 +821,32 @@ h5.article--category__title {
 		    width: unset;
 		    max-width: unset;
 		}
-
-		.title-container {
-			min-height: 83px;
-		}
-
 	}
 
-	.featured-top-row-1 .title-container, 
-	.featured-top-row-2 .title-container {
-	    min-height: unset;
+	/* Widgets */
+	.recent-post-container-widget .article-recent-header {
+		min-height: 127px;
 	}
 
-	.featured-top-row-1 .title-container, 
-	.featured-top-row-2 .title-container {
-	    min-height: 150px;
+	.article-recent-header .article-recent-title {
+		margin-bottom: 18px;
 	}
 
-	.featured-side-50 .thumbnail,
-	.featured-top-33-inner-container .thumbnail,
-	.featured-top-row-1 .featured-side-100 .thumbnail,
-	.featured-top-row-2 .thumbnail {
-		height: 150px;
+	.popular-widget	.article-popular .article-popular-header {
+		min-height: 100px;
 	}
-
+	.popular-widget .article-popular .thumbnail {
+		height: 100px;
+	}
 
 	.widget_kaitain_authors {
 		height: 297px; // + 3px for trim totals 300px as per spec
 	}
 	.adrotate_widgets {
 		text-align: left;
+	}
+	.article-recent .archive-trim-top {
+		display: none; // hidden on larger devices
 	}
 
 	.thumbnail.col-sm-3 {
@@ -807,19 +859,27 @@ h5.article--category__title {
 		width: 66.66666667%;
 	}
 
-
 	.home h5 {
 	    font-size: 14px;
 	    font-size: .875rem;
-	    line-height: 20px;
-	    line-height: 1.25rem;
+/*	    line-height: 20px;
+	    line-height: 1.25rem;*/
 	}
 
     .home h6 {
 	    font-size: 12px;
 	    font-size: .75rem; 
 	}
-
+/*
+	.featured-top-row-1 h6 {
+	    font-size: 14px;
+	    font-size: .875rem;
+	}*/
+	.post-date {
+		display: none;
+		position: absolute;
+		bottom: 4px;
+	}
 }
 
 @media screen and (min-width: 880px) {
@@ -846,15 +906,53 @@ h5.article--category__title {
 /* col-md starts here */ 
 @media screen and (min-width: 992px) {
 
+	.featured-top-row-1 {
+		.featured-top-70 {
+
+			.featured-top-70-text {
+				min-height: 239px; // lines up bottom of lead article with bottom of side article
+			}
+		}
+	}
 	.featured-top-row-1 .featured-top-30 .featured-side-100 {
 	    height: 289px;
 	    .title-container {
 			min-height: 139px;
 		}
 	}
+	.featured-top-row-1 .title-container, 
+	.featured-top-row-2 .title-container {
+	    min-height: 137px;
+	}
+
+	.featured-top-30-middle .featured-side-50 .thumbnail {
+	    height: 75px;
+	}
+
+
+	.featured-top-30 .featured-top-33-inner-container {
+		.thumbnail {
+		    height: 83px; /* Set dimensions intended to make a square */
+		}
+		.title-container {
+			min-height: 83px;
+		}
+	}
+
+	.popular-widget	.article-popular .article-popular-header {
+		min-height: 76px;
+	}
+	.popular-widget .article-popular .thumbnail {
+		height: 76px;
+	}
+
 
 	.thumbnail.col-md-3 {
 		width: 25%;
+	}
+
+	.thumbnail.col-md-12 {
+		width: 100%;
 	}
 }
 
