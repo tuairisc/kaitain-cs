@@ -723,17 +723,17 @@ h5.article--category__title {
 }
 
 iframe {
-	max-height: 184px; // height of featured category posts
+	/*max-height: 184px;*/ // height of featured category posts
 }
 .widget--category__left .youtube-embed-post .article--category__title   {
-	min-height:56px;
+	/*min-height:56px;
 	height:56px;
-	margin-top:20px;
+	margin-top:20px;*/
 	line-height: 21px;
 	line-height: 1.35rem;
 }
 .youtube-embed-post .thumbnail.youtube-embed-container {
-	overflow: visible;
+/*	overflow: visible;*/
 }
 /**
  * Media Queries
@@ -928,10 +928,7 @@ iframe {
 	/*.featured-top-row-2 article {		
 		height: 300px;
 	}*/
-
-
 }
-
 
 /* col-md starts here */ 
 @media screen and (min-width: 992px) {
@@ -996,6 +993,13 @@ iframe {
 	.thumbnail.col-md-12 {
 		width: 100%;
 	}
+
+
+	
+	.single .article--lead__thumb.img-frame {
+		height: 500px;
+	}
+
 }
 
 @media screen and (min-width: 1200px) {
