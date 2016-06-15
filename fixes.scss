@@ -33,6 +33,10 @@ $half-gutter: $gutter / 2;
  *-----------------------------------------------------------------------------
  */
 
+body {
+	font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
 // fix oddness on iOS chrome, font-weight: normal makes h tags bold
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 400 !important;
@@ -68,11 +72,23 @@ h6 {
 	font-family: Georgia, serif;
 }
 
+
 .featured-side-50 .title-container,
 .featured-top-33-inner-container .title-container {
 	font-family: Arial, sans-serif;
 }
 
+
+/* single post page font styling */
+.single-post h1.title.article--full__title {
+	font-weight: 400 !important;
+	font-size: 38px;
+}
+
+.single-post .article--full__excerpt {
+    font-size: 19px;
+    color: #666
+}
 
 /**
  * Layout
@@ -143,6 +159,10 @@ div, article, .thumbnail {
 .featured-25-c,
 .adrotate_widgets {
 	margin-bottom: $gutter;
+}
+
+.single-post #main .main__content {
+	padding-right: 32px;
 }
 
 /**
