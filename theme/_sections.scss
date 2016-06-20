@@ -54,7 +54,8 @@ $sections: (
     ('saol', #e04184),
     ('greann', #e6192a), 
     ('pobal', #7d5e90), 
-    ('foghlaimeoiri', #424045), 
+    // ('foghlaimeoiri', #424045), // old color
+    ('foghlaimeoiri', #516671), 
     ('nuacht', #516671),
     ('other', #caab60) 
 );
@@ -117,7 +118,18 @@ $sections: (
             // 4. Set trims for current section text.
             color: $color;
         }
-    } 
+    }
+
+    nav .section {
+     
+         &--#{$class}--bg-hover, &--#{$class}-bg-hover:hover, {
+            // color nav children of section that are not in a category
+            // in that parents section color
+            .section---shadow, .section---shadow-hover:hover {
+                    box-shadow: inset 0px -5px 0px -1px $color;
+            }
+        }
+    }
 }
 
 /**

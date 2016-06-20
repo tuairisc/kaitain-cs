@@ -45,7 +45,9 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3,
 .featured-top-row-1 .featured-top-70,
 .featured-top-row-1 .featured-top-30 .featured-side-100,
-.widget--sidebar__title {
+.widget--sidebar__title,
+.featured-top-row-1 h6,
+.featured-top-row-2 h6   {
 	font-family: Georgia, serif;
 }
 
