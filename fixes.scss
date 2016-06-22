@@ -548,9 +548,13 @@ $columnist-padding: 0px;
 .popular-widget	.article-popular .article-popular-header {
 	min-height: 76px;
 	padding: $half-gutter;
+	height: 76px;
+	overflow: hidden;
 }
 .recent-widget .article--sidebar .post-content {
 	min-height: 76px;
+	height: 76px;
+	overflow: hidden;
 }
 
 .popular-widget .article-popular .thumbnail,
