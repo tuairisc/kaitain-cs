@@ -239,18 +239,72 @@ nav > ul > li.navmenu--focused:hover a {
 	transition-property: all;
 	transition-delay: 1s;
 	transition-timing-function: ease;
-}
+}*/
 
-.navSearch {
-	height: 80px;
-}
 
+.navrow #home {
+    max-height: 60px;
+}
 .navrow .hideLogo {
-	opacity: 0;
-	width: 0;
+	//opacity: 0;
+	height: 0;
 	display: block;
 }
-*/
+
+/* Search form style */
+.showSearch {
+	height: 100px;
+}
+
+
+.navrow .navrow__button--search ,
+#bigsearch .navrow__button--search {
+	transition: all 0.1s ease-in;
+}
+
+.navrow.showSearch .navrow__button--search .close,
+#bigsearch.showSearch .navrow__button--search .close {
+	margin-top: 30px;	
+}
+
+#bigsearch {
+	/*height: 80px;*/
+	height: 0;
+	transition: all 110ms ease-in;
+}
+.bigsearch.showSearch{
+	height: 100px;
+} 
+
+.bigsearch-input {
+	color: #333;
+	background: #fff;
+    border-radius: 2px;
+    box-shadow: 0px 1px 1px 1px rgba(50,50,50,0.1);
+    text-align: left;
+    width: 63%;
+    max-width: 400px;
+    /*height: 44px;*/
+    height: 0;
+    margin-top: 16px;
+    transition: all 110ms ease-in;
+}
+
+.bigsearch-input.showSearch {
+	height: 44px;
+    margin-top: 28px;
+    transition: all 110ms ease-in;
+}
+
+.bigsearch-input::-webkit-input-placeholder,
+.bigsearch-input:-moz-placeholder,
+.bigsearch-input::-moz-placeholder,
+.bigsearch-input:-ms-input-placeholder,
+.bigsearch-input::placeholder   {
+   color: #999;  
+}
+
+
 /**
  * Single post with featured image
  *-----------------------------------------------------------------------------
@@ -911,40 +965,6 @@ iframe {
 /*	overflow: visible;*/
 }
 
-
-/* Search form style */
-
-#bigsearch {
-	height: 80px;
-}
-
-.bigsearch-input {
-	color: #333;
-	background: #fff;
-    border-radius: 2px;
-    box-shadow: 0px 1px 1px 1px rgba(50,50,50,0.1);
-    text-align: left;
-    width: 63%;
-    max-width: 400px;
-    height: 44px;
-    margin-top: 18px;
-}
-
-.bigsearch-input::-webkit-input-placeholder {
-   color: #999;
-}
-
-.bigsearch-input:-moz-placeholder { /* Firefox 18- */
-   color: #999;  
-}
-
-.bigsearch-input::-moz-placeholder {  /* Firefox 19+ */
-   color: #999;  
-}
-
-.bigsearch-input:-ms-input-placeholder {  
-   color: #999;  
-}
 
 /**
  * Media Queries
