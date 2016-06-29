@@ -135,7 +135,7 @@ h6 {
 .widget_kaitain_home_category .widget--category .widget--category__left .title {
 	font-family: Georgia, serif;
 }
-
+*/
 
 .widget--home .widget_kaitain_recent_container_column .title,
 .home-recent-posts-widget .title {
@@ -143,7 +143,7 @@ h6 {
 	line-height: 22px;
 }
 
-/* single post page font styling 
+/* single post page font styling */
 .single-post h1.title.article--full__title {
 	font-weight: 400 !important;
 	font-size: 38px;
@@ -152,7 +152,9 @@ h6 {
 .single-post .article--full__excerpt {
     font-size: 19px;
     color: #666;
-}*/
+    border: none;
+}
+
 
 
 /**
@@ -630,6 +632,15 @@ body.post-featured-image {
 	}
 }
 
+.widget_kaitain_popular {
+	background: #f3f3f3;
+}
+
+.widget_kaitain_popular .article-popular {
+/*	padding-left: $gutter;
+	padding-right: $gutter;*/
+}
+
 /**
  *  Featured Category Widget
  * -----------------------------------------------------------------------------
@@ -659,7 +670,7 @@ body.post-featured-image {
     overflow: hidden;
 }
 
-.widget--category__left .article--category__thumb.thumbnail img{
+.widget--category__left .article--categoryegory__thumb.thumbnail img{
     min-height: 190px;
     min-width: 100%;
     height: auto;
@@ -786,9 +797,9 @@ h5.article--category__title {
 	overflow: visible;
 }
 
-.home-recent-posts-widget.rogha-an-eagarthora,
+.home-recent-posts-widget .post-content,
 .home-recent-posts-widget.rogha-an-eagarthora .post-content {
-	background: none;
+	background: #f3f3f3;
 	color: #111;
 }
 
@@ -938,32 +949,16 @@ $columnist-padding: 0px;
 /*	position: relative;*/
 }
 .img-frame img {
-	/*height: auto;
-    min-height: 100%;
-    min-width: 100%;
-    width: unset;*/
-/*    //
-    // crop wide images to container while maintaining height
-    //
-    height:100%;
-    width: auto;
-    max-width: none;
-    //
-    // center img within .img-frame container
-    //
-    position: absolute;
-	left: 50%;
-	top: 50%;
-    -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-
-*/
     height: 100%; // set media queries for heights
     width: 100%;
     max-width: none;
     @include object-fit( cover, center );
 }
+
+.article--category__thumb  img {
+	min-height: 100%;
+}
+
 .section-trim {
 	height: 3px;
 	/*background-color: #AAB;*/
@@ -1185,9 +1180,16 @@ iframe {
 	}
 
 	/* Widgets */
-	.recent-post-container-widget .article-recent-header {
+	.recent-post-container-widget .article-recent-header,
+	.home .home-recent-posts-widget .post-content {
 		min-height: 127px;
 	}
+
+	.home .home-recent-posts-widget .post-content  {
+		height: 145px;
+		overflow: hidden;
+	}
+
 	.recent-post-container-widget a:hover .article-recent-header:hover h5{
 		text-decoration: underline;	
 	}
@@ -1251,6 +1253,15 @@ iframe {
 		display: none;
 		position: absolute;
 		bottom: 4px;
+	}
+
+	/* single post page font styling */
+	.single-post h1.title.article--full__title {
+		margin-right: 0;
+	}
+
+	.single-post .article--full__excerpt {
+	    margin-right: 180px;
 	}
 }
 
@@ -1414,11 +1425,13 @@ iframe {
 	.single-post h1.title.article--full__title {
 		font-weight: 400 !important;
 		font-size: 38px;
+		margin-right: 150px;
 	}
 
 	.single-post .article--full__excerpt {
 	    font-size: 19px;
 	    color: #666;
+	    margin-right: 300px;
 	}
 
 }
