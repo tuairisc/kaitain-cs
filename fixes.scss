@@ -82,43 +82,68 @@ h6 {
     line-height: 1rem;
 }
 
+
+
 .title-container,
 .post-excerpt {
 	font-family: Georgia, serif;
 }
-
-
+/*
+/*
+ * Featured Articles on Homepage font styles
+ 
+.article--lead__excerpt {
+	/*font-size: 0.9rem;*/
+	/*font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+    line-height: 22px;
+}
 .featured-side-50 .title-container,
 .featured-top-33-inner-container .title-container {
 	font-family: Arial, sans-serif;
 }
-
 .featured-top-30 .featured-side-100 h5 {
 	font-size: 18px;
     line-height: 24px;
 }
-
 .featured-top-row-1 .featured-top-30-middle h6 {
-	/*font-family: Arial, sans-serif;*/
-	/*font-size: 14px;*/
-/*	font-size: 15px;
-	line-height: 14px;*/
 	font-size: 13px;
     line-height: 18px;
 }
-
 .featured-top-33-inner-container .title {
 	font-size: 13px;
     line-height: 18px;
 }
-
-
 .featured-50-a .title {
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 16px;
+	line-height: 22px;
+}
+.featured-25-b .title,
+.featured-25-c .title {
+	font-size: 16px;
+	line-height: 22px;
 }
 
-/* single post page font styling */
+/* home page widget font styles 
+
+.home .widget-video-article .title {
+	font-family: Arial, sans-serif;
+	line-height: 18px;
+}
+.home .widget-video-article .article-video-link:hover {}
+
+.widget_kaitain_home_category .widget--category .widget--category__left .title {
+	font-family: Georgia, serif;
+}
+
+
+.widget--home .widget_kaitain_recent_container_column .title,
+.home-recent-posts-widget .title {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+/* single post page font styling 
 .single-post h1.title.article--full__title {
 	font-weight: 400 !important;
 	font-size: 38px;
@@ -127,8 +152,7 @@ h6 {
 .single-post .article--full__excerpt {
     font-size: 19px;
     color: #666;
-}
-
+}*/
 
 
 /**
@@ -431,13 +455,6 @@ body.post-featured-image {
 	.article--lead__excerpt {
 		padding: 10px;
 	}
-}
-
-.article--lead__excerpt {
-	/*font-size: 0.9rem;*/
-	/*font-family: Helvetica, Arial, sans-serif;*/
-	font-size: 16px;
-    line-height: 24px;
 }
 
 .featured-top-30 {
@@ -1337,6 +1354,71 @@ iframe {
 	
 	.single .article--lead__thumb.img-frame {
 		height: 500px;
+	}
+
+	/*
+	 * Featured Articles on Homepage font styles
+	 */
+	.article--lead__excerpt {
+		/*font-size: 0.9rem;*/
+		/*font-family: Helvetica, Arial, sans-serif;*/
+		font-size: 16px;
+	    line-height: 22px;
+	}
+	.featured-side-50 .title-container,
+	.featured-top-33-inner-container .title-container {
+		font-family: Arial, sans-serif;
+	}
+	.featured-top-30 .featured-side-100 h5 {
+		font-size: 18px;
+	    line-height: 24px;
+	}
+	.featured-top-row-1 .featured-top-30-middle h6 {
+		font-size: 13px;
+	    line-height: 18px;
+	}
+	.featured-top-33-inner-container .title {
+		font-size: 13px;
+	    line-height: 18px;
+	}
+	.featured-50-a .title {
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.featured-25-b .title,
+	.featured-25-c .title {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	/* home page widget font styles */
+
+	.home .widget-video-article .title {
+		font-family: Arial, sans-serif;
+		line-height: 18px;
+	}
+	.home .widget-video-article .article-video-link:hover {}
+
+	.widget_kaitain_home_category .widget--category .widget--category__left .title {
+		font-family: Georgia, serif;
+	}
+
+
+	.widget--home .widget_kaitain_recent_container_column .title,
+	.home-recent-posts-widget .title {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	/* single post page font styling */
+	.single-post h1.title.article--full__title {
+		font-weight: 400 !important;
+		font-size: 38px;
+	}
+
+	.single-post .article--full__excerpt {
+	    font-size: 19px;
+	    color: #666;
 	}
 
 }
