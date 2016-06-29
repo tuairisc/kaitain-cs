@@ -98,10 +98,14 @@ h6 {
     line-height: 24px;
 }
 
-.featured-top-row-1 h6 {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
+.featured-top-row-1 .featured-top-30-middle h6 {
+	/*font-family: Arial, sans-serif;*/
+	/*font-size: 14px;*/
+	font-size: 15px;
+	line-height: 14px;
 }
+
+
 
 /* single post page font styling */
 .single-post h1.title.article--full__title {
@@ -111,7 +115,7 @@ h6 {
 
 .single-post .article--full__excerpt {
     font-size: 19px;
-    color: #666
+    color: #666;
 }
 
 
@@ -499,6 +503,7 @@ body.post-featured-image {
 .featured-top-row-1 .title-container, 
 .featured-top-row-2 .title-container {
     min-height: 100px;
+	overflow: hidden;
 }
 
 .featured-side-50 .thumbnail,
