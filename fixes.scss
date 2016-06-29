@@ -707,11 +707,13 @@ h5.article--category__title {
 }
 
 /* Recent Posts Container Widget */
-.recent-post-container-widget .article-recent .post-content {
+.recent-post-container-widget .article-recent .post-content,
+.home-recent-posts-widget .post-content {
 	padding: $half-gutter;
 	min-height: 100px;
 }
-.recent-post-container-widget .article-recent .thumbnail {
+.recent-post-container-widget .article-recent .thumbnail,
+.home-recent-posts-widget .thumbnail {
 	height: 100px;
 }
 .article-recent .archive-trim-top {
@@ -738,6 +740,11 @@ h5.article--category__title {
 	overflow: visible;
 }
 
+.home-recent-posts-widget.rogha-an-eagarthora,
+.home-recent-posts-widget.rogha-an-eagarthora .post-content {
+	background: none;
+	color: #111;
+}
 
 /**
  * Footer
