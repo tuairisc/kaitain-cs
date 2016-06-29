@@ -101,11 +101,16 @@ h6 {
 .featured-top-row-1 .featured-top-30-middle h6 {
 	/*font-family: Arial, sans-serif;*/
 	/*font-size: 14px;*/
-	font-size: 15px;
-	line-height: 14px;
+/*	font-size: 15px;
+	line-height: 14px;*/
+	font-size: 13px;
+    line-height: 18px;
 }
 
-
+.featured-top-33-inner-container .title {
+	font-size: 13px;
+    line-height: 18px;
+}
 
 /* single post page font styling */
 .single-post h1.title.article--full__title {
