@@ -454,9 +454,11 @@ body.post-featured-image {
 		line-height: 33px;
 	}
 	.article--lead__title,
-	.article--lead__header,
 	.article--lead__excerpt {
 		padding: 10px;
+	}
+	.article--lead__header {
+		padding: 0 10px;
 	}
 }
 
@@ -773,8 +775,12 @@ h5.article--category__title {
 	min-height: 76px;
 	padding: $half-gutter;
 	height: 76px;
-	overflow: hidden;
 	
+	h5.title.article-popular-title {
+    height: 46px;
+	overflow: hidden;
+	}
+
 	h6.post-date.article__postmeta {
 	    position: absolute;
 	    bottom: 5px;
