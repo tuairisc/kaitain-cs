@@ -230,7 +230,8 @@ div, article, .thumbnail {
 .widget-gallery,
 .widget-video,
 .widget--category,
-.searchform__meta  {
+.searchform__meta,
+.widget_kaitain_recent_sidebar  {
 	margin-bottom: $gutter;
 }
 
@@ -632,15 +633,6 @@ body.post-featured-image {
 	}
 }
 
-.widget_kaitain_popular {
-	background: #f3f3f3;
-}
-
-.widget_kaitain_popular .article-popular {
-/*	padding-left: $gutter;
-	padding-right: $gutter;*/
-}
-
 /**
  *  Featured Category Widget
  * -----------------------------------------------------------------------------
@@ -782,12 +774,43 @@ h5.article--category__title {
 	padding: $half-gutter;
 	height: 76px;
 	overflow: hidden;
+	
+	h6.post-date.article__postmeta {
+	    position: absolute;
+	    bottom: 5px;
+	}	
 }
-.recent-widget .article--sidebar .post-content {
-	min-height: 76px;
-	height: 76px;
-	overflow: hidden;
+
+.widget_kaitain_recent_sidebar {
+	background: #f3f3f3;
+
+	.recent-widget .article--sidebar {
+		.post-content {
+			min-height: 76px;
+			height: 76px;
+		}
+
+		.title {
+			overflow: hidden;
+			height: 62px;
+		}
+
+		h6.post-date.article__postmeta {
+		    position: absolute;
+		    bottom: 0px;
+		    height: 14px;
+		}
+	} 
 }
+
+.main__sidebar .widget_kaitain_recent_sidebar,
+.main__sidebar .widget_kaitain_popular {
+	max-width: 300px;
+    padding: 8px;
+    background: #f3f3f3;
+}
+
+
 
 .popular-widget .article-popular .thumbnail,
 .recent-widget .article--sidebar .thumbnail {
@@ -802,6 +825,7 @@ h5.article--category__title {
 	background: #f3f3f3;
 	color: #111;
 }
+
 
 /**
  * Footer
@@ -1249,18 +1273,26 @@ iframe {
 	    font-size: 14px;
 	    font-size: .875rem;
 	}*/
-	.post-date {
+	/*.article-recent .post-date {
 		display: none;
+		position: absolute;
+		bottom: 4px;
+	}*/
+	.post-date {
+		display: block;
+	}
+	.article-recent .post-date {
+		display: block;
 		position: absolute;
 		bottom: 4px;
 	}
 
 	/* single post page font styling */
-	.single-post h1.title.article--full__title {
+	.single-post.fullwidth-featured-image h1.title.article--full__title {
 		margin-right: 0;
 	}
 
-	.single-post .article--full__excerpt {
+	.single-post.fullwidth-featured-image .article--full__excerpt {
 	    margin-right: 180px;
 	}
 }
@@ -1422,13 +1454,13 @@ iframe {
 	}
 
 	/* single post page font styling */
-	.single-post h1.title.article--full__title {
+	.single-post.fullwidth-featured-image h1.title.article--full__title {
 		font-weight: 400 !important;
 		font-size: 38px;
 		margin-right: 150px;
 	}
 
-	.single-post .article--full__excerpt {
+	.single-post.fullwidth-featured-image .article--full__excerpt {
 	    font-size: 19px;
 	    color: #666;
 	    margin-right: 300px;
