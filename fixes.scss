@@ -418,6 +418,11 @@ body.post-featured-image {
 	min-width: 100%;
 }
 
+
+.single .article--full__content img.size-large {
+	margin-bottom: $gutter;
+}
+
 /**
  * Home Page Widgets
  *-----------------------------------------------------------------------------
@@ -1074,6 +1079,11 @@ iframe {
 }
 .youtube-embed-post .thumbnail.youtube-embed-container {
 /*	overflow: visible;*/
+}
+
+.foras img {
+    width: 17.5%;
+    max-width: 225px;
 }
 
 
