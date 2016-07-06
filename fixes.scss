@@ -625,6 +625,12 @@ body.post-featured-image {
 
 }
 
+.related-articles {
+	.thumbnail {
+		height: 150px;
+	}
+}
+
 /**
  * Columnist home page widget
  */
@@ -762,6 +768,14 @@ h5.article--category__title {
 	text-align: center; // on mobile
 }
 
+.trim-block-banner .adverts--banner .adrotate_widgets {
+	text-align: center;
+}
+
+.advert_sidebar .banner {
+	display: none;
+}
+
 /* Recent Posts Container Widget */
 .recent-post-container-widget .article-recent .post-content,
 .home-recent-posts-widget .post-content {
@@ -816,7 +830,7 @@ h5.article--category__title {
 
 .main__sidebar .widget_kaitain_recent_sidebar,
 .main__sidebar .widget_kaitain_popular {
-	max-width: 300px;
+	max-width: unset;
     padding: 8px;
     background: #f3f3f3;
 }
@@ -944,6 +958,18 @@ $columnist-padding: 0px;
  		height: 180px;		
  	}
  }
+
+
+/**
+ *  Author Archive Page
+ * -----------------------------------------------------------------------------
+ * 
+ */
+
+.author .article-archive-thumbnail {
+	height: 150px;
+}
+
 
 /**
  *  Partials and misc
@@ -1254,7 +1280,8 @@ iframe {
 	.widget_kaitain_authors {
 		height: 297px; // + 3px for trim totals 300px as per spec
 	}
-	.adrotate_widgets {
+
+	.widget--sidebar.adrotate_widgets {
 		text-align: left;
 	}
 	.article-recent .archive-trim-top {
@@ -1339,7 +1366,7 @@ iframe {
 				overflow: hidden;
 			}
 		}
-	}
+			}
 	.featured-top-row-1 .featured-top-30 .featured-side-100 {
 	    height: 289px;
 	    .title-container {
@@ -1482,7 +1509,77 @@ iframe {
 	    margin-right: 300px;
 	}
 
+	// hacky fix start
+	// to get sidebar with fixed with displaying somewhat aligned as per item 19.
+	#main .main__sidebar,
+	.main__sidebar .widget_kaitain_recent_sidebar,
+	.main__sidebar .widget_kaitain_popular,
+	.featured-top-row-1 .featured-top-30,
+	.featured-top-row-2 .featured-top-30  {
+		max-width: 300px;
+	}
+
+	.single {
+		#main .main__sidebar,
+		.main__sidebar .widget_kaitain_recent_sidebar,
+		.main__sidebar .widget_kaitain_popular {
+			max-width: unset;
+		}
+
+		#main .main__sidebar {
+			width: 31%;
+			margin: 0;
+			padding-right: 0;	
+		}
+
+
+		.advert_sidebar .adrotate_widgets{
+		    background-color: #f3f3f3;
+		    padding: 18px;
+		}
+	}
+	// hacky fix end
 }
+
+
+// hacky fix start
+// to get sidebar with fixed with displaying somewhat aligned as per item 19.
+@media screen and (min-width: 1104px){
+	#main .main__content,
+	.featured-top-row-1 .featured-top-70,
+	.featured-top-row-2 .featured-top-70 {
+		width: 70.2%;
+	}
+
+	.single #main .main__content{
+		width: 70%;
+	}
+}
+@media screen and (min-width: 1134px){
+	#main .main__content,
+	.featured-top-row-1 .featured-top-70,
+	.featured-top-row-2 .featured-top-70 {
+		width: 71%;
+	}
+
+	.single #main .main__content{
+		width: 70%;
+	}
+}
+@media screen and (min-width: 1180px){
+	#main .main__content,
+	.featured-top-row-1 .featured-top-70,
+	.featured-top-row-2 .featured-top-70 {
+		width: 72%;
+	}
+
+	.single #main .main__content{
+		width: 70%;
+	}
+}
+//hacky fix end
+
+
 
 /* col-lg starts here */ 
 @media screen and (min-width: 1200px) {
@@ -1500,7 +1597,7 @@ iframe {
 }
 
 /**
- *	Sets top article's fixed height and visually dependant sidebar articles'
+ *	Sets top article's fixed height and visually dependant sidebar articles' q
  *	fixed heights to be shorter on tablets to maintain a readability and design
  */
 @media screen and (max-width: 769px) {
