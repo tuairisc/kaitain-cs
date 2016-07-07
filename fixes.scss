@@ -212,6 +212,10 @@ div, article, .thumbnail {
     box-sizing: border-box;
 }
 
+.home #main .main__sidebar {
+	width: 316px;
+}
+
 #main > .container-fluid {
 	padding: 0;
 }
@@ -388,40 +392,45 @@ body.post-featured-image {
 	}
 }
 
-.single .trim-block {
-	transition: all 0.4s ease;
-	@media screen and (max-width: 360px) {
-		min-height: 10px;
+.single {
+	.trim-block {
+		transition: all 0.4s ease;
+		@media screen and (max-width: 360px) {
+			min-height: 10px;
+		}
 	}
+
+	.post-featured-image .post-thumbnail {
+		box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.5);
+	}
+
+	#main {
+		flex-direction: column;
+	}
+
+	#main .flex-row {
+		display: flex;
+		flex-direction: row;
+		margin-top: 20px;
+	}
+	 #main .flex-row .title.article--full__title {
+		margin-top: 0;	
+	}
+
+	.article--lead__thumb {
+		min-width: 100%;
+	}
+
+	.article--full__content img.size-large {
+		margin-bottom: $gutter;
+	}
+	
+	.sidebar__widgets {
+		display: block;
+	}
+
 }
 
-.single .post-featured-image .post-thumbnail {
-	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.5);
-}
-
-.single #main {
-	flex-direction: column;
-}
-
-.single #main .flex-row {
-	display: flex;
-	flex-direction: row;
-	margin-top: 20px;
-}
-
-
-.single #main .flex-row .title.article--full__title {
-	margin-top: 0;	
-}
-
-.single .article--lead__thumb {
-	min-width: 100%;
-}
-
-
-.single .article--full__content img.size-large {
-	margin-bottom: $gutter;
-}
 
 /**
  * Home Page Widgets
@@ -851,6 +860,12 @@ h5.article--category__title {
 	color: #111;
 }
 
+/*.article--related .archive-trim-bottom {
+	margin-left: 8px;
+	margin-right: 8px;
+}*/
+
+
 
 /**
  * Footer
@@ -1184,6 +1199,7 @@ iframe {
 		}
 		.featured-top-30 {
 			width: 30%;
+			width: 316px;
 		    padding-right: 0;
 		    padding-left: 0;
 		}
@@ -1204,6 +1220,7 @@ iframe {
 		}
 		.featured-top-30 {
 			width: 30%;
+			width: 316px;
 		    padding-right: 0;
 		    padding-left: 0;
 
@@ -1426,22 +1443,6 @@ iframe {
 		padding-right: 0;
 	}
 
-	.thumbnail.col-md-1 {width: 8.33333333%;}
-	.thumbnail.col-md-2 {width: 16.66666667%;}
-	.thumbnail.col-md-3 {width: 25%;}
-	.thumbnail.col-md-4 {width: 33.33333333%;}
-	.thumbnail.col-md-6 {width: 50%;}
-	.thumbnail.col-md-7 {width: 58.33333333%;}
-	.thumbnail.col-md-8 {width: 66.66666667%;}
-	.thumbnail.col-md-9 {width: 75%;}
-	.thumbnail.col-md-10 {width: 83.33333333%}
-	.thumbnail.col-md-11 {width: 91.66666667%;}
-	.thumbnail.col-md-12 {width: 100%;}
-	
-	.single .article--lead__thumb.img-frame {
-		height: 500px;
-	}
-
 	/*
 	 * Featured Articles on Homepage font styles
 	 */
@@ -1496,7 +1497,33 @@ iframe {
 		line-height: 22px;
 	}
 
-	/* single post page font styling */
+	/**
+	 *	Single post
+	 */
+
+	.single .article--lead__thumb.img-frame {
+		height: 500px;
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+	// set 300px width sidebar
+	#main .main__content {
+	    width: 71%;
+	}
+
+	#main .main__sidebar {
+		width: 316px;
+    	display: block;
+	    margin: 0;
+    }
+
+	.advert_sidebar {
+	    width: 300px;
+	}
+
+
+	/* Single post font styles */
 	.single-post.fullwidth-featured-image h1.title.article--full__title {
 		font-weight: 400 !important;
 		font-size: 38px;
@@ -1509,9 +1536,23 @@ iframe {
 	    margin-right: 300px;
 	}
 
+
+
+	.thumbnail.col-md-1 {width: 8.33333333%;}
+	.thumbnail.col-md-2 {width: 16.66666667%;}
+	.thumbnail.col-md-3 {width: 25%;}
+	.thumbnail.col-md-4 {width: 33.33333333%;}
+	.thumbnail.col-md-6 {width: 50%;}
+	.thumbnail.col-md-7 {width: 58.33333333%;}
+	.thumbnail.col-md-8 {width: 66.66666667%;}
+	.thumbnail.col-md-9 {width: 75%;}
+	.thumbnail.col-md-10 {width: 83.33333333%}
+	.thumbnail.col-md-11 {width: 91.66666667%;}
+	.thumbnail.col-md-12 {width: 100%;}
+	
 	// hacky fix start
 	// to get sidebar with fixed with displaying somewhat aligned as per item 19.
-	#main .main__sidebar,
+/*	#main .main__sidebar,
 	.main__sidebar .widget_kaitain_recent_sidebar,
 	.main__sidebar .widget_kaitain_popular,
 	.featured-top-row-1 .featured-top-30,
@@ -1537,14 +1578,14 @@ iframe {
 		    background-color: #f3f3f3;
 		    padding: 18px;
 		}
-	}
+	}*/
 	// hacky fix end
 }
 
 
 // hacky fix start
 // to get sidebar with fixed with displaying somewhat aligned as per item 19.
-@media screen and (min-width: 1104px){
+/*@media screen and (min-width: 1104px){
 	#main .main__content,
 	.featured-top-row-1 .featured-top-70,
 	.featured-top-row-2 .featured-top-70 {
@@ -1576,7 +1617,7 @@ iframe {
 	.single #main .main__content{
 		width: 70%;
 	}
-}
+}*/
 //hacky fix end
 
 
