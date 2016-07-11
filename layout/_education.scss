@@ -14,7 +14,7 @@ $education-sections: (
     crosfhocal: crossword,
     fiseain: video,
     mireanna-mearai: jigsaw,
-    sraith-pictuir: picture,
+    sraith-pictiur: picture,
     ursceal-dfhoghlaimeoiri: reading,
     leamhthuiscinti: book
 );
@@ -94,7 +94,8 @@ $education-sections: (
 
     &__description {
         // Category description.
-        font-family: map-get($fonts, arial);
+        /*font-family: map-get($fonts, arial);*/
+        font-family: map-get($fonts, butterfly);
     }
 
     &__iconwrap {

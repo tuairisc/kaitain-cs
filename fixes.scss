@@ -235,12 +235,13 @@ div, article, .thumbnail {
 .widget-video,
 .widget--category,
 .searchform__meta,
-.widget_kaitain_recent_sidebar  {
+.widget_kaitain_recent_sidebar,
+.category-lead-image {
 	margin-bottom: $gutter;
 }
 
 .single-post #main .main__content {
-	padding-right: 32px;
+	padding-right: $gutter * 2;
 }
 
 /**
@@ -601,6 +602,10 @@ body.post-featured-image {
 	}
 }
 
+/**
+ *  Home Video Widget
+ */
+
 .widget-video {
 	//padding-right: 0;
 	color: #fff;
@@ -633,6 +638,10 @@ body.post-featured-image {
 
 
 }
+
+/**
+ *  Related articles Widget
+ */
 
 .related-articles {
 	.thumbnail {
@@ -712,10 +721,10 @@ body.post-featured-image {
 
 .widget--category__right .article--category__link > div.article--category__thumb .post-thumbnail,
 .featured-post-image-inner {
-    min-width: 100%;
+   /* min-width: 100%;
     min-height:100%;
     width: unset;
-    height: auto;
+    height: auto;*/
 }
 
 .widget--category__right .article--category__link .article--category__text {
@@ -865,7 +874,12 @@ h5.article--category__title {
 	margin-right: 8px;
 }*/
 
-
+/*	Hide post date meta from Rogha an Eagarthóra widget
+	and the recent posts container columns */
+.home .article-recent .post-date,
+.home .recent-post-container-widget .post-date {
+	display: none;
+}
 
 /**
  * Footer
@@ -973,7 +987,6 @@ $columnist-padding: 0px;
  		height: 180px;		
  	}
  }
-
 
 /**
  *  Author Archive Page
@@ -1501,27 +1514,28 @@ iframe {
 	 *	Single post
 	 */
 
-	.single .article--lead__thumb.img-frame {
-		height: 500px;
-		padding-left: 8px;
-		padding-right: 8px;
+	.single {
+		.article--lead__thumb.img-frame {
+			height: 500px;
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		// set 300px width sidebar
+		#main .main__content {
+		    width: 71%;
+		}
+
+		#main .main__sidebar {
+			width: 316px;
+	    	display: block;
+		    margin: 0;
+	    }
+
+		.advert_sidebar {
+		    width: 300px;
+		}
 	}
-
-	// set 300px width sidebar
-	#main .main__content {
-	    width: 71%;
-	}
-
-	#main .main__sidebar {
-		width: 316px;
-    	display: block;
-	    margin: 0;
-    }
-
-	.advert_sidebar {
-	    width: 300px;
-	}
-
 
 	/* Single post font styles */
 	.single-post.fullwidth-featured-image h1.title.article--full__title {
