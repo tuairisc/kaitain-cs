@@ -636,8 +636,25 @@ body.post-featured-image {
 		height: 120px;
 	}
 
-
 }
+// used in video widget aswell as category widget
+.video-icon-overlay {
+	background: no-repeat url("../images/glyphicons-221-play-button.png");
+		// invert the png from dark grey to white
+		-webkit-filter: invert(100%);
+		filter: invert(100%);
+    //background-size: 30% auto;
+    background-size: 32px 32px; 
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.widget--category__left .video-icon-overlay {
+    background-size: 48px 48px; 
+}
+
 
 /**
  *  Related articles Widget
@@ -657,10 +674,19 @@ body.post-featured-image {
 	color: #fff;
 	height: auto; // + 3px for trim totals 300px as per spec
 
+	.widget--authors__author {
+		padding: 4px;
+	}
+
+	.author-photo {
+		border-radius: 100%;
+	}
+
 	.widget--authors__name {
 	    font-weight: 600;
 	    //color: #222;
 	    font-family: sans-serif;
+	    text-align: center;
 	}
 }
 
