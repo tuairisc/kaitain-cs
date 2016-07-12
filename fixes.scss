@@ -709,59 +709,59 @@ body.post-featured-image {
 	height: 261px;
 }
 
+.widget--category__left {
 
-.widget--category__left .article--category {
-    height: 254px;
+	.article--category {
+	    height: 254px;
+	}
+	.article--category__thumb.thumbnail {
+	    height: 184px;
+	    overflow: hidden;
+	}
+	.article--categoryegory__thumb.thumbnail img{
+	    min-height: 190px;
+	    min-width: 100%;
+	    height: auto;
+	    width: unset;
+	}
+	.article--category__title {
+		min-height: 76px;
+		height: 76px;
+	}
 }
 
-.widget--category__left .article--category__thumb.thumbnail {
-    height: 184px;
-    overflow: hidden;
+
+.widget--category__right {
+
+	.article--category__link {
+		height: 76px;
+		margin-bottom: 16px;
+		background: #f3f3f3;
+	}
+	.article--category__link > div.article--category__thumb {
+	    flex: none;  
+		height: 76px;
+	    width: 44%;
+	    display: inline-block;
+	    overflow: hidden;
+	}
+	.article--category__link > div.article--category__thumb .post-thumbnail {
+	   /* min-width: 100%;
+	    min-height:100%;
+	    width: unset;
+	    height: auto;*/
+	}
+	.article--category__link .article--category__text {
+	    flex: none;
+	    max-height:70px;
+	    overflow: hidden;
+	    width: 50%;
+	    display: inline-block;
+	    padding: 0;
+	    margin: 12px 12px 8px 12px;
+	}
 }
 
-.widget--category__left .article--categoryegory__thumb.thumbnail img{
-    min-height: 190px;
-    min-width: 100%;
-    height: auto;
-    width: unset;
-}
-
-.widget--category__left .article--category__title {
-	min-height: 76px;
-	height: 76px;
-}
-
-.widget--category__right .article--category__link {
-	height: 76px;
-	margin-bottom: 16px;
-	background: #f3f3f3;
-}
-
-.widget--category__right .article--category__link > div.article--category__thumb {
-    flex: none;  
-	height: 76px;
-    width: 44%;
-    display: inline-block;
-    overflow: hidden;
-}
-
-.widget--category__right .article--category__link > div.article--category__thumb .post-thumbnail,
-.featured-post-image-inner {
-   /* min-width: 100%;
-    min-height:100%;
-    width: unset;
-    height: auto;*/
-}
-
-.widget--category__right .article--category__link .article--category__text {
-    flex: none;
-    max-height:70px;
-    overflow: hidden;
-    width: 50%;
-    display: inline-block;
-    padding: 0;
-    margin: 12px;
-}
 
 h5.article--category__title {
 	font-family: Helvetica, Arial, Sans-serif;
