@@ -76,8 +76,6 @@ h6 {
 .home h6 {
     font-size: 15px;
     font-size: 0.937rem;
-/*    line-height: 20px;
-    line-height: 1.3rem;*/
     line-height: 16px;
     line-height: 1rem;
 }
@@ -88,54 +86,6 @@ h6 {
 .post-excerpt {
 	font-family: Georgia, serif;
 }
-/*
-/*
- * Featured Articles on Homepage font styles
- 
-.article--lead__excerpt {
-	/*font-size: 0.9rem;*/
-	/*font-family: Helvetica, Arial, sans-serif;
-	font-size: 16px;
-    line-height: 22px;
-}
-.featured-side-50 .title-container,
-.featured-top-33-inner-container .title-container {
-	font-family: Arial, sans-serif;
-}
-.featured-top-30 .featured-side-100 h5 {
-	font-size: 18px;
-    line-height: 24px;
-}
-.featured-top-row-1 .featured-top-30-middle h6 {
-	font-size: 13px;
-    line-height: 18px;
-}
-.featured-top-33-inner-container .title {
-	font-size: 13px;
-    line-height: 18px;
-}
-.featured-50-a .title {
-	font-size: 16px;
-	line-height: 22px;
-}
-.featured-25-b .title,
-.featured-25-c .title {
-	font-size: 16px;
-	line-height: 22px;
-}
-
-/* home page widget font styles 
-
-.home .widget-video-article .title {
-	font-family: Arial, sans-serif;
-	line-height: 18px;
-}
-.home .widget-video-article .article-video-link:hover {}
-
-.widget_kaitain_home_category .widget--category .widget--category__left .title {
-	font-family: Georgia, serif;
-}
-*/
 
 .widget--home .widget_kaitain_recent_container_column .title,
 .home-recent-posts-widget .title {
@@ -202,18 +152,15 @@ div, article, .thumbnail {
     box-sizing: border-box;
 }
 
+// mobile
 #main .main__sidebar {
-	width: 30%; // Using this instead of bootstrap to line up with design docs
- 	display: inline-block;
-    margin: 0 -2px;
+	width: 100%;
+    margin: 0 auto;
+    display: block;
     padding-left: $half-gutter;
     padding-right: $half-gutter;
     vertical-align: top;
     box-sizing: border-box;
-}
-
-.home #main .main__sidebar {
-	width: 316px;
 }
 
 #main > .container-fluid {
@@ -753,7 +700,8 @@ body.post-featured-image {
 	}
 	.article--category__link .article--category__text {
 	    flex: none;
-	    max-height:70px;
+	    //max-height:70px;
+	    max-height: 53px;
 	    overflow: hidden;
 	    width: 50%;
 	    display: inline-block;
@@ -825,6 +773,8 @@ h5.article--category__title {
 .home-recent-posts-widget .post-content {
 	padding: $half-gutter;
 	min-height: 100px;
+    height: 100px;
+    overflow: hidden;
 }
 .recent-post-container-widget .article-recent .thumbnail,
 .home-recent-posts-widget .thumbnail {
@@ -906,6 +856,10 @@ h5.article--category__title {
 .home .recent-post-container-widget .post-date {
 	display: none;
 }
+/*
+.article-recent {
+	//display: inline-block;
+}*/
 
 /**
  * Footer
@@ -1172,9 +1126,6 @@ iframe {
  *-----------------------------------------------------------------------------
  */
 
-@media only screen and (max-device-width: 667px) and (min-device-width: 320px) {
-
-}
 @media screen and (min-width: 668px) {
 	.trim-block {
 		width: 100%;
@@ -1202,6 +1153,14 @@ iframe {
 
 /* col-sm starts here */
 @media screen and (min-width: 768px) {
+
+
+	#main .main__sidebar {
+		width: 30%;
+		//width: 316px;
+	 	display: inline-block;
+	    margin: 0 -2px;
+	}
 
 	.featured-top-row-1 .title-container, 
 	.featured-top-row-2 .title-container {
@@ -1550,11 +1509,12 @@ iframe {
 		// set 300px width sidebar
 		#main .main__content {
 		    width: 71%;
+		    max-width: 722px;
 		}
 
 		#main .main__sidebar {
 			width: 316px;
-	    	display: block;
+	    	display: inline-block;
 		    margin: 0;
 	    }
 
@@ -1590,77 +1550,7 @@ iframe {
 	.thumbnail.col-md-11 {width: 91.66666667%;}
 	.thumbnail.col-md-12 {width: 100%;}
 	
-	// hacky fix start
-	// to get sidebar with fixed with displaying somewhat aligned as per item 19.
-/*	#main .main__sidebar,
-	.main__sidebar .widget_kaitain_recent_sidebar,
-	.main__sidebar .widget_kaitain_popular,
-	.featured-top-row-1 .featured-top-30,
-	.featured-top-row-2 .featured-top-30  {
-		max-width: 300px;
-	}
-
-	.single {
-		#main .main__sidebar,
-		.main__sidebar .widget_kaitain_recent_sidebar,
-		.main__sidebar .widget_kaitain_popular {
-			max-width: unset;
-		}
-
-		#main .main__sidebar {
-			width: 31%;
-			margin: 0;
-			padding-right: 0;	
-		}
-
-
-		.advert_sidebar .adrotate_widgets{
-		    background-color: #f3f3f3;
-		    padding: 18px;
-		}
-	}*/
-	// hacky fix end
 }
-
-
-// hacky fix start
-// to get sidebar with fixed with displaying somewhat aligned as per item 19.
-/*@media screen and (min-width: 1104px){
-	#main .main__content,
-	.featured-top-row-1 .featured-top-70,
-	.featured-top-row-2 .featured-top-70 {
-		width: 70.2%;
-	}
-
-	.single #main .main__content{
-		width: 70%;
-	}
-}
-@media screen and (min-width: 1134px){
-	#main .main__content,
-	.featured-top-row-1 .featured-top-70,
-	.featured-top-row-2 .featured-top-70 {
-		width: 71%;
-	}
-
-	.single #main .main__content{
-		width: 70%;
-	}
-}
-@media screen and (min-width: 1180px){
-	#main .main__content,
-	.featured-top-row-1 .featured-top-70,
-	.featured-top-row-2 .featured-top-70 {
-		width: 72%;
-	}
-
-	.single #main .main__content{
-		width: 70%;
-	}
-}*/
-//hacky fix end
-
-
 
 /* col-lg starts here */ 
 @media screen and (min-width: 1200px) {
@@ -1773,5 +1663,16 @@ iframe {
 	.footer__columns .footer__site-links-2 {
 		width: 100%;
 		column-count: 1;
+	}
+}
+
+@media only screen and (max-device-width: 667px) and (min-device-width: 320px) {
+	.adverts--banner {
+		.square{
+			display: none;
+		}
+		.banner{
+			display: block;
+		}
 	}
 }
