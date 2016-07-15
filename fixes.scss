@@ -183,7 +183,8 @@ div, article, .thumbnail {
 .widget--category,
 .searchform__meta,
 .widget_kaitain_recent_sidebar,
-.category-lead-image {
+.category-lead-image,
+.widget_kaitain_recent_posts_widget {
 	margin-bottom: $gutter;
 }
 
@@ -511,10 +512,8 @@ body.post-featured-image {
  */
 
 .widget-gallery {
-	//padding: 0;
-	color: #fff;/*
-	margin-left: 0px;
-	margin-right: 8px;*/
+	padding: 0;
+	color: #fff;
 
 	.widget {
 		background: #7c5e90;
@@ -551,7 +550,7 @@ body.post-featured-image {
  */
 
 .widget-video {
-	//padding-right: 0;
+	padding: 0;
 	color: #fff;
 
 	.widget {
@@ -1117,7 +1116,15 @@ iframe {
     max-width: 225px;
 }
 
-
+/*.advert_sidebar .tuairisc-advert {
+	height: 300px;
+	display: block;
+	min-width: 100%;
+	img {
+		//min-width: 100%;
+	}
+}
+*/
 /**
  * Media Queries
  *-----------------------------------------------------------------------------
@@ -1170,6 +1177,10 @@ iframe {
 	    height: 100px;
 	}
 
+	.featured-side-100 .title-container.col-sm-12.col-xs-8 {
+	    min-height: 106px;
+	}
+
 	.featured-side-50 .thumbnail,
 	.featured-top-33-inner-container .thumbnail,
 	.featured-top-row-1 .featured-side-100 .thumbnail,
@@ -1186,7 +1197,7 @@ iframe {
 		.featured-top-70 {
 			width: 70%;
 			.thumbnail {
-				height: 300px;
+				height: 380px;
 			}
 			.featured-top-70-text {
 				//min-height: 239px; // lines up bottom of lead article with bottom of side article
@@ -1220,7 +1231,7 @@ iframe {
 		}
 		.featured-top-30 {
 			width: 30%;
-			width: 316px;
+			//width: 316px;
 		    padding-right: 0;
 		    padding-left: 0;
 
@@ -1289,20 +1300,26 @@ iframe {
 	}
 
 	.widget-gallery {
+		padding-left: 0;
 		padding-right:8px;
 		.thumbnail {
 			height: 190px;
 		}
 	}
+
+	.video-widget {
+		padding-left: 8px;
+		padding-right: 0;
+	}
+
 	.widget_kaitain_authors {
 		height: 297px; // + 3px for trim totals 300px as per spec
 	}
 
 	.widget--sidebar.adrotate_widgets {
-		text-align: center;
-		max-width: 300px;
-	    margin-left: auto;
-	    margin-right: auto;
+		text-align: left;
+		/*max-width: 300px;*/
+		max-width: 100%;
 	}
 	.article-recent .archive-trim-top {
 		display: none; // hidden on larger devices
@@ -1370,6 +1387,19 @@ iframe {
 
 	.single-post.fullwidth-featured-image .article--full__excerpt {
 	    margin-right: 180px;
+	}
+
+
+	.advert_sidebar .tuairisc-advert {
+		min-height: 222px;
+	}
+	.advert_sidebar .tuairisc-advert img {
+		min-height: 222px;
+
+	}
+
+	.advert_sidebar {
+		text-align: center;
 	}
 }
 
