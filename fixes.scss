@@ -105,6 +105,10 @@ h6 {
     border: none;
 }
 
+.widget_kaitain_authors a:hover,
+.widget-video a:hover {
+	color: #fff;
+}
 
 
 /**
@@ -184,7 +188,8 @@ div, article, .thumbnail {
 .searchform__meta,
 .widget_kaitain_recent_sidebar,
 .category-lead-image,
-.widget_kaitain_recent_posts_widget {
+.widget_kaitain_recent_posts_widget,
+.article--full__content img.size-large {
 	margin-bottom: $gutter;
 }
 
@@ -365,10 +370,6 @@ body.post-featured-image {
 
 	.article--lead__thumb {
 		min-width: 100%;
-	}
-
-	.article--full__content img.size-large {
-		margin-bottom: $gutter;
 	}
 	
 	.sidebar__widgets {
@@ -779,7 +780,7 @@ h5.article--category__title {
 
 .popular-widget	.article-popular .article-popular-header {
 	min-height: 76px;
-	padding: $half-gutter;
+	padding: 0 $half-gutter 0 $half-gutter;
 	height: 76px;
 	
 	h5.title.article-popular-title {
@@ -789,12 +790,20 @@ h5.article--category__title {
 
 	h6.post-date.article__postmeta {
 	    position: absolute;
-	    bottom: 5px;
+	    bottom: 2px;
+	    height: 12px;
+        line-height: 12px;
+
+	    time {
+	    	vertical-align: bottom;
+    		line-height: 8px;
+	    }
 	}	
 }
 
 .widget_kaitain_recent_sidebar {
 	background: #f3f3f3;
+	text-align: left;
 
 	.recent-widget .article--sidebar {
 		.post-content {
@@ -809,8 +818,14 @@ h5.article--category__title {
 
 		h6.post-date.article__postmeta {
 		    position: absolute;
-		    bottom: 0px;
-		    height: 14px;
+		    bottom: 2px;
+		    height: 12px;
+	        line-height: 12px;
+
+		    time {
+		    	vertical-align: bottom;
+	    		line-height: 8px;
+		    }
 		}
 	} 
 }
@@ -1277,8 +1292,17 @@ iframe {
 	}
 
 	.home .home-recent-posts-widget .post-content  {
-		height: 145px;
+		//height: 145px;
+		height: 161px;		
 		overflow: hidden;
+	}
+
+	.recent-post-container-widget {
+		.widget_kaitain_recent_container_column {
+			.article-recent .post-content {
+				height: 161px;
+			}
+		}
 	}
 
 	.recent-post-container-widget a:hover .article-recent-header:hover h5{
@@ -1450,7 +1474,7 @@ iframe {
 				overflow: hidden;
 			}
 		}
-			}
+	}
 	.featured-top-row-1 .featured-top-30 .featured-side-100 {
 	    height: 289px;
 	    .title-container {
@@ -1563,6 +1587,15 @@ iframe {
 		font-size: 16px;
 		line-height: 22px;
 	}
+
+	.recent-post-container-widget {
+		.widget_kaitain_recent_container_column {
+			.article-recent .post-content {
+				height: 161px;
+			}
+		}
+	}
+
 
 	/**
 	 *	Single post
