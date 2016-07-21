@@ -582,10 +582,7 @@ body.post-featured-image {
 }
 // used in video widget aswell as category widget
 .video-icon-overlay {
-	background: no-repeat url("../images/glyphicons-221-play-button.png");
-		// invert the png from dark grey to white
-		-webkit-filter: invert(100%);
-		filter: invert(100%);
+	background: no-repeat url("../images/play-icon-white.png");
     //background-size: 30% auto;
     background-size: 32px 32px; 
     background-position: center;
