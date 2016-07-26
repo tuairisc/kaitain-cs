@@ -116,6 +116,10 @@ h6 {
  *-----------------------------------------------------------------------------
  */
 
+body {
+ padding-top: 106px
+}
+
 // Move the main content down if the admin bar is present
 @import 'includes/scss-helpers/decimal';
 
@@ -1530,6 +1534,7 @@ iframe {
 	}
 	.widget-video {
 		padding-right: 0;
+		padding-left: 8px;
 	}
 
 	/*
