@@ -117,7 +117,7 @@ h6 {
  */
 
 body {
- padding-top: 106px
+ padding-top: 108px;
 }
 
 // Move the main content down if the admin bar is present
@@ -663,12 +663,13 @@ body.post-featured-image {
 	    height: 184px;
 	    overflow: hidden;
 	}
-	.article--categoryegory__thumb.thumbnail img{
+	// NEEDS TESTING
+	/*.article--category__thumb.thumbnail img{
 	    min-height: 190px;
 	    min-width: 100%;
 	    height: auto;
 	    width: unset;
-	}
+	}*/
 	.article--category__title {
 		min-height: 76px;
 		height: 76px;
@@ -1282,7 +1283,7 @@ iframe {
 			height: 100%;
 		    min-height: 100%;
 		    min-width: 100%;
-		    width: unset;
+		    width: 100%;
 		    max-width: unset;
 		}
 	}
