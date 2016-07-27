@@ -687,7 +687,8 @@ body.post-featured-image {
 	.article--category__link > div.article--category__thumb {
 	    flex: none;  
 		height: 76px;
-	    width: 44%;
+	    //width: 44%;
+	    width: 25%;
 	    display: inline-block;
 	    overflow: hidden;
 	}
@@ -804,6 +805,14 @@ h5.article--category__title {
     		line-height: 8px;
 	    }
 	}	
+}
+.home .popular-widget	.article-popular .article-popular-header {
+	h5.title.article-popular-title {
+		height: 64px;
+	}
+	h6.post-date.article__postmeta {
+		bottom: 0;
+	}
 }
 
 .widget_kaitain_recent_sidebar {
@@ -990,6 +999,14 @@ $columnist-padding: 0px;
 .author .article-archive-thumbnail {
 	height: 150px;
 }
+
+
+/**
+ * Jobs archive page & Jobs single post
+ *
+ */
+/*.page-template-archive-foluntais {
+}*/
 
 
 /**
