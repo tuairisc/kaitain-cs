@@ -1054,6 +1054,10 @@ $columnist-padding: 0px;
     @include object-fit( cover, center );
 }
 
+.alignnone {
+	width: unset;
+}
+
 .article--category__thumb  img {
 	min-height: 100%;
 }
