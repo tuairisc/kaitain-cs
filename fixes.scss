@@ -1130,7 +1130,6 @@ $columnist-padding: 0px;
 }
 
 .post-date {
-	//display: none;
 	display: block;
 	color: rgba(250,250,250,0.7);	
 }
@@ -1168,6 +1167,7 @@ iframe {
 .foras img {
     width: 17.5%;
     max-width: 225px;
+    min-width: 200px;
 }
 
 .caption {
