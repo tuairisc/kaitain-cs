@@ -1246,6 +1246,16 @@ iframe {
 	}
 }
 */
+
+.article--full__content ul,
+.article--full__content ol {
+	margin-left: 24px;
+}
+.article--full__content ul {
+	list-style-type: disc;
+}
+
+
 /**
  * Media Queries
  *-----------------------------------------------------------------------------
