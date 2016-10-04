@@ -16,7 +16,8 @@ $education-sections: (
     mireanna-mearai: jigsaw,
     sraith-pictiur: picture,
     ursceal-dfhoghlaimeoiri: reading,
-    leamhthuiscinti: book
+    leamhthuiscinti: book,
+    scribhneoireacht-chruthaitheach: pen
 );
 
 /**
@@ -80,9 +81,17 @@ $education-sections: (
             &--#{$key} {
                 background: palette(education, $value);
 
-                #{$parent}__icon {
-                    background: sprite(education, $value);
-                }
+		@if $value == pen {
+            // this image is not in the larger svg file
+            // Adding it in via condition due to lack of time
+			#{$parent}__icon {
+			    background: 60% 50%/75% 90% no-repeat url("../images/pen.svg");
+			}	
+		} @else {
+			#{$parent}__icon {
+			    background: sprite(education, $value);
+			}
+		}
             }
         }
     }
